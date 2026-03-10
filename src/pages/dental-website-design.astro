@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import FAQBlock from '../components/FAQBlock.astro';
+import CTABlock from '../components/CTABlock.astro';
+
+const faqs = [
+  {
+    question: 'Why not just use WordPress or Wix?',
+    answer: 'WordPress sites load slowly (40-60 PageSpeed), require constant plugin updates, and create vendor dependency. Wix locks you into their platform entirely — you can\'t export your site. Static HTML sites load instantly, have zero security vulnerabilities from plugins, and can be hosted anywhere for free.',
+  },
+  {
+    question: 'What\'s wrong with my current website?',
+    answer: 'Maybe nothing visually. But most dental websites are WordPress templates shared across hundreds of practices, load slowly on mobile, have no structured data (schema markup), and are hosted on agency-controlled servers you don\'t own. The content is usually generic enough to apply to any dentist in the country.',
+  },
+  {
+    question: 'What does "custom" actually mean?',
+    answer: 'Unique color palette, typography, component design, and content — all tailored to your specific practice. Not a template with your logo swapped in. Not "custom" in the way agencies use the word (which usually means "we changed the hero image").',
+  },
+  {
+    question: 'How do you build sites so fast?',
+    answer: 'AI tools handle the heavy lifting: content drafting, design system generation, code scaffolding. A single engineer using modern AI tools can now deliver what used to require a team of 4-5 people working for weeks. The time savings get passed to you as cost savings.',
+  },
+  {
+    question: 'Will it work on mobile?',
+    answer: 'Mobile-first. Over 70% of dental website visitors are on phones. Every page is designed for mobile first, then enhanced for desktop. Not the other way around (which is how most agencies build — desktop first, then "make it responsive" as an afterthought).',
+  },
+  {
+    question: 'What about ADA compliance?',
+    answer: 'Semantic HTML, proper heading hierarchy, ARIA labels, sufficient color contrast, and keyboard navigation. Not perfect WCAG 2.1 AAA compliance (that\'s a $50k audit), but solid baseline accessibility that most dental websites completely ignore.',
+  },
+];
+---
+
+<BaseLayout
+  title="Dental Website Design — Custom Sites That Actually Perform | Groundwork Dental"
+  description="Why most dental websites fail and what modern sites require. Custom design, 90+ PageSpeed, structured data for Google, zero JavaScript. Built in days, not months."
+>
+  <!-- Hero -->
+  <section class="bg-brand-cream">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div class="max-w-3xl">
+        <h1 class="section-heading mb-6">Your Dental Website Is Probably Slowing You Down.</h1>
+        <p class="font-serif text-xl text-mid-gray leading-relaxed">
+          Most dental websites share a template with 400 other practices, load in 6 seconds, and have zero structured data. That's not a website — that's expensive wallpaper. Here's what a modern dental site actually requires.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Most Dental Websites Fail -->
+  <section class="py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-subheading mb-8">Why Most Dental Websites Fail</h2>
+      <div class="prose-article text-lg">
+        <p>
+          The typical dental website is a WordPress site built by a marketing agency in 2019. It uses the same template as hundreds of other dentists. It loads in 4-6 seconds on mobile. It has maybe 10-15 pages with generic copy that could apply to any practice in the country.
+        </p>
+        <p>
+          The agency charges $200-500/month to "host" it — but the hosting costs them $5/month wholesale. The rest is margin for doing approximately nothing. If you stop paying, the site vanishes. You don't own the hosting. Sometimes you don't even own the domain.
+        </p>
+        <p>
+          The SEO? Basic meta tags. Maybe a title tag that says "Dentist in [City]." No structured data. No schema markup. No content strategy. No authority pages. Google knows you exist, but it doesn't know what you do or why anyone should care.
+        </p>
+        <p>
+          The worst part: the dentist doesn't know any of this is wrong, because "it looks fine on my phone." And technically, it does look fine. It just doesn't <em>perform</em>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Modern Sites Require -->
+  <section class="py-16 bg-surface-2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-subheading text-center mb-4">What a Modern Dental Website Actually Requires</h2>
+      <p class="font-serif text-mid-gray text-center mb-12 max-w-2xl mx-auto">
+        These aren't nice-to-haves. These are baseline requirements for showing up in search and converting visitors into patients.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <FeatureCard
+          title="90+ PageSpeed"
+          description="Google uses page speed as a ranking factor. A 4-second load time on mobile means patients bounce before they see your phone number. Static HTML loads instantly."
+        />
+        <FeatureCard
+          title="Schema Markup"
+          description="Structured data tells Google exactly what your practice offers. LocalBusiness, FAQPage, MedicalProcedure — 7+ schema types on every page. Most agencies skip this entirely."
+        />
+        <FeatureCard
+          title="Authority Architecture"
+          description="Not just a homepage and 10 service pages. 30-50+ pages organized into topic clusters that establish expertise. Dental implants hub, veneers hub, each with deep sub-pages."
+        />
+        <FeatureCard
+          title="Mobile-First Design"
+          description="70%+ of dental visitors are on phones. Design for mobile first, enhance for desktop. Not the other way around. Touch-friendly buttons, readable text, no pinch-zooming."
+        />
+        <FeatureCard
+          title="Unique Content"
+          description="Copy that mentions your specific practice, city, doctor, and services — not generic text that applies to any dentist in the country. Google penalizes duplicate medical content."
+        />
+        <FeatureCard
+          title="Conversion Basics"
+          description="Phone number prominent. Clear CTAs on every page. Map embed. Hours visible. Links to your existing booking system. The basics that 40% of dental sites still get wrong."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- The Performance Gap -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="section-subheading text-center mb-8">The Performance Gap</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="rounded p-6 border border-border-light">
+            <h3 class="font-serif text-charcoal mb-3">Typical Dental Website</h3>
+            <ul class="font-serif text-sm text-mid-gray space-y-2">
+              <li>PageSpeed: <span class="font-mono font-bold text-red-400">40-60</span></li>
+              <li>Pages: 10-15 (template)</li>
+              <li>Schema: None or basic</li>
+              <li>JavaScript: 500KB+ (plugins)</li>
+              <li>Load time: 4-6 seconds</li>
+              <li>Ownership: Agency-controlled</li>
+              <li>Monthly cost: $200-500</li>
+            </ul>
+          </div>
+          <div class="rounded p-6 border border-border-light bg-surface-2">
+            <h3 class="font-serif text-charcoal mb-3">Groundwork Dental Build</h3>
+            <ul class="font-serif text-sm text-mid-gray space-y-2">
+              <li>PageSpeed: <span class="font-mono font-bold text-green-700">90+</span></li>
+              <li>Pages: 30-50+ (custom)</li>
+              <li>Schema: 7+ types on every page</li>
+              <li>JavaScript: 0 by default</li>
+              <li>Load time: Under 1 second</li>
+              <li>Ownership: You own everything</li>
+              <li>Monthly cost: $0 (self-host)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Approach -->
+  <section class="py-16 bg-surface-2">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-subheading mb-8">Our Approach</h2>
+      <div class="prose-article text-lg">
+        <p>
+          We build with <strong>Astro</strong> — a modern static site generator that outputs pure HTML with zero JavaScript by default. Your site loads instantly because there's nothing to load. No WordPress. No Wix. No page builders. Just fast, clean, semantic HTML.
+        </p>
+        <p>
+          Styling is done with <strong>Tailwind CSS</strong> — a utility framework that produces minimal, optimized stylesheets. Each site gets a custom design system: unique color palette, typography, component styles. No templates reused between clients.
+        </p>
+        <p>
+          Hosting is on <strong>Cloudflare Pages</strong> — a free global CDN with automatic HTTPS, DDoS protection, and 99.99% uptime. Your site is served from data centers worldwide. It costs $0/month. You own the account.
+        </p>
+        <p>
+          The result: a custom website that loads in under a second, scores 90+ on PageSpeed, includes comprehensive SEO markup, and costs $12/year to keep running. Every agency should build like this. Most don't because template WordPress is easier and locks you in.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQBlock faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <CTABlock
+        heading="See It In Action"
+        subheading="We built a full dental website with 48 pages, 95+ PageSpeed, and schema on every page. Click around and test it yourself."
+        primaryCTA="View Example Site"
+        primaryHref="/example"
+        secondaryCTA="View pricing"
+        secondaryHref="/pricing"
+        variant="dark"
+      />
+    </div>
+  </section>
+</BaseLayout>

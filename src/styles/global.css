@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-serif antialiased text-charcoal;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block bg-brand-warm text-white font-sans font-medium px-6 py-3 rounded transition-colors duration-200 text-center text-sm tracking-wide hover:bg-brand-warm-dark;
+  }
+
+  .btn-secondary {
+    @apply inline-block bg-white text-charcoal font-sans font-medium px-6 py-3 rounded transition-colors duration-200 text-center text-sm tracking-wide border border-border-light hover:bg-charcoal hover:text-white hover:border-charcoal;
+  }
+
+  .btn-dark {
+    @apply inline-block bg-charcoal text-white font-sans font-medium px-6 py-3 rounded transition-colors duration-200 text-center text-sm tracking-wide hover:bg-neutral-800;
+  }
+
+  .eyebrow {
+    @apply font-sans uppercase text-neutral-400 font-medium;
+    font-size: 10px;
+    line-height: 1.4;
+    letter-spacing: 0.14em;
+  }
+
+  .section-label {
+    @apply font-sans uppercase text-mid-gray font-medium;
+    font-size: 11px;
+    line-height: 1.4;
+    letter-spacing: 0.12em;
+  }
+
+  .section-heading {
+    @apply font-serif text-4xl md:text-5xl font-normal leading-tight tracking-tight text-charcoal;
+  }
+
+  .section-subheading {
+    @apply font-serif text-2xl md:text-3xl font-normal leading-tight text-charcoal;
+  }
+
+  .prose-article {
+    @apply font-serif text-mid-gray leading-relaxed;
+  }
+
+  .prose-article p {
+    @apply mb-5;
+  }
+
+  .prose-article h2 {
+    @apply font-serif text-2xl md:text-3xl font-normal leading-tight text-charcoal mt-12 mb-5;
+  }
+
+  .prose-article h3 {
+    @apply font-serif text-xl font-normal mt-8 mb-3 text-charcoal;
+  }
+
+  .prose-article ul {
+    @apply list-disc list-inside mb-5 space-y-2;
+  }
+
+  .prose-article ol {
+    @apply list-decimal list-inside mb-5 space-y-2;
+  }
+
+  .prose-article strong {
+    @apply text-charcoal font-semibold;
+  }
+
+  .prose-article blockquote {
+    @apply border-l-2 border-border-light pl-6 my-6 italic text-neutral-mid;
+  }
+
+  .card {
+    @apply rounded p-6 border bg-surface-2 border-border-light;
+  }
+
+  .nav-link {
+    @apply font-sans text-xs uppercase tracking-widest font-medium transition-colors duration-200 text-mid-gray hover:text-charcoal;
+  }
+
+  /* Form inputs */
+  .form-input {
+    @apply font-serif text-charcoal bg-white border border-border-light rounded px-4 py-3 transition-colors duration-200 outline-none;
+  }
+
+  .form-input:focus {
+    @apply border-brand-warm ring-1 ring-brand-warm;
+  }
+
+  .form-input::placeholder {
+    @apply text-neutral-400;
+  }
+
+  .form-label {
+    @apply block font-sans text-mid-gray font-medium mb-2;
+    font-size: 11px;
+    line-height: 1.4;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .form-textarea {
+    @apply form-input min-h-[120px] resize-y;
+  }
+
+  .upload-zone {
+    @apply rounded border-2 border-dashed border-border-light bg-white text-center py-12 px-6 cursor-pointer transition-colors duration-200 hover:border-brand-warm/50;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center gap-1.5 font-sans text-xs font-medium px-2.5 py-1 rounded-full;
+  }
+
+  .status-badge-complete {
+    @apply status-badge bg-brand-sage-light text-brand-warm;
+  }
+
+  .status-badge-progress {
+    @apply status-badge bg-amber-50 text-amber-700;
+  }
+
+  .status-badge-pending {
+    @apply status-badge bg-neutral-100 text-mid-gray;
+  }
+}

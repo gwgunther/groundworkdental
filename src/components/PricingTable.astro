@@ -1,0 +1,64 @@
+---
+interface Feature {
+  text: string;
+  included: boolean;
+}
+
+interface Tier {
+  name: string;
+  price: string;
+  period: string;
+  description: string;
+  features: Feature[];
+  cta: string;
+  href: string;
+  highlighted?: boolean;
+}
+
+interface Props {
+  tiers: Tier[];
+}
+
+const { tiers } = Astro.props;
+---
+
+<div class={`grid grid-cols-1 gap-6 max-w-5xl mx-auto ${tiers.length === 2 ? 'md:grid-cols-2 max-w-3xl' : 'md:grid-cols-3'}`}>
+  {tiers.map((tier) => (
+    <div class={`rounded p-8 flex flex-col ${tier.highlighted ? 'bg-charcoal text-white border border-neutral-700' : 'bg-surface-2 border border-border-light'}`}>
+      <div class="mb-6">
+        <h3 class={`font-sans text-eyebrow uppercase mb-3 ${tier.highlighted ? 'text-neutral-400' : 'text-mid-gray'}`}>{tier.name}</h3>
+        <div class="flex items-baseline gap-1">
+          <span class={`font-serif text-4xl ${tier.highlighted ? 'text-white' : 'text-charcoal'}`}>{tier.price}</span>
+          <span class={`font-sans text-xs ${tier.highlighted ? 'text-neutral-500' : 'text-mid-gray'}`}>{tier.period}</span>
+        </div>
+        <p class={`font-serif text-sm mt-3 leading-relaxed ${tier.highlighted ? 'text-neutral-300' : 'text-mid-gray'}`}>{tier.description}</p>
+      </div>
+
+      <ul class="space-y-3 mb-8 flex-grow">
+        {tier.features.map((feature) => (
+          <li class="flex items-start gap-3 font-sans text-xs">
+            {feature.included ? (
+              <svg class="w-4 h-4 text-brand-sage flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            ) : (
+              <svg class={`w-4 h-4 flex-shrink-0 mt-0.5 ${tier.highlighted ? 'text-neutral-600' : 'text-neutral-300'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            )}
+            <span class={feature.included ? (tier.highlighted ? 'text-neutral-200' : 'text-charcoal') : (tier.highlighted ? 'text-neutral-500' : 'text-neutral-400')}>
+              {feature.text}
+            </span>
+          </li>
+        ))}
+      </ul>
+
+      <a
+        href={tier.href}
+        class={`text-center font-sans font-medium text-sm px-6 py-3 rounded transition-colors tracking-wide ${tier.highlighted ? 'bg-brand-warm text-white hover:bg-brand-warm-dark' : 'btn-secondary'}`}
+      >
+        {tier.cta}
+      </a>
+    </div>
+  ))}
+</div>

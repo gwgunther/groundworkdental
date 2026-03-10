@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQBlock from '../components/FAQBlock.astro';
+import CTABlock from '../components/CTABlock.astro';
+import { site } from '../config/site';
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  'name': site.founder,
+  'jobTitle': 'Founder',
+  'worksFor': {
+    '@type': 'Organization',
+    'name': site.name,
+    'url': site.url,
+  },
+  'knowsAbout': ['Dental Website Design', 'SEO', 'Web Development', 'AI-Assisted Development'],
+};
+
+const faqs = [
+  {
+    question: 'Why dental websites specifically?',
+    answer: 'Dentists are some of the most skilled professionals we know — and some of the most underserved when it comes to their online presence. They don\'t have time to learn web development, and they shouldn\'t have to. The dental marketing industry has been overcharging for underwhelming work for years. Modern tools make it possible to deliver dramatically better results at a fraction of the cost. Dentists were the obvious place to start.',
+  },
+  {
+    question: 'Are you a one-person operation?',
+    answer: 'Yes. That\'s the point. Modern AI tools let a single engineer deliver what used to require a team of designers, developers, and copywriters. The savings get passed to you. No overhead. No account managers. No one between you and the person actually building your site.',
+  },
+  {
+    question: 'What happens if you get hit by a bus?',
+    answer: 'Your website keeps working. It\'s hosted on Cloudflare (which isn\'t going anywhere), the code is on GitHub, and any developer in the world can pick it up. That\'s the whole ownership model — you\'re never dependent on one person.',
+  },
+  {
+    question: 'Do you use AI? Is that a problem?',
+    answer: 'Yes, and no. The page you\'re reading right now was built with the help of AI — doesn\'t it look good? Every agency in 2026 is using AI. Most just won\'t admit it because they\'re still charging 2019 prices. We\'re upfront about it because it\'s why the service costs $2,000 instead of $15,000. The AI does the heavy lifting; we do the quality control, customization, and engineering that AI can\'t handle on its own yet.',
+  },
+];
+---
+
+<BaseLayout
+  title="About Groundwork Dental — Why This Exists"
+  description="Dentists deserve better websites. Professional, fast, search-optimized — without the agency lock-in or monthly ransom. Here's why we built this."
+  schema={personSchema}
+>
+  <!-- Hero -->
+  <section class="bg-brand-cream">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div class="max-w-3xl">
+        <p class="eyebrow text-brand-warm mb-4">Why this exists</p>
+        <h1 class="section-heading mb-6">Dentists Shouldn't Need a Tech Department.</h1>
+        <p class="font-serif text-xl text-mid-gray leading-relaxed">
+          You're great at dentistry. You shouldn't have to be great at websites too.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Story -->
+  <section class="py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose-article text-lg">
+        <h2>The Problem</h2>
+        <p>
+          Dentists are some of the most skilled healthcare professionals out there — and some of the worst-served when it comes to their online presence. Not because they don't care, but because they're busy doing what they actually went to school for: fixing teeth.
+        </p>
+        <p>
+          Meanwhile, the dental marketing industry has figured out that most dentists don't have the time or interest to learn what "SEO" means, so they charge $300–$500/month to host a WordPress site that loads in 6 seconds and shares a template with 400 other practices. The dentist doesn't know this, because "it looks fine on my phone." If they stop paying, the website vanishes.
+        </p>
+        <p>
+          That's not a service. That's a hostage situation with nice fonts.
+        </p>
+        <p>
+          It's frustrating to watch non-technical health professionals get held back by something like this. Dentists don't need anything crazy. They need the basics: a professional site that accurately represents their practice and ranks well in searches so patients can actually find them. That shouldn't require a marketing degree or a $500/month subscription.
+        </p>
+
+        <h2>The AI Transparency Thing</h2>
+        <p>
+          You or your tech-savvy niece could technically build a website with AI tools today. Seriously — if you've used ChatGPT, you're halfway there. The other half is where things start breaking: your SSL certificate expires, your sitemap isn't submitting, your schema markup is invalid, your structured data doesn't match what Google expects, and your contact form is emailing submissions into the void.
+        </p>
+        <p>
+          We use AI. We're upfront about it. The page you're reading right now was built with the help of AI — doesn't it look good? Every agency in 2026 is using AI. Most just won't admit it because they're still charging 2019 prices. We say the quiet part out loud: AI is why this costs $2,000 instead of $15,000. But there's still a lot that goes on in the background — writing, hosting, coding, configuration — that ChatGPT can't quite do on its own yet. We could teach you all of that, but it would cost more than $2,000 and take longer than 7 days. Which is what we're offering.
+        </p>
+
+        <h2>What We Actually Promise</h2>
+        <p>
+          We don't promise patient growth. We don't promise marketing magic. Every dental marketing agency on earth promises "more patients." We promise a website that doesn't embarrass you when someone Googles your name.
+        </p>
+        <p>
+          The bar is low. We clear it by a lot.
+        </p>
+        <p>
+          Our focus is just the baseline foundation. The groundwork. You'll be set up extremely well for SEO and AI search with authoritative, geographic content. But real growth requires regular content creation — more articles, more engagement, maybe even TikToks. Let's crawl before we walk.
+        </p>
+
+        <h2>The Ownership Guarantee</h2>
+        <p>
+          After the project's done, you could hand the whole thing off to your tech-savvy niece and let her vibe-code it from there. Seriously. She'll understand what that means, even if you don't.
+        </p>
+        <p>
+          The point is: it's yours. Hire someone else, or never talk to us again. Your website keeps working. No kill switch. No hostage negotiation.
+        </p>
+        <p>
+          You keep: the domain, the hosting, the website code, the design assets, the SEO content, all Google accounts, all analytics. We walk away clean.
+        </p>
+
+        <h2>Who This Is NOT For</h2>
+        <p>
+          If you want a $30,000 fully custom marketing website with a full design team — that exists, and that's fine. This isn't that.
+        </p>
+        <p>
+          If you need complex patient management software, aggressive paid advertising campaigns, or enterprise integrations — different conversation entirely. If you eventually want full-service patient management, you can start here and evolve into that. This complements that journey. But the majority of practices just need to look professional online and show up in search results first.
+        </p>
+        <p>
+          We build the website foundation. We don't run a marketing department. But we'll happily tell you what to look for and what to avoid so you don't get burned. That advice is free.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-surface-2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQBlock faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <CTABlock
+        heading="Want to See What We Build?"
+        subheading="Check out a live example of a dental website we've built. Click around. Test the speed. Then decide if you want one."
+        primaryCTA="See an Example"
+        primaryHref="/example"
+        secondaryCTA="View pricing"
+        secondaryHref="/pricing"
+        variant="dark"
+      />
+    </div>
+  </section>
+</BaseLayout>

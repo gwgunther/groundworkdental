@@ -1,0 +1,64 @@
+---
+interface Props {
+  heading?: string;
+  subheading?: string;
+  primaryCTA?: string;
+  primaryHref?: string;
+  secondaryCTA?: string;
+  secondaryHref?: string;
+  variant?: 'dark' | 'light' | 'warm';
+}
+
+const {
+  heading = 'Ready to See Your Practice Reimagined?',
+  subheading = 'Enter your website URL. We\'ll rebuild it into a modern, search-ready version and email you a preview within 24 hours. If you like it, it\'s $2,000. If not, you owe nothing.',
+  primaryCTA = 'Get Started',
+  primaryHref = '/get-started',
+  secondaryCTA = 'See an Example',
+  secondaryHref = '/example',
+  variant = 'light',
+} = Astro.props;
+
+const styles = {
+  dark: {
+    bg: 'bg-charcoal',
+    heading: 'text-white',
+    sub: 'text-neutral-400',
+    btn: 'bg-brand-warm text-white hover:bg-brand-warm-dark',
+    link: 'text-neutral-400 hover:text-white',
+  },
+  light: {
+    bg: 'bg-surface-2',
+    heading: 'text-charcoal',
+    sub: 'text-mid-gray',
+    btn: 'bg-brand-warm text-white hover:bg-brand-warm-dark',
+    link: 'text-mid-gray hover:text-charcoal',
+  },
+  warm: {
+    bg: 'bg-brand-warm',
+    heading: 'text-white',
+    sub: 'text-white/80',
+    btn: 'bg-white text-charcoal hover:bg-neutral-100',
+    link: 'text-white/80 hover:text-white',
+  },
+}[variant];
+---
+
+<section class={`${styles.bg} rounded p-8 md:p-12 text-center`}>
+  <h2 class={`font-serif text-2xl md:text-3xl font-normal mb-4 ${styles.heading}`}>
+    {heading}
+  </h2>
+  <p class={`font-serif max-w-2xl mx-auto mb-8 leading-relaxed ${styles.sub}`}>
+    {subheading}
+  </p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+    <a href={primaryHref} class={`${styles.btn} font-sans font-medium px-8 py-3.5 rounded transition-colors text-sm tracking-wide`}>
+      {primaryCTA}
+    </a>
+    {secondaryCTA && secondaryHref && (
+      <a href={secondaryHref} class={`font-sans text-sm font-medium transition-colors ${styles.link}`}>
+        {secondaryCTA} &rarr;
+      </a>
+    )}
+  </div>
+</section>

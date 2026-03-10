@@ -1,0 +1,54 @@
+---
+import { site } from '../config/site';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-charcoal text-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+      <!-- Brand -->
+      <div>
+        <span class="font-serif text-lg mb-4 block">Groundwork <span class="text-brand-warm">Dental</span></span>
+        <p class="text-neutral-400 font-sans text-xs leading-relaxed mb-4">
+          Custom dental websites built in days. You own the code, the hosting, and every account. No lock-in.
+        </p>
+        <a href={`mailto:${site.email}`} class="text-neutral-500 font-sans text-xs hover:text-white transition-colors">
+          {site.email}
+        </a>
+      </div>
+
+      <!-- Pages -->
+      <div>
+        <h3 class="font-sans text-eyebrow uppercase text-neutral-500 mb-5">Pages</h3>
+        <ul class="space-y-2.5 font-sans text-xs">
+          <li><a href="/dental-website-design" class="text-neutral-400 hover:text-white transition-colors">Dental Website Design</a></li>
+          <li><a href="/dental-seo-foundation" class="text-neutral-400 hover:text-white transition-colors">Dental SEO Guide</a></li>
+          <li><a href="/pricing" class="text-neutral-400 hover:text-white transition-colors">Pricing</a></li>
+          <li><a href="/why-agencies-lock-you-in" class="text-neutral-400 hover:text-white transition-colors">Agency Lock-In</a></li>
+          <li><a href="/example" class="text-neutral-400 hover:text-white transition-colors">Example Website</a></li>
+          <li><a href="/about" class="text-neutral-400 hover:text-white transition-colors">About</a></li>
+          <li><a href="/blog" class="text-neutral-400 hover:text-white transition-colors">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div>
+        <h3 class="font-sans text-eyebrow uppercase text-neutral-500 mb-5">Get Started</h3>
+        <p class="text-neutral-400 font-serif text-sm mb-6 leading-relaxed">
+          $2,000 flat. Your only cost after that is ~$12/year for your domain. That's it.
+        </p>
+        <a href="/pricing" class="btn-primary px-5 py-2.5">
+          View Pricing
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-neutral-800">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 font-sans text-xs text-neutral-600">
+        <p>&copy; {currentYear} Groundwork Dental. Built by {site.founder}.</p>
+        <p>Built with Astro. Hosted on Cloudflare.</p>
+      </div>
+    </div>
+  </div>
+</footer>

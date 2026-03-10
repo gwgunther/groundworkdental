@@ -1,0 +1,260 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQBlock from '../components/FAQBlock.astro';
+import CTABlock from '../components/CTABlock.astro';
+
+const faqs = [
+  {
+    question: 'Do I really need SEO if I already get patients from referrals?',
+    answer: 'Referrals are great — but what happens when the referred patient Googles your name before calling? If your website looks like it was built in 2015, loads slowly, or doesn\'t show up at all, you\'re losing patients who were already pre-sold. SEO isn\'t just about new patients. It\'s about not losing the ones you already have.',
+  },
+  {
+    question: 'How long does SEO take to work?',
+    answer: 'Baseline SEO (showing up for your own name and basic local searches) can take 2-4 weeks after your site is indexed. Competitive rankings for treatment keywords (implant cost, veneers cost) typically take 3-6 months of consistent content and link building. Anyone promising results in 30 days is either targeting non-competitive keywords or lying.',
+  },
+  {
+    question: 'Is Google Business Profile more important than my website?',
+    answer: 'For local searches like "dentist near me"? Often yes. GBP with 200 reviews will usually outrank a perfect website with 10 reviews. But your website is what converts the visitor into a patient. You need both — the GBP gets them to click, the website gets them to call.',
+  },
+  {
+    question: 'Should I blog?',
+    answer: 'Only if you\'re publishing content that answers real questions patients actually search for. "5 Tips for Healthy Teeth" does nothing for SEO. "How Much Do Dental Implants Cost in [Your City]?" targets a $30,000 patient. Quality over quantity. Always.',
+  },
+  {
+    question: 'Can I do all of this myself?',
+    answer: 'If you made it through dental school, you can absolutely build a website like this — especially with AI tools. But you also know what your time is worth. Between learning hosting, configuring structured data, writing SEO content, and debugging deployments, you\'d spend far more than $2,000 in hours. The information on this page is free. The implementation is $2,000. Most dentists read this, appreciate the honesty, and decide their evenings are better spent elsewhere.',
+  },
+  {
+    question: 'What\'s the difference between what you do and what a $5,000/month SEO agency does?',
+    answer: 'We build the foundation: website, schema, content architecture, GBP optimization. That\'s the 80% that matters. A $5,000/month agency adds ongoing content creation, backlink outreach, paid media management, and reporting. If you need that level of service, you probably need a bigger agency. If you need the foundation done right, that\'s us.',
+  },
+];
+---
+
+<BaseLayout
+  title="Dental SEO Foundation — Everything You Need to Know (For Free) | Groundwork Dental"
+  description="The complete guide to dental SEO: baseline presence, growth levels, treatment keywords, the three ranking engines, and what agencies actually do. We're giving all of this away."
+>
+  <!-- Hero -->
+  <section class="bg-brand-cream">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div class="max-w-3xl">
+        <p class="eyebrow text-brand-warm mb-4">Yes, we're giving this away</p>
+        <h1 class="section-heading mb-6">Everything You Need to Know About Dental SEO.</h1>
+        <p class="font-serif text-xl text-mid-gray leading-relaxed">
+          Every secret, every framework, every thing a dental marketing agency charges $5k to explain in a sales call. Right here. For free. Because dentists will read it, appreciate the honesty, realize the implementation requires actual engineering, and hire us anyway.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose-article text-lg">
+
+        <h2>What "Baseline SEO Presence" Actually Means</h2>
+        <p>
+          Baseline is not growth. It's being eligible to appear in local search. Think of it as local discoverability, not marketing. 90% of dental offices never get past baseline. They set up a decent site and Google Business Profile and stop. That baseline alone can generate patients because dental search is heavily local-intent ("dentist near me"). But the ceiling is low.
+        </p>
+
+        <h3>Website Baseline</h3>
+        <ul>
+          <li><strong>Site structure:</strong> Homepage, service pages (cleanings, implants, Invisalign, etc.), contact page, location page</li>
+          <li><strong>Technical basics:</strong> Mobile-friendly, fast load time, HTTPS, proper title tags + meta descriptions, basic schema markup</li>
+          <li><strong>On-page SEO:</strong> Keywords like "dentist in [city]" and "family dentist [city]", clear service descriptions, internal links</li>
+          <li><strong>Conversion basics:</strong> Phone number prominent, online booking, map embed</li>
+        </ul>
+
+        <h3>Google Business Profile Baseline</h3>
+        <p>
+          This matters more than most dentists realize. A mediocre website with 200 reviews will often outrank a perfect website with 10. Google prioritizes local proximity, relevance, and prominence in map rankings.
+        </p>
+        <ul>
+          <li>Profile completeness: correct name, address, phone, categories, hours, website link</li>
+          <li>Photos: exterior, waiting room, staff, treatment rooms</li>
+          <li>Reviews: at least 20-40 real reviews, respond to all of them</li>
+          <li>Basic activity: occasional updates, answer Q&A</li>
+        </ul>
+
+        <h3>Directory Citations</h3>
+        <ul>
+          <li>Healthgrades, Yelp, Zocdoc, Bing Places, Apple Maps, YellowPages, dental directories</li>
+          <li>Key rule: Name / Address / Phone must match exactly everywhere</li>
+        </ul>
+
+        <p>
+          <strong>What baseline results look like:</strong> If the area isn't hyper-competitive: rank in local map pack for your name + some services, 20-100 organic visitors per month, occasional new patients. Caps out quickly.
+        </p>
+
+        <h2>Beyond Baseline: Growth Levels</h2>
+        <p>
+          Going beyond baseline gets you three things baseline cannot deliver: <strong>scale, stability, and patient quality.</strong>
+        </p>
+
+        <h3>Level 1 — Content & Activity (Moderate effort)</h3>
+        <ul>
+          <li>Blog posts, FAQ pages, treatment explainers ("How long do dental implants last?")</li>
+          <li>Weekly GBP activity: posts, new photos, review replies, service updates</li>
+          <li>Basic link acquisition: chamber of commerce, local sponsorships, dental associations</li>
+        </ul>
+        <p>Results: ranking for informational searches, long-tail queries. Traffic grows 2-4x baseline.</p>
+
+        <h3>Level 2 — Authority SEO (High effort)</h3>
+        <ul>
+          <li>Topical authority clusters: instead of random blog posts, build content hubs (dental implants hub with 10+ pages)</li>
+          <li>Active backlink outreach: health publications, dental blogs, local media</li>
+          <li>Location expansion pages: multiple geo pages for surrounding cities</li>
+          <li>Review velocity strategy: continuous 5-10 new reviews/month</li>
+        </ul>
+        <p>Results: top 3 for core services, rankings across nearby cities, hundreds to thousands of organic visits/month.</p>
+
+        <h3>Level 3 — Competitive Dominance (Very high effort)</h3>
+        <ul>
+          <li>Aggressive content publishing: 20-100+ SEO pages</li>
+          <li>Local PR and link campaigns</li>
+          <li>Structured entity authority (advanced schema, doctor entity pages)</li>
+          <li>YouTube + video SEO</li>
+        </ul>
+        <p>Results: owns entire search category locally.</p>
+
+        <h2>Why Treatment Keywords Are Insanely Valuable</h2>
+        <p>
+          Generic dentist searches skew cheap procedures. Treatment research keywords bring high-value cases. This is where most agencies completely miss the boat.
+        </p>
+        <p>
+          When someone searches "dental implant cost," Google injects local dentists into results. A Long Beach dentist ranking for "dental implant cost" is really ranking for "dental implant cost near Long Beach." Users just don't type the city.
+        </p>
+        <p>
+          80-90% of healthcare searches start informational, not provider-based. Most patients search for their problem first, then a provider. If your site answers the earlier questions, you own the research phase.
+        </p>
+
+        <div class="overflow-x-auto my-8">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b-2 border-border-light">
+                <th class="py-3 pr-4 font-sans text-xs font-semibold text-mid-gray">Query</th>
+                <th class="py-3 px-4 font-sans text-xs font-semibold text-mid-gray">Intent</th>
+                <th class="py-3 pl-4 font-sans text-xs font-semibold text-mid-gray">Patient Value</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm">
+              <tr class="border-b border-border-light">
+                <td class="py-3 pr-4">dentist near me</td>
+                <td class="py-3 px-4 text-mid-gray">Cleaning / exam</td>
+                <td class="py-3 pl-4 font-mono">$100–$300</td>
+              </tr>
+              <tr class="border-b border-border-light">
+                <td class="py-3 pr-4">emergency dentist</td>
+                <td class="py-3 px-4 text-mid-gray">Urgent visit</td>
+                <td class="py-3 pl-4 font-mono">$200–$500</td>
+              </tr>
+              <tr class="border-b border-border-light">
+                <td class="py-3 pr-4 font-semibold text-brand-warm">dental implant cost</td>
+                <td class="py-3 px-4 text-mid-gray">Research</td>
+                <td class="py-3 pl-4 font-mono font-bold text-brand-warm">$5k–$40k</td>
+              </tr>
+              <tr class="border-b border-border-light">
+                <td class="py-3 pr-4 font-semibold text-brand-warm">Invisalign cost</td>
+                <td class="py-3 px-4 text-mid-gray">Research</td>
+                <td class="py-3 pl-4 font-mono font-bold text-brand-warm">$4k–$7k</td>
+              </tr>
+              <tr class="border-b border-border-light">
+                <td class="py-3 pr-4 font-semibold text-brand-warm">veneers cost</td>
+                <td class="py-3 px-4 text-mid-gray">Research</td>
+                <td class="py-3 pl-4 font-mono font-bold text-brand-warm">$8k–$20k</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          One implant case pays for years of SEO work. Your agency is optimizing for "teeth cleaning near me." Let's talk about that.
+        </p>
+
+        <h2>The Three Ranking Engines</h2>
+        <p>
+          The entire dental SEO game reduces to three ranking engines. Everything else is noise.
+        </p>
+        <ol>
+          <li><strong>Google Maps</strong> (GBP + reviews) — captures most calls from local intent searches</li>
+          <li><strong>Local Organic Pages</strong> — service pages and location pages that rank for treatment + city queries</li>
+          <li><strong>Authority Signals</strong> (links + content) — topical depth and backlinks that improve ranking power across all pages</li>
+        </ol>
+        <p>
+          Everything else — social media, email marketing, print ads — is either a supporting channel or a distraction. Focus on these three engines and you'll outperform 90% of dental practices.
+        </p>
+
+        <h2>The Non-Obvious Truth</h2>
+        <p>
+          The biggest lever for dentists isn't blogging. It's <strong>reviews + Google Business Profile optimization.</strong> Those two signals often matter more than the website. A mediocre website with 200 reviews will often outrank a perfect website with 10. Google prioritizes local proximity, relevance, and prominence in map rankings.
+        </p>
+        <p>
+          This is why we include a full GBP audit and optimization with every website build. The website is the foundation — but if your GBP has 8 reviews and wrong hours listed, the website won't save you.
+        </p>
+
+        <h2>What Dental SEO Agencies Actually Do</h2>
+        <p>
+          Most run the same formula: templated site, GBP optimization, directory citations, occasional generic blog content ("5 tips for healthy teeth" — almost useless for SEO).
+        </p>
+        <p>Their biggest weaknesses:</p>
+        <ul>
+          <li>Rarely target procedure research queries (missing the most valuable patients)</li>
+          <li>Template content reused across hundreds of sites (Google penalizes duplicate medical content)</li>
+          <li>No authority building (no real backlinks from health publications)</li>
+          <li>No topical authority (one implant page instead of a 10-20 page cluster)</li>
+          <li>No content funnel (only bottom-funnel "dentist [city]" pages)</li>
+        </ul>
+
+        <h2>The Elite Architecture</h2>
+        <p>
+          The fastest-growing cosmetic dental chains build four-layer site architectures:
+        </p>
+        <ol>
+          <li><strong>Homepage (authority hub):</strong> Signals brand authority, distributes ranking power</li>
+          <li><strong>Service pages (revenue drivers):</strong> Rank for high-intent treatment searches with deep content per procedure</li>
+          <li><strong>Research content (traffic engine):</strong> Content clusters capturing research queries — this is where elite SEO happens</li>
+          <li><strong>Local pages (geographic expansion):</strong> Geo pages for surrounding cities</li>
+        </ol>
+        <p>
+          Plus conversion trust pages (galleries, patient stories, doctor authority pages) and a review layer.
+        </p>
+        <p>
+          That's exactly how we build every site. 30-50+ pages of authority content, organized into topic clusters, with schema markup on every page. Not because we're overbuilding — because that's what it takes to compete beyond baseline.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Pitch -->
+  <section class="py-16 bg-charcoal text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-serif text-3xl font-normal mb-6">Want Us to Implement All of This?</h2>
+        <p class="font-serif text-neutral-300 text-lg leading-relaxed mb-2">
+          Everything on this page — the site architecture, the schema markup, the content strategy, the GBP optimization — we implement all of it.
+        </p>
+        <p class="text-5xl text-brand-warm font-mono my-6">$2,000</p>
+        <p class="font-sans text-xs text-neutral-400 mb-8">
+          One-time. You own everything. ~$12/year after that.
+        </p>
+        <a href="/pricing" class="btn-primary px-8 py-3.5">
+          View Full Pricing
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQBlock faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <CTABlock variant="light" />
+    </div>
+  </section>
+</BaseLayout>

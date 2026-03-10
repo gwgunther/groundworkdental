@@ -1,0 +1,217 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PricingTable from '../components/PricingTable.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import FAQBlock from '../components/FAQBlock.astro';
+import CTABlock from '../components/CTABlock.astro';
+import { site } from '../config/site';
+
+const buildHref = site.stripe.websiteBuild || `mailto:${site.email}?subject=Website%20Build&body=I'm%20interested%20in%20getting%20a%20custom%20dental%20website.%20Here's%20my%20current%20site%3A%20`;
+const hostingHref = site.stripe.managedHosting || `mailto:${site.email}?subject=Managed%20Hosting&body=I'm%20interested%20in%20managed%20hosting%20for%20my%20dental%20website.`;
+
+const tiers = [
+  {
+    name: 'Website Build',
+    price: '$2,000',
+    period: 'one-time',
+    description: 'Everything you need. Custom website, SEO foundation, all accounts set up and transferred to you.',
+    highlighted: true,
+    cta: 'Get Started',
+    href: buildHref,
+    features: [
+      { text: '30–50+ custom pages', included: true },
+      { text: '100% unique design (no templates)', included: true },
+      { text: 'Built to show up in Google search results', included: true },
+      { text: 'Structured data so Google understands your site', included: true },
+      { text: 'Google Business Profile optimization', included: true },
+      { text: 'Google Analytics + Search Console setup', included: true },
+      { text: 'Blog ready to publish articles', included: true },
+      { text: 'Links to your existing booking/patient management system', included: true },
+      { text: 'Before/after photo gallery', included: true },
+      { text: 'Looks great on every device', included: true },
+      { text: 'Loads fast (90+ speed score)', included: true },
+      { text: 'You own everything — code, hosting, accounts', included: true },
+    ],
+  },
+  {
+    name: 'Managed Hosting',
+    price: '$100',
+    period: '/month',
+    description: "Honestly? Most practices don't need this. It's a little more work to manage your own site, but it saves you money long-term. That said — if you value hands-off peace of mind, or just want one bill and one point of contact for everything, this option is here for you.",
+    highlighted: false,
+    cta: 'Add After Build',
+    href: hostingHref,
+    features: [
+      { text: 'Everything in Website Build', included: true },
+      { text: 'We keep your site running and up to date', included: true },
+      { text: 'Content changes whenever you need them', included: true },
+      { text: 'Security patches and software updates', included: true },
+      { text: 'Monthly report on how your site is doing', included: true },
+      { text: 'Priority email support', included: true },
+      { text: 'One bill, one point of contact — no juggling accounts', included: true },
+    ],
+  },
+];
+
+const costComparison = [
+  { feature: 'Year 1', traditional: '$5,600–$9,000+', groundwork: '$2,000 (build only)' },
+  { feature: 'Year 2', traditional: '$3,600–$6,000', groundwork: '~$12 (domain renewal — paid to your registrar, not us)' },
+  { feature: 'Year 3', traditional: '$3,600–$6,000', groundwork: '~$12 (domain renewal)' },
+  { feature: '3-Year Total', traditional: '$12,800–$21,000+', groundwork: '$2,024' },
+];
+
+const faqs = [
+  {
+    question: 'Why is it only $2,000 when other agencies charge $5,000–$15,000?',
+    answer: 'Modern development tools — including AI-assisted workflows — have made it possible for a skilled engineer to build high-quality, unique websites dramatically faster than a traditional agency team. The $15k firm is using the same tools. They just have more people, more overhead, and more reasons to keep you paying. $2,000 is the minimum cost to have a properly built website. The difference is we pass the efficiency gains to you instead of pocketing them.',
+  },
+  {
+    question: "What's the ~$12/year cost after the build?",
+    answer: "That's your domain renewal (like yourpractice.com), and it goes directly to your domain registrar — not to us. We don't touch that money. Your website hosting is free through Cloudflare Pages — a service built by one of the largest internet infrastructure companies in the world. They offer free hosting for static websites because it costs them almost nothing to serve fast, lightweight pages from their global network. Your code lives in your own account. We walk away clean.",
+  },
+  {
+    question: 'Do I really not need managed hosting?',
+    answer: "I don't think you do. Most practices don't need constant maintenance that a service like WordPress provides. There are no plugins to update, no security holes to patch, no database to manage. If you need a text change, any web developer (or a tech-savvy friend) can make it. Managed hosting is there for practices that truly want zero involvement — but we'd rather save you the money. This does mean you're responsible for managing a few accounts on your own — your domain registrar, Cloudflare, and GitHub. We set everything up for you and hand over clear documentation, but they're yours going forward.",
+  },
+  {
+    question: 'Can I self-host and pay $0/month?',
+    answer: 'Yes. After the build, your only cost is ~$12/year for the domain renewal (paid to your registrar). The site runs on Cloudflare Pages (free), the code lives on GitHub (free), and you own everything.',
+  },
+  {
+    question: 'What if I want changes after the build?',
+    answer: "If you're on managed hosting, content updates are included. If you're self-hosting, you can hire any developer to make changes — the site is built with standard, well-documented technology. No proprietary systems, no lock-in.",
+  },
+  {
+    question: 'Is there a contract or commitment?',
+    answer: "The website build is a one-time payment. Managed hosting is month-to-month — cancel anytime. No contracts. No cancellation fees. No \"90-day notice period.\" If you want to stop, just stop.",
+  },
+  {
+    question: 'Do you offer refunds?',
+    answer: "We build a preview before you commit. You see the finished work, click around, check it on your phone. If you like it, you pay. If you don't, you owe nothing. That's the deal.",
+  },
+  {
+    question: "What's NOT included?",
+    answer: "Paid advertising (Google Ads, Facebook Ads), complex software integrations, patient portal development, and ongoing marketing strategy. We build the website foundation optimized for SEO, but no ongoing content creation. We are not a full marketing or growth department.",
+  },
+];
+---
+
+<BaseLayout
+  title="Pricing — Groundwork Dental | $2,000 Custom Dental Website"
+  description="Radically transparent pricing. $2,000 for a custom dental website. $100/month optional managed hosting. No hidden fees. No 'contact us for a quote.' The actual price."
+>
+  <!-- Hero -->
+  <section class="bg-surface-warm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="section-heading mb-6">Radically Transparent Pricing.</h1>
+        <p class="font-serif text-xl text-mid-gray leading-relaxed">
+          No "contact us for a quote." No "starting at." No asterisks. The actual price, right here. This page should feel like a breath of fresh air after every other agency's "custom pricing" page that's just a contact form.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Table -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <PricingTable tiers={tiers} />
+    </div>
+  </section>
+
+  <!-- Cost of Ownership -->
+  <section class="py-16 bg-surface-2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <h2 class="section-subheading mb-4">The Real Cost of a Dental Website</h2>
+        <p class="font-serif text-mid-gray max-w-2xl mx-auto">Most agencies charge $200–$500/month to host a WordPress site that costs $5/month wholesale. Here's what you'd actually spend over 3 years.</p>
+      </div>
+      <ComparisonTable rows={costComparison} heading="" />
+      <div class="text-center mt-6">
+        <p class="font-serif text-sm text-mid-gray italic">Traditional agency assumes $2,000 setup + $300/mo ongoing. Groundwork assumes $2,000 build + self-hosted. The ~$12/year domain renewal goes directly to your registrar (like Cloudflare or GoDaddy) — not to us.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included Detail -->
+  <section class="py-16" id="get-started">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="section-subheading text-center mb-8">What's Included in the $2,000 Build</h2>
+        <div class="font-serif space-y-4 text-mid-gray leading-relaxed">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="card">
+              <h3 class="font-serif text-charcoal mb-2">Your Website</h3>
+              <ul class="font-serif text-sm space-y-1.5">
+                <li>30–50+ custom pages</li>
+                <li>Homepage, about, service pages, and more</li>
+                <li>Blog ready to publish articles</li>
+                <li>Before/after photo gallery</li>
+                <li>Links to your booking system</li>
+                <li>FAQ pages with expandable answers</li>
+                <li>Insurance and financing info</li>
+                <li>Pages for nearby cities you serve</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 class="font-serif text-charcoal mb-2">Design & Speed</h3>
+              <ul class="font-serif text-sm space-y-1.5">
+                <li>100% custom — no template reused</li>
+                <li>Unique colors and fonts for your practice</li>
+                <li>Looks great on phones, tablets, desktops</li>
+                <li>Loads fast (90+ Google speed score)</li>
+                <li>Clean, modern code — no bloat</li>
+                <li>Optimized images throughout</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 class="font-serif text-charcoal mb-2">Search Visibility</h3>
+              <ul class="font-serif text-sm space-y-1.5">
+                <li>Every page written to rank in Google</li>
+                <li>Structured data so Google understands your services, location, and credentials</li>
+                <li>Sitemap submitted to search engines</li>
+                <li>Pages linked together for better ranking</li>
+                <li>Social media preview cards</li>
+                <li>Optimized for AI search (ChatGPT, Perplexity, Google AI Overviews)</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 class="font-serif text-charcoal mb-2">Accounts & Handoff</h3>
+              <ul class="font-serif text-sm space-y-1.5">
+                <li>Google Analytics set up and tracking</li>
+                <li>Google Search Console verified</li>
+                <li>Google Business Profile optimized</li>
+                <li>Directory listings checked for accuracy</li>
+                <li>All code in your own account</li>
+                <li>Free hosting set up in your name</li>
+                <li>Complete handoff documentation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-surface-2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQBlock faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <CTABlock
+        heading="Ready to Get Started?"
+        subheading="Give us your website URL. We'll rebuild it into a modern version you can preview live. If you like it, it's $2,000. If you don't, you owe nothing."
+        variant="warm"
+        primaryCTA="Send Us Your URL"
+        primaryHref={`mailto:${site.email}?subject=Website%20Rebuild&body=Here's%20my%20current%20website%20URL%3A%20`}
+        secondaryCTA="See an example first"
+        secondaryHref="/example"
+      />
+    </div>
+  </section>
+</BaseLayout>

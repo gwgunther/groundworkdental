@@ -1,0 +1,79 @@
+---
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqs: FAQ[];
+  heading?: string;
+}
+
+const {
+  faqs,
+  heading = 'Frequently Asked Questions',
+} = Astro.props;
+---
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(faq => ({
+    '@type': 'Question',
+    'name': faq.question,
+    'acceptedAnswer': {
+      '@type': 'Answer',
+      'text': faq.answer,
+    },
+  })),
+})} />
+
+<section class="py-12">
+  <h2 class="section-subheading text-center mb-10">{heading}</h2>
+
+  <div class="max-w-3xl mx-auto divide-y divide-border-light border-t border-border-light">
+    {faqs.map((faq, index) => (
+      <div>
+        <button
+          class="w-full text-left py-5 flex justify-between items-start bg-transparent hover:text-brand-warm transition-colors duration-200"
+          aria-expanded="false"
+          data-faq-btn={index}
+        >
+          <span class="font-serif text-charcoal pr-6">{faq.question}</span>
+          <svg
+            class="w-4 h-4 text-neutral-400 flex-shrink-0 mt-1.5 transition-transform duration-200"
+            data-faq-icon={index}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div
+          class="hidden pb-5 text-mid-gray font-serif text-sm leading-relaxed"
+          data-faq-content={index}
+        >
+          {faq.answer}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  const buttons = document.querySelectorAll('[data-faq-btn]');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const index = btn.getAttribute('data-faq-btn');
+      const content = document.querySelector(`[data-faq-content="${index}"]`);
+      const icon = document.querySelector(`[data-faq-icon="${index}"]`);
+      const isOpen = !content?.classList.contains('hidden');
+
+      content?.classList.toggle('hidden');
+      icon?.classList.toggle('rotate-180');
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+</script>

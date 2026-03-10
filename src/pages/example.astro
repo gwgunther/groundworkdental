@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQBlock from '../components/FAQBlock.astro';
+import CTABlock from '../components/CTABlock.astro';
+
+const faqs = [
+  {
+    question: 'Is this a template that every client gets?',
+    answer: 'No. Every site is built custom — unique color palette, typography, layout, and content. This example shows the architecture and quality level, but your site will look completely different. No two builds look the same.',
+  },
+  {
+    question: 'How fast does it actually load?',
+    answer: 'Test it yourself — open the site on your phone and click around. Static HTML loads instantly. No WordPress plugins, no JavaScript frameworks, no bloated page builders. Just fast, clean HTML.',
+  },
+  {
+    question: 'What\'s the schema markup you keep mentioning?',
+    answer: 'Schema markup is structured data that tells Google exactly what your site is about — your practice type, services, doctor credentials, FAQs, reviews, and more. It helps you show up in rich search results. Most agencies skip this or do it poorly. We include 7+ schema types on every page.',
+  },
+  {
+    question: 'Can I get something like this for my practice?',
+    answer: 'Yes. Enter your website URL on our <a href="/get-started" class="text-brand-warm hover:text-brand-warm-dark underline">Get Started page</a> and we\'ll rebuild it into a modern version you can preview within 24 hours. If you like it, it\'s $2,000. If you don\'t, you owe nothing.',
+  },
+];
+---
+
+<BaseLayout
+  title="Example Dental Website — See What Groundwork Dental Builds"
+  description="See a live example of a dental website built by Groundwork Dental. 48 pages, 95+ PageSpeed, structured data on every page. Click around and test it yourself."
+>
+  <!-- Hero -->
+  <section class="bg-brand-cream">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="section-heading mb-6">See What We Build.</h1>
+        <p class="font-serif text-xl text-mid-gray leading-relaxed mb-8">
+          Click around. Test the speed. Check your phone. This is a real site we built for a real practice — not a mockup, not a demo, not a Figma file.
+        </p>
+        <a
+          href="https://hbimplants.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary px-8 py-3.5 inline-flex items-center gap-2"
+        >
+          Visit hbimplants.com
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="card">
+          <p class="text-4xl text-brand-warm font-mono mb-1">95+</p>
+          <p class="font-sans text-eyebrow uppercase text-mid-gray">PageSpeed Score</p>
+        </div>
+        <div class="card">
+          <p class="text-4xl text-charcoal font-mono mb-1">48</p>
+          <p class="font-sans text-eyebrow uppercase text-mid-gray">Total Pages</p>
+        </div>
+        <div class="card">
+          <p class="text-4xl text-charcoal font-mono mb-1">7+</p>
+          <p class="font-sans text-eyebrow uppercase text-mid-gray">Schema Types</p>
+        </div>
+        <div class="card">
+          <p class="text-4xl text-charcoal font-mono mb-1">0</p>
+          <p class="font-sans text-eyebrow uppercase text-mid-gray">JavaScript Frameworks</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Under the Hood -->
+  <section class="py-16 bg-surface-2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-subheading text-center mb-12">What's Under the Hood</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div>
+          <h3 class="font-serif text-charcoal mb-3">Site Architecture</h3>
+          <ul class="font-serif text-mid-gray text-sm space-y-2">
+            <li>Homepage (authority hub)</li>
+            <li>About / Doctor bio with credentials</li>
+            <li>6 service hub pages with sub-pages</li>
+            <li>Before & after gallery with lightbox</li>
+            <li>Blog with 10+ authority articles</li>
+            <li>FAQ page with accordion + schema</li>
+            <li>Financing & insurance information</li>
+            <li>Links to your existing booking system</li>
+            <li>Location pages for nearby cities</li>
+            <li>Services directory</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-serif text-charcoal mb-3">Technical Stack</h3>
+          <ul class="font-serif text-mid-gray text-sm space-y-2">
+            <li><strong class="text-charcoal">Framework:</strong> Astro v5 (static site generation)</li>
+            <li><strong class="text-charcoal">Styling:</strong> Tailwind CSS with custom design tokens</li>
+            <li><strong class="text-charcoal">Hosting:</strong> Cloudflare Pages (free, global CDN)</li>
+            <li><strong class="text-charcoal">JavaScript:</strong> Zero by default (only FAQ accordion)</li>
+            <li><strong class="text-charcoal">Images:</strong> WebP, lazy-loaded, optimized</li>
+            <li><strong class="text-charcoal">Forms:</strong> Linked to your existing booking/patient management</li>
+            <li><strong class="text-charcoal">Analytics:</strong> Google Analytics 4</li>
+            <li><strong class="text-charcoal">Search:</strong> Google Search Console verified</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema Detail -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="section-subheading text-center mb-4">Schema Markup on Every Page</h2>
+        <p class="text-mid-gray text-center mb-8">
+          Most dental websites have zero structured data. This site has 7+ schema types telling Google exactly what the practice offers.
+        </p>
+        <div class="bg-charcoal rounded p-6 overflow-x-auto">
+          <pre class="text-sm text-green-400 font-mono leading-relaxed"><code>{`// Every page includes:
+LocalBusiness    → Practice name, address, phone, hours
+BreadcrumbList   → Auto-generated navigation trail
+FAQPage          → Every FAQ section (rich results)
+
+// Service pages add:
+MedicalProcedure → Treatment details, description
+
+// Blog posts add:
+BlogPosting      → Article schema with author, date
+
+// Doctor pages add:
+Physician        → Credentials, specialties, affiliations
+
+// Homepage adds:
+AggregateRating  → Overall review score from Google`}</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Test It Yourself -->
+  <section class="py-16 bg-surface-2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="section-subheading mb-4">Test It Yourself</h2>
+        <p class="text-mid-gray mb-8">Don't take our word for it. Run these yourself.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <a
+            href="https://pagespeed.web.dev/analysis/https-hbimplants-com/random"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card hover:border-brand-warm transition-colors text-center"
+          >
+            <p class="font-serif text-charcoal mb-1">PageSpeed Insights</p>
+            <p class="font-serif text-sm text-mid-gray">Check load speed and Core Web Vitals</p>
+          </a>
+          <a
+            href="https://search.google.com/test/rich-results?url=https://hbimplants.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card hover:border-brand-warm transition-colors text-center"
+          >
+            <p class="font-serif text-charcoal mb-1">Rich Results Test</p>
+            <p class="font-serif text-sm text-mid-gray">Verify schema markup</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQBlock faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <CTABlock variant="warm" />
+    </div>
+  </section>
+</BaseLayout>
