@@ -1,6 +1,7 @@
 ---
 interface Row {
   feature: string;
+  diy?: string;
   traditional: string;
   groundwork: string;
 }
@@ -14,16 +15,21 @@ const {
   rows,
   heading = 'Why Groundwork Dental Is Different',
 } = Astro.props;
+
+const hasThreeColumns = rows.some((row) => row.diy !== undefined);
 ---
 
 <section class="py-12">
   {heading && <h2 class="section-subheading text-center mb-10">{heading}</h2>}
 
   <div class="overflow-x-auto">
-    <table class="w-full text-left border-collapse max-w-4xl mx-auto">
+    <table class={`w-full text-left border-collapse mx-auto ${hasThreeColumns ? 'max-w-5xl' : 'max-w-4xl'}`}>
       <thead>
         <tr class="border-b border-border-light">
           <th class="py-3 pr-4 font-sans text-eyebrow uppercase text-neutral-400">Feature</th>
+          {hasThreeColumns && (
+            <th class="py-3 px-4 font-sans text-eyebrow uppercase text-neutral-400">DIY (Wix / Squarespace)</th>
+          )}
           <th class="py-3 px-4 font-sans text-eyebrow uppercase text-neutral-400">Traditional Agency</th>
           <th class="py-3 pl-4 font-sans text-eyebrow uppercase text-brand-warm">Groundwork Dental</th>
         </tr>
@@ -32,6 +38,9 @@ const {
         {rows.map((row) => (
           <tr class="border-b border-border-light">
             <td class="py-3.5 pr-4 font-serif text-charcoal text-sm">{row.feature}</td>
+            {hasThreeColumns && (
+              <td class="py-3.5 px-4 font-serif text-mid-gray text-sm">{row.diy}</td>
+            )}
             <td class="py-3.5 px-4 font-serif text-mid-gray text-sm">{row.traditional}</td>
             <td class="py-3.5 pl-4 font-serif text-charcoal text-sm">{row.groundwork}</td>
           </tr>

@@ -5,7 +5,7 @@ import { site } from '../config/site';
 
 <BaseLayout
   title="Get Started — Free Draft in 24 Hours | Groundwork Dental"
-  description="Enter your website URL and email. We'll rebuild your dental website into a modern, search-ready version you can preview within 24 hours. If you like it, it's $2,000. If not, you owe nothing."
+  description="Tell us about your practice. We'll build a modern, search-ready version of your website you can preview within 24 hours. If you like it, it's $2,000. If not, you owe nothing."
 >
   <!-- Hero -->
   <section class="bg-brand-cream">
@@ -13,7 +13,7 @@ import { site } from '../config/site';
       <div class="max-w-2xl mx-auto text-center">
         <h1 class="section-heading mb-6">See Your Practice Reimagined.</h1>
         <p class="font-serif text-xl text-mid-gray leading-relaxed">
-          Enter your website URL. We'll rebuild it into a modern, search-ready version you can preview within 24 hours. If you like it, it's $2,000. If you don't, you owe nothing.
+          Tell us a little about your practice. We'll build a modern, search-ready version of your website you can preview within 24 hours. If you like it, it's $2,000. If you don't, you owe nothing.
         </p>
       </div>
     </div>
@@ -24,15 +24,15 @@ import { site } from '../config/site';
     <div class="max-w-md mx-auto px-4 sm:px-6 lg:px-8">
       <form id="get-started-form" class="space-y-6">
         <div>
-          <label for="website" class="block font-sans text-xs uppercase tracking-widest text-mid-gray mb-2">
-            Your Current Website URL
+          <label for="name" class="block font-sans text-xs uppercase tracking-widest text-mid-gray mb-2">
+            Your Name
           </label>
           <input
-            type="url"
-            id="website"
-            name="website"
+            type="text"
+            id="name"
+            name="name"
             required
-            placeholder="https://yourdentalpractice.com"
+            placeholder="Dr. Sarah Smith"
             class="w-full px-4 py-3 border border-border-light rounded font-serif text-charcoal placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-brand-warm focus:border-transparent"
           />
         </div>
@@ -52,20 +52,34 @@ import { site } from '../config/site';
         </div>
 
         <div>
-          <label for="name" class="block font-sans text-xs uppercase tracking-widest text-mid-gray mb-2">
-            Practice Name <span class="text-neutral-400">(optional)</span>
+          <label for="website" class="block font-sans text-xs uppercase tracking-widest text-mid-gray mb-2">
+            Current Website URL <span class="text-neutral-400">(if you have one)</span>
           </label>
           <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Smith Family Dental"
+            type="url"
+            id="website"
+            name="website"
+            placeholder="https://yourdentalpractice.com"
             class="w-full px-4 py-3 border border-border-light rounded font-serif text-charcoal placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-brand-warm focus:border-transparent"
           />
         </div>
 
+        <div>
+          <label for="comment" class="block font-sans text-xs uppercase tracking-widest text-mid-gray mb-2">
+            Anything else we should know? <span class="text-neutral-400">(optional)</span>
+          </label>
+          <textarea
+            id="comment"
+            name="comment"
+            rows="4"
+            placeholder="Tell us about your practice, what services you offer, or what you're looking for in a website..."
+            class="w-full px-4 py-3 border border-border-light rounded font-serif text-charcoal placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-brand-warm focus:border-transparent resize-y"
+          ></textarea>
+        </div>
+
         <button
           type="submit"
+          id="submit-btn"
           class="w-full btn-primary py-3.5 text-center"
         >
           Build My Draft
@@ -85,7 +99,7 @@ import { site } from '../config/site';
         </div>
         <h2 class="font-serif text-2xl text-charcoal mb-4">We're on it.</h2>
         <p class="font-serif text-mid-gray leading-relaxed mb-2">
-          You'll receive a preview link at your email within 24 hours.
+          You'll hear from us within 24 hours with a preview of your new site.
         </p>
         <p class="font-serif text-sm text-mid-gray">
           Click around, test it on your phone, show your team. No pressure.
@@ -115,7 +129,7 @@ import { site } from '../config/site';
         </div>
         <div>
           <p class="font-serif text-charcoal font-semibold mb-1">~$12/year after</p>
-          <p class="font-serif text-sm text-mid-gray">Domain renewal. That's it. Hosting is free.</p>
+          <p class="font-serif text-sm text-mid-gray">Domain renewal paid to your registrar — not us. Hosting is free.</p>
         </div>
       </div>
     </div>
@@ -126,42 +140,28 @@ import { site } from '../config/site';
   const form = document.getElementById('get-started-form') as HTMLFormElement;
   const successDiv = document.getElementById('form-success');
   const errorDiv = document.getElementById('form-error');
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    // Disable button and show loading state
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    errorDiv?.classList.add('hidden');
+
     const formData = new FormData(form);
     const data = {
-      website_url: formData.get('website'),
+      name: formData.get('name'),
       email: formData.get('email'),
-      practice_name: formData.get('name') || null,
-      submitted_at: new Date().toISOString(),
-      status: 'pending',
+      website: formData.get('website') || '',
+      comment: formData.get('comment') || '',
     };
 
-    // Submit to Supabase REST API
-    const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
-    const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
-
-    if (!supabaseUrl || !supabaseAnonKey) {
-      // Fallback: mailto if Supabase isn't configured yet
-      const subject = encodeURIComponent('New Website Draft Request');
-      const body = encodeURIComponent(
-        `Website: ${data.website_url}\nEmail: ${data.email}\nPractice: ${data.practice_name || 'Not provided'}`
-      );
-      window.location.href = `mailto:garrett@groundworkdental.com?subject=${subject}&body=${body}`;
-      return;
-    }
-
     try {
-      const res = await fetch(`${supabaseUrl}/rest/v1/leads`, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'apikey': supabaseAnonKey,
-          'Authorization': `Bearer ${supabaseAnonKey}`,
-          'Prefer': 'return=minimal',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
 
@@ -173,6 +173,8 @@ import { site } from '../config/site';
     } catch (err) {
       console.error('Form submission failed:', err);
       errorDiv?.classList.remove('hidden');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Build My Draft';
     }
   });
 </script>

@@ -7,7 +7,7 @@ export const site = {
   founder: 'Garrett Gunther',
   tagline: 'Dental Websites Without Agency Lock-In.',
   description: 'Custom SEO-ready dental websites built in days. You own the code, the hosting, and every account. No lock-in. $2,000 flat.',
-  email: 'garrett@groundworkdental.com',
+  email: 'hello@groundworkdental.com',
 
   // Stripe Payment Links — replace with actual URLs after creating Stripe products
   stripe: {

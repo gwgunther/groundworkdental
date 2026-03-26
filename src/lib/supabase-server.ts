@@ -31,7 +31,7 @@ export function createServerClient(cookies: AstroCookies) {
  */
 export function createAdminClient() {
   const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
-  const serviceRoleKey = import.meta.env.SUPABASE_SERVICE_ROLE_KEY;
+  const serviceRoleKey = import.meta.env.SUPABASE_SERVICE_KEY;
 
   return createClient(supabaseUrl, serviceRoleKey, {
     auth: {

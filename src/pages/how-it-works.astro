@@ -1,8 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FeatureCard from '../components/FeatureCard.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
 import FAQBlock from '../components/FAQBlock.astro';
 import CTABlock from '../components/CTABlock.astro';
+import { site } from '../config/site';
+
+const comparisonRows = [
+  { feature: 'Setup cost', diy: 'Free to start', traditional: '$2,000+', groundwork: '$2,000 flat' },
+  { feature: 'Monthly fee', diy: 'Free (with their branding/ads) or $17+/mo', traditional: '$200+/mo required', groundwork: '$0 self-host (recommended)' },
+  { feature: 'Ongoing cost (yearly)', diy: '$200+/year', traditional: '$2,400+/year', groundwork: '~$12\u201315/year (domain renewal)' },
+  { feature: 'Pages', diy: '5\u201310 (you build them)', traditional: '10\u201320', groundwork: '30\u201350+' },
+  { feature: 'Design', diy: 'Shared with millions', traditional: 'Shared across clients', groundwork: '100% custom to your practice' },
+  { feature: 'SEO', diy: 'Basic/DIY', traditional: 'Basic', groundwork: 'Full \u2014 structured for Google + AI' },
+  { feature: 'Ownership', diy: 'Platform controls hosting', traditional: 'Agency controls everything', groundwork: 'You own code, hosting, domain' },
+  { feature: 'If you leave', diy: 'Export is limited/messy', traditional: 'Site disappears', groundwork: 'Nothing changes' },
+  { feature: 'Build time', diy: 'Weeks of your own time', traditional: '6\u201312 weeks', groundwork: '3\u20137 business days' },
+  { feature: 'Speed', diy: 'Slow\u2013moderate', traditional: 'Slow\u2013moderate', groundwork: 'Fast (90+ PageSpeed)' },
+  { feature: 'GBP + Facebook', diy: 'Not included', traditional: 'Sometimes, extra cost', groundwork: 'Included' },
+];
 
 const faqs = [
   {
@@ -19,7 +35,7 @@ const faqs = [
   },
   {
     question: 'What if I want changes after the build?',
-    answer: 'If you\'re self-hosting, any developer can make changes — the code is standard, well-documented, and yours. If you\'re on managed hosting ($100/mo), content updates are included.',
+    answer: 'If you\'re self-hosting, any developer can make changes \u2014 the code is standard, well-documented, and yours. If you\'re on managed hosting ($100/mo), content updates are included.',
   },
   {
     question: 'Is this just for dentists?',
@@ -30,16 +46,16 @@ const faqs = [
 
 <BaseLayout
   title="How It Works — Custom Dental Websites in Days | Groundwork Dental"
-  description="The problem with dental websites, what a proper one requires, and how we build yours in days. AI-optimized, SEO-ready, owned by you. $2,000 flat."
+  description="A modern dental website + optimized Google presence. One flat price. You own everything. No templates. No monthly fees. No fine print. Live in days."
 >
   <!-- Hero -->
   <section class="bg-brand-cream">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
       <div class="max-w-3xl">
         <p class="eyebrow text-brand-warm mb-4">How it works</p>
-        <h1 class="section-heading mb-6">A Professional Dental Website. Without the Headache.</h1>
+        <h1 class="section-heading mb-6">Your Practice Deserves a Better Online Presence.</h1>
         <p class="font-serif text-xl text-mid-gray leading-relaxed">
-          Most dental websites are slow, generic, and locked behind an agency you can't leave. Here's what we do differently — and why it matters for both Google and AI search.
+          A modern dental website + optimized Google presence. One flat price. You own everything. No templates. No monthly fees. No fine print. Live in days.
         </p>
       </div>
     </div>
@@ -48,59 +64,74 @@ const faqs = [
   <!-- The Problem -->
   <section class="py-16">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="section-subheading mb-8">The Problem with Most Dental Websites</h2>
+      <h2 class="section-subheading mb-8">The Problem</h2>
       <div class="prose-article text-lg">
         <p>
-          The typical dental website is a WordPress template shared with hundreds of other practices. It loads in 4-6 seconds on mobile. It has 10-15 pages of generic content that could apply to any dentist in the country. The agency charges $200-500/month to "host" it — but the hosting costs them $5/month.
+          Most dental practices are paying $300+/month for a website that was built once, rarely updated, and would disappear tomorrow if they stopped paying. The site is slow, templated, and shared with hundreds of other dentists. Dentists deserve better. Something modern, fast, and built right &mdash; without a monthly bill for a site that nobody's touching.
         </p>
         <p>
-          If you stop paying, the website vanishes. Sometimes they own your domain too. And the SEO? Basic meta tags at best. No structured data. No authority content. Google knows you exist, but it doesn't know what you do.
-        </p>
-        <p>
-          Now add AI search to the mix. When a patient asks ChatGPT or Google's AI "who's a good implant dentist near me?" — these tools pull from websites with structured, authoritative content. A template WordPress site with generic copy doesn't give AI anything useful to work with. You're invisible in the fastest-growing search channel.
+          Meanwhile, your Google Business Profile &mdash; the single biggest factor in whether patients find you on Google &mdash; is either incomplete or neglected. Your Facebook page is an afterthought. The two things that actually matter most for local search are the two things nobody's paying attention to.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- What We Build -->
+  <!-- What This Service Is -->
   <section class="py-16 bg-surface-2">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-subheading mb-8">What This Service Is</h2>
+      <div class="prose-article text-lg">
+        <p>
+          For most dental practices, this is all you need. A fast, modern website that patients and search engines both love, paired with a fully optimized Google Business Profile. Done right, this combination is the difference between showing up when someone searches "dentist near me" and not existing online at all.
+        </p>
+        <p>
+          We're not a marketing agency. We don't run ads. We don't promise patient growth. What we build is the foundation that makes everything else possible &mdash; and the part that most practices are currently getting wrong or overpaying for.
+        </p>
+        <p>
+          If down the road you want more &mdash; content marketing, competitive SEO, paid campaigns, a full rebrand &mdash; this foundation supports all of it. Build on it yourself, hire us for ongoing work, or hand it to any developer or agency. Nothing we build locks you in or limits what comes next. But for most practices, the groundwork is the thing that's missing. Start here.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Deliver -->
+  <section class="py-16">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="section-subheading text-center mb-4">What a Proper Dental Website Needs</h2>
+      <h2 class="section-subheading text-center mb-4">What We Deliver</h2>
       <p class="font-serif text-mid-gray text-center mb-12 max-w-2xl mx-auto">
-        These aren't nice-to-haves. These are baseline requirements for showing up in search — both traditional Google and AI-powered search tools.
+        These aren't nice-to-haves. These are baseline requirements for showing up in search &mdash; both traditional Google and AI-powered search tools.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <FeatureCard
-          title="90+ PageSpeed"
-          description="Google uses page speed as a ranking factor. Static HTML loads instantly. No WordPress plugins, no JavaScript frameworks, no bloated page builders."
+          title="Custom Website (30–50+ Pages)"
+          description="Designed around your practice, not a template. Every service gets its own dedicated page with real, detailed content. A page that says 'We offer dental implants' tells Google nothing. A page that explains the procedure, who it's for, and what makes your approach different — that's what ranks."
         />
         <FeatureCard
           title="Structured Data for Google & AI"
-          description="7+ schema types tell Google and AI tools exactly what you do, where you are, and what services you offer. This is how you show up in AI Overviews and ChatGPT responses."
+          description="7+ schema types tell Google and AI tools exactly what you do, where you are, and what services you offer. This is how you show up in AI Overviews, ChatGPT responses, and Perplexity — not just search results, but actual citations."
         />
         <FeatureCard
-          title="Authority Architecture"
-          description="30-50+ pages organized into topic clusters. Implants hub, cosmetic hub, each with deep sub-pages. This depth signals expertise to both search engines and AI."
+          title="Google Business Profile Optimization"
+          description="Your GBP is how most patients find you. Full audit and optimization: correct categories, complete service listings, photos, Q&A, review strategy, and consistent info across Google, Yelp, Apple Maps, and Bing Places."
         />
         <FeatureCard
-          title="Geographic Content"
-          description="Location pages for your city and surrounding areas. When someone searches 'dentist in [nearby city],' you show up — even if you're technically in the next town over."
+          title="Facebook Page Optimization"
+          description="Professional page setup, service listings, call-to-action buttons, review integration, and branded cover images. Not a social media strategy — just making sure the page looks right and works when patients land on it."
         />
         <FeatureCard
-          title="Unique, Practice-Specific Content"
-          description="Copy that mentions your specific practice, city, doctor, and services. Not generic text reused across hundreds of sites. Google penalizes duplicate medical content."
+          title="90+ PageSpeed & Mobile-First"
+          description="Static HTML loads instantly. No WordPress plugins, no JavaScript frameworks, no bloated page builders. Built mobile-first because that's how patients are searching."
         />
         <FeatureCard
           title="Full Ownership"
-          description="Your domain, your hosting, your code, your analytics. Fire us tomorrow — everything keeps working. No kill switch. No monthly hostage fee."
+          description="Your domain, your hosting, your code, your analytics. Fire us tomorrow — everything keeps working. No kill switch. No monthly hostage fee. Hand it to any developer or agency."
         />
       </div>
     </div>
   </section>
 
   <!-- AI SEO Section -->
-  <section class="py-16">
+  <section class="py-16 bg-surface-2">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto">
         <p class="eyebrow text-brand-warm mb-4 text-center">The new search</p>
@@ -142,6 +173,95 @@ const faqs = [
     </div>
   </section>
 
+  <!-- A Note on SEO -->
+  <section class="py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-subheading mb-8">A Note on SEO</h2>
+      <div class="prose-article text-lg">
+        <p>
+          What we deliver is a complete SEO foundation &mdash; the technical setup, page structure, and optimized content that puts your site in the best possible position to rank. Think of it as building a house on solid ground: the structure is sound, the wiring is right, and everything is up to code. This alone makes you more visible than the vast majority of dental websites running on slow templates with thin content.
+        </p>
+        <p>
+          Going further &mdash; ranking for competitive treatment keywords, building authority in your market, climbing to the top of search results in a crowded area &mdash; that requires ongoing content: targeted articles published consistently over time. That's a conversation for after the foundation is built. This service is focused on getting the groundwork right first.
+        </p>
+        <p class="text-sm text-mid-gray">
+          Want the full deep dive on dental SEO? Read our <a href="/dental-seo-foundation" class="text-brand-warm hover:text-brand-warm-dark">complete SEO guide &rarr;</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Compare -->
+  <section class="py-16 bg-surface-2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <ComparisonTable rows={comparisonRows} heading="How We Compare" />
+      <div class="max-w-3xl mx-auto mt-8">
+        <div class="card">
+          <p class="font-serif text-sm text-mid-gray leading-relaxed">
+            <strong class="text-charcoal">A note on DIY platforms:</strong> Tools like Wix and Squarespace can be free or cheap to start — but you're the one building the site. That means writing all the content, structuring it for search engines, figuring out which services need their own pages, handling SEO settings, and learning a drag-and-drop editor that still won't give you structured data or the kind of page architecture that Google rewards. A dentist's time is worth $200+/hour — the math doesn't work. The "free" option has a real cost — it's just measured in your time instead of dollars.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Ownership Guarantee -->
+  <section class="py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-subheading text-center mb-8">The Ownership Guarantee</h2>
+      <p class="font-serif text-mid-gray text-center mb-8">
+        When the project is complete, we hand you everything:
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto text-sm">
+        <div class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-sage flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          <span class="font-serif text-charcoal"><strong>Your website code</strong> — in a GitHub repository under your own account</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-sage flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          <span class="font-serif text-charcoal"><strong>Your hosting</strong> — a Cloudflare Pages account in your name</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-sage flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          <span class="font-serif text-charcoal"><strong>Your domain</strong> — registered under your name</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-sage flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          <span class="font-serif text-charcoal"><strong>Google Analytics & Search Console</strong> — under your Google account</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-sage flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          <span class="font-serif text-charcoal"><strong>Google Business Profile</strong> — optimized and under your login</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-sage flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          <span class="font-serif text-charcoal"><strong>Facebook page</strong> — optimized and under your admin access</span>
+        </div>
+        <div class="flex items-start gap-3 sm:col-span-2">
+          <svg class="w-5 h-5 text-sage flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          <span class="font-serif text-charcoal"><strong>All content, design, and assets</strong> — every word, every image, every page. Yours.</span>
+        </div>
+      </div>
+      <p class="font-serif text-mid-gray text-center text-sm mt-8">
+        There's no second invoice. No credentials we keep. No login we hold onto. If you never talk to us again, everything keeps running exactly as it was. Hand it to another developer, another agency, or your tech-savvy nephew. It all transfers because it was always yours to begin with.
+      </p>
+    </div>
+  </section>
+
   <!-- The Process -->
   <section class="py-16 bg-surface-2">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -166,113 +286,74 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Ownership vs Lock-in -->
-  <section class="py-16">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="section-subheading text-center mb-8">Ownership vs. Lock-In</h2>
-      <div class="prose-article text-lg">
-        <p>
-          Most dental marketing agencies don't trap you on purpose. The lock-in is built into their business model. Your website lives on their server. They registered the domain in their name. The CMS is proprietary. If you leave, everything disappears.
-        </p>
-        <p>
-          We do the opposite. Everything is in your name from day one — your domain registrar, your hosting account, your code repository, your Google accounts. We get collaborator access so we can work on your site, but you're the owner. Revoke our access anytime. Nothing changes.
-        </p>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 text-sm">
-        <div class="card border-l-4 border-l-red-300">
-          <h3 class="font-serif text-charcoal mb-3">Typical agency</h3>
-          <ul class="font-serif text-mid-gray space-y-1.5">
-            <li>Domain in agency's name</li>
-            <li>Site on agency's server</li>
-            <li>Proprietary CMS — can't export</li>
-            <li>$200-500/month to keep it running</li>
-            <li>Stop paying → site disappears</li>
-          </ul>
-        </div>
-        <div class="card border-l-4 border-l-sage">
-          <h3 class="font-serif text-charcoal mb-3">Groundwork</h3>
-          <ul class="font-serif text-mid-gray space-y-1.5">
-            <li>Domain in your name</li>
-            <li>Site on your hosting (free)</li>
-            <li>Standard code — any dev can edit</li>
-            <li>$0/month (or $100 optional managed)</li>
-            <li>Stop paying → nothing changes</li>
-          </ul>
-        </div>
-      </div>
-      <p class="font-serif text-sm text-mid-gray mt-6 text-center">
-        Want to understand the traps in detail? Read our full guide: <a href="/why-agencies-lock-you-in" class="text-brand-warm hover:text-brand-warm-dark">Why Agencies Lock You In →</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- The SEO Foundation -->
+  <!-- Pricing Summary -->
   <section class="py-16 bg-charcoal text-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="font-serif text-3xl font-normal mb-6">The SEO Foundation You Get</h2>
-        <p class="font-serif text-neutral-300 text-lg leading-relaxed mb-8">
-          Every build includes the complete baseline for Google search, AI search, and local discovery. Not "Phase 2." Not "SEO is extra." This is what's included in the $2,000.
-        </p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-xl mx-auto text-sm">
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-brand-warm flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            <span class="text-neutral-200">Keyword-optimized titles on every page</span>
+        <h2 class="font-serif text-3xl font-normal mb-8">Pricing</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+          <div>
+            <p class="text-4xl text-brand-warm font-mono mb-2">$2,000</p>
+            <p class="font-sans text-xs text-neutral-400 uppercase tracking-wider mb-3">One-time &mdash; Website + GBP + Facebook</p>
+            <p class="font-serif text-neutral-300 text-sm leading-relaxed">
+              Everything described on this page. Custom website, Google Business Profile optimization, Facebook page optimization, all accounts set up and transferred to you. ~$12/year after that for your domain.
+            </p>
           </div>
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-brand-warm flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            <span class="text-neutral-200">7+ schema types per page</span>
-          </div>
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-brand-warm flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            <span class="text-neutral-200">Google Business Profile optimization</span>
-          </div>
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-brand-warm flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            <span class="text-neutral-200">XML sitemap submitted to Google</span>
-          </div>
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-brand-warm flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            <span class="text-neutral-200">Internal linking across all pages</span>
-          </div>
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-brand-warm flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            <span class="text-neutral-200">AI search optimization</span>
-          </div>
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-brand-warm flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            <span class="text-neutral-200">Authority blog articles per service</span>
-          </div>
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-brand-warm flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            <span class="text-neutral-200">Location pages for nearby cities</span>
+          <div>
+            <p class="text-4xl text-neutral-500 font-mono mb-2">$100<span class="text-lg">/mo</span></p>
+            <p class="font-sans text-xs text-neutral-400 uppercase tracking-wider mb-3">Optional Managed Hosting</p>
+            <p class="font-serif text-neutral-300 text-sm leading-relaxed">
+              I'd encourage you not to get this &mdash; most practices don't need it. Your hosting is free after the build. This option exists for practices that would rather not manage any technical accounts. But if you're comfortable owning your own accounts (and most people are), save your money.
+            </p>
           </div>
         </div>
-        <p class="mt-8 text-sm text-neutral-400">
-          Want the full deep dive? Read our <a href="/dental-seo-foundation" class="text-brand-warm hover:text-brand-warm-dark">complete SEO guide →</a>
-        </p>
+        <a href="/pricing" class="inline-block mt-8 btn-primary px-8 py-3.5">View Full Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Need From You -->
+  <section class="py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-subheading text-center mb-4">What We Need From You to Get Started</h2>
+      <p class="font-serif text-mid-gray text-center mb-8">
+        Most of this you already have &mdash; it's just a matter of gathering it in one place.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-1">Practice basics</h3>
+          <p class="font-serif text-mid-gray">Name, address, phone, hours, and your current website URL if you have one.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-1">Doctor info</h3>
+          <p class="font-serif text-mid-gray">Name(s), credentials, specialty, and a short bio or CV we can work from.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-1">Services</h3>
+          <p class="font-serif text-mid-gray">A list of what you offer, and anything about how you talk about your work with patients. We'll write all the content.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-1">Photos</h3>
+          <p class="font-serif text-mid-gray">Exterior, interior, team, and treatment rooms. iPhone photos are fine &mdash; we'll send you a shot list.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-1">Branding</h3>
+          <p class="font-serif text-mid-gray">Logo files if you have them. If not, we can design one.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-1">Digital accounts</h3>
+          <p class="font-serif text-mid-gray">Google Business Profile login, Facebook page admin access, and any other social profiles.</p>
+        </div>
+        <div class="card sm:col-span-2">
+          <h3 class="font-serif text-charcoal mb-1">Insurance & financing</h3>
+          <p class="font-serif text-mid-gray">Whether you accept insurance, and any financing options you offer (Cherry, etc.) so we can build those pages out.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="py-16">
+  <section class="py-16 bg-surface-2">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <FAQBlock faqs={faqs} />
     </div>
