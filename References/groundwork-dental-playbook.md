@@ -127,7 +127,9 @@ Modern AI tools have made it possible for a single engineer to build high-qualit
 
 This should appear on the website, in sales calls, videos, and articles. It is the single most powerful trust-builder.
 
-> *"I grew up around dentistry. My family has been in the field for years, and I watched them struggle with websites and marketing agencies that charged thousands while delivering very little. Meanwhile I went into engineering — eventually specializing in growth systems and web infrastructure at Stanford. When modern AI tools arrived, it became obvious something had changed: high-quality websites and SEO setups could now be built dramatically faster and cheaper. So I decided to bring that efficiency back to the dental industry."*
+> *"Dental practices deserve better websites than what most agencies deliver. The average dental website is slow, templated, and technically locked — owned by the agency, not the practice. Meanwhile, modern tools have made it possible to build high-quality, custom, search-optimized websites dramatically faster and cheaper than the traditional agency model. That efficiency belongs to the dentist, not the agency."*
+
+> **Note on public-facing copy:** The website avoids specific personal backstory (no family-in-dentistry, no school names). The "why" is abstract and universal — dentists as a category are underserved by the agency model. Keep sales calls and copy grounded in that framing, not personal biography.
 
 ### Brand Identity
 
@@ -1477,7 +1479,7 @@ Every page should feel like talking to a real person. Not a marketing page. Not 
 
 **Page 6 — Example Website:** Live demo, mobile view, speed test, SEO structure. Let them click around a real site you built. Show the PageSpeed score. Show the schema markup. Show what 48 pages of authority content actually looks like. Dentists are visual — they need to see the product.
 
-**Page 7 — Founder Story:** Long Beach + dentistry family, Stanford engineering, why you started this. Write it in first person. Make it human. Mention the niece who could vibe-code the site after handoff. The tone here should feel like a conversation over coffee, not a LinkedIn bio.
+**Page 7 — About:** Why this exists — dentists are systematically underserved by the agency model. No personal biography. Focus on the problem (agencies lock practices in, charge for hosting that costs nothing, deliver templates) and the mission (build the best possible foundation, hand everything over, walk away clean). Mention the niece who could vibe-code the site after handoff. The tone here should feel like a conversation over coffee, not a LinkedIn bio.
 
 ---
 

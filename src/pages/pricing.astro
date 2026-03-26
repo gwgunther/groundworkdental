@@ -54,11 +54,19 @@ const tiers = [
   },
 ];
 
-const costComparison = [
-  { feature: 'Year 1', traditional: '$5,600–$9,000+', groundwork: '$2,000 (build only)' },
-  { feature: 'Year 2', traditional: '$3,600–$6,000', groundwork: '~$12 (domain renewal — paid to your registrar, not us)' },
-  { feature: 'Year 3', traditional: '$3,600–$6,000', groundwork: '~$12 (domain renewal)' },
-  { feature: '3-Year Total', traditional: '$12,800–$21,000+', groundwork: '$2,024' },
+const fullComparison = [
+  { feature: 'Setup cost', diy: 'Free to start', traditional: '$2,000+', groundwork: '$2,000 flat' },
+  { feature: 'Monthly fee', diy: 'Free (with branding/ads) or $17+/mo', traditional: '$200+/mo required', groundwork: '$0 self-host (recommended)' },
+  { feature: 'Ongoing cost (yearly)', diy: '$200+/year', traditional: '$2,400+/year', groundwork: '~$12–15/year (domain renewal)' },
+  { feature: 'Year 1 total', diy: '$200+', traditional: '$5,600–$9,000+', groundwork: '$2,000' },
+  { feature: 'Year 2 total', diy: '$200+', traditional: '$3,600–$6,000', groundwork: '~$12' },
+  { feature: '3-year total', diy: '$600+', traditional: '$12,800–$21,000+', groundwork: '$2,024' },
+  { feature: 'Pages', diy: '5–10 (you build them)', traditional: '10–20', groundwork: '30–50+' },
+  { feature: 'Design', diy: 'Shared with millions', traditional: 'Shared across clients', groundwork: '100% custom' },
+  { feature: 'Speed', diy: 'Slow–moderate', traditional: 'Slow–moderate', groundwork: 'Fast (90+ PageSpeed)' },
+  { feature: 'GBP + Facebook', diy: 'Not included', traditional: 'Sometimes, extra cost', groundwork: 'Included' },
+  { feature: 'Ownership', diy: 'Platform controls hosting', traditional: 'Agency controls everything', groundwork: 'You own code, hosting, domain' },
+  { feature: 'If you leave', diy: 'Export is limited/messy', traditional: 'Site disappears', groundwork: 'Nothing changes' },
 ];
 
 const faqs = [
@@ -99,43 +107,43 @@ const faqs = [
 
 <BaseLayout
   title="Pricing — Groundwork Dental | $2,000 Custom Dental Website"
-  description="Radically transparent pricing. $2,000 for a custom dental website. $100/month optional managed hosting. No hidden fees. No 'contact us for a quote.' The actual price."
+  description="Straightforward pricing. $2,000 for a custom dental website. $100/month optional managed hosting. No hidden fees. No 'contact us for a quote.' The actual price."
 >
   <!-- Hero -->
   <section class="bg-surface-warm">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
       <div class="max-w-3xl mx-auto text-center">
-        <h1 class="section-heading mb-6">Radically Transparent Pricing.</h1>
+        <h1 class="section-heading mb-6">The Price Is Right Here.</h1>
         <p class="font-serif text-xl text-mid-gray leading-relaxed">
-          No "contact us for a quote." No "starting at." No asterisks. The actual price, right here. This page should feel like a breath of fresh air after every other agency's "custom pricing" page that's just a contact form.
+          No "contact us for a quote." No "starting at." No asterisks. Just the actual number, right here on the page — because that's how it should work.
         </p>
       </div>
     </div>
   </section>
 
   <!-- Pricing Table -->
-  <section class="py-16">
+  <section class="py-10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <PricingTable tiers={tiers} />
     </div>
   </section>
 
-  <!-- Cost of Ownership -->
-  <section class="py-16 bg-surface-2">
+  <!-- Full Comparison -->
+  <section class="py-10 bg-surface-2">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-8">
-        <h2 class="section-subheading mb-4">The Real Cost of a Dental Website</h2>
-        <p class="font-serif text-mid-gray max-w-2xl mx-auto">Most agencies charge $200–$500/month to host a WordPress site that costs $5/month wholesale. Here's what you'd actually spend over 3 years.</p>
+        <h2 class="section-subheading mb-4">How the Options Compare</h2>
+        <p class="font-serif text-mid-gray max-w-2xl mx-auto">DIY platforms look cheap until you factor in your time. Traditional agencies look full-service until you try to leave. Here's the full picture.</p>
       </div>
-      <ComparisonTable rows={costComparison} heading="" />
+      <ComparisonTable rows={fullComparison} heading="" />
       <div class="text-center mt-6">
-        <p class="font-serif text-sm text-mid-gray italic">Traditional agency assumes $2,000 setup + $300/mo ongoing. Groundwork assumes $2,000 build + self-hosted. The ~$12/year domain renewal goes directly to your registrar (like Cloudflare or GoDaddy) — not to us.</p>
+        <p class="font-serif text-sm text-mid-gray italic">Traditional agency assumes $2,000 setup + $300/mo ongoing. Groundwork assumes $2,000 build + self-hosted. The ~$12/year domain renewal goes directly to your registrar — not to us.</p>
       </div>
     </div>
   </section>
 
   <!-- What's Included Detail -->
-  <section class="py-16" id="get-started">
+  <section class="py-10" id="get-started">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto">
         <h2 class="section-subheading text-center mb-8">What's Included in the $2,000 Build</h2>
@@ -195,14 +203,14 @@ const faqs = [
   </section>
 
   <!-- FAQ -->
-  <section class="py-16 bg-surface-2">
+  <section class="py-10 bg-surface-2">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <FAQBlock faqs={faqs} />
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-16">
+  <section class="py-10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <CTABlock
         heading="Ready to Get Started?"
