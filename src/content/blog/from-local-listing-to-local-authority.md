@@ -53,7 +53,7 @@ This is where things start to actually matter, and it's the first level that req
 
 You'll typically see 2-4x your baseline organic traffic within 6 months. You'll start ranking for some long-tail keywords. Your Google Business Profile will get more views. You'll get a few more calls per month from organic search.
 
-This is where most agencies stop. They'll get you to Level 1, maintain it on autopilot, and collect their monthly fee indefinitely. And honestly, for some practices in less competitive markets, Level 1 might be enough. But if you're in a mid-size city with 50+ dental practices, Level 1 just gets you into the middle of the pack.
+This is where most standard marketing packages level off. For some practices in less competitive markets, Level 1 might be enough. But if you're in a mid-size city with 50+ dental practices, Level 1 just gets you into the middle of the pack.
 
 If you're building from scratch, [our SEO foundation service](/dental-seo-foundation) is designed to get you to a strong Level 1 with the infrastructure to grow beyond it.
 
@@ -125,7 +125,7 @@ Going from Level 2 to Level 3 is where diminishing returns really kick in. You'r
 
 Three reasons:
 
-**1. Their agency has no incentive to push them further.** An agency charging $400/month can't afford to build topical clusters, do backlink outreach, and create 50 pages of deep content. The economics don't work. So they maintain the baseline and send pretty reports.
+**1. The standard marketing package isn't built for it.** At $400/month, there isn't enough budget to build topical clusters, do backlink outreach, and create 50 pages of deep content. The economics don't support that level of work. Getting past Level 1 requires a different kind of investment.
 
 **2. The practice doesn't understand what's possible.** If you've only ever been at Level 0-1, you don't know what Level 2 traffic looks like. You don't know that practices in your market are getting 500+ organic visitors per month from treatment research keywords. You accept what you have because you don't know what you're missing.
 
@@ -133,7 +133,7 @@ Three reasons:
 
 ## The Honest Takeaway
 
-Building local dental SEO authority is not a mystery. The playbook is well-understood. It's just that most of the industry has no incentive to tell you about it — because actually executing it is hard, and it's much more profitable to keep you at Level 1 on autopilot.
+Building local dental SEO authority is not a mystery. The playbook is well-understood. The challenge is that executing it is hard, time-consuming, and requires a different level of investment than most standard marketing packages provide. But it's absolutely doable if you're willing to invest in it.
 
 At [Groundwork Dental](/compare), we build websites with the technical foundation and content architecture to support Level 2 growth. We give you the infrastructure — the fast site, the schema markup, the content framework, the topical cluster structure — so that your ongoing SEO efforts actually compound instead of spinning in place.
 

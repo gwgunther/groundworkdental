@@ -1,6 +1,6 @@
 ---
-title: "How to Evaluate a Dental SEO Agency — A Practical Framework (From Someone Who Competes With Them)"
-description: "An honest, step-by-step framework for evaluating dental SEO agencies — including specific tests you can run, red flags to watch for, and questions that separate the good agencies from the ones designed to trap you. Written by someone who competes with them."
+title: "How to Evaluate a Dental SEO Agency — A Practical Framework"
+description: "A practical framework for evaluating dental SEO agencies — including specific tests you can run, questions to ask, and what to look for in a provider. Written by someone who builds dental websites."
 publishDate: 2026-03-29
 targetKeyword: "dental SEO agency review"
 category: agency-comparison
@@ -10,9 +10,9 @@ faqs:
   - question: "How can I tell if a dental SEO agency is legitimate?"
     answer: "Run three simple tests: (1) Ask if you own your domain and can take your site with you if you cancel. (2) Ask to see another client's site and check if it looks identical to what they're proposing for you. (3) Look up their client's domain on WHOIS to see if the agency or the dentist owns it. Legitimate agencies pass all three."
   - question: "Should I sign a long-term contract with a dental marketing agency?"
-    answer: "Generally, no. Month-to-month agreements protect you and force the agency to earn your business every month. Long contracts (12-24 months) primarily benefit the agency by guaranteeing revenue even if results are poor. Some setup fees are reasonable, but ongoing work should be month-to-month."
-  - question: "What is a proprietary CMS and why is it a red flag?"
-    answer: "A proprietary CMS is a website builder that only the agency controls. If you cancel, your site disappears because it's built on their platform, not standard technology. You can't export it, hire another developer to work on it, or take it with you. It creates dependency by design."
+    answer: "It depends on the terms. Month-to-month agreements give you the most flexibility. Longer contracts can be fine if the provider has a track record and there are clear performance expectations. Some setup fees with a short initial commitment (3 months) are reasonable. Just make sure you understand the cancellation terms before signing."
+  - question: "What is a proprietary CMS and why does it matter?"
+    answer: "A proprietary CMS is a website builder that only the provider controls. If you cancel, your site may not be portable because it's built on their platform rather than standard technology. You may not be able to export it or hire another developer to work on it. It's worth understanding the portability limitations before committing."
   - question: "How do I check if my dental website has duplicate content?"
     answer: "Take a unique sentence from your website's service page (like your 'About Our Dental Implants' section) and search it in quotes on Google. If the exact same text appears on other dental websites, your agency is using template content across multiple clients. This hurts your SEO because Google devalues duplicate content."
   - question: "What should a dental SEO agency report include?"
@@ -31,35 +31,29 @@ That said, the framework I'm about to give you is genuinely useful regardless of
 
 Use this framework on us, too. We pass every test I'm about to describe — but don't take my word for it. Verify.
 
-## The Red Flags
+## Things to Look Into
 
-Let's start with what should make you walk away.
+Here are the key areas worth evaluating before you commit.
 
-### 1. Proprietary CMS or Platform
+### 1. Platform Portability
 
-If the agency builds your website on their own proprietary platform, you are renting your online presence, not owning it. When you cancel, your site disappears because it was never really yours — it lived on their servers, built with their tools, inaccessible to anyone else.
+If the provider builds your website on a proprietary platform, it's worth understanding what happens if you want to move. Some platforms are fully portable — you can export files and host them anywhere. Others are tied to the provider's system, which means switching providers means starting over.
 
-This is the single biggest red flag in dental marketing, and it's disturbingly common. The agency frames it as a feature ("our custom platform is optimized for dental!") when it's actually a lock-in mechanism.
+Neither approach is inherently wrong, but you should know which one you're getting. A website built on standard technology — WordPress, Astro, Next.js, static HTML — gives you the most flexibility. We've written more about [how the different approaches compare](/compare).
 
-A real website is built on standard technology — WordPress, Astro, Next.js, static HTML — something that any developer can work with. You should be able to export your files, move your hosting, and hire someone else without starting over.
+### 2. Domain Ownership
 
-We've written extensively about [why agencies lock you in](/compare) and how to avoid it.
+It's worth confirming that your domain is registered in your name. Sometimes domains end up in the provider's account — not out of bad intent, but just because they handled the setup. Knowing who owns what upfront saves headaches later.
 
-### 2. Agency-Owned Domain
+**How to check:** Go to whois.com and look up your domain. The registrant should be you or your practice.
 
-This one shocks people when they discover it. Some agencies register your domain name under *their* account, not yours. If you cancel, they own your web address. You'd need to negotiate — or pay — to get your own practice name back.
+If the domain is in someone else's name, it's worth having a conversation about getting it transferred.
 
-**How to check:** Go to whois.com and look up your domain. The registrant should be you or your practice, not your marketing agency.
+### 3. Contract Terms
 
-If your agency owns your domain, this is an immediate problem you need to resolve.
+Long-term contracts are common in the industry. SEO does take time, so some initial commitment makes sense — there's real work in building a site or doing an initial SEO overhaul. A 3-month initial commitment is reasonable.
 
-### 3. Long-Term Contracts
-
-12-month, 24-month, even 36-month contracts. The agency will tell you "SEO takes time, so we need a long commitment." And they're right that SEO takes time — but that's not why they want the contract.
-
-They want the contract because it guarantees revenue whether or not they deliver results. A confident agency that does good work doesn't need to lock you in for two years. They earn your business month after month.
-
-Some setup fees with a short initial commitment (3 months) are reasonable — there's real work in building a site or doing an initial SEO overhaul. But ongoing work should be month-to-month.
+For ongoing work, month-to-month agreements give you the most flexibility. If a provider offers longer terms, just make sure you understand the cancellation process and what happens to your assets if you leave.
 
 ### 4. "Custom Pricing" With No Published Rates
 
@@ -77,7 +71,7 @@ Template sites aren't inherently terrible — a good template is better than a b
 
 This is the test most people skip but shouldn't. Go to one of your website's service pages. Find a distinctive sentence — something from the middle of the page, not the heading. Copy it and search it in Google with quotes around it.
 
-If that exact sentence appears on three other dental websites, your "custom content" is template copy that the agency pastes into every client's site. Google knows this too, and duplicate content hurts your rankings.
+If that exact sentence appears on other dental websites, the content may have been reused from a template. That's worth knowing, because Google tends to devalue duplicate content — unique copy performs better in search.
 
 ## The Green Flags
 
@@ -95,7 +89,7 @@ Now, what should make you feel *good* about an agency:
 
 **Measurable deliverables.** They can tell you exactly what they'll deliver each month — content pieces, links built, pages optimized — not vague "SEO management."
 
-**They'll talk to you about what's not working.** Good agencies proactively tell you when something needs to change. Bad agencies send you green-arrow reports and hope you don't ask questions.
+**They'll talk to you about what's not working.** Good providers proactively tell you when something needs to change and what they're doing about it.
 
 ## Five Questions That Reveal Everything
 
@@ -164,6 +158,6 @@ I told you at the top that I compete with these agencies. That's true. And our m
 
 But this framework works regardless of whether you hire us. Use it on every agency you talk to. Use it on your current agency. Use it on us.
 
-The practices that thrive are the ones that own their foundation, work with providers who earn their business, and understand enough about how this industry works to avoid the traps.
+The practices that thrive are the ones that own their foundation, work with providers who earn their business, and understand enough about how this industry works to make informed decisions.
 
 Now you have the framework. Use it.

@@ -143,7 +143,7 @@ If I were advising a dental practice starting from scratch, here's exactly how I
 
 Most dental marketing dollars are spent on things that don't move any of these three engines. Fancy logo redesigns, social media management packages, print brochures, sponsorship of events that generate no links. These aren't inherently bad, but they're not growth drivers.
 
-If your agency can't clearly articulate how their work improves one of these three engines, they're selling you the noise, not the signal.
+If your marketing provider can't clearly articulate how their work improves one of these three engines, it's worth asking what you're paying for.
 
 The practices that grow fastest are the ones that ignore the noise, focus their resources on these three engines, and commit to the compound effect over 12-24 months. It's not complicated. It's just not easy — and "not easy" is where most agencies check out and hand you a template.
 

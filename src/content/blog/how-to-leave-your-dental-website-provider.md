@@ -19,7 +19,7 @@ faqs:
     answer: "Before canceling anything: (1) confirm you own your domain or initiate a transfer, (2) download all images and content from your current site, (3) export your Google Analytics data, (4) verify you have access to Google Search Console, (5) save your Google Business Profile login, (6) screenshot your current site for reference. Do all of this before telling the agency you're leaving."
 ---
 
-Switching dental website providers is one of those things that sounds simple until you actually start doing it. Then it gets complicated fast. You realize you don't know who owns your domain. You can't find login credentials for anything. Your agency's contract has a 90-day cancellation clause you forgot about. And somewhere in the back of your mind, you're terrified that your website is going to disappear and patients won't be able to find you.
+Switching dental website providers is one of those things that sounds simple until you actually start doing it. Then it gets complicated fast. You realize you're not sure who owns your domain. You can't find login credentials for anything. Your contract has a 90-day cancellation clause you forgot about. And you're worried about downtime — what happens to your site during the transition?
 
 I get it. I run [Groundwork Dental](/) and I talk to dentists in this exact situation all the time. Some of them end up working with me, some don't — this guide is useful either way. The goal here isn't to sell you on anything. It's to walk you through the process so you don't lose your domain, your content, your rankings, or your sanity.
 
@@ -29,7 +29,7 @@ Let's take this one step at a time.
 
 This is the most important section of this entire post. Before you send the cancellation email, before you tell your current provider you're leaving, before you even start shopping for a replacement — lock down these six things.
 
-The reason this comes first is simple: some agencies get petty when they find out you're leaving. Not all of them, but enough that you should protect yourself before giving notice.
+The reason this comes first is simple: once you give notice, the dynamic of the relationship changes. It's much easier to get access to things while the relationship is still on good terms.
 
 ### 1. Confirm You Own Your Domain
 
@@ -55,7 +55,7 @@ Same drill as Analytics. Go to search.google.com/search-console and check if you
 
 ### 6. Confirm Your Google Business Profile Login
 
-Your Google Business Profile (the thing that shows up in the map pack) is separate from your website. But a surprising number of agencies set up or manage GBP under their own accounts, and when you leave, they can remove themselves as managers — or worse, remove you.
+Your Google Business Profile (the thing that shows up in the map pack) is separate from your website. But sometimes GBP gets set up or managed under the provider's account. It's worth confirming you have primary ownership before making any changes.
 
 Log into business.google.com and confirm you're listed as the Primary Owner. If you're not, request a transfer of primary ownership before you make any moves.
 
@@ -87,7 +87,7 @@ Like the proprietary platforms, plan on a rebuild rather than a migration. Copy 
 
 ## The Domain Situation
 
-Your domain name is the single most important asset in this whole transition. If you lose control of your domain, nothing else matters — your patients can't find you, your Google rankings disappear, and your printed marketing materials all point to a dead end.
+Your domain name is the single most important asset in this whole transition. Keeping control of your domain ensures your patients can still find you, your Google rankings stay intact, and your printed marketing materials still work.
 
 There are three common scenarios.
 
@@ -191,11 +191,11 @@ Most dentists I talk to end up choosing the rebuild path, and they're glad they 
 
 Since you're going through the trouble of switching, make sure you're not walking into the same problems with your next provider. Here are the things that matter most.
 
-**You should own your domain.** Period. Any provider that insists on registering or holding your domain for you is setting up a lock-in situation. Register your domain yourself or transfer it to your own registrar account.
+**You should own your domain.** Register your domain yourself or transfer it to your own registrar account. It's a small thing that gives you a lot of flexibility down the road.
 
 **You should own your content.** Get this in writing. If you pay for content creation, the copyright should transfer to you upon payment. This includes text, images your provider creates, and any custom design work.
 
-**There should be no long-term lock-in.** Month-to-month or annual agreements with reasonable cancellation terms are fine. Multi-year contracts with steep early termination fees are a warning sign. If the provider's service is good, they shouldn't need a contract to keep you.
+**Understand the commitment terms.** Month-to-month or annual agreements with reasonable cancellation terms are standard. If you're considering a longer commitment, just make sure you understand the cancellation terms before signing.
 
 **Pricing should be transparent.** If you can't find the price on their website, or if the quote requires a "custom consultation," be cautious. You should know exactly what you're paying and what's included before you sign anything.
 

@@ -175,13 +175,13 @@ This is the one that can't be fixed with a tweak. If you don't own your website'
 
 **Code ownership:** Ask your web company this question: "If we part ways, can I take my website files and host them somewhere else?" If the answer is no, or if the answer involves paying a large fee, or if the website is built on a proprietary platform that only works with their hosting — you don't own your code.
 
-**Why it matters:** Practices that don't own their digital assets are locked in. If you want to switch providers, you're starting over from scratch — new website, potential downtime, and in the worst cases, a fight over your own domain name. I've talked to dentists who couldn't leave a web company they were unhappy with because moving meant losing their domain (and the SEO authority attached to it), losing their content, and rebuilding everything.
+**Why it matters:** Practices that don't own their digital assets have less flexibility. If you want to switch providers, you may be starting over from scratch — new website, potential downtime, and extra steps to transfer your domain. I've talked to dentists who stayed with a provider longer than they wanted to because switching meant losing their domain's SEO authority and rebuilding everything.
 
-This lock-in is sometimes intentional — it's a business model. Monthly fees become effectively permanent because leaving is so painful. And the practices most vulnerable to this are the ones who signed up years ago, have built significant SEO authority on their domain, and can't afford to lose that equity by starting over on a new domain.
+This isn't necessarily anyone's fault — it's just how some platforms are structured. But it's worth understanding before you sign up, because the practices most affected are the ones who've been with a provider for years and have built significant SEO authority on their domain.
 
-**What to look for in contracts:** Any web service agreement should clearly state that you own your domain, your content, and have the right to export your website files. If the contract is vague about ownership, assume the worst.
+**What to look for in contracts:** Any web service agreement should clearly state that you own your domain, your content, and have the right to export your website files. If the contract is vague about ownership, ask for clarification before signing.
 
-**The honest take:** This is the one sign on this list that usually means rebuilding rather than fixing. If you're locked into a proprietary platform with a company that controls your domain, the best path forward is typically to regain control of your domain (sometimes this requires uncomfortable conversations or legal pressure), then build a new site that you actually own. It's not fun, but every month you wait is another month of SEO authority being built on assets you don't control.
+**The honest take:** This is the one sign on this list that usually means rebuilding rather than fixing. If your site is on a proprietary platform and your domain is in someone else's name, the best path forward is to get your domain transferred to your own account, then build a new site that you own. It takes some effort, but it's worth doing sooner rather than later.
 
 ## What to Do About It
 

@@ -8,7 +8,7 @@ author: Garrett Gunther
 draft: false
 faqs:
   - question: "Is Wix good enough for a dental practice?"
-    answer: "For a very basic online presence, yes. For a practice that wants to grow through search, no. Wix sites are slower, have no schema markup, and lock you into their platform. If patients can find you through word of mouth alone, Wix is fine. If you need Google to find you, the limitations matter."
+    answer: "For a basic online presence, yes. For a practice that wants to grow through search, there are limitations to consider. Wix sites tend to be slower, don't support schema markup, and your site is tied to their platform. If patients find you through word of mouth, Wix works. If you need Google to find you, those limitations can matter."
   - question: "Is Squarespace better than Wix for dentists?"
     answer: "Squarespace has better templates and slightly better SEO than Wix, but the same fundamental limitations: no structured data, platform lock-in, and moderate page speeds. It's a step up in design quality but not a meaningful step up in search performance."
   - question: "What about Webflow for dental websites?"
@@ -35,7 +35,7 @@ Before we compare platforms, let's establish what a dental website needs to do. 
 
 **SEO flexibility.** Can you control your title tags, meta descriptions, URL structure, heading hierarchy, and internal linking? Can you create deep service pages targeting specific procedures? Can you add new pages without calling someone and waiting three days?
 
-**Ownership.** If you stop paying, what happens? Can you take your site somewhere else? Or does the platform hold your website hostage?
+**Ownership.** If you stop paying, what happens? Can you take your site somewhere else? Or is it tied to the platform?
 
 **Total cost of ownership.** The setup price is not the real price. The real price is what you've spent after three years, including monthly fees, add-ons, and the cost of things you can't do.
 
@@ -63,7 +63,7 @@ There's no native schema markup support. You can add it through third-party apps
 
 SEO controls are limited. You get basic title tags and meta descriptions, but Wix generates its own URL structures, the heading hierarchy is whatever the template dictates, and creating deep, interlinked service pages is clunky at best.
 
-And here's the one that bites people later: you cannot export a Wix site. If you outgrow Wix in two years, you're starting over from scratch. Your design, your page structure, your SEO equity built on those specific URLs — all gone. You can copy-paste your text content, but that's about it.
+One thing worth knowing upfront: you cannot export a Wix site. If you outgrow Wix in two years, you'd need to rebuild from scratch. Your design, your page structure, your SEO equity built on those specific URLs — those don't transfer. You can copy-paste your text content, but that's about it.
 
 **Who it's best for:**
 
@@ -93,7 +93,7 @@ Page speed is better than Wix but still not great. Squarespace sites carry their
 
 No native schema markup. Same problem as Wix. You can inject it manually through code blocks, but Squarespace doesn't generate LocalBusiness, Dentist, or MedicalOrganization schema for you. Most dental practices on Squarespace are invisible to Google's structured data systems.
 
-Platform lock-in is real. Squarespace does offer a basic export, but it's limited. Your design won't transfer. Your custom CSS won't transfer. You'll keep your text content and images, but the site itself needs to be rebuilt.
+Portability is limited. Squarespace does offer a basic export, but your design won't transfer. Your custom CSS won't transfer. You'll keep your text content and images, but the site itself would need to be rebuilt.
 
 Customization hits a wall. Squarespace templates are beautiful within their constraints. But when you need a custom comparison table, a specific FAQ layout, or a service page structure that doesn't match any template, you're fighting the platform. And fighting a website platform is a miserable way to spend your time.
 
@@ -187,7 +187,7 @@ Schema markup is baked in from the start. A custom dental site includes LocalBus
 
 Full SEO control. Every URL, every heading, every meta tag, every internal link is intentional. Service pages are built around specific procedures and the keywords patients actually search. The site architecture itself is an SEO strategy, not an afterthought bolted on after design.
 
-You own everything. The code, the design, the content, the hosting account. If you want to switch developers tomorrow, you hand them the codebase and they pick up where the last person left off. No lock-in. No hostage situations. No starting over.
+You own everything. The code, the design, the content, the hosting account. If you want to switch developers tomorrow, you hand them the codebase and they pick up where the last person left off. Full portability. No starting over.
 
 No monthly agency fees. Hosting a static site on Cloudflare Pages or Netlify costs $0 for the vast majority of dental practice websites. Your domain costs $10-20/year. That's it. The $300-500/month that agencies charge for "management" doesn't exist because there's nothing to manage — static sites don't have plugins to update, databases to maintain, or security vulnerabilities to patch.
 
@@ -203,7 +203,7 @@ Fewer off-the-shelf integrations. Need online scheduling? A WordPress plugin han
 
 **Who it's best for:**
 
-An established practice that wants to grow through search and is willing to invest in a site that's built for that purpose. A practice that has been burned by agency lock-in and wants full ownership. A dentist who values performance and is thinking about their website as a long-term asset, not a short-term expense.
+An established practice that wants to grow through search and is willing to invest in a site that's built for that purpose. A practice that values full ownership and portability. A dentist who values performance and is thinking about their website as a long-term asset, not a short-term expense.
 
 ## The Comparison at a Glance
 
@@ -273,7 +273,7 @@ If you're a brand-new practice with zero budget and you just need something onli
 
 If you're technically inclined and genuinely enjoy building things on the web, **look at Webflow.** The learning curve is real, but the output is dramatically better than Wix or Squarespace from a performance and SEO standpoint. And you'll own what you build.
 
-If you're an established practice and you want to grow through search — if you want patients finding you through Google when they search for dental implants or cosmetic dentistry or emergency dental care in your city — **the limitations of DIY platforms become real costs.** Slower page speeds mean lower rankings. Missing schema markup means less visibility in rich results. Platform lock-in means you're renting your online presence instead of owning it.
+If you're an established practice and you want to grow through search — if you want patients finding you through Google when they search for dental implants or cosmetic dentistry or emergency dental care in your city — **the limitations of DIY platforms become real costs.** Slower page speeds mean lower rankings. Missing schema markup means less visibility in rich results. And being tied to a platform means less flexibility as your practice grows.
 
 For those practices, a custom-built website isn't a luxury. It's the foundation that every other marketing effort builds on. Whether that's through [Groundwork Dental](/pricing) or another provider who builds performance-first dental sites, the investment pays for itself when your website starts generating patient inquiries instead of just existing.
 

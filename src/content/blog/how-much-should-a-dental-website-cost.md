@@ -1,6 +1,6 @@
 ---
 title: "How Much Should a Dental Website Cost? A Brutally Honest Breakdown"
-description: "The real cost of a dental website isn't the setup fee — it's the total cost of ownership over 3 years. Here's an honest breakdown of every tier, from DIY to full custom, including the hidden costs nobody mentions until you're locked in."
+description: "The real cost of a dental website isn't the setup fee — it's the total cost of ownership over 3 years. Here's an honest breakdown of every tier, from DIY to full custom, including the costs that aren't always obvious upfront."
 publishDate: 2026-04-05
 targetKeyword: "dental website cost"
 category: pricing
@@ -12,7 +12,7 @@ faqs:
   - question: "Is a cheap dental website worth it?"
     answer: "A DIY website on Wix or Squarespace can work for a brand new practice just getting started, but it has real limitations for SEO, page speed, and professional credibility. If you're established and trying to grow through search, a $0-500 website is likely holding you back. The question isn't whether it's cheap — it's whether the limitations cost you more in lost patients than you're saving."
   - question: "What are the hidden costs of dental website agencies?"
-    answer: "Common hidden costs include: monthly hosting fees ($50-200/month for hosting that costs them $10-20), premium plugin licenses billed to you, 'content update' fees for simple text changes, SEO as a mandatory add-on, annual redesign fees, and the biggest hidden cost — being locked into a platform you can't leave without starting over."
+    answer: "Common costs that aren't always obvious upfront include: monthly hosting fees ($50-200/month), premium plugin licenses, content update fees for simple text changes, SEO as a mandatory add-on, and annual redesign fees. It's also worth understanding the portability of your site — whether you can take it with you if you switch providers."
   - question: "Why are custom dental websites so expensive?"
     answer: "Traditional custom websites are expensive because they require a team of humans — designer, developer, copywriter, project manager, SEO specialist — working for 4-8 weeks. Labor costs drive the price. AI-powered workflows can dramatically reduce this labor while maintaining custom quality, which is how services like Groundwork Dental deliver custom sites at a fraction of the traditional price."
   - question: "Should I use Wix or Squarespace for my dental website?"
@@ -80,17 +80,15 @@ This is where things get uncomfortable. That $300/month "website management" fee
 
 Many template agencies also layer on additional fees: content updates ($50-100 per change), "premium" plugin licenses ($50-100/month), SEO as a mandatory add-on ($200-500/month more), and annual "refresh" fees to update the design.
 
-But the biggest hidden cost isn't a line item — it's lock-in. Many template agencies build on proprietary platforms. When you cancel, your site goes dark. You're not paying $300/month for maintenance. You're paying $300/month for permission to keep your website online.
+The other thing to consider is portability. Some template agencies build on proprietary platforms where the site is tied to their system. That means if you ever want to switch, you may need to start over. It's not a dealbreaker if you're happy with the service, but it's worth understanding upfront.
 
 **The honest assessment:**
 
-Tier 2 is often the worst value in dental marketing. You pay premium ongoing fees for a template site you might not even own, with content that might be duplicated across other practices in your region. The $15,000-23,000 you spend over three years buys you... a template and a dependency.
-
-There are good agencies in this tier — ones that use standard WordPress, give you full ownership, and provide genuine value in their monthly retainer. But they're the exception, not the norm.
+The value of this tier depends heavily on the specific provider. Some agencies in this range use standard WordPress, give you full ownership, and provide genuine value in their monthly retainer. Others offer less flexibility. The $15,000-23,000 you spend over three years can be worth it if the ongoing work is real — or it can feel like a lot if the monthly fee mostly covers hosting and occasional updates.
 
 **When this makes sense:** You find an honest agency that builds on standard WordPress, gives you full ownership, and the monthly fee covers real ongoing SEO work (not just hosting).
 
-**When this doesn't make sense:** You're paying $300+/month and the agency owns your platform, your domain, or uses a proprietary CMS. [That's not a service — that's a trap](/compare).
+**When this doesn't make sense:** You're paying $300+/month and you don't own your platform, your domain, or the site isn't portable. [Understanding what you own matters](/compare).
 
 ## Tier 3: Custom Agency ($10K-25K + Monthly)
 
@@ -156,7 +154,7 @@ That doesn't mean it's fully automated or low-quality — it means the human exp
 
 The trade-off: we don't offer ongoing monthly SEO services (though we offer an [SEO foundation service](/dental-seo-foundation) as a separate product). You get a high-quality foundation, but ongoing growth still requires ongoing effort — whether you do it yourself, hire us for specific projects, or work with another provider.
 
-**When this makes sense:** Any practice that wants a custom, high-performance website without paying $10,000+ or getting locked into monthly fees.
+**When this makes sense:** Any practice that wants a custom, high-performance website without paying $10,000+ or committing to monthly fees.
 
 **When this doesn't make sense:** If you want a single agency handling everything — website, SEO, content, GBP, reviews, social media — month after month, you need a full-service provider. We build foundations, not ongoing retainers.
 
@@ -173,11 +171,11 @@ The spread between the cheapest and most expensive option is staggering. And the
 
 ## The Middle Tier Trap
 
-I want to call out specifically why Tier 2 (template agency) is often the worst value proposition in dental marketing.
+I want to highlight why Tier 2 (template agency) is worth evaluating carefully.
 
-You're paying near-custom prices for template work. The $15,000-23,000 three-year cost gets you a site that looks like dozens of other practices' sites, with content that might be duplicated across clients, built on a platform you may not own. You're paying more than DIY, getting less than custom, and potentially trapped in a contract you can't exit without losing everything.
+You're paying near-custom prices for template work. The $15,000-23,000 three-year cost can get you a site that looks similar to other practices' sites, with content that may not be unique. That's not always a problem — a well-executed template is better than a poorly built custom site. But it's worth asking what you're getting for the money.
 
-The template agency tier exists because it's enormously profitable for agencies. The template is built once and resold dozens of times. The monthly fee covers hosting that costs them almost nothing. The proprietary platform ensures you can't leave. It's a great business model — for the agency.
+The key questions: Is the content original? Is the site built on standard technology you can take with you? Does the monthly fee cover real ongoing work? If the answers are yes, the value can be there. If not, you may want to consider other tiers.
 
 ## What Actually Matters
 
