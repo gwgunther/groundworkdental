@@ -25,12 +25,10 @@ export const POST: APIRoute = async ({ request }) => {
       try {
         const supabase = createAdminClient();
         const { error: dbError } = await supabase.from('leads').insert({
-          contact_name: name,
-          contact_email: email,
-          website_url: website || null,
-          comment: comment || null,
-          submitted_at: new Date().toISOString(),
-          status: 'new',
+          practice_name: name,
+          email,
+          website_url: website || '',
+          comment: comment || '',
         });
         if (dbError) console.error('Supabase insert error:', dbError);
       } catch (dbErr) {
