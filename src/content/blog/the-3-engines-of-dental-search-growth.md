@@ -86,7 +86,7 @@ This is the engine that separates practices who rank well from practices who ran
 - **Content depth** — comprehensive coverage of your core topics showing genuine expertise
 - **Brand mentions** and citations across the web
 - **Topical authority** — being the most thorough resource on specific dental topics in your market
-- **Site age and history** — how long your domain has been active and building authority (this is one reason [owning your domain matters](/why-agencies-lock-you-in))
+- **Site age and history** — how long your domain has been active and building authority (this is one reason [owning your domain matters](/compare))
 - **User engagement signals** — low bounce rates, time on site, pages per session
 
 **How authority compounds:**

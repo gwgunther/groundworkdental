@@ -101,7 +101,7 @@ A practice targeting the full funnel has:
 
 That's 30-50+ pages of authority content, organized into topic clusters, with schema markup on every page.
 
-It's also exactly what we build for every client at [Groundwork Dental](/dental-website-design).
+It's also exactly what we build for every client at [Groundwork Dental](/compare).
 
 ## The Bottom Line
 

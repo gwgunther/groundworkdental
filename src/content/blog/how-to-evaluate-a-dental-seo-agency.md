@@ -25,7 +25,7 @@ faqs:
     answer: "The five critical questions are: (1) If I cancel, does my website stay online? (2) Can I export my website files? (3) Do I own my domain registration? (4) Show me another client's site (check for identical templates). (5) What specific deliverables will I receive each month? The answers to these questions will tell you more than any sales pitch."
 ---
 
-Let me get the bias disclosure out of the way immediately: I run [Groundwork Dental](/dental-website-design). We compete with the agencies I'm about to help you evaluate. I have a financial incentive for you to choose us over them.
+Let me get the bias disclosure out of the way immediately: I run [Groundwork Dental](/compare). We compete with the agencies I'm about to help you evaluate. I have a financial incentive for you to choose us over them.
 
 That said, the framework I'm about to give you is genuinely useful regardless of whether you ever become our client. These are the same tests and questions I'd tell a friend to use, and they work whether you're evaluating us, a large dental marketing agency, or a local freelancer.
 
@@ -43,7 +43,7 @@ This is the single biggest red flag in dental marketing, and it's disturbingly c
 
 A real website is built on standard technology — WordPress, Astro, Next.js, static HTML — something that any developer can work with. You should be able to export your files, move your hosting, and hire someone else without starting over.
 
-We've written extensively about [why agencies lock you in](/why-agencies-lock-you-in) and how to avoid it.
+We've written extensively about [why agencies lock you in](/compare) and how to avoid it.
 
 ### 2. Agency-Owned Domain
 

@@ -90,7 +90,7 @@ There are good agencies in this tier — ones that use standard WordPress, give 
 
 **When this makes sense:** You find an honest agency that builds on standard WordPress, gives you full ownership, and the monthly fee covers real ongoing SEO work (not just hosting).
 
-**When this doesn't make sense:** You're paying $300+/month and the agency owns your platform, your domain, or uses a proprietary CMS. [That's not a service — that's a trap](/why-agencies-lock-you-in).
+**When this doesn't make sense:** You're paying $300+/month and the agency owns your platform, your domain, or uses a proprietary CMS. [That's not a service — that's a trap](/compare).
 
 ## Tier 3: Custom Agency ($10K-25K + Monthly)
 

@@ -135,7 +135,7 @@ Three reasons:
 
 Building local dental SEO authority is not a mystery. The playbook is well-understood. It's just that most of the industry has no incentive to tell you about it — because actually executing it is hard, and it's much more profitable to keep you at Level 1 on autopilot.
 
-At [Groundwork Dental](/dental-website-design), we build websites with the technical foundation and content architecture to support Level 2 growth. We give you the infrastructure — the fast site, the schema markup, the content framework, the topical cluster structure — so that your ongoing SEO efforts actually compound instead of spinning in place.
+At [Groundwork Dental](/compare), we build websites with the technical foundation and content architecture to support Level 2 growth. We give you the infrastructure — the fast site, the schema markup, the content framework, the topical cluster structure — so that your ongoing SEO efforts actually compound instead of spinning in place.
 
 But I won't pretend that buying a website is the same as building authority. The website is the foundation. Authority takes consistent effort on top of it. Anyone who tells you otherwise is selling you something.
 

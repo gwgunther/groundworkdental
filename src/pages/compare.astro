@@ -1,0 +1,321 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import FAQBlock from '../components/FAQBlock.astro';
+import CTABlock from '../components/CTABlock.astro';
+
+const fullComparison = [
+  { feature: 'Setup cost',        wix: 'Free',              squarespace: 'Free',          traditional: '$2,000–$15,000',  groundwork: '$2,000 flat' },
+  { feature: 'Monthly fee',       wix: '$0 (Wix ads shown)', squarespace: '$16+/mo',      traditional: '$200–$500/mo',    groundwork: '$0 (hosting is free)' },
+  { feature: '3-year total',      wix: '$0 + your time',    squarespace: '$576+',         traditional: '$9,200+',         groundwork: '$2,024' },
+  { feature: 'Design',            wix: 'Wix templates',     squarespace: 'SS templates',  traditional: 'Shared across clients', groundwork: '100% custom' },
+  { feature: 'Speed',             wix: 'Slow (60–70)',      squarespace: 'Moderate (65–80)', traditional: 'Slow (40–60)',  groundwork: '90+ PageSpeed' },
+  { feature: 'Schema markup',     wix: 'None',              squarespace: 'None',          traditional: 'Basic or none',   groundwork: '7+ types on every page' },
+  { feature: 'Content',           wix: 'You write it',      squarespace: 'You write it',  traditional: 'Generic template copy', groundwork: 'Unique to your practice' },
+  { feature: 'Ownership',         wix: 'Wix controls hosting', squarespace: 'SS controls hosting', traditional: 'Agency controls everything', groundwork: 'You own code, hosting, domain' },
+  { feature: 'If you leave',      wix: 'Messy export',      squarespace: 'Messy export',  traditional: 'Site disappears', groundwork: 'Nothing changes' },
+  { feature: 'Build time',        wix: 'Weeks (your time)', squarespace: 'Weeks (your time)', traditional: '6–12 weeks', groundwork: '3–7 business days' },
+  { feature: 'GBP optimization',  wix: 'Not included',      squarespace: 'Not included',  traditional: 'Sometimes, extra cost', groundwork: 'Included' },
+];
+
+const faqs = [
+  {
+    question: 'Why not just use Wix? It\'s free.',
+    answer: 'Wix is a fine tool for a food blog or a personal portfolio. For a dental practice, it falls short: slow load times, no structured data, Wix branding on free plans, and your site lives inside their system. You can\'t export it meaningfully. If Wix changes their pricing or shuts down your plan, you\'re starting over. For a business that depends on local search visibility, the free price comes with real trade-offs.',
+  },
+  {
+    question: 'What about Squarespace? It\'s popular and looks good.',
+    answer: 'Squarespace makes beautiful templates. The problem for dental practices is what\'s under the hood: no schema markup, limited SEO control, moderate page speeds, and your site is locked inside their platform. You\'re paying $16–45/month indefinitely for something you\'ll never own. It\'s better than Wix for design, but the same fundamental issue — you\'re renting, not owning.',
+  },
+  {
+    question: 'What about Webflow? It\'s powerful.',
+    answer: 'Webflow is genuinely good software. It\'s the closest DIY option to a custom-built site. The trade-off: steep learning curve, $14–39/month hosting, and you still need to handle SEO, schema, and content yourself. If you have the time and interest to learn it, Webflow is a solid choice. Most dentists don\'t — and that\'s completely reasonable. You went to dental school, not web design school.',
+  },
+  {
+    question: 'How do I check if my current agency owns my domain?',
+    answer: 'Run a WHOIS lookup on your domain (search "WHOIS lookup" and enter your URL). If the registrant isn\'t you or your practice, the agency registered it in their name. This is the most common trap — and the easiest to check.',
+  },
+  {
+    question: 'Can I get my website back if I leave my current agency?',
+    answer: 'Depends on the platform. If it\'s WordPress, you can request a full export — but you\'ll need hosting and a developer to set it up. If it\'s a proprietary builder (PatientPop, Birdeye, etc.), you typically can\'t export anything. The site was never really yours.',
+  },
+  {
+    question: 'Is $200–500/month for hosting normal?',
+    answer: 'For what they\'re providing? Not really. WordPress hosting costs $3–10/month wholesale. Static hosting (what we use) costs $0. The rest is margin. Some of that covers maintenance and support — but if you\'re paying $400/month for occasional content updates, it\'s worth knowing what the actual costs are so you can make an informed decision.',
+  },
+  {
+    question: 'Why don\'t more agencies offer full ownership?',
+    answer: 'Because recurring hosting revenue is more profitable than one-time builds. If you own your site, you don\'t need the agency anymore. Their model depends on you staying. That\'s not necessarily malicious — it\'s just how the economics work. We chose a different model because we think it\'s more honest, even if it means less recurring revenue for us.',
+  },
+  {
+    question: 'Do I actually need a custom website? Maybe a template is fine.',
+    answer: 'It might be. If your practice is doing well, your current patients find you easily, and you\'re not trying to grow — a template site that loads reasonably fast is probably fine. We\'re not here to convince you that you need something you don\'t. Where custom sites matter most: competitive markets, specialty practices (implants, cosmetic), and practices that want to show up in AI search results. If that\'s you, the difference is meaningful.',
+  },
+];
+---
+
+<BaseLayout
+  title="Compare Dental Website Options — DIY, Agency, or Groundwork Dental"
+  description="Honest comparison of dental website options: Wix, Squarespace, Webflow, traditional agencies, and Groundwork Dental. Cost, ownership, speed, and what actually matters for your practice."
+>
+  <!-- Hero -->
+  <section class="bg-brand-cream">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+      <div class="max-w-3xl">
+        <h1 class="section-heading mb-6">How Your Options Actually Compare.</h1>
+        <p class="font-serif text-xl text-mid-gray leading-relaxed">
+          There are a lot of ways to get a dental website. Some are free. Some cost $15,000. Most lock you in somehow. Here's an honest breakdown so you can decide what's right for your practice.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIY: Wix, Squarespace, Webflow -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="font-sans text-eyebrow uppercase text-mid-gray tracking-widest mb-4">Option 1</p>
+      <h2 class="section-subheading mb-6">Do It Yourself (Wix, Squarespace, Webflow)</h2>
+      <div class="prose-article text-lg">
+        <p>
+          These platforms are genuinely useful tools. If you have the time and interest to build your own site, they can work. Squarespace makes attractive templates. Webflow gives you real design control. Wix is free to start.
+        </p>
+        <p>
+          The honest trade-offs for dental practices:
+        </p>
+      </div>
+      <ul class="font-serif text-mid-gray space-y-3 mt-6">
+        <li class="flex items-start gap-3">
+          <span class="text-neutral-400 mt-1 flex-shrink-0">&#x2022;</span>
+          <span><strong class="text-charcoal">Your time is the real cost.</strong> Most dentists spend 20-40 hours building a site that still needs professional SEO work. That's time away from patients or family.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-neutral-400 mt-1 flex-shrink-0">&#x2022;</span>
+          <span><strong class="text-charcoal">No structured data.</strong> None of these platforms add schema markup — the code that tells Google what your practice does, where you are, and what services you offer. That matters for local search and AI search.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-neutral-400 mt-1 flex-shrink-0">&#x2022;</span>
+          <span><strong class="text-charcoal">Platform lock-in.</strong> Your site lives inside their system. If you outgrow it or they change pricing, migration is painful or impossible.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-neutral-400 mt-1 flex-shrink-0">&#x2022;</span>
+          <span><strong class="text-charcoal">Page speed limitations.</strong> Platform overhead means slower load times than static HTML. Google uses speed as a ranking signal.</span>
+        </li>
+      </ul>
+      <div class="card mt-8 bg-surface-2">
+        <p class="font-serif text-sm text-mid-gray">
+          <strong class="text-charcoal">Our honest take:</strong> If you enjoy building websites and have the time, Webflow is the best DIY option. If you'd rather spend that time on dentistry, that's what we're here for. Either way, make sure someone handles your Google Business Profile — it matters more than your website for local search.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Traditional Agencies -->
+  <section class="py-10 bg-surface-2">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="font-sans text-eyebrow uppercase text-mid-gray tracking-widest mb-4">Option 2</p>
+      <h2 class="section-subheading mb-6">Dental Marketing Agencies</h2>
+      <div class="prose-article text-lg">
+        <p>
+          Companies like ProSites, Officite, Sesame Communications, and similar dental-specific agencies have been the default choice for years. They handle everything — which sounds great until you look at the details.
+        </p>
+        <p>
+          The typical setup: $2,000-5,000 upfront, then $200-500/month. The monthly fee covers "hosting" that costs them $5-10/month wholesale and "maintenance" that amounts to occasional content swaps. Over three years, you're paying $9,000+ for a template website.
+        </p>
+        <p>
+          The bigger issue isn't cost — it's what happens when you want to leave.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Four Traps -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-subheading mb-8">The Four Agency Lock-In Traps</h2>
+      <p class="font-serif text-mid-gray mb-8">
+        Most agencies don't explicitly say "we're going to trap you." The lock-in is built into the business model. Here's how it works and how to check if it's happening to you.
+      </p>
+
+      <div class="space-y-6">
+        <div class="card border-l-4 border-l-brand-warm">
+          <h3 class="font-serif text-xl text-charcoal mb-3">Trap #1: The Domain</h3>
+          <div class="prose-article">
+            <p>
+              The agency registers your domain in their name. You think you own "yourdentalpractice.com" because it has your name on it. But check the WHOIS record. If the registrant is their company name — they own your domain. If you leave, they can hold it hostage, let it expire, or redirect it.
+            </p>
+            <p class="font-semibold text-charcoal mt-3">
+              How to check: Search "WHOIS lookup" and enter your domain. The registrant should be you or your practice name.
+            </p>
+          </div>
+        </div>
+
+        <div class="card border-l-4 border-l-brand-warm">
+          <h3 class="font-serif text-xl text-charcoal mb-3">Trap #2: The Hosting</h3>
+          <div class="prose-article">
+            <p>
+              Your website lives on the agency's server. If you stop paying, it goes offline — not because it costs anything to keep running, but because they flipped the switch. Your patients Google your practice and get a blank page.
+            </p>
+            <p class="font-semibold text-charcoal mt-3">
+              How to check: Ask "if I cancel, does my website stay online?" If the answer involves any caveat — you don't own your hosting.
+            </p>
+          </div>
+        </div>
+
+        <div class="card border-l-4 border-l-brand-warm">
+          <h3 class="font-serif text-xl text-charcoal mb-3">Trap #3: The CMS</h3>
+          <div class="prose-article">
+            <p>
+              Many agencies use proprietary website builders. The site looks like a website, but it's not portable. Companies like PatientPop and Birdeye build your site inside their system. If you leave, you get nothing — not the design, not the content, not the images. You start from zero.
+            </p>
+            <p class="font-semibold text-charcoal mt-3">
+              How to check: Ask your agency to export your website as files you can open on any server. If they can't — you're locked in.
+            </p>
+          </div>
+        </div>
+
+        <div class="card border-l-4 border-l-brand-warm">
+          <h3 class="font-serif text-xl text-charcoal mb-3">Trap #4: The Contract</h3>
+          <div class="prose-article">
+            <p>
+              Annual contracts. 90-day cancellation notice. Early termination fees. These aren't standard business terms — they're retention mechanisms. The best agencies don't need contracts because their work speaks for itself.
+            </p>
+            <p class="font-semibold text-charcoal mt-3">
+              How to check: Read your agreement. If there's a minimum commitment or cancellation fee — ask yourself why they need that clause.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-8 bg-surface-2">
+        <p class="font-serif text-sm text-mid-gray">
+          <strong class="text-charcoal">To be fair:</strong> Not every agency does all of this. Some are genuinely good. The point isn't that all agencies are bad — it's that you should know what you own before you sign anything. If your current agency gives you full ownership and you're happy with the work, keep them.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Agencies ($10k-$25k) -->
+  <section class="py-10 bg-surface-2">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="font-sans text-eyebrow uppercase text-mid-gray tracking-widest mb-4">Option 3</p>
+      <h2 class="section-subheading mb-6">Premium Custom Agencies ($10k–$25k+)</h2>
+      <div class="prose-article text-lg">
+        <p>
+          There are agencies that do exceptional work — custom design, real strategy, ongoing optimization. They charge $10,000-25,000+ for a build and $1,000-3,000/month for marketing. Some dental practices genuinely need this level of service.
+        </p>
+        <p>
+          The question is whether <em>your</em> practice does. A solo or small-group dental practice is fundamentally a local business with a static website. You're not running an e-commerce platform. You're not building a SaaS product. You need a fast, well-structured site that shows up in local search. That doesn't require a $25k build.
+        </p>
+        <p>
+          If you're a multi-location DSO, a practice doing $5M+ in revenue, or competing in a market like Manhattan — a premium agency might be the right call. For everyone else, there's a simpler path.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Groundwork Approach -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="font-sans text-eyebrow uppercase text-mid-gray tracking-widest mb-4">Option 4</p>
+      <h2 class="section-subheading mb-6">Groundwork Dental</h2>
+      <div class="prose-article text-lg">
+        <p>
+          We build custom dental websites for $2,000 flat. No monthly fees. No templates. No lock-in. Everything transfers to your accounts on day one — the code, the hosting, the domain, the analytics. Fire us tomorrow and your website keeps working.
+        </p>
+        <p>
+          After the build, your only cost is ~$12/year for your domain renewal. Hosting is free through Cloudflare Pages. There's no WordPress subscription, no Wix plan, no monthly "hosting fee."
+        </p>
+        <p>
+          We're not the right fit for everyone. If you want a full marketing department — paid ads, social media management, ongoing content strategy — that's not what we do. We build the foundation. A really good one. What you do with it after that is up to you.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Do It Differently -->
+  <section class="py-10 bg-charcoal text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-serif text-3xl font-normal mb-6">What You Own With Us</h2>
+        <p class="font-serif text-neutral-300 text-lg leading-relaxed mb-8">
+          Everything is in your name from day one. We get collaborator access so we can work on your site — but you're the owner. Revoke our access anytime. Nothing changes.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-xl mx-auto">
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-brand-warm flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="font-sans text-neutral-200 text-xs">Domain in your name</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-brand-warm flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="font-sans text-neutral-200 text-xs">Code on your GitHub</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-brand-warm flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="font-sans text-neutral-200 text-xs">Hosting on your Cloudflare</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-brand-warm flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="font-sans text-neutral-200 text-xs">Analytics in your accounts</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-brand-warm flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="font-sans text-neutral-200 text-xs">No contracts, cancel anytime</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-brand-warm flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="font-sans text-neutral-200 text-xs">Full source code, no proprietary CMS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-4">
+        <h2 class="section-subheading mb-4">Side-by-Side Comparison</h2>
+        <p class="font-serif text-mid-gray max-w-2xl mx-auto">Real numbers. No asterisks.</p>
+      </div>
+      <ComparisonTable rows={fullComparison} heading="" />
+      <div class="text-center mt-6">
+        <p class="font-serif text-sm text-mid-gray italic">Traditional agency assumes $200/mo ongoing after setup. Groundwork assumes $2,000 build + self-hosted. Domain renewal (~$12/year) goes to your registrar, not us.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-10 bg-surface-2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQBlock faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <CTABlock
+        heading="Want to See What We'd Build?"
+        subheading="Send us your practice info and current website. We'll reach out to walk through what we'd build for you. No commitment, no pressure."
+        primaryCTA="Get in Touch"
+        primaryHref="/get-started"
+        secondaryCTA="See an example first"
+        secondaryHref="/example"
+        variant="light"
+      />
+    </div>
+  </section>
+</BaseLayout>

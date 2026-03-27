@@ -129,7 +129,7 @@ If the agency actually invested in growth — deep content creation, authority b
 
 So they don't. They maintain your baseline, send you reports that show you're "ranking" (for keywords you were already ranking for), and hope you don't ask too many questions.
 
-The really cynical version: [some agencies also lock you in](/why-agencies-lock-you-in) by owning your website, your domain, or your GBP. If you leave, you lose everything they built — which means you stay even when you know the results have stalled. It's not a growth partnership. It's a retention strategy.
+The really cynical version: [some agencies also lock you in](/compare) by owning your website, your domain, or your GBP. If you leave, you lose everything they built — which means you stay even when you know the results have stalled. It's not a growth partnership. It's a retention strategy.
 
 ## What Growth Actually Requires
 
@@ -155,6 +155,6 @@ If your organic traffic has been flat for 6+ months, your agency has stopped pro
 
 You have two options: demand a real growth strategy with measurable content and authority milestones, or find a partner who builds you something designed to grow.
 
-We built [Groundwork Dental](/dental-website-design) specifically for the second option. We don't charge monthly management fees to maintain a template. We build a site you own, with content designed to rank for the searches that drive your most valuable patients. Then we hand you the keys.
+We built [Groundwork Dental](/compare) specifically for the second option. We don't charge monthly management fees to maintain a template. We build a site you own, with content designed to rank for the searches that drive your most valuable patients. Then we hand you the keys.
 
 Because the point of a foundation is to build on it — not to rent it.
