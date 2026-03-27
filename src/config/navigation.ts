@@ -10,6 +10,7 @@ export interface NavLink {
 
 export const navLinks: NavLink[] = [
   { label: 'How It Works', href: '/how-it-works' },
+  { label: 'Example', href: '/example' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'About', href: '/about' },
   { label: 'SEO Guide', href: '/dental-seo-foundation' },

@@ -4,16 +4,16 @@ import { site } from '../config/site';
 ---
 
 <BaseLayout
-  title="Get Started — Free Draft in 24 Hours | Groundwork Dental"
-  description="Tell us about your practice. We'll build a modern, search-ready version of your website you can preview within 24 hours. If you like it, it's $2,000. If not, you owe nothing."
+  title="Get Started — Groundwork Dental"
+  description="Tell us about your practice and current website. We'll reach out to walk through what we'd build for you. No commitment required."
 >
   <!-- Hero -->
   <section class="bg-brand-cream">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
       <div class="max-w-2xl mx-auto text-center">
-        <h1 class="section-heading mb-6">See Your Practice Reimagined.</h1>
+        <h1 class="section-heading mb-6">Let's Talk About Your Practice.</h1>
         <p class="font-serif text-xl text-mid-gray leading-relaxed">
-          Tell us a little about your practice. We'll build a modern, search-ready version of your website you can preview within 24 hours. If you like it, it's $2,000. If you don't, you owe nothing.
+          Send us your practice info and current website. We'll reach out to walk through what we'd build for you.
         </p>
       </div>
     </div>
@@ -82,11 +82,11 @@ import { site } from '../config/site';
           id="submit-btn"
           class="w-full btn-primary py-3.5 text-center"
         >
-          Build My Draft
+          Send My Info
         </button>
 
         <p class="text-center font-serif text-sm text-mid-gray">
-          No payment required. No obligation. We build it, you preview it, you decide.
+          No commitment required. We'll reach out to discuss next steps.
         </p>
       </form>
 
@@ -97,12 +97,12 @@ import { site } from '../config/site';
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2 class="font-serif text-2xl text-charcoal mb-4">We're on it.</h2>
+        <h2 class="font-serif text-2xl text-charcoal mb-4">Got it — we'll be in touch.</h2>
         <p class="font-serif text-mid-gray leading-relaxed mb-2">
-          You'll hear from us within 24 hours with a preview of your new site.
+          We'll reach out shortly to talk through what we'd build for you.
         </p>
         <p class="font-serif text-sm text-mid-gray">
-          Click around, test it on your phone, show your team. No pressure.
+          In the meantime, take a look at our <a href="/example" class="text-brand-warm hover:text-brand-warm-dark underline">example site</a>.
         </p>
       </div>
 
@@ -174,7 +174,7 @@ import { site } from '../config/site';
       console.error('Form submission failed:', err);
       errorDiv?.classList.remove('hidden');
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Build My Draft';
+      submitBtn.textContent = 'Send My Info';
     }
   });
 </script>
