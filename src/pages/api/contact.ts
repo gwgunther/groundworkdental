@@ -20,19 +20,19 @@ export const POST: APIRoute = async ({ request }) => {
     const serviceRoleKey = import.meta.env.SUPABASE_SERVICE_KEY;
 
     if (supabaseUrl && serviceRoleKey) {
-      const supabase = createAdminClient();
-      const { error: dbError } = await supabase.from('leads').insert({
-        contact_name: name,
-        contact_email: email,
-        website_url: website || null,
-        comment: comment || null,
-        submitted_at: new Date().toISOString(),
-        status: 'new',
-      });
-
-      if (dbError) {
-        console.error('Supabase insert error:', dbError);
-        // Don't fail the whole request — still try to send email
+      try {
+        const supabase = createAdminClient();
+        const { error: dbError } = await supabase.from('leads').insert({
+          contact_name: name,
+          contact_email: email,
+          website_url: website || null,
+          comment: comment || null,
+          submitted_at: new Date().toISOString(),
+          status: 'new',
+        });
+        if (dbError) console.error('Supabase insert error:', dbError);
+      } catch (dbErr) {
+        console.error('Supabase unexpected error:', dbErr);
       }
     } else {
       console.log('Supabase not configured — skipping database insert');
@@ -42,27 +42,32 @@ export const POST: APIRoute = async ({ request }) => {
     const resendKey = import.meta.env.RESEND_API_KEY;
 
     if (resendKey) {
-      const resend = new Resend(resendKey);
-      await resend.emails.send({
-        from: 'Groundwork Dental <notifications@groundworkdental.com>',
-        to: 'hello@groundworkdental.com',
-        replyTo: email,
-        subject: `New Lead: ${name}${website ? ` — ${website}` : ''}`,
-        text: [
-          `Name: ${name}`,
-          `Email: ${email}`,
-          `Website: ${website || 'No current website'}`,
-          '',
-          `Comment:`,
-          comment || '(none)',
-          '',
-          `Submitted: ${new Date().toISOString()}`,
-        ].join('\n'),
-      });
+      try {
+        const resend = new Resend(resendKey);
+        await resend.emails.send({
+          from: 'Groundwork Dental <notifications@groundworkdental.com>',
+          to: 'hello@groundworkdental.com',
+          replyTo: email,
+          subject: `New Lead: ${name}${website ? ` — ${website}` : ''}`,
+          text: [
+            `Name: ${name}`,
+            `Email: ${email}`,
+            `Website: ${website || 'No current website'}`,
+            '',
+            `Comment:`,
+            comment || '(none)',
+            '',
+            `Submitted: ${new Date().toISOString()}`,
+          ].join('\n'),
+        });
+      } catch (emailErr) {
+        console.error('Resend error:', emailErr);
+      }
     } else {
       console.log('Resend not configured — skipping email notification');
     }
 
+    // Always return success — failures are logged server-side
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
