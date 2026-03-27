@@ -8,7 +8,7 @@ author: Garrett Gunther
 draft: false
 faqs:
   - question: "Can I take my dental website with me when I switch providers?"
-    answer: "It depends on the platform. If your site is on WordPress, you can export the content and database. If it's on a proprietary platform (PatientPop, Birdeye, Sesame, etc.), you typically can't export the site — you can only take your text content and images manually. In either case, plan on rebuilding rather than migrating."
+    answer: "It depends on the platform. If your site is on WordPress, you can export the content and database. If it's on a proprietary platform, you typically can't export the site — you can only take your text content and images manually. In either case, plan on rebuilding rather than migrating."
   - question: "Will my Google rankings drop when I switch website providers?"
     answer: "Temporarily, yes — usually for 2-4 weeks. Google needs to re-crawl and re-index your new site. If your new site has the same or better content, proper redirects, and the same verified Search Console, rankings typically recover and often improve if the new site is faster and better structured."
   - question: "How do I get my domain back from my website agency?"
@@ -71,7 +71,7 @@ WordPress is the most portable option. You can export your entire site — conte
 
 The catch: if your agency built a custom theme or used proprietary plugins, the theme and plugin code might be licensed to them, not to you. The content is yours, but the design template might not be. Check your contract.
 
-### Proprietary Platforms (PatientPop, Birdeye, Sesame, RevenueWell, etc.)
+### Proprietary Platforms
 
 This is where it gets frustrating. Proprietary platforms are closed systems. There's no export button. There's no database you can download. The platform owns the infrastructure and the templates — you own your content, but extracting it is a manual process.
 
