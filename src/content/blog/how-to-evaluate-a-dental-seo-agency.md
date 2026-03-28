@@ -42,6 +42,8 @@ If the provider builds your website on a proprietary platform, it's worth unders
 
 Neither approach is inherently wrong, but you should know which one you're getting. A website built on standard technology — WordPress, Astro, Next.js, static HTML — gives you the most flexibility. We've written more about [how the different approaches compare](/compare).
 
+> **How Groundwork handles this:** Your site is built with Astro and deployed to Cloudflare Pages — both open, standard technologies. You get the full source code in your own GitHub account. Take it anywhere.
+
 ### 2. Domain Ownership
 
 It's worth confirming that your domain is registered in your name. Sometimes domains end up in the provider's account — not out of bad intent, but just because they handled the setup. Knowing who owns what upfront saves headaches later.
@@ -50,11 +52,15 @@ It's worth confirming that your domain is registered in your name. Sometimes dom
 
 If the domain is in someone else's name, it's worth having a conversation about getting it transferred.
 
+> **How Groundwork handles this:** You register the domain yourself, in your name, in your account. We never touch it.
+
 ### 3. Contract Terms
 
 Long-term contracts are common in the industry. SEO does take time, so some initial commitment makes sense — there's real work in building a site or doing an initial SEO overhaul. A 3-month initial commitment is reasonable.
 
 For ongoing work, month-to-month agreements give you the most flexibility. If a provider offers longer terms, just make sure you understand the cancellation process and what happens to your assets if you leave.
+
+> **How Groundwork handles this:** One flat fee. No contract, no retainer, no recurring charges. You pay once, we build it, and we hand you the keys.
 
 ### 4. "Custom Pricing" With No Published Rates
 
@@ -62,17 +68,23 @@ If an agency won't tell you what things cost until they get you on a sales call,
 
 Legitimate businesses publish their prices. You know what a Toyota costs before you walk into the dealership. [We publish our pricing](/pricing) because we think you should know what you're buying before you talk to anyone.
 
+> **How Groundwork handles this:** [$2,000 for a custom website](/pricing). It's on the website. No sales call required.
+
 ### 5. Template Sites Reused Across Clients
 
 Ask the agency to show you 5 client websites. Then actually look at them. Do they all look the same? Same layout, same structure, same stock photos, just different logos and colors?
 
 Template sites aren't inherently terrible — a good template is better than a bad custom site. But if you're paying $5,000-15,000 for what the agency calls a "custom website" and it looks identical to their other clients' sites, you're overpaying for a template.
 
+> **How Groundwork handles this:** Every site is built from scratch. No templates, no themes, no shared layouts across clients. [See an example](/example).
+
 ### 6. Generic, Duplicated Content
 
 This is the test most people skip but shouldn't. Go to one of your website's service pages. Find a distinctive sentence — something from the middle of the page, not the heading. Copy it and search it in Google with quotes around it.
 
 If that exact sentence appears on other dental websites, the content may have been reused from a template. That's worth knowing, because Google tends to devalue duplicate content — unique copy performs better in search.
+
+> **How Groundwork handles this:** All content is written specifically for your practice — your location, your services, your voice. Run the duplicate content test on any site we build.
 
 ## The Green Flags
 
