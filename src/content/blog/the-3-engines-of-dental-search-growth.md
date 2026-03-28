@@ -1,9 +1,10 @@
 ---
 title: "The 3 Engines of Dental Search Growth — Everything Else Is Noise"
 description: "There are only three things that actually drive dental search growth: Google Maps, local organic pages, and authority signals. Social media, email, and print ads are either supporting cast or distractions. Here's how each engine works and where to focus first."
-publishDate: 2026-03-22
+publishDate: 2026-02-10
 targetKeyword: "dental search marketing"
 category: dental-seo
+tags: ["SEO", "Google Maps", "local search", "growth"]
 author: Garrett Gunther
 draft: false
 faqs:

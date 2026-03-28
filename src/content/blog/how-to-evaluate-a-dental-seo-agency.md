@@ -4,6 +4,7 @@ description: "A practical framework for evaluating dental SEO agencies — inclu
 publishDate: 2026-03-29
 targetKeyword: "dental SEO agency review"
 category: agency-comparison
+tags: ["agency red flags", "SEO", "due diligence"]
 author: Garrett Gunther
 draft: false
 faqs:

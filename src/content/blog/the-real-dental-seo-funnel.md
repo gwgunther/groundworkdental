@@ -1,9 +1,10 @@
 ---
 title: "The Real Dental SEO Funnel — Why 'Dentist Near Me' Isn't Where $30K Patients Come From"
 description: "Most dental SEO targets the wrong searches. The patients researching implants, veneers, and Invisalign are worth 10-100x more than someone searching 'dentist near me.' Here's the funnel nobody talks about."
-publishDate: 2026-02-15
+publishDate: 2026-01-17
 targetKeyword: "dental SEO funnel"
 category: dental-seo
+tags: ["SEO", "patient acquisition", "high-value keywords"]
 author: Garrett Gunther
 draft: false
 faqs:

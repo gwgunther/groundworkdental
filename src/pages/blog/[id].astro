@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQBlock from '../../components/FAQBlock.astro';
 import CTABlock from '../../components/CTABlock.astro';
+import RelatedArticles from '../../components/RelatedArticles.astro';
 import { getCollection, render } from 'astro:content';
 import { site } from '../../config/site';
 
@@ -9,11 +10,11 @@ export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map((post) => ({
     params: { id: post.id },
-    props: { post },
+    props: { post, allPosts: posts },
   }));
 }
 
-const { post } = Astro.props;
+const { post, allPosts } = Astro.props;
 const { Content } = await render(post);
 
 const blogPostingSchema = {
@@ -55,13 +56,22 @@ const blogPostingSchema = {
           {post.data.category.replace(/-/g, ' ')}
         </p>
         <h1 class="section-heading mb-6">{post.data.title}</h1>
-        <div class="flex items-center gap-4 font-sans text-xs text-mid-gray">
+        <div class="flex items-center gap-4 font-sans text-xs text-mid-gray mb-4">
           <span>By {post.data.author}</span>
           <span>&middot;</span>
           <time datetime={post.data.publishDate.toISOString()}>
             {post.data.publishDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
           </time>
         </div>
+        {post.data.tags.length > 0 && (
+          <div class="flex flex-wrap gap-2">
+            {post.data.tags.map((tag: string) => (
+              <span class="font-sans text-[10px] uppercase tracking-wider text-brand-warm bg-brand-warm/10 px-2 py-0.5 rounded-full">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </section>
 
@@ -83,6 +93,9 @@ const blogPostingSchema = {
       </section>
     )}
   </article>
+
+  <!-- Related Articles -->
+  <RelatedArticles current={post} allPosts={allPosts} />
 
   <!-- Author Box -->
   <section class="py-12">

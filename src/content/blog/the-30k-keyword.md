@@ -1,9 +1,10 @@
 ---
 title: "The $30K Keyword: Why Treatment Research Searches Drive Your Most Valuable Patients"
 description: "Dental implant cost, Invisalign cost, veneers cost — these searches drive patients worth 10-100x more than 'dentist near me.' Here's why treatment research keywords are the most valuable in dental SEO, how Google localizes them, and how to capture them."
-publishDate: 2026-03-08
+publishDate: 2026-01-25
 targetKeyword: "dental implant cost SEO"
 category: dental-seo
+tags: ["SEO", "high-value keywords", "implants"]
 author: Garrett Gunther
 draft: false
 faqs:

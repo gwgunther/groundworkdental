@@ -1,9 +1,10 @@
 ---
 title: "From Local Listing to Local Authority — What It Actually Takes to Dominate Dental Search"
 description: "Having a Google Business Profile doesn't make you a local authority. Here's the honest breakdown of what it takes to go from just being listed to actually dominating dental search in your market — and why most practices never make it past Level 1."
-publishDate: 2026-03-15
+publishDate: 2026-02-02
 targetKeyword: "local dental SEO authority"
 category: dental-seo
+tags: ["SEO", "local search", "Google Maps", "growth"]
 author: Garrett Gunther
 draft: false
 faqs:
