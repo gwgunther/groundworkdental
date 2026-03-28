@@ -96,13 +96,13 @@ This one only applies if you're paying a monthly retainer. If you are, you shoul
 
 ## 6. Site Performance
 
-This one you can check yourself in 60 seconds.
+This one you can check yourself in 60 seconds with [Google PageSpeed Insights](https://pagespeed.web.dev/). Enter your website URL and look at the mobile score.
 
-Go to Google PageSpeed Insights and enter your website URL. Look at the mobile score. If it's below 50, your site has technical health problems. Below 30 means serious performance issues that are actively hurting your rankings.
+**🚩 Red flag:** Mobile score below 50. Your site has technical health problems that are hurting your rankings. Below 30 is serious. If your current agency built or manages your site and the score is this low, they're not maintaining the technical foundation.
 
-A well-built dental website should score 80+ on mobile. The sites we build at Groundwork typically score 90+.
+**✅ Green flag:** Mobile score of 80+. That's where a well-built dental website should land. Fast load times, clean code, optimized images.
 
-If your current agency built or manages your site and the score is poor, they're not maintaining the technical foundation.
+> **How Groundwork handles this:** The sites we build typically score 90+ on mobile. You can verify this yourself — run [any example](/example) through [PageSpeed Insights](https://pagespeed.web.dev/).
 
 ## The Checklist
 
