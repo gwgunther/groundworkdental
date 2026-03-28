@@ -5,7 +5,7 @@ publishDate: 2026-01-25
 targetKeyword: "dental implant cost SEO"
 category: dental-seo
 tags: ["SEO", "patient acquisition"]
-author: Garrett Gunther
+author: Groundwork
 draft: false
 faqs:
   - question: "Why is 'dental implant cost' more valuable than 'dentist near me' for SEO?"
@@ -161,6 +161,6 @@ Building a content strategy around treatment research keywords is harder than bu
 
 But the alternative is paying an agency $500/month forever to maintain a ceiling you hit six months ago. The math on that approach never gets better.
 
-If you want to understand how treatment research content fits into a complete dental SEO strategy, I wrote the whole framework in [The Dental SEO Foundation guide](/dental-seo-foundation). It covers everything from baseline setup through authority building and growth content.
+If you want to understand how treatment research content fits into a complete dental SEO strategy, We wrote the whole framework in [The Dental SEO Foundation guide](/dental-seo-foundation). It covers everything from baseline setup through authority building and growth content.
 
 The $30K keyword is sitting there in your market right now. Patients in your city are searching for it today. The only question is whether your website shows up — or whether they find someone else's.

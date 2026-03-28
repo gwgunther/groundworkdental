@@ -5,7 +5,7 @@ publishDate: 2026-03-29
 targetKeyword: "dental SEO agency review"
 category: agency-comparison
 tags: ["agencies", "SEO"]
-author: Garrett Gunther
+author: Groundwork
 draft: false
 faqs:
   - question: "How can I tell if a dental SEO agency is legitimate?"
@@ -26,11 +26,11 @@ faqs:
     answer: "The five critical questions are: (1) If I cancel, does my website stay online? (2) Can I export my website files? (3) Do I own my domain registration? (4) Show me another client's site (check for identical templates). (5) What specific deliverables will I receive each month? The answers to these questions will tell you more than any sales pitch."
 ---
 
-Let me get the bias disclosure out of the way immediately: I run [Groundwork Dental](/compare). We compete with the agencies I'm about to help you evaluate. I have a financial incentive for you to choose us over them.
+Bias disclosure up front: we're [Groundwork Dental](/compare). We compete with the agencies we're about to help you evaluate. We have a financial incentive for you to choose us over them.
 
-That said, the framework I'm about to give you is genuinely useful regardless of whether you ever become our client. These are the same tests and questions I'd tell a friend to use, and they work whether you're evaluating us, a large dental marketing agency, or a local freelancer.
+That said, this framework is genuinely useful regardless of whether you ever become a client. These are the same tests and questions we'd tell a friend to use, and they work whether you're evaluating us, a large dental marketing agency, or a local freelancer.
 
-Use this framework on us, too. We pass every test I'm about to describe — but don't take my word for it. Verify.
+Use this framework on us, too. We pass every test below — but don't take our word for it. Verify.
 
 ## Things to Look Into
 
@@ -167,7 +167,7 @@ This isn't a high bar. It's basic business ethics applied to an industry that's 
 
 ## The Bias Revisited
 
-I told you at the top that I compete with these agencies. That's true. And our model — [flat-rate pricing](/pricing), you own everything, no contracts, AI-powered efficiency — is designed specifically to address the problems I've described here.
+We told you at the top that we compete with these agencies. That's true. And our model — [flat-rate pricing](/pricing), you own everything, no contracts, AI-powered efficiency — is designed specifically to address the problems described here.
 
 But this framework works regardless of whether you hire us. Use it on every agency you talk to. Use it on your current agency. Use it on us.
 

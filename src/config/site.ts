@@ -4,7 +4,6 @@
 export const site = {
   name: 'Groundwork Dental',
   url: 'https://groundworkdental.com',
-  founder: 'Garrett Gunther',
   tagline: 'Dental Websites Without Agency Lock-In.',
   description: 'Custom SEO-ready dental websites built in days. You own the code, the hosting, and every account. No lock-in. $2,000 flat.',
   email: 'hello@groundworkdental.com',
@@ -22,10 +21,6 @@ export const organizationSchema = {
   'name': site.name,
   'url': site.url,
   'description': site.description,
-  'founder': {
-    '@type': 'Person',
-    'name': site.founder,
-  },
   'areaServed': {
     '@type': 'Country',
     'name': 'US',

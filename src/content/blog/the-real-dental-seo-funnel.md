@@ -5,7 +5,7 @@ publishDate: 2026-01-17
 targetKeyword: "dental SEO funnel"
 category: dental-seo
 tags: ["SEO", "patient acquisition"]
-author: Garrett Gunther
+author: Groundwork
 draft: false
 faqs:
   - question: "What is the dental SEO funnel?"

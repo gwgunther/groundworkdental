@@ -5,7 +5,7 @@ publishDate: 2026-02-26
 targetKeyword: "dental website not getting patients"
 category: dental-websites
 tags: ["websites", "getting started"]
-author: Garrett Gunther
+author: Groundwork
 draft: false
 faqs:
   - question: "How do I know if my dental website is losing patients?"
@@ -22,7 +22,7 @@ Your dental website probably looks fine. It has your logo, your address, some ph
 
 But "okay" and "actually working" are very different things when it comes to dental websites. A site can look perfectly professional and still be invisible to Google, slow on mobile, and confusing to navigate. That gap between looking fine and performing well is where you're losing patients — you just can't see them leaving because they never arrived in the first place.
 
-I run [Groundwork Dental](/pricing), so I'll be upfront: I build dental websites for a living and I obviously have a stake in this conversation. But the diagnostic checklist below is useful regardless of whether you ever hire anyone. These are things you can check yourself, right now, in about 20 minutes. If your site passes all seven, you're in better shape than 90% of dental practices online. If it doesn't, at least you'll know exactly what's wrong.
+We're [Groundwork Dental](/pricing), so we'll be upfront: we build dental websites for a living and we obviously have a stake in this conversation. But the diagnostic checklist below is useful regardless of whether you ever hire anyone. These are things you can check yourself, right now, in about 20 minutes. If your site passes all seven, you're in better shape than 90% of dental practices online. If it doesn't, at least you'll know exactly what's wrong.
 
 Let's go through them.
 
@@ -45,7 +45,7 @@ On the patient side, speed expectations are brutal. Most people will leave a web
 - **50-69:** Problematic. You're losing both rankings and visitors.
 - **Below 50:** Your site is slow enough that it's a significant competitive disadvantage.
 
-Most dental websites I audit score between 30 and 60 on mobile. The culprits are almost always the same: oversized images that haven't been compressed, too many third-party scripts (chat widgets, analytics trackers, social media embeds), bloated WordPress themes with dozens of unused features loaded on every page, and cheap shared hosting that responds slowly.
+Most dental websites we audit score between 30 and 60 on mobile. The culprits are almost always the same: oversized images that haven't been compressed, too many third-party scripts (chat widgets, analytics trackers, social media embeds), bloated WordPress themes with dozens of unused features loaded on every page, and cheap shared hosting that responds slowly.
 
 **The honest take:** If your score is below 70, this is fixable without rebuilding your entire site. Image optimization, reducing unnecessary scripts, and upgrading to better hosting can often get you into the 80s or 90s. If your developer can't fix these things, that itself is a sign.
 
@@ -176,7 +176,7 @@ This is the one that can't be fixed with a tweak. If you don't own your website'
 
 **Code ownership:** Ask your web company this question: "If we part ways, can I take my website files and host them somewhere else?" If the answer is no, or if the answer involves paying a large fee, or if the website is built on a proprietary platform that only works with their hosting — you don't own your code.
 
-**Why it matters:** Practices that don't own their digital assets have less flexibility. If you want to switch providers, you may be starting over from scratch — new website, potential downtime, and extra steps to transfer your domain. I've talked to dentists who stayed with a provider longer than they wanted to because switching meant losing their domain's SEO authority and rebuilding everything.
+**Why it matters:** Practices that don't own their digital assets have less flexibility. If you want to switch providers, you may be starting over from scratch — new website, potential downtime, and extra steps to transfer your domain. We've talked to dentists who stayed with a provider longer than they wanted to because switching meant losing their domain's SEO authority and rebuilding everything.
 
 This isn't necessarily anyone's fault — it's just how some platforms are structured. But it's worth understanding before you sign up, because the practices most affected are the ones who've been with a provider for years and have built significant SEO authority on their domain.
 
@@ -196,7 +196,7 @@ If it's a 7-year-old template on a slow shared host with generic content and no 
 
 **Sign 7 is the one that changes the calculus.** If you don't own your domain, hosting, and code, fixing signs 1-6 means investing in assets that someone else controls. Every improvement you make increases the value of something you can't take with you. In that situation, the right move is usually to secure ownership of your domain, then rebuild on a platform where you own everything.
 
-If you're evaluating your options, I've put together a comparison of the common approaches dental practices take — from fixing what you have to starting from scratch. You can [compare your options](/compare) to see what makes sense for your situation and budget. And if you want to see what a site looks like when all seven of these problems are solved from the ground up, [see what a modern dental site looks like](/example).
+If you're evaluating your options, we've put together a comparison of the common approaches dental practices take — from fixing what you have to starting from scratch. You can [compare your options](/compare) to see what makes sense for your situation and budget. And if you want to see what a site looks like when all seven of these problems are solved from the ground up, [see what a modern dental site looks like](/example).
 
 Whatever you decide, the first step is always the same: know where you stand. Run the PageSpeed test. Google your services. Check your structured data. Read your content with fresh eyes. Use your site on your phone. Try to book an appointment. Ask who owns your domain.
 

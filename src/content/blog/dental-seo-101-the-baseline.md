@@ -5,7 +5,7 @@ publishDate: 2026-01-09
 targetKeyword: "dental SEO basics"
 category: dental-seo
 tags: ["SEO", "getting started"]
-author: Garrett Gunther
+author: Groundwork
 draft: false
 faqs:
   - question: "What is baseline SEO for a dental practice?"
@@ -24,7 +24,7 @@ faqs:
 
 Let me be upfront about something: most dental practices that say they're "doing SEO" are actually just sitting at baseline. And most agencies charging $300-500/month to "manage your SEO" are just maintaining that baseline — not building anything.
 
-I'm not saying baseline doesn't matter. It does. It's the minimum viable presence that makes you eligible to show up in local search. But it's not a growth strategy. It's more like making sure the lights are on when someone walks by your storefront.
+That's not to say baseline doesn't matter. It does. It's the minimum viable presence that makes you eligible to show up in local search. But it's not a growth strategy. It's more like making sure the lights are on when someone walks by your storefront.
 
 Here's what baseline actually includes, what it produces, and why 90% of practices never get past it.
 
@@ -74,7 +74,7 @@ Google cross-references these listings to verify your practice is real and locat
 
 Baseline content means each service page has 300-500 words of original text (not copied from another website), your homepage clearly states who you are, where you are, and what you do, and maybe you have a few blog posts.
 
-Notice I said "original text." If your agency used a template site and the same service page descriptions appear on 50 other dental websites, Google knows. Duplicate content across medical websites is something Google has gotten very good at identifying and devaluing.
+Notice we said "original text." If your agency used a template site and the same service page descriptions appear on 50 other dental websites, Google knows. Duplicate content across medical websites is something Google has gotten very good at identifying and devaluing.
 
 ## What Baseline Results Look Like
 
@@ -131,7 +131,7 @@ Baseline is necessary. Everyone needs it. But it's the foundation, not the house
 
 Growth requires a fundamentally different approach: targeting treatment research keywords, building topical authority through content clusters, creating pages that answer the questions patients actually ask, and earning the kind of authority signals that move you past page two.
 
-I wrote a complete breakdown of what this looks like in [The Dental SEO Foundation guide](/dental-seo-foundation). If you're at baseline and wondering what's next, that's where I'd start.
+We wrote a complete breakdown of what this looks like in [The Dental SEO Foundation guide](/dental-seo-foundation). If you're at baseline and wondering what's next, that's where we'd start.
 
 The short version: baseline makes you findable. Everything after baseline is what makes you the obvious choice.
 

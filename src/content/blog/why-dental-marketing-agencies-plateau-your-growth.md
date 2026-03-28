@@ -5,7 +5,7 @@ publishDate: 2026-02-18
 targetKeyword: "dental marketing agency"
 category: agency-comparison
 tags: ["agencies", "growth"]
-author: Garrett Gunther
+author: Groundwork
 draft: false
 faqs:
   - question: "Why did my dental marketing agency stop producing results?"
@@ -22,7 +22,7 @@ faqs:
     answer: "You can handle baseline setup yourself — it's mostly configuration and setup tasks. Real growth past baseline requires content strategy, technical SEO knowledge, and consistent execution that most practice owners don't have time for. But baseline is genuinely valuable on its own. The key is not overpaying for it — and making sure you own what gets built."
 ---
 
-I'm going to walk through the standard dental marketing playbook — the one most providers follow — and explain why it produces results up to a point, then levels off. You'll probably recognize the steps.
+Let's walk through the standard dental marketing playbook — the one most providers follow — and explain why it produces results up to a point, then levels off. You'll probably recognize the steps.
 
 This isn't a criticism of agencies or the people working in them. Many are talented and genuinely trying. But the standard playbook has a built-in ceiling, and understanding why can help you make better decisions about your marketing.
 
