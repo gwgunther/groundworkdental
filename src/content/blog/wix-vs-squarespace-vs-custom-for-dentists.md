@@ -11,7 +11,7 @@ faqs:
   - question: "Is Wix good enough for a dental practice?"
     answer: "For a basic online presence, yes. For a practice that wants to grow through search, there are limitations to consider. Wix sites tend to be slower, don't support schema markup, and your site is tied to their platform. If patients find you through word of mouth, Wix works. If you need Google to find you, those limitations can matter."
   - question: "Is Squarespace better than Wix for dentists?"
-    answer: "Squarespace has better templates and slightly better SEO than Wix, but the same fundamental limitations: no structured data, platform lock-in, and moderate page speeds. It's a step up in design quality but not a meaningful step up in search performance."
+    answer: "Squarespace has better templates and slightly better SEO than Wix, but the same fundamental limitations: no structured data, limited portability, and moderate page speeds. It's a step up in design quality but not a meaningful step up in search performance."
   - question: "What about Webflow for dental websites?"
     answer: "Webflow is the best DIY option if you want real design control. It produces clean code, has decent performance, and gives you more flexibility than Wix or Squarespace. The trade-off is a steep learning curve and $14-39/month in hosting. If you genuinely enjoy building websites, Webflow is solid."
   - question: "How much does a custom dental website cost vs. DIY?"
