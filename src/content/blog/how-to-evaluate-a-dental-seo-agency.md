@@ -102,19 +102,17 @@ A well-built dental website should score 80+ on mobile. The sites we build at Gr
 
 If your current agency built or manages your site and the score is poor, they're not maintaining the technical foundation.
 
-## The Bottom Line
+## The Checklist
 
-This isn't a high bar. It's basic business ethics applied to an industry that's gotten away with ignoring them for years:
+Before you sign anything, make sure you can check every box:
 
-- You own your domain
-- You own your website files
-- You know what things cost upfront
-- Your content is unique to your practice
-- You can leave without losing everything
-- You can verify what you're paying for
+- [ ] You own your domain registration
+- [ ] You own your website files (or can export them)
+- [ ] You know what things cost before getting on a call
+- [ ] Your content is unique to your practice
+- [ ] You can leave without losing everything
+- [ ] You can verify what you're paying for each month
 
-We told you at the top that we compete with these agencies. Our model — [flat-rate pricing](/pricing), you own everything, no contracts — is designed specifically to address the problems described here.
+None of this is unusual to ask for. It's just worth confirming.
 
-But this framework works regardless of whether you hire us. Use it on every agency you talk to. Use it on your current agency. Use it on us.
-
-Now you have the framework. Use it.
+Our model — [flat-rate pricing](/pricing), you own everything, no contracts — is built around these same principles. But this checklist works regardless of whether you hire us. Use it on every agency you talk to. Use it on your current agency. Use it on us.
