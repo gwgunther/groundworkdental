@@ -36,11 +36,11 @@ Use this framework on us, too. We pass every test below — but don't take our w
 
 Your domain is your address on the internet. If someone else controls it, they control your online presence.
 
-**Red flag:** The agency registered your domain in their name or their account. If you leave, you have to negotiate to get it back — or start over with a new domain and lose your SEO history.
+**🚩 Red flag:** The agency registered your domain in their name or their account. If you leave, you have to negotiate to get it back — or start over with a new domain and lose your SEO history.
 
-**Green flag:** The domain is registered to you, paid by you, in an account you control. The agency has access only if you grant it.
+**✅ Green flag:** The domain is registered to you, paid by you, in an account you control. The agency has access only if you grant it.
 
-**Ask them:** "Do I own my domain registration?" Then verify it yourself — go to whois.com and look up your domain. The registrant should be you or your practice. If the agency's name appears instead, you have a problem.
+**What to ask:** "Do I own my domain registration?" Then verify it yourself — go to whois.com and look up your domain. The registrant should be you or your practice. If the agency's name appears instead, you have a problem.
 
 > **How Groundwork handles this:** You register the domain yourself, in your name, in your account. We never touch it.
 
@@ -48,11 +48,11 @@ Your domain is your address on the internet. If someone else controls it, they c
 
 If the provider builds your website on a proprietary platform, switching providers might mean starting from scratch.
 
-**Red flag:** Your site is built on a platform that only the agency controls. You can't export your files, and no other developer can work on it. Ask "If I cancel, does my website stay online?" — if there's any hesitation, conditions, or "well, our platform..." — that's your answer.
+**🚩 Red flag:** Your site is built on a platform that only the agency controls. You can't export your files, and no other developer can work on it. Ask "If I cancel, does my website stay online?" — if there's any hesitation, conditions, or "well, our platform..." — that's your answer.
 
-**Green flag:** Your site is built on standard technology — WordPress, Astro, Next.js, static HTML — and you can get a complete copy of all files, images, and content that a different developer could deploy somewhere else.
+**✅ Green flag:** Your site is built on standard technology — WordPress, Astro, Next.js, static HTML — and you can get a complete copy of all files, images, and content that a different developer could deploy somewhere else.
 
-**Ask them:** "Can I export my website files and host them somewhere else?" If the answer is no, you don't own your website. You're renting it. We've written more about [how the different approaches compare](/compare).
+**What to ask:** "Can I export my website files and host them somewhere else?" If the answer is no, you don't own your website. You're renting it. We've written more about [how the different approaches compare](/compare).
 
 > **How Groundwork handles this:** Your site is built with Astro and deployed to Cloudflare Pages — both open, standard technologies. You get the full source code in your own GitHub account. Take it anywhere.
 
@@ -60,11 +60,11 @@ If the provider builds your website on a proprietary platform, switching provide
 
 How an agency prices their work and structures their agreements tells you a lot about how they think about the relationship.
 
-**Red flag:** No published pricing — you have to get on a sales call to find out what things cost. They're pricing based on how much they think you'll pay, not what the work actually costs. Long-term contracts with vague cancellation terms are another signal.
+**🚩 Red flag:** No published pricing — you have to get on a sales call to find out what things cost. They're pricing based on how much they think you'll pay, not what the work actually costs. Long-term contracts with vague cancellation terms are another signal.
 
-**Green flag:** Published rates or a clear rate card upfront. Month-to-month agreements for ongoing work after any initial setup period. They're confident enough in their work to let you leave.
+**✅ Green flag:** Published rates or a clear rate card upfront. Month-to-month agreements for ongoing work after any initial setup period. They're confident enough in their work to let you leave.
 
-**Ask them:** "What does this cost, and what happens if I want to cancel?" Some initial commitment (3 months) is reasonable — there's real work in building a site. But for ongoing work, month-to-month gives you the most flexibility. You know what a Toyota costs before you walk into the dealership. You should know what a website costs before you talk to anyone.
+**What to ask:** "What does this cost, and what happens if I want to cancel?" Some initial commitment (3 months) is reasonable — there's real work in building a site. But for ongoing work, month-to-month gives you the most flexibility. You know what a Toyota costs before you walk into the dealership. You should know what a website costs before you talk to anyone.
 
 > **How Groundwork handles this:** [$2,000 for a custom website](/pricing). It's on the website. One flat fee. No contract, no retainer, no recurring charges. You pay once, we build it, and we hand you the keys.
 
@@ -72,13 +72,13 @@ How an agency prices their work and structures their agreements tells you a lot 
 
 These two go together because they're two sides of the same shortcut — reusing work across clients.
 
-**Red flag:** The agency's client sites all look the same. Same layout, same structure, same stock photos, just different logos and colors. Or worse — the actual text on your service pages appears word-for-word on other dental websites.
-
-**Green flag:** Your site looks and reads like it was built for your practice. Unique design, unique content, specific to your location and services.
-
-**Ask them:** "Show me five client websites." Then actually look at them side by side. Do they look identical? Then run this test: go to one of your service pages, find a distinctive sentence from the middle of the page, copy it, and search it in Google with quotes around it. If that exact sentence appears on other dental websites, you're not just getting a template design — you're getting template words. Google recognizes duplicate content and devalues it.
-
 Template sites aren't inherently terrible — a good template is better than a bad custom site. But if you're paying $5,000-15,000 for what the agency calls a "custom website" and it looks identical to their other clients' sites, you're overpaying.
+
+**🚩 Red flag:** The agency's client sites all look the same. Same layout, same structure, same stock photos, just different logos and colors. Or worse — the actual text on your service pages appears word-for-word on other dental websites.
+
+**✅ Green flag:** Your site looks and reads like it was built for your practice. Unique design, unique content, specific to your location and services.
+
+**What to ask:** "Show me five client websites." Then actually look at them side by side. Do they look identical? Then run this test: go to one of your service pages, find a distinctive sentence from the middle of the page, copy it, and search it in Google with quotes around it. If that exact sentence appears on other dental websites, you're not just getting a template design — you're getting template words. Google recognizes duplicate content and devalues it.
 
 > **How Groundwork handles this:** Every site is built from scratch. No templates, no themes, no shared layouts across clients. All content is written specifically for your practice — your location, your services, your voice. Run the duplicate content test on any site we build. [See an example](/example).
 
@@ -86,11 +86,11 @@ Template sites aren't inherently terrible — a good template is better than a b
 
 This is where a lot of agencies hide behind vague language.
 
-**Red flag:** Monthly reports that are just a PDF with green arrows and no actionable data. Deliverables described as "SEO management" or "social media management" with no specifics. You can't tell what they actually did last month.
+**🚩 Red flag:** Monthly reports that are just a PDF with green arrows and no actionable data. Deliverables described as "SEO management" or "social media management" with no specifics. You can't tell what they actually did last month.
 
-**Green flag:** They can tell you exactly what they'll deliver — content pieces, links built, pages optimized. Reports include actual keyword ranking changes (for specific terms, not just your practice name), organic traffic trends, and Google Business Profile performance. Concrete, countable things you can verify actually happened.
+**✅ Green flag:** They can tell you exactly what they'll deliver — content pieces, links built, pages optimized. Reports include actual keyword ranking changes (for specific terms, not just your practice name), organic traffic trends, and Google Business Profile performance. Concrete, countable things you can verify actually happened.
 
-**Ask them:** "What specific deliverables will I receive each month?" If the answer is vague, that's your answer.
+**What to ask:** "What specific deliverables will I receive each month?" If the answer is vague, that's your answer.
 
 ## 6. Site Performance
 
