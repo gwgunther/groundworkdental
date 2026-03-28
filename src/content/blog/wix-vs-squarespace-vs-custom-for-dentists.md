@@ -4,8 +4,8 @@ description: "An honest comparison of Wix, Squarespace, Webflow, and custom-buil
 publishDate: 2026-03-14
 targetKeyword: "wix vs squarespace for dentists"
 category: agency-comparison
-tags: ["website platforms", "ownership", "DIY vs custom"]
-author: Garrett Gunther
+tags: ["websites", "ownership"]
+author: Groundwork
 draft: false
 faqs:
   - question: "Is Wix good enough for a dental practice?"
@@ -20,9 +20,9 @@ faqs:
     answer: "Yes, but you'll likely start over. Neither platform exports cleanly. Your content (text, images) can be migrated, but the design and structure won't transfer. It's not a dealbreaker — just know that the switch means rebuilding, not migrating."
 ---
 
-Every dentist I talk to has the same question: should I just use Wix or Squarespace, or do I actually need a custom website? It sounds simple. It is not.
+Every dentist we talk to has the same question: should I just use Wix or Squarespace, or do I actually need a custom website? It sounds simple. It is not.
 
-I run [Groundwork Dental](/pricing), so I have an obvious bias toward custom-built sites. I'm going to be upfront about that throughout this post. But I've also helped dentists evaluate every option on this list, and sometimes the right answer genuinely is a $16/month Squarespace site. I'll tell you when.
+We're [Groundwork Dental](/pricing), so we have an obvious bias toward custom-built sites. We'll be upfront about that throughout this post. But we've also helped dentists evaluate every option on this list, and sometimes the right answer genuinely is a $16/month Squarespace site. We'll tell you when.
 
 This is a comparison of five realistic paths for getting your dental practice online: Wix, Squarespace, Webflow, a WordPress agency, and a custom-built site. For each one, I'll cover what it costs, what it does well, what it does poorly, and who it actually makes sense for.
 
@@ -58,7 +58,7 @@ Wix is genuinely easy to use. If you've never built a website and just need some
 
 **The honest cons:**
 
-Page speed is Wix's biggest weakness for dental practices. Wix sites load a significant amount of platform JavaScript on every page, and that overhead shows up in Core Web Vitals scores. Run any Wix dental site through Google PageSpeed Insights and you'll see what I mean. Mobile performance is particularly rough.
+Page speed is Wix's biggest weakness for dental practices. Wix sites load a significant amount of platform JavaScript on every page, and that overhead shows up in Core Web Vitals scores. Run any Wix dental site through Google PageSpeed Insights and you'll see what we mean. Mobile performance is particularly rough.
 
 There's no native schema markup support. You can add it through third-party apps or manual code injection, but most Wix dental sites don't have it, which means Google gets less information about your practice than it would from a properly built site.
 

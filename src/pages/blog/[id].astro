@@ -23,8 +23,8 @@ const blogPostingSchema = {
   'headline': post.data.title,
   'description': post.data.description,
   'author': {
-    '@type': 'Person',
-    'name': post.data.author,
+    '@type': 'Organization',
+    'name': site.name,
   },
   'publisher': {
     '@type': 'Organization',
@@ -44,7 +44,6 @@ const blogPostingSchema = {
   title={`${post.data.title} | Groundwork Dental`}
   description={post.data.description}
   ogType="article"
-  articleAuthor={post.data.author}
   articleDate={post.data.publishDate.toISOString()}
   schema={blogPostingSchema}
 >
@@ -56,9 +55,7 @@ const blogPostingSchema = {
           {post.data.category.replace(/-/g, ' ')}
         </p>
         <h1 class="section-heading mb-6">{post.data.title}</h1>
-        <div class="flex items-center gap-4 font-sans text-xs text-mid-gray mb-4">
-          <span>By {post.data.author}</span>
-          <span>&middot;</span>
+        <div class="font-sans text-xs text-mid-gray mb-4">
           <time datetime={post.data.publishDate.toISOString()}>
             {post.data.publishDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
           </time>
@@ -102,9 +99,9 @@ const blogPostingSchema = {
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="card flex flex-col sm:flex-row items-start gap-4">
         <div>
-          <p class="font-serif text-charcoal mb-1">{post.data.author}</p>
+          <p class="font-serif text-charcoal mb-1">Groundwork</p>
           <p class="font-serif text-sm text-mid-gray leading-relaxed">
-            Founder of Groundwork Dental. Builds custom dental websites with full ownership. No lock-in. <a href="/about" class="text-brand-warm hover:text-brand-warm-dark">Read more &rarr;</a>
+            Custom dental websites with full ownership. No lock-in. No retainer. <a href="/about" class="text-brand-warm hover:text-brand-warm-dark">Learn more &rarr;</a>
           </p>
         </div>
       </div>

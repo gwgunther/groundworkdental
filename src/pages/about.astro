@@ -4,16 +4,11 @@ import FAQBlock from '../components/FAQBlock.astro';
 import CTABlock from '../components/CTABlock.astro';
 import { site } from '../config/site';
 
-const personSchema = {
+const aboutSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  'name': site.founder,
-  'jobTitle': 'Founder',
-  'worksFor': {
-    '@type': 'Organization',
-    'name': site.name,
-    'url': site.url,
-  },
+  '@type': 'Organization',
+  'name': site.name,
+  'url': site.url,
   'knowsAbout': ['Dental Website Design', 'SEO', 'Web Development', 'AI-Assisted Development'],
 };
 
@@ -40,7 +35,7 @@ const faqs = [
 <BaseLayout
   title="About Groundwork Dental — Why This Exists"
   description="Dentists deserve better websites. Professional, fast, search-optimized — with full ownership and no monthly fees. Here's why we built this."
-  schema={personSchema}
+  schema={aboutSchema}
 >
   <!-- Hero -->
   <section class="bg-brand-cream">

@@ -80,7 +80,11 @@
   }
 
   .prose-article blockquote {
-    @apply border-l-2 border-border-light pl-6 my-6 italic text-neutral-mid;
+    @apply border-l-2 border-brand-warm bg-brand-warm/5 pl-6 pr-4 py-4 my-6 not-italic text-charcoal rounded-r text-base;
+  }
+
+  .prose-article blockquote strong {
+    @apply text-brand-warm;
   }
 
   .card {

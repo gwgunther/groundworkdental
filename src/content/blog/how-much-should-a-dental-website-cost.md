@@ -4,8 +4,8 @@ description: "The real cost of a dental website isn't the setup fee — it's the
 publishDate: 2026-03-06
 targetKeyword: "dental website cost"
 category: pricing
-tags: ["pricing", "website platforms", "ownership"]
-author: Garrett Gunther
+tags: ["pricing", "websites"]
+author: Groundwork
 draft: false
 faqs:
   - question: "How much does a dental website cost?"
@@ -24,9 +24,9 @@ faqs:
     answer: "You need to pay for hosting (typically $10-50/month) and your domain renewal ($10-20/year). Those are real costs. But the $200-500/month 'website management' fees that agencies charge are mostly profit margin on services that cost them very little to deliver. Ongoing SEO work is a separate, legitimate expense — but basic website hosting and maintenance should not cost $500/month."
 ---
 
-I'm going to walk through the actual cost of a dental website at every level — from doing it yourself to hiring a premium agency. I'll include the numbers nobody puts in the proposal: the monthly fees, the hidden costs, and what you're really paying over three years.
+Let's walk through the actual cost of a dental website at every level — from doing it yourself to hiring a premium agency. We'll include the numbers nobody puts in the proposal: the monthly fees, the hidden costs, and what you're really paying over three years.
 
-I run [Groundwork Dental](/pricing), so I'm obviously biased toward our pricing model. I'll be transparent about that. But the cost breakdowns for every tier are accurate regardless of whether you choose us, and I think you'll find the comparison useful.
+We're [Groundwork Dental](/pricing), so we're obviously biased toward our pricing model. We'll be transparent about that. But the cost breakdowns for every tier are accurate regardless of whether you choose us, and the comparison is useful either way.
 
 ## Tier 1: DIY (Wix, Squarespace, GoDaddy)
 
@@ -129,7 +129,7 @@ For a general practice in a mid-size market, this tier is usually overkill. You'
 **Monthly cost:** $0 (you handle your own hosting, typically $10-20/month)
 **3-year total:** ~$2,400-2,700
 
-Yes, I'm including us. I told you I'm biased, and I'm not going to pretend we don't exist in this comparison.
+Yes, we're including ourselves. We told you we're biased, and we're not going to pretend we don't exist in this comparison.
 
 **What you get:**
 

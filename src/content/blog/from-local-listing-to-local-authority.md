@@ -4,8 +4,8 @@ description: "Having a Google Business Profile doesn't make you a local authorit
 publishDate: 2026-02-02
 targetKeyword: "local dental SEO authority"
 category: dental-seo
-tags: ["SEO", "local search", "Google Maps", "growth"]
-author: Garrett Gunther
+tags: ["SEO", "growth"]
+author: Groundwork
 draft: false
 faqs:
   - question: "What is local dental SEO authority?"
@@ -138,6 +138,6 @@ Building local dental SEO authority is not a mystery. The playbook is well-under
 
 At [Groundwork Dental](/compare), we build websites with the technical foundation and content architecture to support Level 2 growth. We give you the infrastructure — the fast site, the schema markup, the content framework, the topical cluster structure — so that your ongoing SEO efforts actually compound instead of spinning in place.
 
-But I won't pretend that buying a website is the same as building authority. The website is the foundation. Authority takes consistent effort on top of it. Anyone who tells you otherwise is selling you something.
+But we won't pretend that buying a website is the same as building authority. The website is the foundation. Authority takes consistent effort on top of it. Anyone who tells you otherwise is selling you something.
 
 The question isn't whether you *can* get to Level 2. It's whether you're willing to commit to the 12-18 months of consistent work it takes to get there.

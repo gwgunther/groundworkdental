@@ -10,7 +10,7 @@ const blog = defineCollection({
     updatedDate: z.coerce.date().optional(),
     targetKeyword: z.string(),
     category: z.enum(['dental-seo', 'dental-websites', 'agency-comparison', 'pricing']),
-    author: z.string().default('Garrett Gunther'),
+    author: z.string().default('Groundwork'),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
     faqs: z.array(z.object({

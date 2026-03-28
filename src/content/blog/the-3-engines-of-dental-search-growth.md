@@ -4,8 +4,8 @@ description: "There are only three things that actually drive dental search grow
 publishDate: 2026-02-10
 targetKeyword: "dental search marketing"
 category: dental-seo
-tags: ["SEO", "Google Maps", "local search", "growth"]
-author: Garrett Gunther
+tags: ["SEO", "growth"]
+author: Groundwork
 draft: false
 faqs:
   - question: "What are the three engines of dental search growth?"
@@ -22,7 +22,7 @@ faqs:
     answer: "Absolutely. Review quantity, quality (star rating), velocity (how fast you're getting new ones), and recency all factor into local rankings. In competitive markets, the practices in the Map Pack almost always have significantly more reviews with higher ratings than those below them. Reviews are arguably the single strongest local ranking factor."
 ---
 
-I'm going to save you a lot of wasted money and time with a simple framework.
+Here's a simple framework that'll save you a lot of wasted money and time.
 
 There are exactly three things that drive dental search growth. Not five, not ten, not the "comprehensive 12-pillar digital marketing strategy" your agency pitched you. Three.
 
@@ -49,7 +49,7 @@ Review velocity matters more than most people realize. Google doesn't just count
 
 Here's the thing that should make every practice owner uncomfortable: **a mediocre website with 200 genuine reviews and a well-maintained GBP will outrank a perfect website with 10 reviews and a neglected profile.** Every time.
 
-I've seen it repeatedly. Beautiful $20,000 custom websites sitting on page two while a practice with a decent-but-not-amazing site dominates the Map Pack because they have 350 reviews, a 4.8 rating, and consistent GBP activity.
+We've seen it repeatedly. Beautiful $20,000 custom websites sitting on page two while a practice with a decent-but-not-amazing site dominates the Map Pack because they have 350 reviews, a 4.8 rating, and consistent GBP activity.
 
 That doesn't mean websites don't matter. They do — and we'll get to that. But if you're spending $500/month on website SEO and have no systematic approach to review generation, your priorities are backwards.
 
@@ -116,7 +116,7 @@ If you enjoy social media and it's easy for you, keep doing it. But if you're ch
 
 ## The Priority Order
 
-If I were advising a dental practice starting from scratch, here's exactly how I'd prioritize:
+If we were advising a dental practice starting from scratch, here's exactly how we'd prioritize:
 
 **Month 1-2: Fix Engine 1**
 - Fully optimize your Google Business Profile

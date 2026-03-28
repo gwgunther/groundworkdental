@@ -4,8 +4,8 @@ description: "A step-by-step guide to switching dental website providers. What t
 publishDate: 2026-03-22
 targetKeyword: "switch dental website provider"
 category: dental-websites
-tags: ["ownership", "switching providers", "agency red flags"]
-author: Garrett Gunther
+tags: ["ownership", "agencies"]
+author: Groundwork
 draft: false
 faqs:
   - question: "Can I take my dental website with me when I switch providers?"
@@ -22,7 +22,7 @@ faqs:
 
 Switching dental website providers is one of those things that sounds simple until you actually start doing it. Then it gets complicated fast. You realize you're not sure who owns your domain. You can't find login credentials for anything. Your contract has a 90-day cancellation clause you forgot about. And you're worried about downtime — what happens to your site during the transition?
 
-I get it. I run [Groundwork Dental](/) and I talk to dentists in this exact situation all the time. Some of them end up working with me, some don't — this guide is useful either way. The goal here isn't to sell you on anything. It's to walk you through the process so you don't lose your domain, your content, your rankings, or your sanity.
+We get it. We're [Groundwork Dental](/) and we talk to dentists in this exact situation all the time. Some of them end up working with us, some don't — this guide is useful either way. The goal here isn't to sell you on anything. It's to walk you through the process so you don't lose your domain, your content, your rankings, or your sanity.
 
 Let's take this one step at a time.
 
@@ -186,7 +186,7 @@ Here's why. If you're switching providers because your current site isn't perfor
 
 A rebuild gives you the chance to start clean. Better page structure. Faster load times. Improved content. Proper technical SEO from day one. Yes, it takes more time upfront. But if the whole reason you're switching is that your current site isn't working, migrating the same broken thing defeats the purpose.
 
-Most dentists I talk to end up choosing the rebuild path, and they're glad they did. The temporary disruption is worth the long-term improvement.
+Most dentists we talk to end up choosing the rebuild path, and they're glad they did. The temporary disruption is worth the long-term improvement.
 
 ## Red Flags When Choosing Your Next Provider
 

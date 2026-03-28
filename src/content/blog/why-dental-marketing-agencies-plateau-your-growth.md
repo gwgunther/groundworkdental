@@ -4,8 +4,8 @@ description: "Most dental marketing follows a standard playbook that produces ba
 publishDate: 2026-02-18
 targetKeyword: "dental marketing agency"
 category: agency-comparison
-tags: ["marketing", "agency red flags", "growth"]
-author: Garrett Gunther
+tags: ["agencies", "growth"]
+author: Groundwork
 draft: false
 faqs:
   - question: "Why did my dental marketing agency stop producing results?"
@@ -19,10 +19,10 @@ faqs:
   - question: "Why do some dental marketing agreements have long commitment terms?"
     answer: "Long-term contracts provide revenue predictability for the provider. They're not inherently bad — some agencies use that stability to invest in your growth. But it's worth understanding what you're committing to and what happens if results plateau. Look for agreements with clear performance expectations."
   - question: "Can I do dental marketing myself instead of hiring an agency?"
-    answer: "You can handle baseline setup yourself — it's mostly configuration and setup tasks. But sustainable growth requires content strategy, technical SEO knowledge, and consistent execution that most practice owners don't have time for. The key is finding a partner who builds assets you own rather than renting access to a template you can't take with you."
+    answer: "You can handle baseline setup yourself — it's mostly configuration and setup tasks. Real growth past baseline requires content strategy, technical SEO knowledge, and consistent execution that most practice owners don't have time for. But baseline is genuinely valuable on its own. The key is not overpaying for it — and making sure you own what gets built."
 ---
 
-I'm going to walk through the standard dental marketing playbook — the one most providers follow — and explain why it produces results up to a point, then levels off. You'll probably recognize the steps.
+Let's walk through the standard dental marketing playbook — the one most providers follow — and explain why it produces results up to a point, then levels off. You'll probably recognize the steps.
 
 This isn't a criticism of agencies or the people working in them. Many are talented and genuinely trying. But the standard playbook has a built-in ceiling, and understanding why can help you make better decisions about your marketing.
 
@@ -37,7 +37,7 @@ Almost every dental marketing agency follows the same sequence:
 - Swap in your logo, photos, and practice info
 - Write (or more likely copy-paste and lightly edit) service page descriptions
 - Set up or claim your Google Business Profile
-- Submit your practice to 30-50 online directories
+- Submit your practice to a handful of online directories (Google, Yelp, Healthgrades)
 
 **Month 3-4: Optimization**
 - Add title tags and meta descriptions
@@ -147,10 +147,8 @@ This costs more than $500/month. But one patient who finds you through a "dental
 
 ## What This Means for You
 
-If your organic traffic has been flat for 6+ months, you've likely reached the ceiling of the standard playbook. That doesn't mean your provider did a bad job — it means the setup phase is done and you're ready for a different kind of investment.
+If your organic traffic has been flat for 6+ months, you've likely reached the ceiling of the standard playbook. That doesn't mean your provider did a bad job — it means the setup phase is done.
 
-You have two options: have an honest conversation with your current provider about what a growth-focused strategy would look like (and what it would cost), or find a partner who specializes in building the kind of foundation that's designed to grow.
+Here's the honest part: we'll get you to baseline too. Everyone does. The difference is we charge you once, hand you the keys, and don't pretend a monthly retainer is going to change the math. You own the site, you own the accounts, and you're not paying $500/month for someone to send you a report.
 
-We built [Groundwork Dental](/compare) for the second option. We build a site you own, with content designed to rank for the searches that drive your most valuable patients. Then we hand you the keys.
-
-Because the point of a foundation is to build on it.
+Real growth past baseline — deep content, authority building, backlink outreach — is a different investment entirely. It costs more, takes longer, and most practices don't need it right away. When you're ready to focus on real growth, that's a separate conversation — one that involves a deliberate content creation plan and genuine outreach effort for backlinks. It's real work, not a line item on a retainer invoice. But don't let anyone charge you a monthly fee for baseline maintenance and call it growth.

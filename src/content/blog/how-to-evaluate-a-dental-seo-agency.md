@@ -4,8 +4,8 @@ description: "A practical framework for evaluating dental SEO agencies — inclu
 publishDate: 2026-03-29
 targetKeyword: "dental SEO agency review"
 category: agency-comparison
-tags: ["agency red flags", "SEO", "due diligence"]
-author: Garrett Gunther
+tags: ["agencies", "SEO"]
+author: Groundwork
 draft: false
 faqs:
   - question: "How can I tell if a dental SEO agency is legitimate?"
@@ -26,139 +26,95 @@ faqs:
     answer: "The five critical questions are: (1) If I cancel, does my website stay online? (2) Can I export my website files? (3) Do I own my domain registration? (4) Show me another client's site (check for identical templates). (5) What specific deliverables will I receive each month? The answers to these questions will tell you more than any sales pitch."
 ---
 
-Let me get the bias disclosure out of the way immediately: I run [Groundwork Dental](/compare). We compete with the agencies I'm about to help you evaluate. I have a financial incentive for you to choose us over them.
+Bias disclosure up front: we're [Groundwork Dental](/compare). We compete with the agencies we're about to help you evaluate. We have a financial incentive for you to choose us over them.
 
-That said, the framework I'm about to give you is genuinely useful regardless of whether you ever become our client. These are the same tests and questions I'd tell a friend to use, and they work whether you're evaluating us, a large dental marketing agency, or a local freelancer.
+That said, this framework is genuinely useful regardless of whether you ever become a client. These are the same tests and questions we'd tell a friend to use, and they work whether you're evaluating us, a large dental marketing agency, or a local freelancer.
 
-Use this framework on us, too. We pass every test I'm about to describe — but don't take my word for it. Verify.
+Use this framework on us, too. We pass every test below — but don't take our word for it. Verify.
 
-## Things to Look Into
+## 1. Domain Ownership
 
-Here are the key areas worth evaluating before you commit.
+Your domain is your address on the internet. If someone else controls it, they control your online presence.
 
-### 1. Platform Portability
+**Red flag:** The agency registered your domain in their name or their account. If you leave, you have to negotiate to get it back — or start over with a new domain and lose your SEO history.
 
-If the provider builds your website on a proprietary platform, it's worth understanding what happens if you want to move. Some platforms are fully portable — you can export files and host them anywhere. Others are tied to the provider's system, which means switching providers means starting over.
+**Green flag:** The domain is registered to you, paid by you, in an account you control. The agency has access only if you grant it.
 
-Neither approach is inherently wrong, but you should know which one you're getting. A website built on standard technology — WordPress, Astro, Next.js, static HTML — gives you the most flexibility. We've written more about [how the different approaches compare](/compare).
+**Ask them:** "Do I own my domain registration?" Then verify it yourself — go to whois.com and look up your domain. The registrant should be you or your practice. If the agency's name appears instead, you have a problem.
 
-### 2. Domain Ownership
+> **How Groundwork handles this:** You register the domain yourself, in your name, in your account. We never touch it.
 
-It's worth confirming that your domain is registered in your name. Sometimes domains end up in the provider's account — not out of bad intent, but just because they handled the setup. Knowing who owns what upfront saves headaches later.
+## 2. Platform & Portability
 
-**How to check:** Go to whois.com and look up your domain. The registrant should be you or your practice.
+If the provider builds your website on a proprietary platform, switching providers might mean starting from scratch.
 
-If the domain is in someone else's name, it's worth having a conversation about getting it transferred.
+**Red flag:** Your site is built on a platform that only the agency controls. You can't export your files, and no other developer can work on it. Ask "If I cancel, does my website stay online?" — if there's any hesitation, conditions, or "well, our platform..." — that's your answer.
 
-### 3. Contract Terms
+**Green flag:** Your site is built on standard technology — WordPress, Astro, Next.js, static HTML — and you can get a complete copy of all files, images, and content that a different developer could deploy somewhere else.
 
-Long-term contracts are common in the industry. SEO does take time, so some initial commitment makes sense — there's real work in building a site or doing an initial SEO overhaul. A 3-month initial commitment is reasonable.
+**Ask them:** "Can I export my website files and host them somewhere else?" If the answer is no, you don't own your website. You're renting it. We've written more about [how the different approaches compare](/compare).
 
-For ongoing work, month-to-month agreements give you the most flexibility. If a provider offers longer terms, just make sure you understand the cancellation process and what happens to your assets if you leave.
+> **How Groundwork handles this:** Your site is built with Astro and deployed to Cloudflare Pages — both open, standard technologies. You get the full source code in your own GitHub account. Take it anywhere.
 
-### 4. "Custom Pricing" With No Published Rates
+## 3. Contracts & Pricing
 
-If an agency won't tell you what things cost until they get you on a sales call, there's a reason. They're pricing based on how much they think you'll pay, not what the work actually costs.
+How an agency prices their work and structures their agreements tells you a lot about how they think about the relationship.
 
-Legitimate businesses publish their prices. You know what a Toyota costs before you walk into the dealership. [We publish our pricing](/pricing) because we think you should know what you're buying before you talk to anyone.
+**Red flag:** No published pricing — you have to get on a sales call to find out what things cost. They're pricing based on how much they think you'll pay, not what the work actually costs. Long-term contracts with vague cancellation terms are another signal.
 
-### 5. Template Sites Reused Across Clients
+**Green flag:** Published rates or a clear rate card upfront. Month-to-month agreements for ongoing work after any initial setup period. They're confident enough in their work to let you leave.
 
-Ask the agency to show you 5 client websites. Then actually look at them. Do they all look the same? Same layout, same structure, same stock photos, just different logos and colors?
+**Ask them:** "What does this cost, and what happens if I want to cancel?" Some initial commitment (3 months) is reasonable — there's real work in building a site. But for ongoing work, month-to-month gives you the most flexibility. You know what a Toyota costs before you walk into the dealership. You should know what a website costs before you talk to anyone.
 
-Template sites aren't inherently terrible — a good template is better than a bad custom site. But if you're paying $5,000-15,000 for what the agency calls a "custom website" and it looks identical to their other clients' sites, you're overpaying for a template.
+> **How Groundwork handles this:** [$2,000 for a custom website](/pricing). It's on the website. One flat fee. No contract, no retainer, no recurring charges. You pay once, we build it, and we hand you the keys.
 
-### 6. Generic, Duplicated Content
+## 4. Template Sites & Duplicate Content
 
-This is the test most people skip but shouldn't. Go to one of your website's service pages. Find a distinctive sentence — something from the middle of the page, not the heading. Copy it and search it in Google with quotes around it.
+These two go together because they're two sides of the same shortcut — reusing work across clients.
 
-If that exact sentence appears on other dental websites, the content may have been reused from a template. That's worth knowing, because Google tends to devalue duplicate content — unique copy performs better in search.
+**Red flag:** The agency's client sites all look the same. Same layout, same structure, same stock photos, just different logos and colors. Or worse — the actual text on your service pages appears word-for-word on other dental websites.
 
-## The Green Flags
+**Green flag:** Your site looks and reads like it was built for your practice. Unique design, unique content, specific to your location and services.
 
-Now, what should make you feel *good* about an agency:
+**Ask them:** "Show me five client websites." Then actually look at them side by side. Do they look identical? Then run this test: go to one of your service pages, find a distinctive sentence from the middle of the page, copy it, and search it in Google with quotes around it. If that exact sentence appears on other dental websites, you're not just getting a template design — you're getting template words. Google recognizes duplicate content and devalues it.
 
-**You own your domain.** Registered to you, paid by you, accessible by you.
+Template sites aren't inherently terrible — a good template is better than a bad custom site. But if you're paying $5,000-15,000 for what the agency calls a "custom website" and it looks identical to their other clients' sites, you're overpaying.
 
-**You own your hosting.** Or at minimum, your website files are exportable and portable.
+> **How Groundwork handles this:** Every site is built from scratch. No templates, no themes, no shared layouts across clients. All content is written specifically for your practice — your location, your services, your voice. Run the duplicate content test on any site we build. [See an example](/example).
 
-**Month-to-month after any initial setup period.** They're confident enough in their work to let you leave.
+## 5. Reporting & Deliverables
 
-**Transparent pricing.** Published rates or a clear rate card. No mystery until the sales call.
+This is where a lot of agencies hide behind vague language.
 
-**Unique content.** Your website's text doesn't appear on any other website when you search for it.
+**Red flag:** Monthly reports that are just a PDF with green arrows and no actionable data. Deliverables described as "SEO management" or "social media management" with no specifics. You can't tell what they actually did last month.
 
-**Measurable deliverables.** They can tell you exactly what they'll deliver each month — content pieces, links built, pages optimized — not vague "SEO management."
+**Green flag:** They can tell you exactly what they'll deliver — content pieces, links built, pages optimized. Reports include actual keyword ranking changes (for specific terms, not just your practice name), organic traffic trends, and Google Business Profile performance. Concrete, countable things you can verify actually happened.
 
-**They'll talk to you about what's not working.** Good providers proactively tell you when something needs to change and what they're doing about it.
+**Ask them:** "What specific deliverables will I receive each month?" If the answer is vague, that's your answer.
 
-## Five Questions That Reveal Everything
+## 6. Site Performance
 
-You can evaluate almost any dental marketing agency by asking these five questions. The answers — and how they respond to being asked — tell you everything.
+This one you can check yourself in 60 seconds.
 
-### 1. "If I cancel, does my website stay online?"
+Go to Google PageSpeed Insights and enter your website URL. Look at the mobile score. If it's below 50, your site has technical health problems. Below 30 means serious performance issues that are actively hurting your rankings.
 
-The right answer is an unqualified yes. Your site stays up, you keep your files, nothing changes except they stop doing ongoing work.
+A well-built dental website should score 80+ on mobile. The sites we build at Groundwork typically score 90+.
 
-If there's any hesitation, conditions, or "well, our platform..." — that's your answer.
+If your current agency built or manages your site and the score is poor, they're not maintaining the technical foundation.
 
-### 2. "Can I export my website files?"
+## The Bottom Line
 
-You should be able to get a complete copy of your website — all files, all images, all content — that a different developer could deploy somewhere else. If the answer is no, you don't own your website. You're renting it.
+This isn't a high bar. It's basic business ethics applied to an industry that's gotten away with ignoring them for years:
 
-### 3. "Do I own my domain registration?"
+- You own your domain
+- You own your website files
+- You know what things cost upfront
+- Your content is unique to your practice
+- You can leave without losing everything
+- You can verify what you're paying for
 
-Check this yourself on WHOIS, but also ask them directly. Watch their reaction. A good agency will say "of course" without blinking. A bad one will explain why it's "easier" for them to manage it for you.
-
-### 4. "Show me another client's site."
-
-Then actually look at it. Compare it to what they're proposing for you. Is it the same template? Same layout? Open both sites side by side. Check the content — is the wording suspiciously similar?
-
-### 5. "What specific deliverables will I receive each month?"
-
-"SEO management" is not a deliverable. "Social media management" is not specific. You want to hear things like: "4 blog posts per month, 2 GBP posts per week, monthly technical audit, quarterly backlink outreach campaign." Concrete, countable things you can verify actually happened.
-
-## Three Tests You Can Run Right Now
-
-If you already have a dental marketing agency, here are three tests you can run in the next 10 minutes.
-
-### The WHOIS Test
-
-Go to whois.com. Enter your practice's domain name. Look at the registrant information. If the agency's name appears instead of yours, you have a problem.
-
-### The PageSpeed Test
-
-Go to pagespeed.insights.dev (or Google "PageSpeed Insights") and enter your website URL. Look at the mobile score. If it's below 50, your agency is not maintaining your site's technical health. Below 30 means the site has serious performance issues that are actively hurting your rankings.
-
-For context, a well-built dental website should score 80+ on mobile. The sites we build at Groundwork typically score 90+.
-
-### The Duplicate Content Test
-
-Pick a service page on your site — dental implants, for example. Find a sentence from the middle of the page. Search it in quotes on Google.
-
-If you see that exact sentence on other dental websites, your agency is copy-pasting content across clients. This means you're not just getting a template design — you're getting template words. Google recognizes duplicate content and devalues it. Your "custom" page is competing against identical copies of itself.
-
-## What Good Dental Marketing Actually Looks Like
-
-A good agency or provider (including us, but not only us):
-
-- Builds your site on technology you can take with you
-- Registers your domain in your name
-- Doesn't require long-term contracts for ongoing work
-- Publishes pricing or gives you a clear rate card upfront
-- Creates unique content for your practice — not template copy
-- Reports on metrics that actually matter (rankings for real keywords, organic traffic, calls from search)
-- Tells you when something isn't working and adjusts strategy
-- Wants you to stay because the work is good, not because a contract forces you to
-
-This isn't a high bar. It's basic business ethics applied to an industry that's gotten away with ignoring them for years.
-
-## The Bias Revisited
-
-I told you at the top that I compete with these agencies. That's true. And our model — [flat-rate pricing](/pricing), you own everything, no contracts, AI-powered efficiency — is designed specifically to address the problems I've described here.
+We told you at the top that we compete with these agencies. Our model — [flat-rate pricing](/pricing), you own everything, no contracts — is designed specifically to address the problems described here.
 
 But this framework works regardless of whether you hire us. Use it on every agency you talk to. Use it on your current agency. Use it on us.
-
-The practices that thrive are the ones that own their foundation, work with providers who earn their business, and understand enough about how this industry works to make informed decisions.
 
 Now you have the framework. Use it.
