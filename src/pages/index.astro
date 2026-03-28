@@ -7,16 +7,14 @@ import CTABlock from '../components/CTABlock.astro';
 import { site } from '../config/site';
 
 const comparisonRows = [
-  { feature: 'Setup Cost', traditional: '$2,000–$15,000', groundwork: '$2,000 flat' },
-  { feature: 'Monthly Fee', traditional: '$200–$500/mo required', groundwork: '$0 (self-host) or $100/mo managed' },
-  { feature: 'Ongoing Cost', traditional: '$2,400–$6,000/year', groundwork: '~$12/year (domain only)' },
-  { feature: 'Templates', traditional: 'Shared across hundreds of clients', groundwork: '100% custom per practice' },
-  { feature: 'Ownership', traditional: 'Varies by provider', groundwork: 'You own everything' },
-  { feature: 'Portability', traditional: 'Varies by provider', groundwork: 'Full transferability' },
-  { feature: 'PageSpeed', traditional: '40–70 (WordPress/Wix)', groundwork: '90+ (static HTML, zero JS)' },
-  { feature: 'SEO', traditional: 'Basic meta tags', groundwork: 'Structured data on every page — optimized for Google and AI search tools' },
-  { feature: 'Build Time', traditional: '6–12 weeks', groundwork: '3–7 business days' },
-  { feature: 'Vendor Switching', traditional: 'Weeks of migration, content loss', groundwork: 'Hand the GitHub URL to any developer' },
+  { feature: 'Setup cost', diy: 'Free', traditional: '$2,000–$15,000', groundwork: '$2,000 flat' },
+  { feature: 'Monthly fee', diy: '$0 (with ads) or $16+/mo', traditional: '$200–$500/mo', groundwork: '$0 (hosting is free)' },
+  { feature: 'Design', diy: 'Shared templates', traditional: 'Shared across clients', groundwork: '100% custom' },
+  { feature: 'Speed', diy: 'Slow–moderate', traditional: 'Slow–moderate', groundwork: '90+ PageSpeed' },
+  { feature: 'SEO', diy: 'Basic or none', traditional: 'Basic', groundwork: 'Full — structured for Google + AI' },
+  { feature: 'Ownership', diy: 'Hosted on their platform', traditional: 'Varies by provider', groundwork: 'You own code, hosting, domain' },
+  { feature: 'Build time', diy: 'Weeks (your time)', traditional: '6–12 weeks', groundwork: '3–7 business days' },
+  { feature: 'Google Business Profile', diy: 'Not included', traditional: 'Sometimes, extra cost', groundwork: 'Included' },
 ];
 
 const faqs = [
@@ -57,10 +55,11 @@ const faqs = [
       <div class="max-w-3xl">
         <p class="eyebrow mb-4">For dental practices</p>
         <h1 class="font-serif text-5xl md:text-6xl font-normal leading-tight tracking-tight text-charcoal mb-6">
-          The Foundation Your Practice Needs Online.
+          The Foundation Your<br />Practice Needs Online.
         </h1>
         <p class="font-serif text-xl text-mid-gray leading-relaxed mb-8 max-w-2xl">
-          A modern dental website + optimized Google presence. One flat price. No monthly fees. No templates. Live in days. You own everything.
+          A modern dental website + optimized Google presence. One flat price.<br class="hidden sm:inline" />
+          No&nbsp;monthly&nbsp;fees. No templates. Live in days. You own everything.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="/get-started" class="btn-primary px-8 py-3.5">
@@ -80,7 +79,7 @@ const faqs = [
       <p class="eyebrow text-brand-warm mb-4">After the build</p>
       <p class="text-6xl md:text-8xl text-charcoal mb-4 font-mono tracking-tight">~$12<span class="text-mid-gray text-3xl md:text-4xl">/year</span></p>
       <p class="font-serif text-mid-gray text-lg max-w-xl mx-auto leading-relaxed">
-        That's your domain renewal. Hosting is free. No WordPress subscription. No Wix plan. No monthly hosting fees.
+        Straight to your domain registrar for renewal — not us. Hosting is free. No monthly agency fees or website builder subscriptions.
       </p>
     </div>
   </section>
@@ -89,33 +88,39 @@ const faqs = [
   <section class="py-10 bg-surface-2">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="section-subheading mb-4">Everything Included. Nothing Hidden.</h2>
-        <p class="font-serif text-mid-gray max-w-2xl mx-auto">One price. Every deliverable listed. No "Phase 2" upsell. No "oh, hosting is extra."</p>
+        <h2 class="section-subheading mb-4">What You Get</h2>
+        <p class="font-serif text-mid-gray max-w-2xl mx-auto">One price covers every piece of the puzzle. No extras, no upsells.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <FeatureCard
-          title="Built Around Your Services"
-          description="Every service category gets its own dedicated page with real, detailed content. Not a one-liner buried in a list — the kind of depth that tells Google what you actually specialize in."
+          title="Dedicated Service Pages"
+          description="Every service gets its own page with real content — the kind of depth that helps Google understand what you specialize in."
+          icon='<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>'
         />
         <FeatureCard
           title="90+ PageSpeed Score"
-          description="Static HTML, zero JavaScript by default. Your site loads instantly on any device. No bloated WordPress plugins slowing things down."
+          description="Static HTML, zero JavaScript bloat. Your site loads instantly on any device — no plugins slowing things down."
+          icon='<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>'
         />
         <FeatureCard
           title="Google & AI Search Ready"
-          description="Structured data on every page tells Google and AI tools (ChatGPT, Perplexity, Google AI Overviews) exactly what you do, where you are, and who your doctors are."
+          description="Structured data on every page so Google, ChatGPT, and Perplexity know exactly what you do and where you are."
+          icon='<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>'
         />
         <FeatureCard
           title="Full SEO Foundation"
-          description="Keyword-optimized titles, heading hierarchy, internal linking, XML sitemap, robots.txt, Open Graph cards. The entire baseline, done right."
+          description="Optimized titles, internal linking, sitemap, robots.txt, Open Graph tags. The entire technical baseline, done right."
+          icon='<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>'
         />
         <FeatureCard
           title="Google Business Profile"
-          description="Full profile optimization — categories, services, photos, and settings configured correctly. The single most important ranking factor for local search."
+          description="Categories, services, photos, and settings configured correctly. The single most important factor for local search."
+          icon='<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>'
         />
         <FeatureCard
           title="You Own Everything"
-          description="GitHub repo, Cloudflare hosting, domain, analytics, search console. Walk away tomorrow — your website keeps working. No strings attached."
+          description="Code, hosting, domain, analytics — all yours. Walk away tomorrow and your website keeps running. No strings."
+          icon='<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>'
         />
       </div>
     </div>
@@ -148,15 +153,15 @@ const faqs = [
   <section class="py-10 bg-charcoal text-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center">
-        <p class="font-sans text-eyebrow uppercase text-neutral-500 mb-4">The guarantee</p>
+        <p class="font-sans text-eyebrow uppercase text-neutral-300 mb-4">The guarantee</p>
         <h2 class="font-serif text-3xl md:text-4xl font-normal mb-6">The Ownership Guarantee</h2>
-        <p class="font-serif text-lg text-neutral-300 leading-relaxed mb-6">
+        <p class="font-serif text-lg text-neutral-200 leading-relaxed mb-6">
           After the project's done, you could hand the whole thing off to your tech-savvy niece and let her vibe-code it from there. Seriously. She'll understand what that means, even if you don't.
         </p>
-        <p class="font-serif text-neutral-400 leading-relaxed mb-8">
+        <p class="font-serif text-neutral-200 leading-relaxed mb-8">
           The point is: it's yours. Walk away tomorrow, hire someone else, or never talk to us again. Your website keeps working. No strings attached.
         </p>
-        <p class="font-sans text-xs text-neutral-500">
+        <p class="font-sans text-xs text-neutral-300">
           You keep: the domain, the hosting, the website code, the design assets, the SEO content, all Google accounts, all analytics. We walk away clean.
         </p>
       </div>
@@ -176,7 +181,7 @@ const faqs = [
         <div class="text-center">
           <div class="w-10 h-10 rounded border border-border-light text-charcoal font-mono text-sm flex items-center justify-center mx-auto mb-4">02</div>
           <h3 class="font-serif text-charcoal mb-2">You Review It</h3>
-          <p class="font-serif text-mid-gray text-sm leading-relaxed">Click around. Check your phone. Read the content. Send us one round of feedback and we'll dial it in.</p>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">You get 30 days to review and send feedback. Check your phone, read the content, send feedback as many times as you want until it's right.</p>
         </div>
         <div class="text-center">
           <div class="w-10 h-10 rounded border border-border-light text-charcoal font-mono text-sm flex items-center justify-center mx-auto mb-4">03</div>

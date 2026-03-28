@@ -172,3 +172,36 @@ CREATE POLICY "Anyone can submit a lead"
 
 -- No SELECT/UPDATE/DELETE for anon — only accessible via service role key
 -- This means the admin dashboard uses the service role key to read leads.
+
+-- ============================================
+-- Table: handoffs
+-- Client handoff documentation portal.
+-- Password-protected per client. Accessed via /handoff/[token].
+-- Only service role can read/write (no RLS policies for anon/auth).
+-- ============================================
+CREATE TABLE handoffs (
+  id             UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  client_id      UUID REFERENCES clients(id) ON DELETE SET NULL,
+  token          TEXT UNIQUE NOT NULL,
+  password       TEXT NOT NULL,
+  practice_name  TEXT NOT NULL,
+  accounts       JSONB NOT NULL DEFAULT '[]'::jsonb,
+  completed_at   TIMESTAMPTZ,
+  created_at     TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_at     TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- No RLS policies — only accessed via service role key from the server.
+-- The password gate in the Astro page handles client authentication.
+
+-- accounts JSONB structure:
+-- [
+--   {
+--     "name": "Domain — Cloudflare Registrar",
+--     "url": "https://dash.cloudflare.com",
+--     "username": "drsmith@example.com",
+--     "description": "Your domain (smithdental.com) is registered here. Renew annually for ~$12.",
+--     "instructions": "Log in with your email. Your domain is under the Registrar tab.",
+--     "details": { "Domain": "smithdental.com" }
+--   }
+-- ]

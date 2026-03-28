@@ -14,5 +14,5 @@ export const navLinks: NavLink[] = [
   { label: 'Pricing', href: '/pricing' },
   { label: 'Compare', href: '/compare' },
   { label: 'About', href: '/about' },
-  { label: 'Blog', href: '/blog' },
+  { label: 'Resources', href: '/blog' },
 ];

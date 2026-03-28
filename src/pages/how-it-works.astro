@@ -7,23 +7,22 @@ import CTABlock from '../components/CTABlock.astro';
 import { site } from '../config/site';
 
 const comparisonRows = [
-  { feature: 'Setup cost', diy: 'Free to start', traditional: '$2,000+', groundwork: '$2,000 flat' },
-  { feature: 'Monthly fee', diy: 'Free (with their branding/ads) or $17+/mo', traditional: '$200+/mo required', groundwork: '$0 self-host (recommended)' },
-  { feature: 'Ongoing cost (yearly)', diy: '$200+/year', traditional: '$2,400+/year', groundwork: '~$12\u201315/year (domain renewal)' },
-  { feature: 'Pages', diy: '5\u201310 (you build them)', traditional: '10\u201320', groundwork: '30\u201350+' },
-  { feature: 'Design', diy: 'Shared with millions', traditional: 'Shared across clients', groundwork: '100% custom to your practice' },
-  { feature: 'SEO', diy: 'Basic/DIY', traditional: 'Basic', groundwork: 'Full \u2014 structured for Google + AI' },
-  { feature: 'Ownership', diy: 'Hosted on platform', traditional: 'Varies by provider', groundwork: 'You own code, hosting, domain' },
+  { feature: 'Setup cost', diy: 'Free', traditional: '$2,000–$15,000', groundwork: '$2,000 flat' },
+  { feature: 'Monthly fee', diy: '$0 (with ads) or $16+/mo', traditional: '$200–$500/mo', groundwork: '$0 (hosting is free)' },
+  { feature: 'Ongoing cost', diy: '$200+/year', traditional: '$2,400+/year', groundwork: '~$12/year (domain only)' },
+  { feature: 'Design', diy: 'Shared templates', traditional: 'Shared across clients', groundwork: '100% custom' },
+  { feature: 'Speed', diy: 'Slow–moderate', traditional: 'Slow–moderate', groundwork: '90+ PageSpeed' },
+  { feature: 'SEO', diy: 'Basic or none', traditional: 'Basic', groundwork: 'Full — structured for Google + AI' },
+  { feature: 'Ownership', diy: 'Hosted on their platform', traditional: 'Varies by provider', groundwork: 'You own code, hosting, domain' },
   { feature: 'If you leave', diy: 'Limited export', traditional: 'Varies by provider', groundwork: 'Nothing changes' },
-  { feature: 'Build time', diy: 'Weeks of your own time', traditional: '6\u201312 weeks', groundwork: '3\u20137 business days' },
-  { feature: 'Speed', diy: 'Slow\u2013moderate', traditional: 'Slow\u2013moderate', groundwork: 'Fast (90+ PageSpeed)' },
+  { feature: 'Build time', diy: 'Weeks (your time)', traditional: '6–12 weeks', groundwork: '3–7 business days' },
   { feature: 'Google Business Profile', diy: 'Not included', traditional: 'Sometimes, extra cost', groundwork: 'Included' },
 ];
 
 const faqs = [
   {
     question: 'How long does the build take?',
-    answer: 'Typically 3–7 business days from when we have your practice info and sign-off on the direction.',
+    answer: 'Typically 3–7 business days for the initial build, then you get 30 days to review and send feedback before final handoff.',
   },
   {
     question: 'What if I don\'t have a website yet?',
@@ -265,7 +264,7 @@ const faqs = [
         <div class="text-center">
           <div class="w-10 h-10 rounded border border-border-light text-charcoal font-mono text-sm flex items-center justify-center mx-auto mb-4">02</div>
           <h3 class="font-serif text-charcoal mb-2">Review & Refine</h3>
-          <p class="font-serif text-mid-gray text-sm leading-relaxed">Check your phone. Read the content. Send us one round of feedback and we'll dial it in. No payment until you're happy.</p>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">You get 30 days to review and send feedback. Send feedback as many times as you want — we'll keep refining until you're happy. No payment until you sign off.</p>
         </div>
         <div class="text-center">
           <div class="w-10 h-10 rounded border border-border-light text-charcoal font-mono text-sm flex items-center justify-center mx-auto mb-4">03</div>
@@ -333,15 +332,15 @@ const faqs = [
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
           <div>
             <p class="text-4xl text-brand-warm font-mono mb-2">$2,000</p>
-            <p class="font-sans text-xs text-neutral-400 uppercase tracking-wider mb-3">One-time &mdash; Website + Google Business Profile</p>
-            <p class="font-serif text-neutral-300 text-sm leading-relaxed">
+            <p class="font-sans text-xs text-neutral-200 uppercase tracking-wider mb-3">One-time &mdash; Website + Google Business Profile</p>
+            <p class="font-serif text-neutral-200 text-sm leading-relaxed">
               Everything described on this page. Custom website, Google Business Profile optimization, all accounts set up and transferred to you. ~$12/year after that for your domain.
             </p>
           </div>
           <div>
-            <p class="text-4xl text-neutral-500 font-mono mb-2">$100<span class="text-lg">/mo</span></p>
-            <p class="font-sans text-xs text-neutral-400 uppercase tracking-wider mb-3">Optional Managed Hosting</p>
-            <p class="font-serif text-neutral-300 text-sm leading-relaxed">
+            <p class="text-4xl text-neutral-300 font-mono mb-2">$100<span class="text-lg">/mo</span></p>
+            <p class="font-sans text-xs text-neutral-200 uppercase tracking-wider mb-3">Optional Managed Hosting</p>
+            <p class="font-serif text-neutral-200 text-sm leading-relaxed">
               This is not recommended — and it's intentionally priced high to discourage you. Your hosting is free after the build. The only recurring cost is ~$12/year for your domain. Only if you truly want a completely hands-off experience should you consider it.
             </p>
           </div>
