@@ -4,6 +4,7 @@ description: "There are only three things that actually drive dental search grow
 publishDate: 2026-03-22
 targetKeyword: "dental search marketing"
 category: dental-seo
+tags: ["SEO", "Google Maps", "local search", "growth"]
 author: Garrett Gunther
 draft: false
 faqs:

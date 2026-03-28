@@ -4,6 +4,7 @@ description: "Having a Google Business Profile doesn't make you a local authorit
 publishDate: 2026-03-15
 targetKeyword: "local dental SEO authority"
 category: dental-seo
+tags: ["SEO", "local search", "Google Maps", "growth"]
 author: Garrett Gunther
 draft: false
 faqs:

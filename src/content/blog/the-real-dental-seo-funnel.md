@@ -4,6 +4,7 @@ description: "Most dental SEO targets the wrong searches. The patients researchi
 publishDate: 2026-02-15
 targetKeyword: "dental SEO funnel"
 category: dental-seo
+tags: ["SEO", "patient acquisition", "high-value keywords"]
 author: Garrett Gunther
 draft: false
 faqs:

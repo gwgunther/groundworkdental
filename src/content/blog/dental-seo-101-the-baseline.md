@@ -4,6 +4,7 @@ description: "Most dental practices have baseline SEO and think they're 'doing S
 publishDate: 2026-02-22
 targetKeyword: "dental SEO basics"
 category: dental-seo
+tags: ["SEO", "local search", "getting started"]
 author: Garrett Gunther
 draft: false
 faqs:

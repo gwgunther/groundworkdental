@@ -7,14 +7,7 @@ const posts = (await getCollection('blog'))
   .filter(post => !post.data.draft)
   .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 
-const categories = ['all', 'dental-seo', 'dental-websites', 'agency-comparison', 'pricing'] as const;
-const categoryLabels: Record<string, string> = {
-  'all': 'All',
-  'dental-seo': 'Dental SEO',
-  'dental-websites': 'Websites',
-  'agency-comparison': 'Agency Comparison',
-  'pricing': 'Pricing',
-};
+const allTags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
 ---
 
 <BaseLayout
@@ -27,8 +20,30 @@ const categoryLabels: Record<string, string> = {
       <div class="max-w-3xl">
         <h1 class="section-heading mb-4">The Blog</h1>
         <p class="font-serif text-xl text-mid-gray leading-relaxed">
-          Everything we know about dental SEO, websites, and marketing — given away for free. Because dentists will read it, appreciate the honesty, and hire us anyway.
+          Everything we know about dental SEO, websites, and marketing — given away for free. We'd rather you show up informed.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tag Filter -->
+  <section class="border-b border-border-light">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex flex-wrap items-center gap-2">
+        <button
+          class="tag-filter font-sans text-xs px-3 py-1.5 rounded-full border transition-colors duration-200 is-active"
+          data-tag="all"
+        >
+          All
+        </button>
+        {allTags.map((tag) => (
+          <button
+            class="tag-filter font-sans text-xs px-3 py-1.5 rounded-full border transition-colors duration-200"
+            data-tag={tag}
+          >
+            {tag}
+          </button>
+        ))}
       </div>
     </div>
   </section>
@@ -37,13 +52,19 @@ const categoryLabels: Record<string, string> = {
   <section class="py-10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       {posts.length > 0 ? (
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="posts-grid">
           {posts.map((post) => (
-            <a href={`/blog/${post.id}`} class="card hover:border-brand-warm transition-colors group">
-              <div class="mb-3">
-                <span class="eyebrow text-brand-warm">
-                  {categoryLabels[post.data.category] || post.data.category}
-                </span>
+            <a
+              href={`/blog/${post.id}`}
+              class="card hover:border-brand-warm transition-colors group"
+              data-tags={JSON.stringify(post.data.tags)}
+            >
+              <div class="flex flex-wrap items-center gap-2 mb-3">
+                {post.data.tags.map((tag: string) => (
+                  <span class="font-sans text-[10px] uppercase tracking-wider text-brand-warm bg-brand-warm/10 px-2 py-0.5 rounded-full">
+                    {tag}
+                  </span>
+                ))}
               </div>
               <h2 class="font-serif text-charcoal mb-2 group-hover:text-brand-warm transition-colors">
                 {post.data.title}
@@ -72,3 +93,41 @@ const categoryLabels: Record<string, string> = {
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .tag-filter {
+    border-color: var(--color-border-light, #e5e5e5);
+    color: var(--color-mid-gray, #6b7280);
+    background: transparent;
+    cursor: pointer;
+  }
+  .tag-filter:hover,
+  .tag-filter.is-active {
+    border-color: #C45D3E;
+    color: #C45D3E;
+    background: rgba(196, 93, 62, 0.08);
+  }
+</style>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.tag-filter');
+  const cards = document.querySelectorAll<HTMLAnchorElement>('#posts-grid > a');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+
+      const tag = btn.dataset.tag;
+
+      cards.forEach(card => {
+        if (tag === 'all') {
+          card.style.display = '';
+          return;
+        }
+        const tags: string[] = JSON.parse(card.dataset.tags || '[]');
+        card.style.display = tags.includes(tag!) ? '' : 'none';
+      });
+    });
+  });
+</script>

@@ -4,6 +4,7 @@ description: "Your dental website might look fine — but looking fine and perfo
 publishDate: 2026-04-19
 targetKeyword: "dental website not getting patients"
 category: dental-websites
+tags: ["website performance", "patient acquisition", "getting started"]
 author: Garrett Gunther
 draft: false
 faqs:

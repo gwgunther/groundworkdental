@@ -11,6 +11,7 @@ const blog = defineCollection({
     targetKeyword: z.string(),
     category: z.enum(['dental-seo', 'dental-websites', 'agency-comparison', 'pricing']),
     author: z.string().default('Garrett Gunther'),
+    tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
     faqs: z.array(z.object({
       question: z.string(),

@@ -4,6 +4,7 @@ description: "The real cost of a dental website isn't the setup fee — it's the
 publishDate: 2026-04-05
 targetKeyword: "dental website cost"
 category: pricing
+tags: ["pricing", "website platforms", "ownership"]
 author: Garrett Gunther
 draft: false
 faqs:

@@ -1,0 +1,50 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  current: CollectionEntry<'blog'>;
+  allPosts: CollectionEntry<'blog'>[];
+  max?: number;
+}
+
+const { current, allPosts, max = 3 } = Astro.props;
+
+const currentTags = new Set(current.data.tags);
+
+const scored = allPosts
+  .filter(p => p.id !== current.id && !p.data.draft)
+  .map(p => {
+    const shared = p.data.tags.filter(t => currentTags.has(t)).length;
+    const sameCategory = p.data.category === current.data.category ? 1 : 0;
+    return { post: p, score: shared * 2 + sameCategory };
+  })
+  .filter(s => s.score > 0)
+  .sort((a, b) => b.score - a.score || b.post.data.publishDate.valueOf() - a.post.data.publishDate.valueOf())
+  .slice(0, max);
+
+const related = scored.map(s => s.post);
+---
+
+{related.length > 0 && (
+  <section class="py-12 border-t border-border-light">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-serif text-2xl text-charcoal mb-6">Related Articles</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {related.map((post) => (
+          <a href={`/blog/${post.id}`} class="card hover:border-brand-warm transition-colors group">
+            <div class="flex flex-wrap gap-1.5 mb-2">
+              {post.data.tags.slice(0, 2).map((tag: string) => (
+                <span class="font-sans text-[10px] uppercase tracking-wider text-brand-warm bg-brand-warm/10 px-2 py-0.5 rounded-full">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <h3 class="font-serif text-sm text-charcoal leading-snug group-hover:text-brand-warm transition-colors">
+              {post.data.title}
+            </h3>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
