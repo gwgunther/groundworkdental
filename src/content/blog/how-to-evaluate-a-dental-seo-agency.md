@@ -48,7 +48,7 @@ Your domain is your address on the internet. If someone else controls it, they c
 
 If the provider builds your website on a proprietary platform, switching providers might mean starting from scratch.
 
-**Red flag:** Your site is built on a platform that only the agency controls. You can't export your files, and no other developer can work on it. Ask "If I cancel, does my website stay online?" — if there's any hesitation, conditions, or "well, our platform..." — that's your answer.
+**Worth checking:** Is your site built on a platform where only the provider can make changes? Can you export your files? Could another developer work on it? Ask "If I cancel, does my website stay online?" — the answer tells you a lot about how portable your site is.
 
 **Green flag:** Your site is built on standard technology — WordPress, Astro, Next.js, static HTML — and you can get a complete copy of all files, images, and content that a different developer could deploy somewhere else.
 
