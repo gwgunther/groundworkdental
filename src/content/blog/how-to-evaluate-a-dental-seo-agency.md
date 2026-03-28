@@ -92,7 +92,7 @@ This one only applies if you're paying a monthly retainer. If you are, you shoul
 
 **What to ask:** "What specific deliverables will I receive each month?" You want to hear things like "4 blog posts, 2 GBP posts per week, monthly technical audit." If the answer is vague, that's your answer.
 
-> **How Groundwork handles this:** We don't charge a retainer, so there are no monthly deliverables — no reports, no ongoing content, no recurring fees. We build the site, hand you the keys, and walk away. If you want ongoing content creation or growth marketing down the road, that's a separate conversation.
+> **How Groundwork handles this:** We don't charge a retainer, so there are no monthly deliverables — no reports, no ongoing content, no recurring fees. We build the site, hand you the keys, and walk away. We do offer a [$100/month managed hosting option](/pricing) for practices that want to be completely hands-off — we hold the keys to your hosting, domain, and analytics accounts so you don't have to. But this is not recommended. You're capable of owning your accounts, and your hosting is free after the build. If you want ongoing content creation or growth marketing down the road, that's a separate conversation.
 
 ## 6. Site Performance
 
