@@ -4,7 +4,7 @@ description: "Dental implant cost, Invisalign cost, veneers cost — these searc
 publishDate: 2026-01-25
 targetKeyword: "dental implant cost SEO"
 category: dental-seo
-tags: ["SEO", "high-value keywords"]
+tags: ["SEO", "patient acquisition"]
 author: Garrett Gunther
 draft: false
 faqs:

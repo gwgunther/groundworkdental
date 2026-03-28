@@ -4,7 +4,7 @@ description: "Most dental marketing follows a standard playbook that produces ba
 publishDate: 2026-02-18
 targetKeyword: "dental marketing agency"
 category: agency-comparison
-tags: ["marketing", "agency red flags", "growth"]
+tags: ["agencies", "growth"]
 author: Garrett Gunther
 draft: false
 faqs:

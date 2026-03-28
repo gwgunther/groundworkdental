@@ -4,7 +4,7 @@ description: "An honest comparison of Wix, Squarespace, Webflow, and custom-buil
 publishDate: 2026-03-14
 targetKeyword: "wix vs squarespace for dentists"
 category: agency-comparison
-tags: ["website platforms", "ownership", "DIY vs custom"]
+tags: ["websites", "ownership"]
 author: Garrett Gunther
 draft: false
 faqs:

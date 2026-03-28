@@ -4,7 +4,7 @@ description: "A step-by-step guide to switching dental website providers. What t
 publishDate: 2026-03-22
 targetKeyword: "switch dental website provider"
 category: dental-websites
-tags: ["ownership", "switching providers", "agency red flags"]
+tags: ["ownership", "agencies"]
 author: Garrett Gunther
 draft: false
 faqs:
