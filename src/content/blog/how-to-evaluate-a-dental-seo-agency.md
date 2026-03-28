@@ -84,13 +84,15 @@ Template sites aren't inherently terrible — a good template is better than a b
 
 ## 5. Reporting & Deliverables
 
-This is where a lot of agencies hide behind vague language.
+This one only applies if you're paying a monthly retainer. If you are, you should know exactly what you're getting for it.
 
 **🚩 Red flag:** Monthly reports that are just a PDF with green arrows and no actionable data. Deliverables described as "SEO management" or "social media management" with no specifics. You can't tell what they actually did last month.
 
-**✅ Green flag:** They can tell you exactly what they'll deliver — content pieces, links built, pages optimized. Reports include actual keyword ranking changes (for specific terms, not just your practice name), organic traffic trends, and Google Business Profile performance. Concrete, countable things you can verify actually happened.
+**✅ Green flag:** They can tell you exactly what they'll deliver — content pieces written, links built, pages optimized. Reports include actual keyword ranking changes (for specific terms, not just your practice name), organic traffic trends, and Google Business Profile performance. Concrete, countable things you can verify actually happened.
 
-**What to ask:** "What specific deliverables will I receive each month?" If the answer is vague, that's your answer.
+**What to ask:** "What specific deliverables will I receive each month?" You want to hear things like "4 blog posts, 2 GBP posts per week, monthly technical audit." If the answer is vague, that's your answer.
+
+> **How Groundwork handles this:** We don't charge a retainer, so there are no monthly deliverables — no reports, no ongoing content, no recurring fees. We build the site, hand you the keys, and walk away. If you want ongoing content creation or growth marketing down the road, that's a separate conversation.
 
 ## 6. Site Performance
 
