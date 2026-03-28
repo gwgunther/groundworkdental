@@ -1,7 +1,7 @@
 ---
 title: "Wix vs. Squarespace vs. Custom: Which Is Right for Your Dental Practice?"
 description: "An honest comparison of Wix, Squarespace, Webflow, and custom-built websites for dental practices. Cost, speed, SEO, ownership — what actually matters and when each option makes sense."
-publishDate: 2026-04-12
+publishDate: 2026-03-14
 targetKeyword: "wix vs squarespace for dentists"
 category: agency-comparison
 tags: ["website platforms", "ownership", "DIY vs custom"]

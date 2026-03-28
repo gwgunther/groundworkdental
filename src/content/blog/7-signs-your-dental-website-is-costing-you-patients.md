@@ -1,7 +1,7 @@
 ---
 title: "7 Signs Your Dental Website Is Costing You Patients"
 description: "Your dental website might look fine — but looking fine and performing well are different things. Here are seven specific signs your website is actively losing you patients, and what to do about each one."
-publishDate: 2026-04-19
+publishDate: 2026-02-26
 targetKeyword: "dental website not getting patients"
 category: dental-websites
 tags: ["website performance", "patient acquisition", "getting started"]

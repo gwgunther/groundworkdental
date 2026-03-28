@@ -1,7 +1,7 @@
 ---
 title: "Dental SEO 101: What 'Baseline Presence' Actually Means (And Why Most Practices Never Get Past It)"
 description: "Most dental practices have baseline SEO and think they're 'doing SEO.' They're not. Baseline is just the price of admission to local search. Here's what it actually includes, what results it produces, and why it caps out fast."
-publishDate: 2026-02-22
+publishDate: 2026-01-09
 targetKeyword: "dental SEO basics"
 category: dental-seo
 tags: ["SEO", "local search", "getting started"]

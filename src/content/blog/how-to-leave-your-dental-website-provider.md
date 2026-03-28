@@ -1,7 +1,7 @@
 ---
 title: "How to Leave Your Dental Website Provider (Without Losing Everything)"
 description: "A step-by-step guide to switching dental website providers. What to secure first, what you can take with you, what you'll lose, and how to make the transition without your site going dark."
-publishDate: 2026-04-26
+publishDate: 2026-03-22
 targetKeyword: "switch dental website provider"
 category: dental-websites
 tags: ["ownership", "switching providers", "agency red flags"]

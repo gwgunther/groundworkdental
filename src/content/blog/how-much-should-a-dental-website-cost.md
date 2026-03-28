@@ -1,7 +1,7 @@
 ---
 title: "How Much Should a Dental Website Cost? A Brutally Honest Breakdown"
 description: "The real cost of a dental website isn't the setup fee — it's the total cost of ownership over 3 years. Here's an honest breakdown of every tier, from DIY to full custom, including the costs that aren't always obvious upfront."
-publishDate: 2026-04-05
+publishDate: 2026-03-06
 targetKeyword: "dental website cost"
 category: pricing
 tags: ["pricing", "website platforms", "ownership"]
