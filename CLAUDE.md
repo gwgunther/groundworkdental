@@ -16,7 +16,7 @@ The marketing website for Groundwork Dental, a productized dental website agency
 - `src/pages/` — all pages (7 core + blog)
 - `src/content/blog/` — markdown blog posts
 - `src/styles/global.css` — Tailwind utilities and component classes
-- `References/` — business playbook (not deployed)
+- `References/` — internal operator docs (not deployed); see `groundwork-dental-playbook.md` (full playbook) and `client-site-build-best-practices.md` (client site IA + technical SEO)
 
 ## Design System
 - **Palette:** charcoal `#1A1A1A`, warm terracotta `#C45D3E`, cream `#FAF8F5`, sage `#6B7F6E`
@@ -31,4 +31,5 @@ Conversational, self-aware, honest. "The honest dental website guy." Not an agen
 
 ## Key Reference
 - Full playbook: `References/groundwork-dental-playbook.md`
+- Client build standards (IA, SEO, schema, crawl): `References/client-site-build-best-practices.md`
 - Reference client site: `/Users/garrettgunther/Projects/hbimplants/`
