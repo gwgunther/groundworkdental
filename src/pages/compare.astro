@@ -6,31 +6,33 @@ import FAQBlock from '../components/FAQBlock.astro';
 import CTABlock from '../components/CTABlock.astro';
 
 const fullComparison = [
-  { feature: 'Setup cost',        wix: 'Free',              squarespace: 'Free',          traditional: '$2,000–$15,000',  groundwork: '$2,000 flat' },
-  { feature: 'Monthly fee',       wix: '$0 (Wix ads shown)', squarespace: '$16+/mo',      traditional: '$200–$500/mo',    groundwork: '$0 (hosting is free)' },
-  { feature: '3-year total',      wix: '$0 + your time',    squarespace: '$576+',         traditional: '$9,200+',         groundwork: '$2,024' },
-  { feature: 'Design',            wix: 'Shared templates',  squarespace: 'Shared templates', traditional: 'Shared across clients', groundwork: '100% custom' },
-  { feature: 'Speed',             wix: 'Slow (60–70)',      squarespace: 'Moderate (65–80)', traditional: 'Slow–moderate',  groundwork: '90+ PageSpeed' },
-  { feature: 'Schema markup',     wix: 'None',              squarespace: 'None',          traditional: 'Basic or none',   groundwork: '7+ types on every page' },
-  { feature: 'Content',           wix: 'You write it',      squarespace: 'You write it',  traditional: 'Generic template copy', groundwork: 'Unique to your practice' },
-  { feature: 'Ownership',         wix: 'Hosted on their platform', squarespace: 'Hosted on their platform', traditional: 'Varies by provider',  groundwork: 'You own code, hosting, domain' },
-  { feature: 'If you leave',      wix: 'Limited export',     squarespace: 'Limited export',  traditional: 'Varies by provider', groundwork: 'Nothing changes' },
-  { feature: 'Build time',        wix: 'Weeks (your time)', squarespace: 'Weeks (your time)', traditional: '6–12 weeks', groundwork: '3–7 business days' },
-  { feature: 'GBP optimization',  wix: 'Not included',      squarespace: 'Not included',  traditional: 'Sometimes, extra cost', groundwork: 'Included' },
+  { feature: 'Setup cost',       diy: 'Free',                         traditional: '$2,000–$15,000',         groundwork: '$2,000 flat' },
+  { feature: 'Yearly cost',      diy: '$0–$200/yr',    traditional: '$2,400+/yr ($200+/mo)', groundwork: '~$12/yr (domain only)' },
+  { feature: 'Design',           diy: 'Shared templates',             traditional: 'Shared across clients',  groundwork: '100% custom' },
+  { feature: 'Mobile',           diy: 'Responsive templates',         traditional: 'Varies by agency',       groundwork: 'Optimized on every device' },
+  { feature: 'Speed',            diy: 'Slow–moderate (50–80)',        traditional: 'Moderate',          groundwork: '90+ PageSpeed' },
+  { feature: 'SEO optimization', diy: 'Minimal',                      traditional: 'Varies by agency',       groundwork: 'Full — built for Google + AI' },
+  { feature: 'Content',          diy: 'You write it',                 traditional: 'Written for you',        groundwork: 'Written for you' },
+  { feature: 'Editing interface', diy: 'Visual drag-and-drop',        traditional: 'They manage it for you', groundwork: 'Code edits or hire a dev' },
+  { feature: 'Ongoing updates',  diy: 'You do it yourself',           traditional: 'Included in monthly fee', groundwork: 'Pay as needed' },
+  { feature: 'Ownership',        diy: 'Hosted on their platform',     traditional: 'Varies by provider',     groundwork: 'You own code, hosting, domain' },
+  { feature: 'If you leave',     diy: 'Limited export',               traditional: 'Varies by provider',     groundwork: 'Nothing changes' },
+  { feature: 'Build time',       diy: 'Weeks (your time)',            traditional: '4–12 weeks',             groundwork: '3–7 business days' },
+  { feature: 'GBP optimization', diy: 'Not included',                 traditional: 'Sometimes, extra cost',  groundwork: 'Included' },
 ];
 
 const faqs = [
   {
     question: 'Why not just use Wix? It\'s free.',
-    answer: 'Wix is a fine tool for a food blog or a personal portfolio. For a dental practice, it falls short: slow load times, no structured data, Wix branding on free plans, and your site lives inside their system. You can\'t export it meaningfully. If Wix changes their pricing or shuts down your plan, you\'re starting over. For a business that depends on local search visibility, the free price comes with real trade-offs.',
+    answer: 'Wix has a real advantage: you can build and edit your site visually without touching code. If you enjoy doing that and have the time, it\'s a legitimate option. The trade-offs for a dental practice: slow load times (the free CDN is limited), no structured data, Wix branding on free plans, and your site lives entirely inside their system. If they change pricing or you want to move, exporting isn\'t really an option. For a business that depends on local search visibility, it\'s worth weighing the free price against those limitations.',
   },
   {
     question: 'What about Squarespace? It\'s popular and looks good.',
-    answer: 'Squarespace makes beautiful templates. The problem for dental practices is what\'s under the hood: no schema markup, limited SEO control, moderate page speeds, and your site is locked inside their platform. You\'re paying $16–45/month indefinitely for something you\'ll never own. It\'s better than Wix for design, but the same fundamental issue — you\'re renting, not owning.',
+    answer: 'Squarespace makes genuinely attractive templates — better-looking than most Wix sites out of the box, and easier to customize visually. If design matters to you and you want to manage the site yourself without code, it\'s a reasonable choice. The trade-offs: limited SEO control, no schema markup, moderate page speeds, $16–45/month forever, and your site is locked inside their platform. You\'re renting a good-looking site you\'ll never fully own.',
   },
   {
     question: 'What about Webflow? It\'s powerful.',
-    answer: 'Webflow is genuinely good software. It\'s the closest DIY option to a custom-built site. The trade-off: steep learning curve, $14–39/month hosting, and you still need to handle SEO, schema, and content yourself. If you have the time and interest to learn it, Webflow is a solid choice. Most dentists don\'t — and that\'s completely reasonable. You went to dental school, not web design school.',
+    answer: 'Webflow is the best DIY option if you\'re willing to invest time in learning it. The visual editor is genuinely impressive — you get real design control without writing code, and the output is cleaner than Wix or Squarespace. The trade-offs: steep learning curve, $14–39/month hosting, and you still need to handle SEO, schema markup, and content strategy yourself. If you have the time and interest, Webflow is a solid choice. Most dentists don\'t — and that\'s completely reasonable.',
   },
   {
     question: 'How do I check if my current agency owns my domain?',
@@ -78,10 +80,10 @@ const faqs = [
       <h2 class="section-subheading mb-6">Do It Yourself (Wix, Squarespace, Webflow)</h2>
       <div class="prose-article text-lg">
         <p>
-          These platforms are genuinely useful tools. If you have the time and interest to build your own site, they can work. Squarespace makes attractive templates. Webflow gives you real design control. Wix is free to start.
+          These platforms are genuinely useful tools with a real advantage: visual drag-and-drop editing. You can update text, swap photos, and rearrange pages without touching code — no developer needed. If you enjoy managing your own site, that's a meaningful benefit.
         </p>
         <p>
-          The honest trade-offs for dental practices:
+          The trade-offs for dental practices:
         </p>
       </div>
       <ul class="font-serif text-mid-gray space-y-3 mt-6">
@@ -104,7 +106,7 @@ const faqs = [
       </ul>
       <div class="card mt-8 bg-surface-2">
         <p class="font-serif text-sm text-mid-gray">
-          <strong class="text-charcoal">Our honest take:</strong> If you enjoy building websites and have the time, Webflow is the best DIY option. If you'd rather spend that time on dentistry, that's what we're here for. Either way, make sure someone handles your Google Business Profile — it matters more than your website for local search.
+          <strong class="text-charcoal">Our honest take:</strong> If you enjoy building websites and want to manage your own content visually, Webflow is the best DIY option. Website builders are genuinely good at that. What they don't give you: structured data, fast load times, written content, or someone who handles the setup. If you'd rather spend your time on dentistry, that's what we're here for.
         </p>
       </div>
     </div>
@@ -117,13 +119,13 @@ const faqs = [
       <h2 class="section-subheading mb-6">Dental Marketing Agencies</h2>
       <div class="prose-article text-lg">
         <p>
-          Dental-specific marketing agencies have been the default choice for years. They handle everything — design, hosting, SEO, content — which sounds great until you look at the details.
+          Dental-specific marketing agencies have been the default choice for years. There's a real case for them: they handle everything — design, hosting, SEO, content, ongoing updates — and the monthly fee includes actual work. If you want someone to publish blog posts, update your service pages, and actively manage your online presence month to month, an agency can do that.
         </p>
         <p>
-          The typical setup: $2,000-5,000 upfront, then $200-500/month. The monthly fee often covers hosting that costs a fraction of what you're paying, plus occasional content updates. Over three years, that adds up to $9,000+ for what's usually a template website shared across many practices.
+          The typical setup: $2,000-5,000 upfront, then $200-500/month. For practices that want a genuinely managed presence and are willing to pay for it, that's a legitimate service. The issues come when you want to leave, when you're getting templates instead of custom work, or when the "ongoing management" is mostly billing you for hosting that costs $10/month.
         </p>
         <p>
-          The bigger issue isn't cost — it's what happens when you want to leave.
+          The bigger issue isn't cost — it's transparency about what you're actually getting.
         </p>
       </div>
 

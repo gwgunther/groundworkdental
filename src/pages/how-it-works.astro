@@ -8,14 +8,17 @@ import { site } from '../config/site';
 
 const comparisonRows = [
   { feature: 'Setup cost', diy: 'Free', traditional: '$2,000–$15,000', groundwork: '$2,000 flat' },
-  { feature: 'Monthly fee', diy: '$0 (with ads) or $16+/mo', traditional: '$200–$500/mo', groundwork: '$0 (hosting is free)' },
-  { feature: 'Ongoing cost', diy: '$200+/year', traditional: '$2,400+/year', groundwork: '~$12/year (domain only)' },
+  { feature: 'Yearly cost', diy: '$0–$200/yr', traditional: '$2,400+/yr ($200+/mo)', groundwork: '~$12/yr (domain only)' },
   { feature: 'Design', diy: 'Shared templates', traditional: 'Shared across clients', groundwork: '100% custom' },
-  { feature: 'Speed', diy: 'Slow–moderate', traditional: 'Slow–moderate', groundwork: '90+ PageSpeed' },
-  { feature: 'SEO', diy: 'Basic or none', traditional: 'Basic', groundwork: 'Full — structured for Google + AI' },
+  { feature: 'Mobile', diy: 'Responsive templates', traditional: 'Varies by agency', groundwork: 'Optimized on every device' },
+  { feature: 'Speed', diy: 'Slow–moderate', traditional: 'Moderate', groundwork: '90+ PageSpeed' },
+  { feature: 'SEO optimization', diy: 'Minimal', traditional: 'Varies by agency', groundwork: 'Full — built for Google + AI' },
+  { feature: 'Content', diy: 'You write it', traditional: 'Written for you', groundwork: 'Written for you' },
+  { feature: 'Editing interface', diy: 'Visual drag-and-drop', traditional: 'They manage it for you', groundwork: 'Code edits or hire a dev' },
+  { feature: 'Ongoing updates', diy: 'You do it yourself', traditional: 'Included in monthly fee', groundwork: 'Pay as needed' },
   { feature: 'Ownership', diy: 'Hosted on their platform', traditional: 'Varies by provider', groundwork: 'You own code, hosting, domain' },
   { feature: 'If you leave', diy: 'Limited export', traditional: 'Varies by provider', groundwork: 'Nothing changes' },
-  { feature: 'Build time', diy: 'Weeks (your time)', traditional: '6–12 weeks', groundwork: '3–7 business days' },
+  { feature: 'Build time', diy: 'Weeks (your time)', traditional: '4–12 weeks', groundwork: '3–7 business days' },
   { feature: 'Google Business Profile', diy: 'Not included', traditional: 'Sometimes, extra cost', groundwork: 'Included' },
 ];
 
@@ -30,7 +33,7 @@ const faqs = [
   },
   {
     question: 'Do I need to be technical?',
-    answer: 'Not at all. We set up every account, configure every setting, and hand you documentation that explains what everything is. If you can send an email, you can manage your website.',
+    answer: 'To run the site: no. Your website is static HTML on Cloudflare — it just works, no maintenance required. To make content changes yourself: yes, a little. Updating text or adding a page means editing code files and pushing to GitHub. It\'s not complicated, but it\'s not a point-and-click interface either. If you want to make updates without touching code, you can hire any developer for a one-off change, or add managed hosting ($100/mo) and we handle it. We\'re upfront about this because website builders like Squarespace do offer visual editing — we don\'t.',
   },
   {
     question: 'What if I want changes after the build?',
