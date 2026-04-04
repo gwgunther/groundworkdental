@@ -1,6 +1,5 @@
 ---
-import { site } from '../config/site';
-import { navLinks } from '../config/navigation';
+import { navMain } from '../config/navigation';
 ---
 
 <header class="bg-white border-b border-border-light sticky top-0 z-50">
@@ -16,12 +15,47 @@ import { navLinks } from '../config/navigation';
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden lg:flex items-center gap-7">
-        {navLinks.map((link) => (
-          <a href={link.href} class="nav-link">
-            {link.label}
-          </a>
-        ))}
+      <nav class="hidden lg:flex items-center gap-7" aria-label="Main">
+        {navMain.map((entry) =>
+          entry.dropdown ? (
+            <div class="relative group">
+              <a
+                href={entry.href}
+                class="nav-link inline-flex items-center gap-1"
+                aria-haspopup="true"
+              >
+                {entry.label}
+                <svg
+                  class="w-3 h-3 shrink-0 opacity-70 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+              <div
+                class="absolute left-0 top-full z-50 pt-2 min-w-[12rem] opacity-0 invisible translate-y-0.5 transition-all duration-150 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0"
+              >
+                <div class="rounded border bg-white border-border-light shadow-lg py-1">
+                  {entry.dropdown.map((link) => (
+                    <a
+                      href={link.href}
+                      class="block px-4 py-2.5 font-sans text-xs uppercase tracking-widest font-medium text-mid-gray hover:text-charcoal hover:bg-surface-2 transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <a href={entry.href} class="nav-link">
+              {entry.label}
+            </a>
+          ),
+        )}
       </nav>
 
       <!-- Desktop CTA -->
@@ -51,13 +85,23 @@ import { navLinks } from '../config/navigation';
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-border-light">
     <div class="px-4 py-4 space-y-1">
-      {navLinks.map((link) => (
-        <a
-          href={link.href}
-          class="block font-sans text-xs uppercase tracking-widest text-mid-gray py-2.5 hover:text-charcoal transition-colors"
-        >
-          {link.label}
-        </a>
+      {navMain.map((entry) => (
+        <>
+          <a
+            href={entry.href}
+            class="block font-sans text-xs uppercase tracking-widest text-mid-gray py-2.5 hover:text-charcoal transition-colors"
+          >
+            {entry.label}
+          </a>
+          {entry.dropdown?.map((link) => (
+            <a
+              href={link.href}
+              class="block pl-3 font-sans text-xs uppercase tracking-widest text-mid-gray py-2.5 hover:text-charcoal transition-colors border-l border-border-light"
+            >
+              {link.label}
+            </a>
+          ))}
+        </>
       ))}
       <div class="pt-4 border-t border-border-light">
         <a href="/get-started" class="block text-center btn-primary">
