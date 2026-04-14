@@ -20,6 +20,7 @@ export default {
         surface: {
           1: '#FFFFFF',
           2: '#F8F8F3',
+          warm: '#FAF8F5',
         },
         charcoal: '#334155',
         'mid-gray': '#64748B',
@@ -27,7 +28,7 @@ export default {
       },
       fontFamily: {
         serif: ['Georgia', '"Times New Roman"', 'serif'],
-        sans: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+        sans: ['Figtree', '"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       fontSize: {

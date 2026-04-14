@@ -87,7 +87,10 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Fonts: Georgia (system) + Helvetica Neue (system) — no external font loads -->
+    <!-- Fonts: Georgia (system serif) + Figtree (Google Fonts, humanist sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
 
     <!-- JSON-LD Schema -->
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
@@ -112,8 +115,9 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
     )}
   </head>
   <body class="bg-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-charcoal focus:text-white focus:text-sm focus:font-sans focus:rounded">Skip to content</a>
     <Header />
-    <main>
+    <main id="main-content">
       <slot />
     </main>
     <Footer />

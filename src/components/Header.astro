@@ -1,5 +1,6 @@
 ---
 import { navMain } from '../config/navigation';
+const pathname = Astro.url.pathname;
 ---
 
 <header class="bg-white border-b border-border-light sticky top-0 z-50">
@@ -16,13 +17,14 @@ import { navMain } from '../config/navigation';
 
       <!-- Desktop Nav -->
       <nav class="hidden lg:flex items-center gap-7" aria-label="Main">
-        {navMain.map((entry) =>
-          entry.dropdown ? (
+        {navMain.map((entry) => {
+          const isActive = pathname === entry.href || (entry.dropdown?.some(l => pathname === l.href));
+          return entry.dropdown ? (
             <div class="relative group">
               <a
                 href={entry.href}
-                class="nav-link inline-flex items-center gap-1"
-                aria-haspopup="true"
+                class={`nav-link inline-flex items-center gap-1 ${isActive ? 'text-charcoal underline underline-offset-4 decoration-brand-warm decoration-1' : ''}`}
+                aria-current={pathname === entry.href ? 'page' : undefined}
               >
                 {entry.label}
                 <svg
@@ -42,7 +44,8 @@ import { navMain } from '../config/navigation';
                   {entry.dropdown.map((link) => (
                     <a
                       href={link.href}
-                      class="block px-4 py-2.5 font-sans text-xs uppercase tracking-widest font-medium text-mid-gray hover:text-charcoal hover:bg-surface-2 transition-colors"
+                      aria-current={pathname === link.href ? 'page' : undefined}
+                      class={`block px-4 py-2.5 font-sans text-xs uppercase tracking-widest font-medium transition-colors ${pathname === link.href ? 'text-charcoal bg-surface-2' : 'text-mid-gray hover:text-charcoal hover:bg-surface-2'}`}
                     >
                       {link.label}
                     </a>
@@ -51,11 +54,15 @@ import { navMain } from '../config/navigation';
               </div>
             </div>
           ) : (
-            <a href={entry.href} class="nav-link">
+            <a
+              href={entry.href}
+              aria-current={pathname === entry.href ? 'page' : undefined}
+              class={`nav-link ${isActive ? 'text-charcoal underline underline-offset-4 decoration-brand-warm decoration-1' : ''}`}
+            >
               {entry.label}
             </a>
-          ),
-        )}
+          );
+        })}
       </nav>
 
       <!-- Desktop CTA -->
@@ -68,14 +75,15 @@ import { navMain } from '../config/navigation';
       <!-- Mobile Hamburger -->
       <button
         id="mobile-menu-btn"
-        class="text-mid-gray p-2 hover:text-charcoal transition-colors lg:hidden"
+        class="text-mid-gray p-3 hover:text-charcoal transition-colors lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center"
         aria-label="Toggle mobile menu"
         aria-expanded="false"
+        aria-controls="mobile-menu"
       >
-        <svg id="hamburger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg id="hamburger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
-        <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
@@ -85,24 +93,29 @@ import { navMain } from '../config/navigation';
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-border-light">
     <div class="px-4 py-4 space-y-1">
-      {navMain.map((entry) => (
-        <>
-          <a
-            href={entry.href}
-            class="block font-sans text-xs uppercase tracking-widest text-mid-gray py-2.5 hover:text-charcoal transition-colors"
-          >
-            {entry.label}
-          </a>
-          {entry.dropdown?.map((link) => (
+      {navMain.map((entry) => {
+        const isActive = pathname === entry.href || (entry.dropdown?.some(l => pathname === l.href));
+        return (
+          <>
             <a
-              href={link.href}
-              class="block pl-3 font-sans text-xs uppercase tracking-widest text-mid-gray py-2.5 hover:text-charcoal transition-colors border-l border-border-light"
+              href={entry.href}
+              aria-current={pathname === entry.href ? 'page' : undefined}
+              class={`block font-sans text-xs uppercase tracking-widest py-3 min-h-[44px] flex items-center hover:text-charcoal transition-colors ${isActive ? 'text-charcoal' : 'text-mid-gray'}`}
             >
-              {link.label}
+              {entry.label}
             </a>
-          ))}
-        </>
-      ))}
+            {entry.dropdown?.map((link) => (
+              <a
+                href={link.href}
+                aria-current={pathname === link.href ? 'page' : undefined}
+                class={`block pl-4 font-sans text-xs uppercase tracking-widest py-3 min-h-[44px] flex items-center hover:text-charcoal transition-colors ${pathname === link.href ? 'text-charcoal' : 'text-neutral-400'}`}
+              >
+                {link.label}
+              </a>
+            ))}
+          </>
+        );
+      })}
       <div class="pt-4 border-t border-border-light">
         <a href="/get-started" class="block text-center btn-primary">
           Get Started

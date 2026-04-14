@@ -37,6 +37,7 @@ const {
         <button
           class="w-full text-left py-5 flex justify-between items-start bg-transparent hover:text-brand-warm transition-colors duration-200"
           aria-expanded="false"
+          aria-controls={`faq-content-${index}`}
           data-faq-btn={index}
         >
           <span class="font-serif text-charcoal pr-6">{faq.question}</span>
@@ -46,20 +47,39 @@ const {
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
         <div
-          class="hidden pb-5 text-mid-gray font-serif text-sm leading-relaxed"
+          id={`faq-content-${index}`}
+          class="faq-panel grid"
+          style="grid-template-rows: 0fr;"
           data-faq-content={index}
         >
-          {faq.answer}
+          <div class="overflow-hidden">
+            <p class="pb-5 text-mid-gray font-serif text-sm leading-relaxed">{faq.answer}</p>
+          </div>
         </div>
       </div>
     ))}
   </div>
 </section>
+
+<style>
+  .faq-panel {
+    transition: grid-template-rows 220ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .faq-panel.open {
+    grid-template-rows: 1fr;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .faq-panel {
+      transition: none;
+    }
+  }
+</style>
 
 <script>
   const buttons = document.querySelectorAll('[data-faq-btn]');
@@ -67,12 +87,12 @@ const {
   buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
       const index = btn.getAttribute('data-faq-btn');
-      const content = document.querySelector(`[data-faq-content="${index}"]`);
+      const panel = document.querySelector(`[data-faq-content="${index}"]`);
       const icon = document.querySelector(`[data-faq-icon="${index}"]`);
-      const isOpen = !content?.classList.contains('hidden');
+      const isOpen = panel?.classList.contains('open');
 
-      content?.classList.toggle('hidden');
-      icon?.classList.toggle('rotate-180');
+      panel?.classList.toggle('open', !isOpen);
+      icon?.classList.toggle('rotate-180', !isOpen);
       btn.setAttribute('aria-expanded', String(!isOpen));
     });
   });

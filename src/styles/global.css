@@ -21,8 +21,18 @@
     @apply inline-block bg-brand-warm text-white font-sans font-medium px-6 py-3 rounded transition-colors duration-200 text-center text-sm tracking-wide hover:bg-brand-warm-dark;
   }
 
+  .btn-primary:focus-visible,
+  .btn-secondary:focus-visible,
+  .btn-dark:focus-visible {
+    @apply outline-none ring-2 ring-brand-warm ring-offset-2;
+  }
+
+  .nav-link:focus-visible {
+    @apply outline-none ring-2 ring-brand-warm ring-offset-2 rounded-sm;
+  }
+
   .btn-secondary {
-    @apply inline-block bg-white text-charcoal font-sans font-medium px-6 py-3 rounded transition-colors duration-200 text-center text-sm tracking-wide border border-border-light hover:bg-charcoal hover:text-white hover:border-charcoal;
+    @apply inline-block bg-white text-charcoal font-sans font-medium px-6 py-3 rounded transition-colors duration-200 text-center text-sm tracking-wide border border-neutral-300 hover:bg-surface-2 hover:border-charcoal;
   }
 
   .btn-dark {
@@ -80,7 +90,7 @@
   }
 
   .prose-article blockquote {
-    @apply border-l-2 border-brand-warm bg-brand-warm/5 pl-6 pr-4 py-4 my-6 not-italic text-charcoal rounded-r text-base;
+    @apply border-t-2 border-brand-warm bg-brand-warm/5 px-6 pt-5 pb-4 my-6 not-italic text-charcoal rounded text-base;
   }
 
   .prose-article blockquote strong {

@@ -29,24 +29,24 @@ const hasThreeColumns = !hasFourColumns && rows.some((row) => row.diy !== undefi
     <table class={`w-full text-left border-collapse mx-auto ${hasFourColumns ? 'max-w-6xl' : hasThreeColumns ? 'max-w-5xl' : 'max-w-4xl'}`}>
       <thead>
         <tr class="border-b border-border-light">
-          <th class="py-3 pr-4 font-sans text-eyebrow uppercase text-neutral-400">Feature</th>
+          <th scope="col" class="py-3 pr-4 font-sans text-eyebrow uppercase text-neutral-400">Feature</th>
           {hasFourColumns && (
-            <th class="py-3 px-4 font-sans text-eyebrow uppercase text-neutral-400">Wix (Free)</th>
+            <th scope="col" class="py-3 px-4 font-sans text-eyebrow uppercase text-neutral-400">Wix (Free)</th>
           )}
           {hasFourColumns && (
-            <th class="py-3 px-4 font-sans text-eyebrow uppercase text-neutral-400">Squarespace</th>
+            <th scope="col" class="py-3 px-4 font-sans text-eyebrow uppercase text-neutral-400">Squarespace</th>
           )}
           {hasThreeColumns && (
-            <th class="py-3 px-4 font-sans text-eyebrow uppercase text-neutral-400">Website Builder<span class="block normal-case font-normal text-[10px] tracking-normal text-neutral-400 mt-0.5">e.g. Wix, Squarespace</span></th>
+            <th scope="col" class="py-3 px-4 font-sans text-eyebrow uppercase text-neutral-400">Website Builder<span class="block normal-case font-normal text-[10px] tracking-normal text-neutral-400 mt-0.5">e.g. Wix, Squarespace</span></th>
           )}
-          <th class="py-3 px-4 font-sans text-eyebrow uppercase text-neutral-400">Traditional Agency</th>
-          <th class="py-3 pl-4 font-sans text-eyebrow uppercase text-brand-warm">Groundwork</th>
+          <th scope="col" class="py-3 px-4 font-sans text-eyebrow uppercase text-neutral-400">Traditional Agency</th>
+          <th scope="col" class="py-3 pl-4 font-sans text-eyebrow uppercase text-brand-warm">Groundwork</th>
         </tr>
       </thead>
       <tbody>
         {rows.map((row) => (
           <tr class="border-b border-border-light">
-            <td class="py-3.5 pr-4 font-serif text-charcoal text-sm font-medium">{row.feature}</td>
+            <td scope="row" class="py-3.5 pr-4 font-serif text-charcoal text-sm font-medium">{row.feature}</td>
             {hasFourColumns && (
               <td class="py-3.5 px-4 font-serif text-mid-gray text-sm">{row.wix}</td>
             )}
