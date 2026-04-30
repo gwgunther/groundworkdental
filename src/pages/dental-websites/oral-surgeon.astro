@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQBlock from '../../components/FAQBlock.astro';
+import CTABlock from '../../components/CTABlock.astro';
+
+const faqs = [
+  {
+    question: 'Can the site handle both patient-facing and referral-facing content?',
+    answer: 'Yes. We structure the site for both audiences — patient-facing service pages and a dedicated referral section for referring dentists. Different entry points, different copy, same clean site architecture.',
+  },
+  {
+    question: 'I perform a mix of procedures — implants, extractions, bone grafting, wisdom teeth. Do each get their own page?',
+    answer: 'They should. Each procedure is searched for differently. Someone Googling "dental implants" is in a different place than someone searching "wisdom tooth removal." Separate pages, separate SEO targets, separate conversion paths.',
+  },
+  {
+    question: 'My patients are mostly referrals from other dentists. Do I still need a consumer-facing website?',
+    answer: 'Yes — for two reasons. First, patients increasingly look you up before keeping the referred appointment. If your site looks dated or thin, they second-guess the referral. Second, a strong web presence reinforces your credibility with the referring dentist, especially newer ones who will Google you.',
+  },
+  {
+    question: 'Can you show my credentials and hospital affiliations prominently?',
+    answer: 'Absolutely. For oral surgery, credentials are a primary trust signal. Board certification, hospital privileges, fellowship memberships — we make these visible and crawlable by search engines, not buried in a footer.',
+  },
+];
+---
+
+<BaseLayout
+  title="Websites for Oral Surgeons | Groundwork Dental"
+  description="Custom websites built for oral surgery practices. Procedure pages for implants, extractions, bone grafting. Referral section, credentials, professional credibility. $2,000 flat."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'MedicalBusiness',
+    'name': 'Groundwork Dental — Oral Surgeon Websites',
+    'description': 'Custom dental website design for oral surgery practices.',
+    'medicalSpecialty': 'Oral and Maxillofacial Surgery',
+    'url': 'https://groundworkdental.com/dental-websites/oral-surgeon',
+    'provider': {
+      '@type': 'ProfessionalService',
+      'name': 'Groundwork Dental',
+      'url': 'https://groundworkdental.com',
+    },
+  })} />
+
+  <!-- Hero -->
+  <section class="bg-surface-warm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+      <div class="max-w-3xl">
+        <p class="eyebrow text-brand-warm mb-4">Oral surgeon websites</p>
+        <h1 class="section-heading mb-6">Patients Look You Up Before Keeping the Referral Appointment.</h1>
+        <p class="font-serif text-xl text-mid-gray leading-relaxed">
+          Oral surgery is a referred specialty. But the patient still Googles you before showing up. If your site looks thin or dated, they second-guess the referral. And the referring dentist noticed too.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-subheading mb-8">Why Oral Surgery Websites Fail</h2>
+      <div class="prose-article text-lg">
+        <p>
+          Most oral surgery websites make the same mistake: they're built for the referred patient and ignore the referring dentist entirely. There's no referral section, no clear credentials, no indication of what cases you handle or how you communicate with the referring office.
+        </p>
+        <p>
+          The other failure is procedure depth. "We perform dental implants" is not a page. It's a line. A referring dentist evaluating whether to trust you with their patient, or a patient researching why their dentist is sending them to a specialist — both need real information. Anatomy of the procedure, what to expect, recovery, your approach. That's what builds confidence.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Build -->
+  <section class="py-10 bg-surface-2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-subheading text-center mb-10">What We Build for Oral Surgery Practices</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">A Page Per Procedure</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">Dental implants, wisdom teeth, bone grafting, tooth extractions, jaw surgery, pathology — each procedure gets its own page, written at depth. Not a services menu. Real content about the procedure, the recovery, and what to expect.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">Referral Section for Dentists</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">A dedicated section for referring dentists — your referral process, contact for urgent cases, what information to send, and how you communicate back. Strengthens existing referral relationships and helps new ones form.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">Credentials Front and Center</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">Board certification, fellowship memberships, hospital affiliations, residency training — visible, labeled, and crawlable by search engines. For a specialty practice, credentials aren't a footnote. They're a primary trust signal.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">Patient Prep and Recovery Content</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">Pre-op instructions, post-op care, what to eat after surgery, when to call the office — this content reduces anxiety for patients and reduces calls to your front desk. Built-in utility.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">IV Sedation and Anesthesia Page</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">Anesthesia options are a major differentiator for oral surgery practices — and a major patient concern. A dedicated page explaining your approach removes one of the biggest hesitation points.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">Oral Surgery Schema Markup</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">Physician and MedicalProcedure schema with board certifications, specialty, and procedure-level content. Ensures Google and AI tools understand and can recommend your practice for the right surgical queries.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Handoff Doc -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="card border-brand-warm/20 bg-brand-warm/5">
+        <p class="eyebrow text-brand-warm mb-3">Included with every build</p>
+        <h2 class="font-serif text-charcoal text-xl mb-3">The Handoff Doc</h2>
+        <p class="font-serif text-mid-gray text-sm leading-relaxed mb-4">
+          When we hand off your site, you get a plain-English document covering everything you own: your Cloudflare login, your GitHub repo, your Google Analytics, your Search Console. Written for a specialist running a practice — not a developer.
+        </p>
+        <p class="font-serif text-mid-gray text-sm leading-relaxed">
+          No ongoing dependency. No "website management plan." Yours to hand to anyone.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-10 bg-surface-2">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="font-mono text-5xl text-charcoal mb-3">$2,000</p>
+      <p class="font-sans text-sm text-neutral-400 uppercase tracking-wider mb-6">One-time — no monthly fee, no contract</p>
+      <p class="font-serif text-mid-gray leading-relaxed max-w-xl mx-auto mb-8">
+        Custom oral surgery website, procedure pages, referral section, credentials, GBP optimization, all accounts transferred to you, and the Handoff Doc. ~$12/year after that for your domain.
+      </p>
+      <a href="/pricing" class="font-sans text-sm text-brand-warm font-medium hover:text-brand-warm-dark transition-colors">
+        Full pricing breakdown &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQBlock faqs={faqs} heading="Questions About Oral Surgeon Websites" />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-10 bg-surface-2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <CTABlock
+        heading="Let's Build Your Oral Surgery Website."
+        subheading="Send us your practice info and current site. We'll walk through exactly what we'd build. No commitment, no pressure."
+        primaryCTA="Get Started"
+        primaryHref="/get-started"
+        secondaryCTA="See all specialties"
+        secondaryHref="/dental-websites"
+        variant="warm"
+      />
+    </div>
+  </section>
+</BaseLayout>

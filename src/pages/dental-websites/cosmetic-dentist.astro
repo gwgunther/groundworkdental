@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQBlock from '../../components/FAQBlock.astro';
+import CTABlock from '../../components/CTABlock.astro';
+
+const faqs = [
+  {
+    question: 'Does the before/after gallery work without a plugin?',
+    answer: 'Yes. We build a custom before/after gallery into the site — no WordPress plugin, no third-party embed. It loads fast, looks clean, and you can add cases yourself or send them to us.',
+  },
+  {
+    question: 'Can I show my specific cosmetic procedures — not just general dentistry?',
+    answer: 'That\'s the point. Every procedure gets its own page: veneers, Invisalign, whitening, bonding, full-mouth reconstruction. Each page is written to rank for that specific procedure in your market.',
+  },
+  {
+    question: 'How does this help me attract high-value cosmetic cases, not cleanings?',
+    answer: 'Page targeting and copy intent. We write your service pages for patients already researching cosmetic work — not patients looking for their first dentist. Different search terms, different copy, different CTA.',
+  },
+  {
+    question: 'What if I\'m dual-specialty — general and cosmetic?',
+    answer: 'We structure the site so both audiences land on the right content. Cosmetic patients aren\'t sent through your cleaning booking flow.',
+  },
+];
+---
+
+<BaseLayout
+  title="Websites for Cosmetic Dentists | Groundwork Dental"
+  description="Custom websites built specifically for cosmetic dental practices. Before/after gallery, procedure pages for veneers, Invisalign, and whitening, consultation flow. $2,000 flat."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'MedicalBusiness',
+    'name': 'Groundwork Dental — Cosmetic Dentist Websites',
+    'description': 'Custom dental website design for cosmetic dentistry practices.',
+    'medicalSpecialty': 'Cosmetic Dentistry',
+    'url': 'https://groundworkdental.com/dental-websites/cosmetic-dentist',
+    'provider': {
+      '@type': 'ProfessionalService',
+      'name': 'Groundwork Dental',
+      'url': 'https://groundworkdental.com',
+    },
+  })} />
+
+  <!-- Hero -->
+  <section class="bg-surface-warm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+      <div class="max-w-3xl">
+        <p class="eyebrow text-brand-warm mb-4">Cosmetic dentist websites</p>
+        <h1 class="section-heading mb-6">Cosmetic Patients Do Their Homework. Your Website Is the Audition.</h1>
+        <p class="font-serif text-xl text-mid-gray leading-relaxed">
+          Before someone books a veneer consultation, they've already Googled you, compared your before/afters to three other practices, and made a gut decision about whether you look like someone they'd trust with their smile. Most cosmetic dentistry websites fail this test.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-subheading mb-8">What a Generic Template Costs You</h2>
+      <div class="prose-article text-lg">
+        <p>
+          A template dental website treats cosmetic work as just another service row. "We offer veneers, whitening, and Invisalign." That's a menu, not a reason to book. It tells Google nothing specific and it tells patients nothing about what makes your cosmetic work different.
+        </p>
+        <p>
+          Cosmetic dentistry is elective. Patients aren't coming to you because they have pain — they're coming because they want something. That's a fundamentally different buyer in a fundamentally different state of mind. Your website should speak to that directly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Build -->
+  <section class="py-10 bg-surface-2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-subheading text-center mb-10">What We Build for Cosmetic Practices</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">A Dedicated Page Per Procedure</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">Veneers, Invisalign, whitening, bonding, full-mouth reconstruction — each on its own page, written to rank for that procedure in your city. Not a single "cosmetic dentistry" page that tries to do everything.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">Before/After Gallery Built In</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">A clean, fast gallery showing your actual work — organized by procedure, not buried in a grid. No plugin required. No slow load. Just your cases, presented like they deserve to be.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">Consultation-Oriented Copy</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">Cosmetic patients want to know what the process looks like before they call. We write your pages for the patient who's researching, not the one who already decided. The copy closes the gap between interest and booking.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">Doctor Credentials Front and Center</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">Cosmetic work is trust-dependent. We make your training, aesthetic philosophy, and experience part of the site architecture — not a footnote on the About page.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">Schema for Cosmetic Procedures</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">Structured data tells Google exactly what procedures you offer, who performs them, and where. This is how you show up in AI search results and rich snippets — not just standard blue links.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">Financing and Payment Info</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">Elective patients are already calculating cost in their head. A dedicated financing page — CareCredit, Cherry, whatever you accept — removes the objection before the consult call.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Handoff Doc -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="card border-brand-warm/20 bg-brand-warm/5">
+        <p class="eyebrow text-brand-warm mb-3">Included with every build</p>
+        <h2 class="font-serif text-charcoal text-xl mb-3">The Handoff Doc</h2>
+        <p class="font-serif text-mid-gray text-sm leading-relaxed mb-4">
+          When we're done, you get a plain-English document that explains everything you own: your Cloudflare login, your GitHub repo, your Google Analytics, your Search Console. Written for a dentist, not a developer. You'll know exactly what you have, where it lives, and who to call if you ever need something changed.
+        </p>
+        <p class="font-serif text-mid-gray text-sm leading-relaxed">
+          No dependency. No mystery. No reason to stay.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-10 bg-surface-2">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="font-mono text-5xl text-charcoal mb-3">$2,000</p>
+      <p class="font-sans text-sm text-neutral-400 uppercase tracking-wider mb-6">One-time — no monthly fee, no contract</p>
+      <p class="font-serif text-mid-gray leading-relaxed max-w-xl mx-auto mb-8">
+        Custom cosmetic dentistry website, before/after gallery, procedure pages, GBP optimization, all accounts transferred to you, and the Handoff Doc. ~$12/year after that for your domain.
+      </p>
+      <a href="/pricing" class="font-sans text-sm text-brand-warm font-medium hover:text-brand-warm-dark transition-colors">
+        Full pricing breakdown &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQBlock faqs={faqs} heading="Questions About Cosmetic Dentist Websites" />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-10 bg-surface-2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <CTABlock
+        heading="Let's Build Your Cosmetic Dentistry Website."
+        subheading="Send us your practice info and current site. We'll walk through what we'd build specifically for your cosmetic practice. No commitment, no pressure."
+        primaryCTA="Get Started"
+        primaryHref="/get-started"
+        secondaryCTA="See all specialties"
+        secondaryHref="/dental-websites"
+        variant="warm"
+      />
+    </div>
+  </section>
+</BaseLayout>

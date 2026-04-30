@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABlock from '../../components/CTABlock.astro';
+
+const specialties = [
+  {
+    name: 'Cosmetic Dentists',
+    href: '/dental-websites/cosmetic-dentist',
+    tagline: 'Elective patients research obsessively. Your website is the audition.',
+    signal: 'Before/after gallery · Procedure pages · Consultation flow',
+  },
+  {
+    name: 'Orthodontists',
+    href: '/dental-websites/orthodontist',
+    tagline: 'Parents comparison-shop. Show them the transformation before the consult.',
+    signal: 'Before/after cases · Treatment page per type · Parent-focused copy',
+  },
+  {
+    name: 'Pediatric Dentists',
+    href: '/dental-websites/pediatric-dentist',
+    tagline: 'Parents need to trust you before they bring their kid in.',
+    signal: 'Warm tone · Near-me SEO · First-visit FAQ',
+  },
+  {
+    name: 'Oral Surgeons',
+    href: '/dental-websites/oral-surgeon',
+    tagline: 'Referral credibility and procedure authority — not a generic dentist site.',
+    signal: 'Procedure pages · Credentials · Referral portal',
+  },
+];
+---
+
+<BaseLayout
+  title="Dental Websites by Specialty | Groundwork Dental"
+  description="We build custom websites for specific dental specialties — cosmetic, orthodontics, pediatric, oral surgery, and more. Specialty-specific copy, schema, and SEO. $2,000 flat."
+>
+  <!-- Hero -->
+  <section class="bg-surface-warm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+      <div class="max-w-3xl">
+        <p class="eyebrow text-brand-warm mb-4">Specialty dental websites</p>
+        <h1 class="section-heading mb-6">A Cosmetic Dentistry Site Isn't a Pediatric Dentistry Site.</h1>
+        <p class="font-serif text-xl text-mid-gray leading-relaxed">
+          Different patients. Different searches. Different trust signals. We build websites that speak directly to your specialty — not a generic dental template with your name swapped in.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialty Grid -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {specialties.map((s) => (
+          <a
+            href={s.href}
+            class="card group hover:border-brand-warm transition-colors duration-200 no-underline"
+          >
+            <h2 class="font-serif text-charcoal text-xl mb-2 group-hover:text-brand-warm transition-colors duration-200">
+              {s.name}
+            </h2>
+            <p class="font-serif text-mid-gray text-sm leading-relaxed mb-4">{s.tagline}</p>
+            <p class="font-mono text-xs text-neutral-400">{s.signal}</p>
+            <p class="font-sans text-sm text-brand-warm font-medium mt-4">
+              See what we build &rarr;
+            </p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Specialty Matters -->
+  <section class="py-10 bg-surface-2">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-subheading mb-8">Why Specialty-Specific Matters</h2>
+      <div class="prose-article text-lg">
+        <p>
+          Generic dental templates treat every practice the same — same page structure, same copy patterns, same service descriptions slightly reworded. It's efficient for the agency. It's not good for you.
+        </p>
+        <p>
+          When a patient searches "cosmetic dentist near me," they're not looking for a general dentist who does some whitening. When someone searches "orthodontist for my teenager," they want to see cases like their kid's. The intent is different. The page should be different.
+        </p>
+        <p>
+          Every specialty page we build starts from the actual search behavior, procedure language, and trust signals specific to that type of practice — not from a template we've already used a hundred times.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's the same -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-subheading mb-2">Same Price. Same Ownership. Every Specialty.</h2>
+      <p class="font-serif text-mid-gray mb-8">Regardless of specialty, the deal is the same:</p>
+      <div class="space-y-3 text-sm">
+        {[
+          ['$2,000 flat', 'One-time. No setup fee, no monthly retainer.'],
+          ['~$12/year after that', 'Your domain renewal. Hosting is free on Cloudflare Pages.'],
+          ['You own everything', 'Code, hosting, domain, analytics — all transferred to your accounts at handoff.'],
+          ['The Handoff Doc', 'Plain-English account guide so you always know what you have and how it works.'],
+        ].map(([label, desc]) => (
+          <div class="flex items-start gap-4">
+            <span class="font-mono text-xs text-brand-warm pt-0.5 min-w-[120px]">{label}</span>
+            <span class="font-serif text-mid-gray">{desc}</span>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8">
+        <a href="/pricing" class="font-sans text-sm text-brand-warm font-medium hover:text-brand-warm-dark transition-colors">
+          Full pricing breakdown &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-10 bg-surface-2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <CTABlock
+        heading="Not sure which page fits your practice?"
+        subheading="Send us your practice info and we'll tell you exactly what we'd build. No commitment, no pressure."
+        primaryCTA="Get in Touch"
+        primaryHref="/get-started"
+        secondaryCTA="See the full process"
+        secondaryHref="/how-it-works"
+        variant="light"
+      />
+    </div>
+  </section>
+</BaseLayout>

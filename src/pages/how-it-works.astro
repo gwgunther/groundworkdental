@@ -254,6 +254,45 @@ const faqs = [
     </div>
   </section>
 
+  <!-- The Handoff Doc -->
+  <section class="py-10 bg-surface-warm">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="eyebrow text-brand-warm mb-4 text-center">What you receive at handoff</p>
+      <h2 class="section-subheading text-center mb-8">The Handoff Doc</h2>
+      <div class="card mb-6">
+        <p class="font-serif text-mid-gray leading-relaxed mb-4">
+          When the build is complete, we write you a plain-English document that covers everything you own. Not a technical manual — a cheat sheet for a dentist who doesn't think about websites for a living.
+        </p>
+        <p class="font-serif text-mid-gray leading-relaxed">
+          It tells you where your site lives, how to log in to each account, what each account does, and exactly who to contact if you ever need something changed. You hand it to your office manager, your tech-savvy spouse, or a developer you hire later. Everything they need is in there.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+        {[
+          ['Your Cloudflare account', 'Where your site is hosted — login, deployment settings, your custom domain.'],
+          ['Your GitHub repository', 'Where your site code lives — how to access it and what to do with it.'],
+          ['Your Google Analytics', 'How to log in and what the key numbers actually mean for your practice.'],
+          ['Your Search Console', 'How to check what searches send patients to your site.'],
+          ['Your GBP login', 'How to update your hours, add photos, and respond to reviews.'],
+          ['Who to call', 'A short list of what to do yourself vs. what to ask a developer vs. what to ask us.'],
+        ].map(([label, desc]) => (
+          <div class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-sage flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <div>
+              <p class="font-serif text-charcoal font-medium">{label}</p>
+              <p class="font-serif text-mid-gray text-xs mt-0.5">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="font-serif text-mid-gray text-center text-sm mt-8">
+        No dependency. No mystery. No reason to keep paying anyone for "account management."
+      </p>
+    </div>
+  </section>
+
   <!-- The Process -->
   <section class="py-10 bg-surface-2">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

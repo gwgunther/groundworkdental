@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQBlock from '../../components/FAQBlock.astro';
+import CTABlock from '../../components/CTABlock.astro';
+
+const faqs = [
+  {
+    question: 'How do you make the site feel warm without being cheesy?',
+    answer: 'Tone and specificity. We write for the actual parent — their specific worries, their kid\'s actual experience. Warm copy isn\'t cartoon characters and clip art. It\'s language that sounds like a practice that genuinely likes working with kids.',
+  },
+  {
+    question: 'Can parents book online through the site?',
+    answer: 'We link directly to your existing booking system. If you don\'t have one, we can integrate a simple form. We don\'t build the scheduling software — but we make sure the path from landing on your site to booking an appointment is as short as possible.',
+  },
+  {
+    question: 'My practice is in a specific neighborhood. Does that help with local SEO?',
+    answer: 'A lot. We build location signals into the site architecture — your city, your neighborhood, nearby schools, the surrounding service area. "Pediatric dentist [neighborhood]" searches are highly local and often less competitive than city-wide terms.',
+  },
+  {
+    question: 'Do you write the first-visit content, or do I?',
+    answer: 'We write it. We\'ll ask you what your first visit looks like, what you tell nervous parents, and what makes your approach different — then we turn that into page content. You review and refine.',
+  },
+];
+---
+
+<BaseLayout
+  title="Websites for Pediatric Dentists | Groundwork Dental"
+  description="Custom websites built for pediatric dental practices. Parent-focused copy, first-visit FAQ, warm tone, near-me local SEO. $2,000 flat. You own everything."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'MedicalBusiness',
+    'name': 'Groundwork Dental — Pediatric Dentist Websites',
+    'description': 'Custom dental website design for pediatric dental practices.',
+    'medicalSpecialty': 'Pediatric Dentistry',
+    'url': 'https://groundworkdental.com/dental-websites/pediatric-dentist',
+    'provider': {
+      '@type': 'ProfessionalService',
+      'name': 'Groundwork Dental',
+      'url': 'https://groundworkdental.com',
+    },
+  })} />
+
+  <!-- Hero -->
+  <section class="bg-surface-warm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+      <div class="max-w-3xl">
+        <p class="eyebrow text-brand-warm mb-4">Pediatric dentist websites</p>
+        <h1 class="section-heading mb-6">Parents Need to Trust You Before They Bring Their Kid In.</h1>
+        <p class="font-serif text-xl text-mid-gray leading-relaxed">
+          A parent searching for a pediatric dentist is doing it with a nervous kid in mind. They're reading your site looking for signals that you're good with children — not just technically competent. Your website is the first impression, and first appointments get booked there.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-subheading mb-8">What the Wrong Website Signals to Parents</h2>
+      <div class="prose-article text-lg">
+        <p>
+          Generic dental templates feel clinical. Cold. Like a waiting room with fluorescent lighting. That's fine for an oral surgeon. For a pediatric practice, it's the wrong signal entirely.
+        </p>
+        <p>
+          Parents are looking for warmth, specificity, and reassurance. A page that says "we see patients of all ages, including children" doesn't cut it. They want to see that you understand what brings a kid to the dentist in the first place — anxiety, novelty, the fear of pain — and that you have a specific way of handling it.
+        </p>
+        <p>
+          Beyond tone, pediatric practices live and die on local search. "Pediatric dentist near [neighborhood]" is a high-intent, very local search. Your site needs to be built for the specific geography you serve.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Build -->
+  <section class="py-10 bg-surface-2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-subheading text-center mb-10">What We Build for Pediatric Practices</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">Parent-First Copy</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">Written for the parent doing the research, not the child who'll be in the chair. We address the real concerns: anxiety management, sedation options, what the first visit looks like, how to prepare a nervous kid.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">First Visit Page</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">A dedicated page walking parents through exactly what to expect — step by step. This page alone can convert a hesitant parent who's been putting off the call.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">Near-Me Local SEO</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">Pediatric dentistry is hyperlocal. We build in your neighborhood, city, and surrounding area so you rank for the "near me" searches that matter most. Your GBP is fully optimized to match.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">Age-Specific Service Pages</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">Infant oral health, toddler first visits, school-age cleanings, teen orthodontic referrals — each stage has different content needs. We build pages that speak to where the parent is, not a single "kids dentistry" page.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">Insurance and Financing Info</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">Parents want to know immediately if you take their insurance. We build a clear insurance page — not just a logo grid, but an explanation of what's typically covered and how your office handles billing.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">Pediatric Schema Markup</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">Structured data for pediatric dental specialty, practice location, hours, and services. This helps Google and AI tools recommend your practice for the right searches — especially near-me and voice queries.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Handoff Doc -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="card border-brand-warm/20 bg-brand-warm/5">
+        <p class="eyebrow text-brand-warm mb-3">Included with every build</p>
+        <h2 class="font-serif text-charcoal text-xl mb-3">The Handoff Doc</h2>
+        <p class="font-serif text-mid-gray text-sm leading-relaxed mb-4">
+          When we hand off your site, you get a plain-English document that covers everything you own: your Cloudflare login, your GitHub repo, your Google Analytics, your Search Console. Written for a dentist running a busy practice — not a developer.
+        </p>
+        <p class="font-serif text-mid-gray text-sm leading-relaxed">
+          You'll always know what you have. No mystery. No reason to keep paying us.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-10 bg-surface-2">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="font-mono text-5xl text-charcoal mb-3">$2,000</p>
+      <p class="font-sans text-sm text-neutral-400 uppercase tracking-wider mb-6">One-time — no monthly fee, no contract</p>
+      <p class="font-serif text-mid-gray leading-relaxed max-w-xl mx-auto mb-8">
+        Custom pediatric dentistry website, first-visit page, local SEO setup, GBP optimization, all accounts transferred to you, and the Handoff Doc. ~$12/year after that for your domain.
+      </p>
+      <a href="/pricing" class="font-sans text-sm text-brand-warm font-medium hover:text-brand-warm-dark transition-colors">
+        Full pricing breakdown &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQBlock faqs={faqs} heading="Questions About Pediatric Dentist Websites" />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-10 bg-surface-2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <CTABlock
+        heading="Let's Build Your Pediatric Dentistry Website."
+        subheading="Tell us about your practice and current site. We'll walk through what we'd build — no commitment, no pressure."
+        primaryCTA="Get Started"
+        primaryHref="/get-started"
+        secondaryCTA="See all specialties"
+        secondaryHref="/dental-websites"
+        variant="warm"
+      />
+    </div>
+  </section>
+</BaseLayout>

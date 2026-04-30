@@ -21,6 +21,16 @@ export const navMain: NavEntry[] = [
       { label: 'Compare', href: '/compare' },
     ],
   },
+  {
+    label: 'Specialties',
+    href: '/dental-websites',
+    dropdown: [
+      { label: 'Cosmetic Dentists', href: '/dental-websites/cosmetic-dentist' },
+      { label: 'Orthodontists', href: '/dental-websites/orthodontist' },
+      { label: 'Pediatric Dentists', href: '/dental-websites/pediatric-dentist' },
+      { label: 'Oral Surgeons', href: '/dental-websites/oral-surgeon' },
+    ],
+  },
   { label: 'Pricing', href: '/pricing' },
   {
     label: 'About',
@@ -34,6 +44,11 @@ export const navLinks: NavLink[] = [
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'Example', href: '/example' },
   { label: 'Compare', href: '/compare' },
+  { label: 'Specialties', href: '/dental-websites' },
+  { label: 'Cosmetic Dentists', href: '/dental-websites/cosmetic-dentist' },
+  { label: 'Orthodontists', href: '/dental-websites/orthodontist' },
+  { label: 'Pediatric Dentists', href: '/dental-websites/pediatric-dentist' },
+  { label: 'Oral Surgeons', href: '/dental-websites/oral-surgeon' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'About', href: '/about' },
   { label: 'Resources', href: '/blog' },

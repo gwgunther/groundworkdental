@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQBlock from '../../components/FAQBlock.astro';
+import CTABlock from '../../components/CTABlock.astro';
+
+const faqs = [
+  {
+    question: 'Can you show different treatment types — braces, Invisalign, retainers?',
+    answer: 'Yes. Each treatment type gets its own page with the specific content and search terms that patient is using. Someone searching "Invisalign teen" isn\'t looking at the same page as someone searching "traditional braces."',
+  },
+  {
+    question: 'My patients are mostly parents. How does that change the site?',
+    answer: 'Significantly. The copy focuses on the concerns parents actually have — treatment timelines, what to expect at the first appointment, how to talk to a hesitant kid about braces, insurance. Not the clinical language of the procedure itself.',
+  },
+  {
+    question: 'Can the site show before/after orthodontic cases?',
+    answer: 'Yes — built-in gallery, no plugin required. We can organize cases by treatment type, age group, or complexity. Your cases are one of your strongest selling tools.',
+  },
+  {
+    question: 'Do you handle the new patient intake flow?',
+    answer: 'We link to your existing scheduling or intake system — or set up a simple intake form. We don\'t build the patient management software, but we connect everything cleanly.',
+  },
+];
+---
+
+<BaseLayout
+  title="Websites for Orthodontists | Groundwork Dental"
+  description="Custom websites built for orthodontic practices. Before/after cases, treatment pages for braces and Invisalign, parent-focused copy. $2,000 flat. You own everything."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'MedicalBusiness',
+    'name': 'Groundwork Dental — Orthodontist Websites',
+    'description': 'Custom dental website design for orthodontic practices.',
+    'medicalSpecialty': 'Orthodontics',
+    'url': 'https://groundworkdental.com/dental-websites/orthodontist',
+    'provider': {
+      '@type': 'ProfessionalService',
+      'name': 'Groundwork Dental',
+      'url': 'https://groundworkdental.com',
+    },
+  })} />
+
+  <!-- Hero -->
+  <section class="bg-surface-warm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+      <div class="max-w-3xl">
+        <p class="eyebrow text-brand-warm mb-4">Orthodontist websites</p>
+        <h1 class="section-heading mb-6">Parents Compare Orthodontists the Way They Compare Schools.</h1>
+        <p class="font-serif text-xl text-mid-gray leading-relaxed">
+          They read reviews. They look at cases. They want to know how you talk about treatment timelines, what happens if something goes wrong, and whether you look like someone who's going to take good care of their kid for the next two years. Your website has to answer all of that before they call.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-subheading mb-8">The Orthodontic Website Problem</h2>
+      <div class="prose-article text-lg">
+        <p>
+          Most orthodontic websites look interchangeable. Stock photos of kids with braces, a "Schedule a Free Consultation" button, and a bullet list of treatment types. It doesn't tell parents anything that differentiates you from the orthodontist three blocks away.
+        </p>
+        <p>
+          Orthodontic treatment is a long-term commitment. Parents are choosing someone to work with their family for 18–30 months. The website that wins that decision shows the practice's personality, the doctor's approach, and real examples of the kind of cases they handle — not a generic clinical description of how braces work.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Build -->
+  <section class="py-10 bg-surface-2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-subheading text-center mb-10">What We Build for Orthodontic Practices</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">A Page Per Treatment Type</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">Traditional braces, clear aligners, Invisalign Teen, retainers, early intervention — each gets its own dedicated page written for the patient and parent doing the research, not a catch-all "treatments" page.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">Before/After Case Gallery</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">Your case results are your strongest proof point. We build a fast, organized gallery — filterable by treatment type or severity. No plugin. No slow load. Just your work.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">Parent-Focused Copy</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">The parent doing the research isn't a clinical audience. We write for their actual concerns: cost, timeline, what the appointments look like, how to talk to their kid about braces. Real answers, not clinical descriptions.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">Age-Group Targeting</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">Early orthodontics for kids, teen treatment, adult clear aligners — the messaging is different for each. We structure the site so each patient type lands on copy that speaks to them.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">Financing and Insurance Pages</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">Orthodontic treatment is a significant spend. A dedicated financing page — payment plans, insurance networks, HSA eligibility — removes the biggest hesitation point before the consult.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-serif text-charcoal mb-2">Orthodontic Schema Markup</h3>
+          <p class="font-serif text-mid-gray text-sm leading-relaxed">Structured data specific to orthodontic services, doctor credentials, and service area. This is how AI search tools and Google understand your practice and recommend it over competitors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Handoff Doc -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="card border-brand-warm/20 bg-brand-warm/5">
+        <p class="eyebrow text-brand-warm mb-3">Included with every build</p>
+        <h2 class="font-serif text-charcoal text-xl mb-3">The Handoff Doc</h2>
+        <p class="font-serif text-mid-gray text-sm leading-relaxed mb-4">
+          When we hand off your site, you get a plain-English document explaining everything you own — your Cloudflare login, your GitHub repo, your Google Analytics and Search Console setup. Written for a doctor, not a developer. No mystery about what you have or how it works.
+        </p>
+        <p class="font-serif text-mid-gray text-sm leading-relaxed">
+          No dependency. No monthly fee for "account management." Just yours.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-10 bg-surface-2">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="font-mono text-5xl text-charcoal mb-3">$2,000</p>
+      <p class="font-sans text-sm text-neutral-400 uppercase tracking-wider mb-6">One-time — no monthly fee, no contract</p>
+      <p class="font-serif text-mid-gray leading-relaxed max-w-xl mx-auto mb-8">
+        Custom orthodontic website, before/after case gallery, treatment pages, GBP optimization, all accounts transferred to you, and the Handoff Doc. ~$12/year after that for your domain.
+      </p>
+      <a href="/pricing" class="font-sans text-sm text-brand-warm font-medium hover:text-brand-warm-dark transition-colors">
+        Full pricing breakdown &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQBlock faqs={faqs} heading="Questions About Orthodontist Websites" />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-10 bg-surface-2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <CTABlock
+        heading="Let's Build Your Orthodontic Practice Website."
+        subheading="Send us your practice info and current site. We'll walk through exactly what we'd build for your practice. No commitment, no pressure."
+        primaryCTA="Get Started"
+        primaryHref="/get-started"
+        secondaryCTA="See all specialties"
+        secondaryHref="/dental-websites"
+        variant="warm"
+      />
+    </div>
+  </section>
+</BaseLayout>
