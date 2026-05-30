@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQBlock from '../components/FAQBlock.astro';
+import CTABlock from '../components/CTABlock.astro';
+
+const buildFaqs = [
+  {
+    question: 'How long does the build take?',
+    answer: 'Typically 3–7 business days for the initial build, then you get 30 days to review and send feedback before final handoff.',
+  },
+  {
+    question: 'What if I don\'t have a website yet?',
+    answer: 'Even better. We\'ll build you one from scratch based on your practice info. Fill out the intake form and we\'ll handle the rest. Same price, same timeline.',
+  },
+  {
+    question: 'Do I need to be technical?',
+    answer: 'To run the site: no. Your website is static HTML on Cloudflare — it just works, no maintenance required. To make content changes yourself: yes, a little. Updating text or adding a page means editing code files and pushing to GitHub. It\'s not complicated, but it\'s not a point-and-click interface either. If you want to make updates without touching code, you can hire any developer for a one-off change, or add managed hosting ($100/mo) and we handle it.',
+  },
+  {
+    question: 'Is this just for dentists?',
+    answer: 'Right now, yes. We\'re focused entirely on dental practices because specialization means better results. Every template, every schema type, every content structure is built specifically for how dental patients search and what Google expects from dental websites.',
+  },
+];
+
+const pricingFaqs = [
+  {
+    question: 'Why is it only $2,000 when other agencies charge $5,000–$15,000?',
+    answer: 'Modern development tools — including AI-assisted workflows — have made it possible for a skilled engineer to build high-quality, unique websites dramatically faster than a traditional agency team. The $15k firm is using the same tools. They just have more people, more overhead, and more reasons to keep you paying. $2,000 is the minimum cost to have a properly built website. The difference is we pass the efficiency gains to you instead of pocketing them.',
+  },
+  {
+    question: 'What\'s the ~$12/year cost after the build?',
+    answer: 'That\'s your domain renewal (like yourpractice.com), paid directly to your domain registrar — not to us. Hosting on Cloudflare Pages is free. No monthly fees, no platform subscriptions.',
+  },
+  {
+    question: 'Is there a contract or commitment?',
+    answer: 'The website build is a one-time payment. Managed hosting is month-to-month — cancel anytime. No contracts. No cancellation fees. No "90-day notice period." If you want to stop, just stop.',
+  },
+  {
+    question: 'Do you offer refunds?',
+    answer: 'We build a preview before you commit. You see the finished work, click around, check it on your phone. If you like it, you pay. If you don\'t, you owe nothing. That\'s the deal.',
+  },
+  {
+    question: 'What\'s NOT included?',
+    answer: 'Paid advertising, complex software integrations, patient portal development, and ongoing marketing strategy. We build the website and Google Business Profile foundation — but not a full marketing department. No ongoing content creation unless you ask for it separately.',
+  },
+];
+
+const afterFaqs = [
+  {
+    question: 'What do I actually own after the build?',
+    answer: 'Everything. Your domain, your content, your hosting account, your code repository, and your Google accounts (Analytics, Search Console, Business Profile). If you never hear from us again, everything keeps working.',
+  },
+  {
+    question: 'What happens if I stop working with you?',
+    answer: 'Nothing changes. That\'s the whole point. Our explicit goal is that you never have to reach back out. No follow-ups, no check-ins, no renewal notices. Your website keeps running on its own.',
+  },
+  {
+    question: 'What if I need a fix or update later?',
+    answer: 'Most practices don\'t need many changes after the initial build. But when you do, just pay $100 for a single month on the retainer. You get the full month to request whatever fixes you need — then it\'s done. No ongoing commitment.',
+  },
+  {
+    question: 'Will this actually help me get more patients?',
+    answer: 'There\'s a saying: "Nice shoes won\'t get you the girl, but bad shoes will lose her." Same thing here. A great website alone won\'t flood your practice with new patients — but a bad one (or no website at all) is actively turning people away. Our focus is the baseline foundation. You\'ll be set up well for SEO and AI search. But real growth requires regular content creation. Let\'s crawl before we walk.',
+  },
+  {
+    question: 'I already use a service like Tebra for my practice. How is this different?',
+    answer: 'Those platforms are full-service practice management systems — patient scheduling, EHR, billing, the works. That\'s a different product solving a different problem. Groundwork isn\'t a practice management tool. It\'s just a website. A really good one that you own outright. Pay once, get your site, done.',
+  },
+];
+
+const aboutFaqs = [
+  {
+    question: 'Why dental websites specifically?',
+    answer: 'Dentists are some of the most skilled professionals we know — and some of the most underserved when it comes to their online presence. The dental marketing industry has been overcharging for underwhelming work for years. Modern tools make it possible to deliver dramatically better results at a fraction of the cost.',
+  },
+  {
+    question: 'Do you use AI to build the websites?',
+    answer: 'Yes, and no. The page you\'re reading right now was built with the help of AI — doesn\'t it look good? Every agency in 2026 is using AI. Most just won\'t admit it because they\'re still charging 2019 prices. We\'re upfront about it because it\'s why the service costs $2,000 instead of $15,000. The AI does the heavy lifting; we do the quality control, customization, and engineering that AI can\'t handle on its own yet.',
+  },
+  {
+    question: 'What happens if you get hit by a bus?',
+    answer: 'Your website keeps working. It\'s hosted on Cloudflare (which isn\'t going anywhere), the code is on GitHub, and any developer in the world can pick it up. That\'s the whole ownership model — you\'re never locked into a single vendor.',
+  },
+];
+---
+
+<BaseLayout
+  title="FAQ — Groundwork Dental"
+  description="Answers to common questions about Groundwork Dental — pricing, the build process, what you own, and what happens after."
+>
+  <!-- Hero -->
+  <section class="bg-brand-cream">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+      <div class="max-w-3xl">
+        <p class="eyebrow mb-4">FAQ</p>
+        <h1 class="section-heading mb-6">Questions We Actually Get Asked.</h1>
+        <p class="font-serif text-xl text-mid-gray leading-relaxed">
+          No fluff. Just the things dentists ask before getting started.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <FAQBlock faqs={buildFaqs} heading="The Build" />
+    <FAQBlock faqs={pricingFaqs} heading="Pricing & Cost" />
+    <FAQBlock faqs={afterFaqs} heading="After the Build" />
+    <FAQBlock faqs={aboutFaqs} heading="About Groundwork" />
+  </div>
+
+  <CTABlock />
+</BaseLayout>
