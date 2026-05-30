@@ -22,6 +22,12 @@ export const navMain: NavEntry[] = [
       { label: 'FAQ', href: '/faq' },
     ],
   },
+  { label: 'Pricing', href: '/pricing' },
+  {
+    label: 'About',
+    href: '/about',
+    dropdown: [{ label: 'Resources', href: '/blog' }],
+  },
   {
     label: 'Specialties',
     href: '/dental-websites',
@@ -31,12 +37,6 @@ export const navMain: NavEntry[] = [
       { label: 'Pediatric Dentists', href: '/dental-websites/pediatric-dentist' },
       { label: 'Oral Surgeons', href: '/dental-websites/oral-surgeon' },
     ],
-  },
-  { label: 'Pricing', href: '/pricing' },
-  {
-    label: 'About',
-    href: '/about',
-    dropdown: [{ label: 'Resources', href: '/blog' }],
   },
 ];
 
