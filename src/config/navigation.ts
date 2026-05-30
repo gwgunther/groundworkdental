@@ -24,18 +24,12 @@ export const navMain: NavEntry[] = [
   },
   { label: 'Pricing', href: '/pricing' },
   {
-    label: 'About',
+    label: 'Learn More',
     href: '/about',
-    dropdown: [{ label: 'Resources', href: '/blog' }],
-  },
-  {
-    label: 'Specialties',
-    href: '/dental-websites',
     dropdown: [
-      { label: 'Cosmetic Dentists', href: '/dental-websites/cosmetic-dentist' },
-      { label: 'Orthodontists', href: '/dental-websites/orthodontist' },
-      { label: 'Pediatric Dentists', href: '/dental-websites/pediatric-dentist' },
-      { label: 'Oral Surgeons', href: '/dental-websites/oral-surgeon' },
+      { label: 'About', href: '/about' },
+      { label: 'Specialties', href: '/dental-websites' },
+      { label: 'Resources', href: '/blog' },
     ],
   },
 ];
@@ -46,12 +40,8 @@ export const navLinks: NavLink[] = [
   { label: 'Example', href: '/example' },
   { label: 'Compare', href: '/compare' },
   { label: 'FAQ', href: '/faq' },
-  { label: 'Specialties', href: '/dental-websites' },
-  { label: 'Cosmetic Dentists', href: '/dental-websites/cosmetic-dentist' },
-  { label: 'Orthodontists', href: '/dental-websites/orthodontist' },
-  { label: 'Pediatric Dentists', href: '/dental-websites/pediatric-dentist' },
-  { label: 'Oral Surgeons', href: '/dental-websites/oral-surgeon' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'About', href: '/about' },
+  { label: 'Specialties', href: '/dental-websites' },
   { label: 'Resources', href: '/blog' },
 ];
