@@ -191,7 +191,30 @@
 
 ---
 
-## 14. Migration and redirects (playbook §20)
+## 14. Review display and collection
+
+Every client site ships with a static reviews section and a review collection system.
+
+**Review display component (`src/components/ReviewsSection.astro`)**
+- Populate with 3–5 real reviews copied from the client's Google Business Profile at intake
+- Each review: reviewer name, star rating (render as SVG stars), review text, optional date
+- Source data lives in `src/data/reviews.ts` as a typed array — easy to update later
+- Include `AggregateRating` JSON-LD schema when using real review data (see §5.2)
+- Place on homepage (below the fold) and/or the About page
+- "Leave us a review" CTA button links to their Google review shortlink
+
+**Review collection system**
+- Generate a QR code from the client's Google review shortlink (`g.page/r/[ID]/review`)
+- Embed the QR code on the Contact or About page with a short prompt ("Happy with your visit? Leave us a review")
+- Export the QR code as a PNG and include in the handoff doc — client can print for in-office use (front desk card, table tent, checkout counter)
+
+**What this is NOT**
+- Not a live Google Reviews API integration — reviews are baked in at build time
+- Content updates (adding new reviews) are a standard one-time fee update
+
+---
+
+## 15. Migration and redirects (playbook §20)
 
 - **301** map from old URLs; preserve equity; update **GBP** website link after cutover.
 
