@@ -141,17 +141,17 @@ const faqs = [
   </section>
 
   <!-- Three Questions -->
-  <section class="py-12 md:py-20 border-b border-border-light">
+  <section class="bg-brand-cream py-12 md:py-20 border-b border-border-light">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
         <div>
           <p class="eyebrow mb-6">Why Groundwork?</p>
-          <p class="font-serif text-2xl md:text-3xl text-charcoal leading-snug mb-4">
+          <p class="font-serif text-3xl md:text-4xl text-charcoal leading-snug mb-6">
             Not every dental practice needs a marketing agency. They just need the basics done right.
           </p>
-          <p class="font-serif text-mid-gray text-lg">If any of these sound familiar, you're in the right place.</p>
+          <p class="font-serif text-mid-gray text-base italic">If any of these sound familiar, you're in the right place.</p>
         </div>
-        <ul class="space-y-4 pt-1">
+        <ul class="space-y-6 pt-1">
           {[
             'Your website is outdated and doesn\'t reflect the quality of your practice',
             'You\'re tired of paying monthly website fees',
@@ -159,8 +159,10 @@ const faqs = [
             'You want a website that brings in new patients, but don\'t have time to manage it',
             'You just want a website that works',
           ].map((item) => (
-            <li class="flex items-start gap-3">
-              <span class="w-5 h-5 border border-neutral-300 rounded-sm flex-shrink-0 mt-0.5"></span>
+            <li class="flex items-start gap-4">
+              <svg class="w-5 h-5 text-brand-warm flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
               <span class="font-serif text-charcoal text-lg">{item}</span>
             </li>
           ))}
