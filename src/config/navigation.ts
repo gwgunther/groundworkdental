@@ -24,10 +24,9 @@ export const navMain: NavEntry[] = [
   },
   { label: 'Pricing', href: '/pricing' },
   {
-    label: 'Learn More',
+    label: 'About',
     href: '/about',
     dropdown: [
-      { label: 'About', href: '/about' },
       { label: 'Specialties', href: '/dental-websites' },
       { label: 'Dental SEO Guide', href: '/dental-seo-foundation' },
       { label: 'Resources', href: '/blog' },
