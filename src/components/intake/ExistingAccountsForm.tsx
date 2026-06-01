@@ -171,7 +171,7 @@ export default function ExistingAccountsForm({
                 <button
                   type="button"
                   onClick={() => removeSocialEntry(index)}
-                  className="font-sans text-xs text-mid-gray hover:text-red-600 transition-colors shrink-0"
+                  className="font-sans text-xs text-mid-gray hover:text-danger transition-colors shrink-0"
                 >
                   Remove
                 </button>
@@ -182,7 +182,7 @@ export default function ExistingAccountsForm({
         <button
           type="button"
           onClick={addSocialEntry}
-          className="font-sans text-xs text-brand-warm hover:text-brand-warm-dark transition-colors mt-3"
+          className="font-sans text-xs text-sage-dark hover:text-sage-dark transition-colors mt-3"
         >
           + Add another profile
         </button>

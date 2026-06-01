@@ -83,7 +83,7 @@ export default function BrandingForm({
               key={option}
               className={`card flex items-center gap-3 cursor-pointer transition-colors ${
                 formData.style_mood === option
-                  ? 'border-brand-warm bg-brand-sage-light/30'
+                  ? 'border-sage bg-sage-tint/30'
                   : 'hover:border-neutral-300'
               }`}
             >
@@ -93,7 +93,7 @@ export default function BrandingForm({
                 value={option}
                 checked={formData.style_mood === option}
                 onChange={(e) => update('style_mood', e.target.value)}
-                className="accent-brand-warm"
+                className="accent-sage"
               />
               <span className="font-sans text-sm text-charcoal">{option}</span>
             </label>

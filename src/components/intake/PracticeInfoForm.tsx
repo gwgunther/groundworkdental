@@ -190,7 +190,7 @@ export default function PracticeInfoForm({
               />
               <button
                 type="button"
-                className="col-span-2 font-sans text-xs text-mid-gray hover:text-red-600 transition-colors"
+                className="col-span-2 font-sans text-xs text-mid-gray hover:text-danger transition-colors"
                 onClick={() => removeHour(i)}
               >
                 Remove
@@ -200,7 +200,7 @@ export default function PracticeInfoForm({
         </div>
         <button
           type="button"
-          className="font-sans text-sm text-brand-warm hover:text-brand-warm-dark mt-3 transition-colors"
+          className="font-sans text-sm text-sage-dark hover:text-sage-dark mt-3 transition-colors"
           onClick={addHour}
         >
           + Add hours

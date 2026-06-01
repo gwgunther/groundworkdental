@@ -87,7 +87,7 @@ export default function FileUploader({
   return (
     <div>
       <div
-        className={`upload-zone ${dragOver ? 'border-brand-warm/50 bg-brand-sage-light/20' : ''}`}
+        className={`upload-zone ${dragOver ? 'border-sage/50 bg-sage-tint/20' : ''}`}
         onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
         onDragLeave={() => setDragOver(false)}
         onDrop={(e) => { e.preventDefault(); setDragOver(false); handleFiles(e.dataTransfer.files); }}
@@ -114,7 +114,7 @@ export default function FileUploader({
       </div>
 
       {error && (
-        <p className="font-sans text-xs text-red-600 mt-2">{error}</p>
+        <p className="font-sans text-xs text-danger mt-2">{error}</p>
       )}
 
       {files.length > 0 && (
@@ -132,7 +132,7 @@ export default function FileUploader({
               </div>
               <button
                 onClick={(e) => { e.stopPropagation(); handleDelete(file.path); }}
-                className="font-sans text-xs text-mid-gray hover:text-red-600 transition-colors shrink-0 ml-2"
+                className="font-sans text-xs text-mid-gray hover:text-danger transition-colors shrink-0 ml-2"
               >
                 Remove
               </button>

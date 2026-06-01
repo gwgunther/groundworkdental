@@ -26,27 +26,27 @@ const { tiers } = Astro.props;
   {tiers.map((tier) => (
     <div class={`rounded p-8 flex flex-col ${tier.highlighted ? 'bg-charcoal text-white border border-neutral-700' : 'bg-surface-2 border border-border-light'}`}>
       <div class="mb-6">
-        <h3 class={`font-sans text-eyebrow uppercase mb-3 ${tier.highlighted ? 'text-neutral-200' : 'text-mid-gray'}`}>{tier.name}</h3>
+        <h3 class={`font-sans text-eyebrow uppercase mb-3 ${tier.highlighted ? 'text-on-dark' : 'text-mid-gray'}`}>{tier.name}</h3>
         <div class="flex items-baseline gap-1">
           <span class={`font-serif text-4xl ${tier.highlighted ? 'text-white' : 'text-charcoal'}`}>{tier.price}</span>
-          <span class={`font-sans text-xs ${tier.highlighted ? 'text-neutral-300' : 'text-mid-gray'}`}>{tier.period}</span>
+          <span class={`font-sans text-xs ${tier.highlighted ? 'text-on-dark-muted' : 'text-mid-gray'}`}>{tier.period}</span>
         </div>
-        <p class={`font-serif text-sm mt-3 leading-relaxed ${tier.highlighted ? 'text-neutral-200' : 'text-mid-gray'}`}>{tier.description}</p>
+        <p class={`font-serif text-sm mt-3 leading-relaxed ${tier.highlighted ? 'text-on-dark' : 'text-mid-gray'}`}>{tier.description}</p>
       </div>
 
       <ul class="space-y-3 mb-8 flex-grow">
         {tier.features.map((feature) => (
           <li class="flex items-start gap-3 font-sans text-xs">
             {feature.included ? (
-              <svg class="w-4 h-4 text-brand-sage flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-sage flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
             ) : (
-              <svg class={`w-4 h-4 flex-shrink-0 mt-0.5 ${tier.highlighted ? 'text-neutral-600' : 'text-neutral-300'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class={`w-4 h-4 flex-shrink-0 mt-0.5 ${tier.highlighted ? 'text-on-dark-muted' : 'text-mid-gray'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             )}
-            <span class={feature.included ? (tier.highlighted ? 'text-neutral-200' : 'text-charcoal') : (tier.highlighted ? 'text-neutral-400' : 'text-neutral-400')}>
+            <span class={feature.included ? (tier.highlighted ? 'text-on-dark' : 'text-charcoal') : (tier.highlighted ? 'text-on-dark-muted' : 'text-mid-gray')}>
               {feature.text}
             </span>
           </li>
@@ -55,7 +55,7 @@ const { tiers } = Astro.props;
 
       <a
         href={tier.href}
-        class={`text-center font-sans font-medium text-sm px-6 py-3 rounded transition-colors tracking-wide ${tier.highlighted ? 'bg-brand-warm text-white hover:bg-brand-warm-dark' : 'btn-secondary'}`}
+        class={`text-center font-sans font-medium text-sm px-6 py-3 rounded transition-colors tracking-wide ${tier.highlighted ? 'bg-sage-dark text-white hover:bg-sage-darker' : 'btn-secondary'}`}
       >
         {tier.cta}
       </a>

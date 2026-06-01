@@ -22,12 +22,12 @@ const hasFourColumns = rows.some((row) => row.wix !== undefined && row.squarespa
 const hasThreeColumns = !hasFourColumns && rows.some((row) => row.diy !== undefined);
 const columnCount = hasFourColumns ? 5 : hasThreeColumns ? 4 : 3;
 
-const featureHead = 'py-3 px-5 font-sans text-eyebrow uppercase text-neutral-400 text-left';
-const dataHead = 'py-3 px-5 font-sans text-eyebrow uppercase text-neutral-400 text-center';
+const featureHead = 'py-3 px-5 font-sans text-eyebrow uppercase text-mid-gray text-left';
+const dataHead = 'py-3 px-5 font-sans text-eyebrow uppercase text-mid-gray text-center';
 const cell = 'py-3.5 px-5 font-serif text-mid-gray text-sm text-center';
 const featureCell = 'py-3.5 px-5 font-serif text-charcoal text-sm font-bold text-left';
-const groundworkHead = 'py-3 px-5 font-sans text-eyebrow uppercase text-brand-warm bg-brand-sage-light text-center';
-const groundworkCell = 'py-3.5 px-5 font-serif text-charcoal text-sm font-medium bg-brand-sage-light text-center';
+const groundworkHead = 'py-3 px-5 font-sans text-eyebrow uppercase text-sage-dark bg-sage-tint text-center';
+const groundworkCell = 'py-3.5 px-5 font-serif text-charcoal text-sm font-medium bg-sage-tint text-center';
 ---
 
 <section class="py-8">
@@ -50,7 +50,7 @@ const groundworkCell = 'py-3.5 px-5 font-serif text-charcoal text-sm font-medium
             <th scope="col" class={dataHead}>Squarespace</th>
           )}
           {hasThreeColumns && (
-            <th scope="col" class={dataHead}>DIY<span class="block normal-case font-normal text-[10px] tracking-normal text-neutral-400 mt-0.5">Wix, Squarespace, etc.</span></th>
+            <th scope="col" class={dataHead}>DIY<span class="block normal-case font-normal text-[10px] tracking-normal text-mid-gray mt-0.5">Wix, Squarespace, etc.</span></th>
           )}
           <th scope="col" class={dataHead}>Traditional Agency</th>
           <th scope="col" class={groundworkHead}>Groundwork</th>

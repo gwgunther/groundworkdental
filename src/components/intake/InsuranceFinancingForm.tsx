@@ -95,11 +95,11 @@ export default function InsuranceFinancingForm({
             >
               <input
                 type="checkbox"
-                className="w-4 h-4 rounded border-border-light accent-brand-warm cursor-pointer"
+                className="w-4 h-4 rounded border-border-light accent-sage cursor-pointer"
                 checked={formData.financing_options.includes(option)}
                 onChange={() => toggleFinancing(option)}
               />
-              <span className="group-hover:text-brand-warm transition-colors">
+              <span className="group-hover:text-sage-dark transition-colors">
                 {option}
               </span>
             </label>

@@ -18,30 +18,47 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-block bg-brand-warm text-white font-sans font-medium px-6 py-3 rounded transition-colors duration-200 text-center text-sm tracking-wide hover:bg-brand-warm-dark;
+    @apply inline-block text-white font-sans font-medium px-6 py-3 rounded transition-colors duration-200 text-center text-sm tracking-wide;
+    background-color: theme('colors.sage-dark');
+  }
+
+  .btn-primary:hover {
+    background-color: theme('colors.sage-darker');
+  }
+
+  .btn-primary:disabled,
+  .btn-secondary:disabled,
+  .btn-dark:disabled {
+    @apply opacity-50 cursor-not-allowed;
   }
 
   .btn-primary:focus-visible,
   .btn-secondary:focus-visible,
   .btn-dark:focus-visible {
-    @apply outline-none ring-2 ring-brand-warm ring-offset-2;
+    @apply outline-none ring-2 ring-sage ring-offset-2;
   }
 
   .nav-link:focus-visible {
-    @apply outline-none ring-2 ring-brand-warm ring-offset-2 rounded-sm;
+    @apply outline-none ring-2 ring-sage ring-offset-2 rounded-sm;
   }
 
   .btn-secondary {
-    @apply inline-block bg-white text-charcoal font-sans font-medium px-6 py-3 rounded transition-colors duration-200 text-center text-sm tracking-wide border border-neutral-300 hover:bg-surface-2 hover:border-charcoal;
+    @apply inline-block bg-white text-charcoal font-sans font-medium px-6 py-3 rounded transition-colors duration-200 text-center text-sm tracking-wide border border-border-light hover:bg-surface-2 hover:border-charcoal;
   }
 
   .btn-dark {
-    @apply inline-block bg-charcoal text-white font-sans font-medium px-6 py-3 rounded transition-colors duration-200 text-center text-sm tracking-wide hover:bg-neutral-800;
+    @apply inline-block bg-charcoal text-white font-sans font-medium px-6 py-3 rounded transition-colors duration-200 text-center text-sm tracking-wide hover:bg-[#283344];
+  }
+
+  .btn-primary:active,
+  .btn-secondary:active,
+  .btn-dark:active {
+    @apply translate-y-px;
   }
 
   .eyebrow {
-    @apply font-sans uppercase text-neutral-400 font-medium;
-    font-size: 10px;
+    @apply font-sans uppercase text-mid-gray font-medium;
+    font-size: 11px;
     line-height: 1.4;
     letter-spacing: 0.14em;
   }
@@ -90,15 +107,20 @@
   }
 
   .prose-article blockquote {
-    @apply border-t-2 border-brand-warm bg-brand-warm/5 px-6 pt-5 pb-4 my-6 not-italic text-charcoal rounded text-base;
+    @apply border-t-2 border-sage bg-sage/5 px-6 pt-5 pb-4 my-6 not-italic text-charcoal rounded text-base;
   }
 
   .prose-article blockquote strong {
-    @apply text-brand-warm;
+    color: theme('colors.sage-dark');
+    @apply font-semibold;
   }
 
   .card {
     @apply rounded p-6 border bg-surface-2 border-border-light;
+  }
+
+  .card-hairline {
+    @apply border-y border-border-light py-6;
   }
 
   .nav-link {
@@ -111,7 +133,7 @@
   }
 
   .form-input:focus {
-    @apply border-brand-warm ring-1 ring-brand-warm;
+    @apply border-sage ring-1 ring-sage;
   }
 
   .form-input::placeholder {
@@ -131,7 +153,7 @@
   }
 
   .upload-zone {
-    @apply rounded border-2 border-dashed border-border-light bg-white text-center py-12 px-6 cursor-pointer transition-colors duration-200 hover:border-brand-warm/50;
+    @apply rounded border-2 border-dashed border-border-light bg-white text-center py-12 px-6 cursor-pointer transition-colors duration-200 hover:border-sage/50;
   }
 
   .status-badge {
@@ -139,14 +161,18 @@
   }
 
   .status-badge-complete {
-    @apply status-badge bg-brand-sage-light text-brand-warm;
+    @apply status-badge bg-success-bg text-success;
   }
 
   .status-badge-progress {
-    @apply status-badge bg-amber-50 text-amber-700;
+    @apply status-badge bg-warning-bg text-warning;
   }
 
   .status-badge-pending {
-    @apply status-badge bg-neutral-100 text-mid-gray;
+    @apply status-badge bg-pending-bg text-pending;
+  }
+
+  .status-badge-error {
+    @apply status-badge bg-danger-bg text-danger;
   }
 }

@@ -19,12 +19,12 @@ const { title, showSignOut = true } = Astro.props;
     <meta name="robots" content="noindex, nofollow" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
-  <body class="bg-brand-cream min-h-screen">
+  <body class="bg-surface-2 min-h-screen">
     <!-- Minimal top bar -->
     <header class="bg-white border-b border-border-light">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
         <a href="/intake" class="font-serif text-lg text-charcoal">
-          Groundwork <span class="text-brand-warm">Dental</span>
+          Groundwork <span class="text-sage-dark">Dental</span>
         </a>
         {showSignOut && (
           <button
@@ -43,7 +43,7 @@ const { title, showSignOut = true } = Astro.props;
 
     <footer class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 border-t border-border-light">
       <p class="font-sans text-xs text-mid-gray">
-        Questions? Email <a href={`mailto:${site.email}`} class="text-brand-warm hover:text-brand-warm-dark">{site.email}</a>
+        Questions? Email <a href={`mailto:${site.email}`} class="text-sage-dark hover:text-sage-dark">{site.email}</a>
       </p>
     </footer>
 

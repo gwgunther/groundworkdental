@@ -106,7 +106,7 @@ export default function DoctorTeamForm({
             {doctors.length > 1 && (
               <button
                 type="button"
-                className="font-sans text-xs text-mid-gray hover:text-red-600 transition-colors"
+                className="font-sans text-xs text-mid-gray hover:text-danger transition-colors"
                 onClick={() => removeDoctor(i)}
               >
                 Remove

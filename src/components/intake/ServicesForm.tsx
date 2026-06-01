@@ -86,11 +86,11 @@ export default function ServicesForm({
             >
               <input
                 type="checkbox"
-                className="w-4 h-4 rounded border-border-light accent-brand-warm cursor-pointer"
+                className="w-4 h-4 rounded border-border-light accent-sage cursor-pointer"
                 checked={formData.offered.includes(service)}
                 onChange={() => toggleService(service)}
               />
-              <span className="group-hover:text-brand-warm transition-colors">
+              <span className="group-hover:text-sage-dark transition-colors">
                 {service}
               </span>
             </label>

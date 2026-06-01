@@ -39,7 +39,7 @@ const progressPercent = Math.round((completedCount / totalSections) * 100);
     </div>
     <div class="w-full bg-border-light rounded-full h-1.5">
       <div
-        class="bg-brand-warm h-1.5 rounded-full transition-all duration-500"
+        class="bg-sage-dark h-1.5 rounded-full transition-all duration-500"
         style={`width: ${progressPercent}%`}
       ></div>
     </div>
@@ -55,10 +55,10 @@ const progressPercent = Math.round((completedCount / totalSections) * 100);
       return (
         <a
           href={`/intake/${section.slug}`}
-          class="card bg-white hover:border-brand-warm/40 transition-all group"
+          class="card bg-white hover:border-sage/40 transition-all group"
         >
           <div class="flex items-start justify-between mb-2">
-            <h2 class="font-serif text-charcoal group-hover:text-brand-warm transition-colors">
+            <h2 class="font-serif text-charcoal group-hover:text-sage-dark transition-colors">
               {section.title}
             </h2>
             {status === 'complete' && (
@@ -78,7 +78,7 @@ const progressPercent = Math.round((completedCount / totalSections) * 100);
           </div>
           <p class="font-serif text-sm text-mid-gray">{section.description}</p>
           {section.required && (
-            <p class="font-sans text-xs text-brand-warm mt-2">Required</p>
+            <p class="font-sans text-xs text-sage-dark mt-2">Required</p>
           )}
         </a>
       );

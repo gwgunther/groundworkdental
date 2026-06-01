@@ -15,7 +15,7 @@ const allTags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
   description="Honest resources on dental SEO, website ownership, and what dentists actually need to know about their online presence. No fluff. No upsells."
 >
   <!-- Hero -->
-  <section class="bg-brand-cream">
+  <section class="bg-surface-2">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20">
       <div class="max-w-3xl">
         <h1 class="section-heading mb-4">Resources</h1>
@@ -56,17 +56,17 @@ const allTags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
           {posts.map((post) => (
             <a
               href={`/blog/${post.id}`}
-              class="card hover:border-brand-warm transition-colors group"
+              class="card hover:border-sage transition-colors group"
               data-tags={JSON.stringify(post.data.tags)}
             >
               <div class="flex flex-wrap items-center gap-2 mb-3">
                 {post.data.tags.map((tag: string) => (
-                  <span class="font-sans text-[10px] uppercase tracking-wider text-brand-warm bg-brand-warm/10 px-2 py-0.5 rounded-full">
+                  <span class="font-sans text-[10px] uppercase tracking-wider text-sage-dark bg-sage/10 px-2 py-0.5 rounded-full">
                     {tag}
                   </span>
                 ))}
               </div>
-              <h2 class="font-serif text-charcoal mb-2 group-hover:text-brand-warm transition-colors">
+              <h2 class="font-serif text-charcoal mb-2 group-hover:text-sage-dark transition-colors">
                 {post.data.title}
               </h2>
               <p class="font-serif text-mid-gray text-sm leading-relaxed mb-3">
@@ -80,7 +80,7 @@ const allTags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
         </div>
       ) : (
         <div class="text-center py-8">
-          <p class="font-serif text-mid-gray text-lg">Articles coming soon. In the meantime, check out our <a href="/dental-seo-foundation" class="text-brand-warm font-medium hover:text-brand-warm-dark">comprehensive SEO guide</a>.</p>
+          <p class="font-serif text-mid-gray text-lg">Articles coming soon. In the meantime, check out our <a href="/dental-seo-foundation" class="text-sage-dark font-medium hover:text-sage-dark">comprehensive SEO guide</a>.</p>
         </div>
       )}
     </div>

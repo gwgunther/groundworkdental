@@ -6,10 +6,10 @@ interface Props {
 
 export default function AutoSaveIndicator({ status }: Props) {
   const config: Record<SaveStatus, { text: string; color: string }> = {
-    saved: { text: 'Saved', color: 'text-brand-warm' },
+    saved: { text: 'Saved', color: 'text-success' },
     saving: { text: 'Saving...', color: 'text-mid-gray' },
-    unsaved: { text: 'Unsaved changes', color: 'text-amber-600' },
-    error: { text: 'Save failed', color: 'text-red-600' },
+    unsaved: { text: 'Unsaved changes', color: 'text-warning' },
+    error: { text: 'Save failed', color: 'text-danger' },
   };
 
   const { text, color } = config[status];
