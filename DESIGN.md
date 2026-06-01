@@ -119,6 +119,12 @@ Tint variants: `text-brand-warm` (warm sections), `text-neutral-400` (default), 
 - **Section vertical padding:** `py-10` standard, `py-10 md:py-16` for hero/emphasis sections
 - **Section dividers:** `border-b border-border-light` on bg-brand-cream sections
 
+### Section Alignment
+
+- **Left-aligned prose** — hero, editorial sections, callout copy on any background. Use `max-w-3xl` without `text-center`.
+- **Centered** — reserved for: step/process grids (How It Works), comparison and FAQ section headings, CTA blocks, and **pricing focal blocks** (headline + price card on homepage).
+- **Full width** — card grids, comparison tables, data-dense layouts within `max-w-6xl`.
+
 ---
 
 ## Spacing Conventions

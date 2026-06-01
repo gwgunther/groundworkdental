@@ -20,44 +20,57 @@ const {
 
 const hasFourColumns = rows.some((row) => row.wix !== undefined && row.squarespace !== undefined);
 const hasThreeColumns = !hasFourColumns && rows.some((row) => row.diy !== undefined);
+const columnCount = hasFourColumns ? 5 : hasThreeColumns ? 4 : 3;
+
+const featureHead = 'py-3 px-5 font-sans text-eyebrow uppercase text-neutral-400 text-left';
+const dataHead = 'py-3 px-5 font-sans text-eyebrow uppercase text-neutral-400 text-center';
+const cell = 'py-3.5 px-5 font-serif text-mid-gray text-sm text-center';
+const featureCell = 'py-3.5 px-5 font-serif text-charcoal text-sm font-bold text-left';
+const groundworkHead = 'py-3 px-5 font-sans text-eyebrow uppercase text-brand-warm bg-brand-sage-light text-center';
+const groundworkCell = 'py-3.5 px-5 font-serif text-charcoal text-sm font-medium bg-brand-sage-light text-center';
 ---
 
 <section class="py-8">
   {heading && <h2 class="section-subheading text-center mb-10">{heading}</h2>}
 
-  <div class="overflow-x-auto">
-    <table class={`w-full text-left border-collapse mx-auto ${hasFourColumns ? 'max-w-6xl' : hasThreeColumns ? 'max-w-5xl' : 'max-w-4xl'}`}>
+  <div class="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
+    <table class="w-full table-fixed border-collapse">
+      <colgroup>
+        {Array.from({ length: columnCount }).map((_, i) => (
+          <col style={`width: ${100 / columnCount}%`} />
+        ))}
+      </colgroup>
       <thead>
         <tr class="border-b border-border-light">
-          <th scope="col" class="py-3 pr-4 font-sans text-eyebrow uppercase text-neutral-400">Feature</th>
+          <th scope="col" class={featureHead}>Feature</th>
           {hasFourColumns && (
-            <th scope="col" class="py-3 px-4 font-sans text-eyebrow uppercase text-neutral-400">Wix (Free)</th>
+            <th scope="col" class={dataHead}>Wix (Free)</th>
           )}
           {hasFourColumns && (
-            <th scope="col" class="py-3 px-4 font-sans text-eyebrow uppercase text-neutral-400">Squarespace</th>
+            <th scope="col" class={dataHead}>Squarespace</th>
           )}
           {hasThreeColumns && (
-            <th scope="col" class="py-3 px-4 font-sans text-eyebrow uppercase text-neutral-400">Website Builder<span class="block normal-case font-normal text-[10px] tracking-normal text-neutral-400 mt-0.5">e.g. Wix, Squarespace</span></th>
+            <th scope="col" class={dataHead}>DIY<span class="block normal-case font-normal text-[10px] tracking-normal text-neutral-400 mt-0.5">Wix, Squarespace, etc.</span></th>
           )}
-          <th scope="col" class="py-3 px-4 font-sans text-eyebrow uppercase text-neutral-400">Traditional Agency</th>
-          <th scope="col" class="py-3 pl-4 font-sans text-eyebrow uppercase text-brand-warm">Groundwork</th>
+          <th scope="col" class={dataHead}>Traditional Agency</th>
+          <th scope="col" class={groundworkHead}>Groundwork</th>
         </tr>
       </thead>
       <tbody>
         {rows.map((row) => (
           <tr class="border-b border-border-light">
-            <td scope="row" class="py-3.5 pr-4 font-serif text-charcoal text-sm font-medium">{row.feature}</td>
+            <td scope="row" class={featureCell}>{row.feature}</td>
             {hasFourColumns && (
-              <td class="py-3.5 px-4 font-serif text-mid-gray text-sm">{row.wix}</td>
+              <td class={cell}>{row.wix}</td>
             )}
             {hasFourColumns && (
-              <td class="py-3.5 px-4 font-serif text-mid-gray text-sm">{row.squarespace}</td>
+              <td class={cell}>{row.squarespace}</td>
             )}
             {hasThreeColumns && (
-              <td class="py-3.5 px-4 font-serif text-mid-gray text-sm">{row.diy}</td>
+              <td class={cell}>{row.diy}</td>
             )}
-            <td class="py-3.5 px-4 font-serif text-mid-gray text-sm">{row.traditional}</td>
-            <td class="py-3.5 pl-4 font-serif text-charcoal text-sm font-medium">{row.groundwork}</td>
+            <td class={cell}>{row.traditional}</td>
+            <td class={groundworkCell}>{row.groundwork}</td>
           </tr>
         ))}
       </tbody>

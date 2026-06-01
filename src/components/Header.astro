@@ -19,11 +19,12 @@ const pathname = Astro.url.pathname;
       <nav class="hidden lg:flex items-center gap-7" aria-label="Main">
         {navMain.map((entry) => {
           const isActive = pathname === entry.href || (entry.dropdown?.some(l => pathname === l.href));
+          const linkClass = `nav-link inline-flex items-center gap-1 ${isActive ? 'text-charcoal underline underline-offset-4 decoration-brand-warm decoration-1' : ''}`;
           return entry.dropdown ? (
             <div class="relative group">
               <a
                 href={entry.href}
-                class={`nav-link inline-flex items-center gap-1 ${isActive ? 'text-charcoal underline underline-offset-4 decoration-brand-warm decoration-1' : ''}`}
+                class={linkClass}
                 aria-current={pathname === entry.href ? 'page' : undefined}
               >
                 {entry.label}
@@ -57,9 +58,10 @@ const pathname = Astro.url.pathname;
             <a
               href={entry.href}
               aria-current={pathname === entry.href ? 'page' : undefined}
-              class={`nav-link ${isActive ? 'text-charcoal underline underline-offset-4 decoration-brand-warm decoration-1' : ''}`}
+              class={linkClass}
             >
               {entry.label}
+              <span class="w-3 h-3 shrink-0" aria-hidden="true"></span>
             </a>
           );
         })}
