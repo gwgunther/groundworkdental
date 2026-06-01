@@ -10,13 +10,18 @@ The marketing website for Groundwork Dental, a productized dental website agency
 
 ## Project Structure
 - `src/config/site.ts` — agency info, Organization schema (single source of truth)
-- `src/config/navigation.ts` — 7-page flat nav
+- `src/config/navigation.ts` — header nav (dropdowns); see `navMain` / `navLinks`
 - `src/layouts/BaseLayout.astro` — master layout (SEO head, OG, schema, GA4, fonts)
-- `src/components/` — shared components (Header, Footer, CTABlock, FAQBlock, FeatureCard, PricingTable, ComparisonTable)
-- `src/pages/` — all pages (7 core + blog)
+- `src/layouts/IntakeLayout.astro` — intake portal shell
+- `src/components/` — shared Astro components (Header, Footer, CTABlock, FAQBlock, etc.)
+- `src/components/intake/` — React intake forms
+- `src/pages/` — marketing routes, `dental-websites/` specialty landers, `blog/`, `intake/`, `admin/`, `handoff/`, `api/`
 - `src/content/blog/` — markdown blog posts
 - `src/styles/global.css` — Tailwind utilities and component classes
-- `References/` — internal operator docs (not deployed); see `groundwork-dental-playbook.md` (full playbook) and `client-site-build-best-practices.md` (client site IA + technical SEO)
+- `public/images/` — static assets served at `/images/...` (screenshots, branding)
+- `supabase/migration.sql` — DB schema (run in Supabase SQL editor)
+- `References/` — internal operator docs (not deployed): playbook, client build standards, `sales/` for business artifacts
+- `DESIGN.md` — design system tokens and patterns
 
 ## Design System
 - **Palette:** charcoal `#334155`, sage green `#5F7F6B` (brand-warm), cream `#F8F8F3`, mid-gray `#64748B`

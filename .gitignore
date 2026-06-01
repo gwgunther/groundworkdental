@@ -21,3 +21,11 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
+
+# Cloudflare / tooling local state
+.wrangler/
+.playwright-mcp/
+.claude/settings.local.json
+
+# Root-level screenshots (QA captures); site assets live in public/
+/*.png
