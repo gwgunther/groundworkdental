@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Audit — Spring St. Dentistry</title>
+<style>
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink:   #1A1A1A;
+    --terracotta: #C45D3E;
+    --cream:      #FAF8F5;
+    --sage:       #6B7F6E;
+    --surface:    #FFFFFF;
+    --border:     #E5E0DA;
+    --text-dim:   #666259;
+    --green:      #2E7D4F;
+    --red:        #C0392B;
+    --amber:      #C07A1A;
+    --blue:       #1565C0;
+    --radius:     8px;
+    --font:       -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono:       'SFMono-Regular', 'Consolas', monospace;
+  }
+  body { font-family: var(--font); background: var(--cream); color: var(--ink); font-size: 14px; line-height: 1.5; }
+
+  /* Score circles */
+  .score-circle {
+    width: 100px; height: 100px; border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    border: 4px solid currentColor;
+    flex-shrink: 0;
+  }
+  .score-num { font-size: 28px; font-weight: 800; line-height: 1; }
+  .score-lbl { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 3px; opacity: 0.75; }
+
+  /* Metric row */
+  .metric-status-pass { color: var(--green); }
+  .metric-status-warn { color: var(--amber); }
+  .metric-status-fail { color: var(--red); }
+  .metric-status-na   { color: var(--text-dim); }
+
+  /* Finding cards */
+  .finding-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; }
+  .finding-card.critical { border-left: 4px solid var(--red); }
+  .finding-card.warning  { border-left: 4px solid var(--amber); }
+  .finding-card.passed   { border-left: 4px solid var(--green); }
+
+  .finding-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+  .finding-icon {
+    width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 800; flex-shrink: 0; margin-top: 1px;
+  }
+  .finding-icon.critical { background: #FDDCDC; color: var(--red); }
+  .finding-icon.warning  { background: #FEF3CD; color: var(--amber); }
+  .finding-icon.passed   { background: #D4EDD9; color: var(--green); }
+
+  .finding-title  { font-size: 14px; font-weight: 700; line-height: 1.3; }
+  .finding-meta   { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); margin-top: 2px; }
+  .finding-detail { font-size: 13px; color: var(--ink); line-height: 1.55; margin-top: 8px; }
+  .finding-evidence { font-size: 13px; font-weight: 700; color: var(--ink); line-height: 1.4; margin-top: 8px; }
+  .finding-impact { font-size: 12px; color: var(--sage); line-height: 1.5; margin-top: 6px; font-style: italic; }
+  .finding-source { font-size: 11px; color: var(--text-dim); margin-top: 6px; }
+  .finding-pages  { margin-top: 8px; font-size: 11px; color: var(--text-dim); }
+  .finding-pages summary { cursor: pointer; font-weight: 600; user-select: none; }
+  .finding-pages summary:hover { color: var(--ink); }
+  .finding-pages ul { list-style: none; margin-top: 5px; display: flex; flex-direction: column; gap: 2px; }
+  .finding-pages li { font-family: var(--mono); font-size: 11px; padding: 2px 0; word-break: break-all; }
+
+  /* Critical findings: show affected pages inline, no disclosure */
+  .finding-pages-inline { margin-top: 10px; }
+  .finding-pages-inline .pages-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); margin-bottom: 4px; }
+  .finding-pages-inline ul { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+  .finding-pages-inline li { font-family: var(--mono); font-size: 11px; padding: 2px 0; word-break: break-all; color: var(--ink); }
+  
+
+/* ── Header ── */
+.header { background: var(--ink); color: white; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.header-left h1 { font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+.header-left .sub { color: #9E9990; font-size: 13px; margin-top: 3px; }
+.header-badge { font-size: 12px; color: #9E9990; text-align: right; line-height: 1.7; }
+.gw-mark { font-size: 11px; font-weight: 700; color: var(--terracotta); letter-spacing: 1px; text-transform: uppercase; }
+
+/* ── Tab Nav ── */
+.tab-nav { background: var(--surface); border-bottom: 2px solid var(--border); padding: 0 32px; display: flex; gap: 0; overflow-x: auto; }
+.tab-btn { background: none; border: none; border-bottom: 2px solid transparent; margin-bottom: -2px; padding: 13px 20px; font-size: 13px; font-weight: 600; color: var(--text-dim); cursor: pointer; white-space: nowrap; transition: color 0.15s, border-color 0.15s; }
+.tab-btn:hover { color: var(--ink); }
+.tab-btn.active { color: var(--terracotta); border-bottom-color: var(--terracotta); }
+.badge { background: var(--red); color: white; font-size: 10px; font-weight: 800; padding: 1px 6px; border-radius: 10px; margin-left: 5px; vertical-align: middle; }
+
+/* ── Main ── */
+.main { max-width: 1080px; margin: 0 auto; padding: 32px 32px 80px; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ── Section layout ── */
+.section-header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 16px; border-bottom: 1px solid var(--border); margin-bottom: 28px; }
+.section-header h2 { font-size: 18px; font-weight: 700; letter-spacing: -0.2px; }
+.section-note { font-size: 12px; color: var(--text-dim); }
+
+/* ── Audit Hero ── */
+.growth-hero { max-width: 1080px; margin: 28px auto 0; padding: 22px 28px; border-radius: var(--radius); display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+.growth-hero-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dim); margin-bottom: 6px; }
+.growth-hero-headline { font-size: 26px; font-weight: 800; line-height: 1.2; letter-spacing: -0.3px; }
+.growth-hero-sub { font-size: 12px; color: var(--text-dim); margin-top: 8px; }
+.growth-hero-right { display: flex; gap: 28px; }
+.growth-stat { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.growth-stat-num { font-size: 30px; font-weight: 800; font-family: var(--mono); line-height: 1; }
+.growth-stat-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); }
+
+/* ── Diff hero + cards (re-scan / before→after mode) ── */
+.badge-green { background: var(--green); color: white; font-size: 10px; font-weight: 800; padding: 1px 6px; border-radius: 10px; margin-left: 5px; vertical-align: middle; }
+
+.diff-group { margin-bottom: 32px; }
+.diff-group-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 14px; }
+.diff-group-list { display: flex; flex-direction: column; gap: 12px; }
+
+.diff-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; }
+.diff-card-fixed { border-left: 4px solid var(--green); }
+.diff-card-regressed { border-left: 4px solid var(--red); }
+.diff-card-still-issue { border-left: 4px solid var(--amber); }
+.diff-card-new { border-left: 4px solid var(--amber); }
+.diff-card-unchanged { border-left: 4px solid var(--green); opacity: 0.7; }
+.diff-card-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+.diff-card-symbol { font-size: 18px; font-weight: 800; line-height: 1.2; }
+.diff-card-titles { flex: 1; }
+.diff-card-title { font-size: 14px; font-weight: 700; }
+.diff-card-category { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); margin-top: 2px; }
+.diff-card-badge { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 12px; border: 1px solid; text-transform: uppercase; letter-spacing: 0.5px; }
+.diff-fixed-line { font-size: 13px; font-weight: 600; color: var(--green); margin-bottom: 12px; }
+.diff-card-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.diff-card-side { padding: 12px 14px; }
+.diff-card-before { background: #FDDCDC55; border-right: 1px solid var(--border); }
+.diff-card-after  { background: #D4EDD955; }
+.diff-side-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); margin-bottom: 4px; }
+.diff-side-detail { font-size: 12px; line-height: 1.5; }
+.diff-card-benefit { font-size: 12px; font-style: italic; color: var(--text-dim); margin-top: 10px; line-height: 1.5; }
+
+/* ── Scorecard ── */
+.score-strip { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 32px; }
+.score-cell { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.score-name { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); text-align: center; }
+.score-subtitle { font-size: 11px; color: var(--text-dim); font-weight: 400; text-align: center; max-width: 90px; line-height: 1.35; }
+
+.lighthouse-callout { background: #EEF4FF; border: 1px solid #C3D4F7; border-radius: var(--radius); padding: 16px 20px; margin-bottom: 28px; font-size: 13px; line-height: 1.6; color: var(--ink); }
+.lighthouse-callout strong { color: #1565C0; }
+.lighthouse-callout a { color: #1565C0; }
+
+.compare-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 32px; }
+.compare-table th { text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); padding: 8px 12px; background: #F5F2EE; border: 1px solid var(--border); }
+.compare-table td { padding: 10px 12px; border: 1px solid var(--border); font-weight: 600; }
+.compare-table td.score-desc { font-size: 11px; color: var(--text-dim); font-weight: 400; }
+.compare-table tr:nth-child(even) td { background: #FAFAF8; }
+.score-val { display: inline-flex; align-items: center; gap: 8px; }
+.score-pill { font-size: 13px; font-weight: 800; padding: 3px 10px; border-radius: 20px; display: inline-block; }
+
+.metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 32px; }
+@media (max-width: 700px) { .metrics-grid { grid-template-columns: 1fr 1fr; } }
+.metric-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
+.metric-label { font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.metric-sublabel { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); margin-bottom: 6px; }
+.metric-value { font-size: 22px; font-weight: 800; font-family: var(--mono); line-height: 1; }
+.metric-threshold { font-size: 11px; color: var(--text-dim); margin-top: 4px; }
+.source-note { font-size: 11px; color: var(--text-dim); font-style: italic; margin-top: 8px; }
+
+/* ── Technical Findings ── */
+.findings-summary { background: var(--ink); color: white; border-radius: var(--radius); padding: 14px 20px; margin-bottom: 24px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.fs-stat { display: flex; align-items: center; gap: 8px; }
+.fs-num { font-size: 22px; font-weight: 800; font-family: var(--mono); line-height: 1; }
+.fs-num.critical { color: #FF6B6B; }
+.fs-num.warning  { color: #FFD93D; }
+.fs-label { font-size: 12px; font-weight: 600; color: #9E9990; }
+
+.findings-group { margin-bottom: 28px; }
+.findings-group-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.findings-group-title.critical { color: var(--red); }
+.findings-group-title.warning  { color: var(--amber); }
+.findings-group-title.passed   { color: var(--green); }
+.findings-list { display: flex; flex-direction: column; gap: 10px; }
+
+.passed-checklist { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 8px; }
+.passed-item { background: var(--surface); border: 1px solid #D4EDD9; border-radius: var(--radius); padding: 10px 14px; display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.passed-check { color: var(--green); font-weight: 800; flex-shrink: 0; }
+
+/* ── AI Audit Tab ── */
+.ai-source-note { background: #F5F2EE; border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 18px; margin-bottom: 24px; font-size: 13px; line-height: 1.6; color: var(--ink); }
+.ai-source-note strong { color: var(--terracotta); }
+.ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 700px) { .ai-grid { grid-template-columns: 1fr; } }
+.ai-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+.ai-block h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-dim); margin-bottom: 12px; }
+.current-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); margin-bottom: 3px; }
+.rec-tag     { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--terracotta); margin-top: 10px; margin-bottom: 3px; }
+.rec-text    { font-weight: 700; color: var(--terracotta); font-size: 13px; line-height: 1.5; }
+.rationale   { font-size: 12px; color: var(--text-dim); font-style: italic; line-height: 1.5; margin-top: 4px; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.tag-primary   { background: var(--terracotta); color: white; font-size: 12px; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
+.tag-secondary { background: #F0EDE8; color: var(--ink); font-size: 12px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+.bullet-list { list-style: none; display: flex; flex-direction: column; gap: 5px; margin-top: 6px; }
+.bullet-list li { font-size: 13px; padding-left: 16px; position: relative; line-height: 1.5; }
+.bullet-list li::before { content: '•'; position: absolute; left: 4px; color: var(--terracotta); font-weight: 700; }
+.empty-state { text-align: center; padding: 48px 24px; color: var(--text-dim); }
+.empty-state p { font-size: 14px; line-height: 1.6; }
+
+/* ── What We'd Fix ── */
+.preview-block { background: var(--ink); border-radius: 12px; padding: 32px; text-align: center; margin-bottom: 32px; }
+.preview-block h3 { font-size: 22px; font-weight: 700; color: white; margin-bottom: 10px; }
+.preview-block p { color: #9E9990; font-size: 14px; margin-bottom: 20px; }
+.preview-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--terracotta); color: white; text-decoration: none; font-size: 15px; font-weight: 700; padding: 14px 28px; border-radius: var(--radius); letter-spacing: 0.2px; }
+.preview-btn:hover { opacity: 0.9; }
+.preview-iframe { width: 100%; height: 500px; border: none; border-radius: var(--radius); margin-bottom: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.12); }
+
+.improvements-list { display: flex; flex-direction: column; gap: 12px; }
+.improvement-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; }
+.impr-finding-ref { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); margin-bottom: 5px; }
+.impr-finding-ref.critical { color: var(--red); }
+.impr-finding-ref.warning  { color: var(--amber); }
+.impr-text { font-size: 13px; line-height: 1.55; }
+
+.before-after-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 12px; }
+.before-after-block .ba-header { padding: 12px 18px; background: #F5F2EE; border-bottom: 1px solid var(--border); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); }
+.ba-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.ba-col { padding: 14px 18px; }
+.ba-col:first-child { border-right: 1px solid var(--border); }
+.ba-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.ba-label.before { color: var(--red); }
+.ba-label.after  { color: var(--green); }
+.ba-content { font-size: 13px; line-height: 1.5; }
+
+.design-info { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-top: 24px; }
+.design-info h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-dim); margin-bottom: 12px; }
+.design-row { display: flex; gap: 10px; padding: 6px 0; border-bottom: 1px solid #F0EDE8; font-size: 13px; }
+.design-row:last-child { border-bottom: none; }
+.design-key { color: var(--text-dim); min-width: 100px; flex-shrink: 0; font-weight: 600; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <h1>Spring St. Dentistry — Site Audit</h1>
+    <div class="sub">https://www.springstdentistry.com &nbsp;·&nbsp; May 31, 2026</div>
+  </div>
+  <div class="header-badge">
+    <div class="gw-mark">Groundwork Builder</div>
+    <div style="color:#9E9990;font-size:12px;margin-top:4px">groundwork.build</div>
+  </div>
+</header>
+
+
+<section class="growth-hero" style="background:#FDDCDC;border-left:6px solid #C0392B">
+  <div class="growth-hero-left">
+    <div class="growth-hero-eyebrow">Site audit</div>
+    <div class="growth-hero-headline" style="color:var(--ink)">13 of 34 checks need attention.</div>
+    <div class="growth-hero-sub">GBP: <strong>Spring St. Dentistry</strong> · 52 reviews · 4.9★</div>
+  </div>
+  <div class="growth-hero-right">
+    <div class="growth-stat"><span class="growth-stat-num" style="color:var(--green)">21</span><span class="growth-stat-label">Passed</span></div>
+    <div class="growth-stat"><span class="growth-stat-num" style="color:var(--amber)">7</span><span class="growth-stat-label">Warnings</span></div>
+    <div class="growth-stat"><span class="growth-stat-num" style="color:var(--red)">6</span><span class="growth-stat-label">Critical</span></div>
+  </div>
+</section>
+
+<nav class="tab-nav">
+  <button class="tab-btn active" data-tab="scorecard">Scorecard</button>
+  <button class="tab-btn" data-tab="findings">What We Found <span class="badge">6</span></button>
+  <button class="tab-btn" data-tab="content">Your Messaging</button>
+  <button class="tab-btn" data-tab="build">What We'd Fix</button>
+</nav>
+
+<main class="main">
+
+  <!-- ═══ TAB: Scorecard ═══════════════════════════════════════════════════ -->
+  <div class="tab-panel active" id="tab-scorecard">
+    
+  <div class="section-header">
+    <h2>Your Site Scores</h2>
+    <span class="section-note">Mobile scores shown · measured by Google</span>
+  </div>
+
+  
+
+  <div class="lighthouse-callout">
+    <strong>Where these scores come from:</strong> These scores are measured by Google Lighthouse — the same tool Google uses to evaluate sites for search ranking. They are objective measurements, not our opinion. You can verify any score yourself at <a href="https://pagespeed.web.dev" target="_blank">pagespeed.web.dev</a>.
+  </div>
+
+  <div class="score-strip"><div class="score-cell">
+      <div class="score-circle" style="background:#FEF3CD;color:#C07A1A;border-color:#C07A1A">
+        <span class="score-num">63</span>
+        <span class="score-lbl">Needs work</span>
+      </div>
+      <div class="score-name">Mobile Speed</div>
+      <div class="score-subtitle">How fast your site loads on a phone</div>
+    </div><div class="score-cell">
+      <div class="score-circle" style="background:#FEF3CD;color:#C07A1A;border-color:#C07A1A">
+        <span class="score-num">82</span>
+        <span class="score-lbl">Needs work</span>
+      </div>
+      <div class="score-name">Google Visibility</div>
+      <div class="score-subtitle">How easily patients can find you</div>
+    </div><div class="score-cell">
+      <div class="score-circle" style="background:#FEF3CD;color:#C07A1A;border-color:#C07A1A">
+        <span class="score-num">75</span>
+        <span class="score-lbl">Needs work</span>
+      </div>
+      <div class="score-name">Ease of Use</div>
+      <div class="score-subtitle">Works for all patients, all devices</div>
+    </div><div class="score-cell">
+      <div class="score-circle" style="background:#D4EDD9;color:#2E7D4F;border-color:#2E7D4F">
+        <span class="score-num">96</span>
+        <span class="score-lbl">Good</span>
+      </div>
+      <div class="score-name">Technical Health</div>
+      <div class="score-subtitle">Security &amp; modern standards</div>
+    </div></div>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Score</th>
+        <th>Mobile (primary)</th>
+        <th>Desktop</th>
+      </tr>
+    </thead>
+    <tbody><tr>
+      <td>
+        <strong>Mobile Speed</strong><br>
+        <span class="score-desc">How fast your site loads on a phone</span>
+      </td>
+      <td><span class="score-pill" style="background:#FEF3CD;color:#C07A1A">63</span></td>
+      <td><span class="score-pill" style="background:#FEF3CD;color:#C07A1A">85</span></td>
+    </tr><tr>
+      <td>
+        <strong>Google Visibility</strong><br>
+        <span class="score-desc">How easily patients can find you</span>
+      </td>
+      <td><span class="score-pill" style="background:#FEF3CD;color:#C07A1A">82</span></td>
+      <td><span class="score-pill" style="background:#FEF3CD;color:#C07A1A">82</span></td>
+    </tr><tr>
+      <td>
+        <strong>Ease of Use</strong><br>
+        <span class="score-desc">Works for all patients, all devices</span>
+      </td>
+      <td><span class="score-pill" style="background:#FEF3CD;color:#C07A1A">75</span></td>
+      <td><span class="score-pill" style="background:#FEF3CD;color:#C07A1A">75</span></td>
+    </tr><tr>
+      <td>
+        <strong>Technical Health</strong><br>
+        <span class="score-desc">Security &amp; modern standards</span>
+      </td>
+      <td><span class="score-pill" style="background:#D4EDD9;color:#2E7D4F">96</span></td>
+      <td><span class="score-pill" style="background:#D4EDD9;color:#2E7D4F">96</span></td>
+    </tr></tbody>
+  </table>
+
+  <div style="font-size:13px;font-weight:700;margin-bottom:14px;color:var(--ink)">Mobile speed breakdown <span style="font-size:11px;font-weight:400;color:var(--text-dim)">— measured by Google Lighthouse on a simulated phone</span></div>
+  <div class="metrics-grid"><div class="metric-card">
+      <div class="metric-label">Time to See Your Page</div>
+      <div class="metric-sublabel">LCP</div>
+      <div class="metric-value metric-status-fail" style="color:var(--red)">12.92s</div>
+      <div class="metric-threshold">Goal: under 2.5 sec</div>
+    </div><div class="metric-card">
+      <div class="metric-label">Time to First Content</div>
+      <div class="metric-sublabel">FCP</div>
+      <div class="metric-value metric-status-fail" style="color:var(--red)">3.10s</div>
+      <div class="metric-threshold">Goal: under 1.8 sec</div>
+    </div><div class="metric-card">
+      <div class="metric-label">Page Responsiveness</div>
+      <div class="metric-sublabel">TBT</div>
+      <div class="metric-value metric-status-pass" style="color:var(--green)">86ms</div>
+      <div class="metric-threshold">Goal: under 200ms</div>
+    </div><div class="metric-card">
+      <div class="metric-label">Visual Stability</div>
+      <div class="metric-sublabel">CLS — does content jump around</div>
+      <div class="metric-value metric-status-pass" style="color:var(--green)">0.077</div>
+      <div class="metric-threshold">Goal: under 0.1</div>
+    </div><div class="metric-card">
+      <div class="metric-label">How Fast It Looks Loaded</div>
+      <div class="metric-sublabel">SI</div>
+      <div class="metric-value metric-status-fail" style="color:var(--red)">5.89s</div>
+      <div class="metric-threshold">Goal: under 3.4 sec</div>
+    </div><div class="metric-card">
+      <div class="metric-label">Time Until Fully Interactive</div>
+      <div class="metric-sublabel">TTI</div>
+      <div class="metric-value metric-status-fail" style="color:var(--red)">13.15s</div>
+      <div class="metric-threshold">Goal: under 3.8 sec</div>
+    </div></div>
+
+  <p class="source-note">All metrics sourced from Google PageSpeed Insights API v5. Mobile scores are the primary signal Google uses for search ranking.</p>
+  
+  </div>
+
+  <!-- ═══ TAB: What We Found / Before → After ════════════════════════════ -->
+  <div class="tab-panel" id="tab-findings">
+    
+  <div class="section-header">
+    <h2>What We Found</h2>
+    <span class="section-note">Based on crawling your site + Google Lighthouse</span>
+  </div>
+
+  <div class="findings-summary">
+    <div class="fs-stat"><span class="fs-num critical">6</span><span class="fs-label">Critical issues</span></div>
+    <div class="fs-stat"><span class="fs-num warning">7</span><span class="fs-label">Warnings</span></div>
+  </div>
+
+  
+  <div class="findings-group">
+    <div class="findings-group-title critical">Critical Issues (6)</div>
+    <div class="findings-list">
+  <div class="finding-card critical">
+    <div class="finding-header">
+      <div class="finding-icon critical">✕</div>
+      <div>
+        <div class="finding-title">Pages competing against each other in Google</div>
+        <div class="finding-meta">seo</div>
+      </div>
+    </div>
+    <div class="finding-evidence">4 titles appear on multiple pages.</div>
+    <div class="finding-impact">Why this matters to patients: Unique titles help Google understand which page should rank for which query and prevent pages from competing against each other.</div>
+    <div class="finding-source">(Detected by crawling your site)</div>
+    <div class="finding-pages-inline">
+            <div class="pages-label">Affected pages (5)</div>
+            <ul><li>https://www.springstdentistry.com/blog</li><li>https://www.springstdentistry.com/blog//page/3</li><li>https://www.springstdentistry.com/blog//page/2</li><li>https://www.springstdentistry.com/blog/teeth-cleaning-exam-in-long-beach-ca-2</li><li>https://www.springstdentistry.com/blog/teeth-cleaning-exam-in-long-beach-ca</li></ul>
+           </div>
+  </div>
+  <div class="finding-card critical">
+    <div class="finding-header">
+      <div class="finding-icon critical">✕</div>
+      <div>
+        <div class="finding-title">Confusing headline structure on multiple pages</div>
+        <div class="finding-meta">seo</div>
+      </div>
+    </div>
+    <div class="finding-evidence">15 pages have more than one H1 heading.</div>
+    <div class="finding-impact">Why this matters to patients: Each page should have exactly one H1. Multiple H1s dilute the primary topic signal and can confuse search engine crawlers.</div>
+    <div class="finding-source">(Detected by crawling your site)</div>
+    <div class="finding-pages-inline">
+            <div class="pages-label">Affected pages (5)</div>
+            <ul><li>https://www.springstdentistry.com/new-patients</li><li>https://www.springstdentistry.com/blog/best-dental-office-near-me-in-long-beach-ca-2</li><li>https://www.springstdentistry.com/blog/teeth-cleaning-exam-in-long-beach-ca</li><li>https://www.springstdentistry.com/blog/teeth-cleaning-exam-near-me-in-long-beach-ca</li><li>https://www.springstdentistry.com/blog/best-dentist-near-me-in-long-beach-ca</li></ul>
+           </div>
+  </div>
+  <div class="finding-card critical">
+    <div class="finding-header">
+      <div class="finding-icon critical">✕</div>
+      <div>
+        <div class="finding-title">Search engines don't know which page to rank</div>
+        <div class="finding-meta">seo</div>
+      </div>
+    </div>
+    <div class="finding-evidence">56 of 56 pages are missing a canonical tag.</div>
+    <div class="finding-impact">Why this matters to patients: Canonical tags prevent duplicate content issues and consolidate link equity to the preferred URL.</div>
+    <div class="finding-source">(Detected by crawling your site)</div>
+    <div class="finding-pages-inline">
+            <div class="pages-label">Affected pages (5)</div>
+            <ul><li>https://www.springstdentistry.com/</li><li>https://www.springstdentistry.com/about</li><li>https://www.springstdentistry.com/dr-anthony-hoang</li><li>https://www.springstdentistry.com/appointment</li><li>https://www.springstdentistry.com/before-after</li></ul>
+           </div>
+  </div>
+  <div class="finding-card critical">
+    <div class="finding-header">
+      <div class="finding-icon critical">✕</div>
+      <div>
+        <div class="finding-title">First impression loads too slowly</div>
+        <div class="finding-meta">performance</div>
+      </div>
+    </div>
+    <div class="finding-evidence">LCP is 12.92s (threshold: 2.5s good, 4.0s poor).</div>
+    <div class="finding-impact">Why this matters to patients: LCP measures how quickly the main content loads. Slow LCP is a top reason users bounce from pages and a direct ranking factor.</div>
+    <div class="finding-source">(Measured by Google Lighthouse)</div>
+    
+  </div>
+  <div class="finding-card critical">
+    <div class="finding-header">
+      <div class="finding-icon critical">✕</div>
+      <div>
+        <div class="finding-title">Images invisible to Google and visually impaired patients</div>
+        <div class="finding-meta">accessibility</div>
+      </div>
+    </div>
+    <div class="finding-evidence">62 images across the site are missing alt text.</div>
+    <div class="finding-impact">Why this matters to patients: Alt text is essential for screen readers and is used by Google Image Search to understand image content.</div>
+    <div class="finding-source">(Detected by crawling your site)</div>
+    
+  </div>
+  <div class="finding-card critical">
+    <div class="finding-header">
+      <div class="finding-icon critical">✕</div>
+      <div>
+        <div class="finding-title">Phone click conversion event</div>
+        <div class="finding-meta">conversion</div>
+      </div>
+    </div>
+    <div class="finding-evidence">No phone-click event tracker detected. Calls happen, but Google Ads sees no signal.</div>
+    <div class="finding-impact">Why this matters to patients: Calls are the #1 conversion action for dental practices. Without a phone_click event in GA4, Smart Bidding can't prioritize keywords that drive calls — they look identical to keywords that drive nothing.</div>
+    <div class="finding-source">(Detected by crawling your site)</div>
+    
+  </div></div>
+  </div>
+
+  
+  <div class="findings-group">
+    <div class="findings-group-title warning">Warnings (7)</div>
+    <div class="findings-list">
+  <div class="finding-card warning">
+    <div class="finding-header">
+      <div class="finding-icon warning">!</div>
+      <div>
+        <div class="finding-title">Page titles missing city</div>
+        <div class="finding-meta">seo</div>
+      </div>
+    </div>
+    <div class="finding-evidence">2 of 56 pages have a title that doesn't include the practice city.</div>
+    <div class="finding-impact">Why this matters to patients: Local-intent ad keywords (&quot;dental implants huntington beach&quot;) match strongest when the city is in the page title. Google Ads quality score and local SEO both reward title-city alignment.</div>
+    <div class="finding-source">(Detected by crawling your site)</div>
+    <details class="finding-pages">
+            <summary>2 affected pages (click to expand)</summary>
+            <ul><li>https://www.springstdentistry.com/appointment</li><li>https://www.springstdentistry.com/reviews</li></ul>
+           </details>
+  </div>
+  <div class="finding-card warning">
+    <div class="finding-header">
+      <div class="finding-icon warning">!</div>
+      <div>
+        <div class="finding-title">Pages with no clear headline structure</div>
+        <div class="finding-meta">seo</div>
+      </div>
+    </div>
+    <div class="finding-evidence">7 of 56 pages are missing an H1 heading.</div>
+    <div class="finding-impact">Why this matters to patients: H1 tags tell search engines the primary topic of a page. Missing H1s weaken page relevance signals.</div>
+    <div class="finding-source">(Detected by crawling your site)</div>
+    <details class="finding-pages">
+            <summary>5 affected pages (click to expand)</summary>
+            <ul><li>https://www.springstdentistry.com/appointment</li><li>https://www.springstdentistry.com/before-after</li><li>https://www.springstdentistry.com/blog</li><li>https://www.springstdentistry.com/contact</li><li>https://www.springstdentistry.com/special-offers</li></ul>
+           </details>
+  </div>
+  <div class="finding-card warning">
+    <div class="finding-header">
+      <div class="finding-icon warning">!</div>
+      <div>
+        <div class="finding-title">Pages with too little information for Google</div>
+        <div class="finding-meta">seo</div>
+      </div>
+    </div>
+    <div class="finding-evidence">2 of 56 pages have fewer than 200 words of content.</div>
+    <div class="finding-impact">Why this matters to patients: Pages with substantial content rank significantly better. Thin pages signal low quality to Google and rarely appear in top results.</div>
+    <div class="finding-source">(Detected by crawling your site)</div>
+    <details class="finding-pages">
+            <summary>2 affected pages (click to expand)</summary>
+            <ul><li>https://www.springstdentistry.com/before-after</li><li>https://www.springstdentistry.com/reviews</li></ul>
+           </details>
+  </div>
+  <div class="finding-card warning">
+    <div class="finding-header">
+      <div class="finding-icon warning">!</div>
+      <div>
+        <div class="finding-title">Site is too slow on mobile phones</div>
+        <div class="finding-meta">performance</div>
+      </div>
+    </div>
+    <div class="finding-evidence">Mobile performance score is 63/100.</div>
+    <div class="finding-impact">Why this matters to patients: Google uses Core Web Vitals as a ranking signal. A fast site reduces bounce rate and improves conversions.</div>
+    <div class="finding-source">(Measured by Google Lighthouse)</div>
+    
+  </div>
+  <div class="finding-card warning">
+    <div class="finding-header">
+      <div class="finding-icon warning">!</div>
+      <div>
+        <div class="finding-title">No FAQ section to capture Google question searches</div>
+        <div class="finding-meta">content</div>
+      </div>
+    </div>
+    <div class="finding-evidence">No FAQ content found anywhere on the site.</div>
+    <div class="finding-impact">Why this matters to patients: FAQ pages capture long-tail search queries, can generate FAQ rich results in Google, and reduce front-desk call volume.</div>
+    <div class="finding-source">(Detected by crawling your site)</div>
+    
+  </div>
+  <div class="finding-card warning">
+    <div class="finding-header">
+      <div class="finding-icon warning">!</div>
+      <div>
+        <div class="finding-title">GBP description</div>
+        <div class="finding-meta">gbp</div>
+      </div>
+    </div>
+    <div class="finding-evidence">Google Business Profile has no description.</div>
+    <div class="finding-impact">Why this matters to patients: The GBP description lets you control your narrative on Maps — what services, who you serve, what differentiates you.</div>
+    <div class="finding-source">(Detected by crawling your site)</div>
+    
+  </div>
+  <div class="finding-card warning">
+    <div class="finding-header">
+      <div class="finding-icon warning">!</div>
+      <div>
+        <div class="finding-title">GBP profile completeness</div>
+        <div class="finding-meta">gbp</div>
+      </div>
+    </div>
+    <div class="finding-evidence">Only 83% of essential GBP fields are filled in.</div>
+    <div class="finding-impact">Why this matters to patients: Google ranks more complete profiles higher in the local pack and shows them more prominently in the Knowledge Panel.</div>
+    <div class="finding-source">(Detected by crawling your site)</div>
+    
+  </div></div>
+  </div>
+
+  
+  <div class="findings-group">
+    <div class="findings-group-title passed">What's Working (21)</div>
+    <div class="passed-checklist">
+      <div class="passed-item"><span class="passed-check">✓</span><span>Missing search result descriptions</span></div><div class="passed-item"><span class="passed-check">✓</span><span>Pages with no title in Google</span></div><div class="passed-item"><span class="passed-check">✓</span><span>Not claiming your business identity in search</span></div><div class="passed-item"><span class="passed-check">✓</span><span>Page content shifts around while loading</span></div><div class="passed-item"><span class="passed-check">✓</span><span>No patient reviews or social proof on site</span></div><div class="passed-item"><span class="passed-check">✓</span><span>About page doesn't build enough trust</span></div><div class="passed-item"><span class="passed-check">✓</span><span>Viewport meta tag</span></div><div class="passed-item"><span class="passed-check">✓</span><span>Phone number on site</span></div><div class="passed-item"><span class="passed-check">✓</span><span>Address on site</span></div><div class="passed-item"><span class="passed-check">✓</span><span>Operating hours on site</span></div><div class="passed-item"><span class="passed-check">✓</span><span>Social media links</span></div><div class="passed-item"><span class="passed-check">✓</span><span>First-party domain</span></div><div class="passed-item"><span class="passed-check">✓</span><span>Single primary domain</span></div><div class="passed-item"><span class="passed-check">✓</span><span>GBP business title</span></div><div class="passed-item"><span class="passed-check">✓</span><span>GBP phone number</span></div><div class="passed-item"><span class="passed-check">✓</span><span>GBP business hours</span></div><div class="passed-item"><span class="passed-check">✓</span><span>GBP website link</span></div><div class="passed-item"><span class="passed-check">✓</span><span>GBP review volume</span></div><div class="passed-item"><span class="passed-check">✓</span><span>GBP primary category aligned</span></div><div class="passed-item"><span class="passed-check">✓</span><span>GBP website link matches audited domain</span></div><div class="passed-item"><span class="passed-check">✓</span><span>GA4 measurement script</span></div>
+    </div>
+  </div>
+  </div>
+
+  <!-- ═══ TAB: Your Messaging ════════════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-content">
+    
+  <div class="section-header">
+    <h2>Your Messaging</h2>
+    <span class="section-note">Analysis by Claude AI</span>
+  </div>
+
+  <div class="ai-source-note">
+    <strong>How this analysis works:</strong> We read every page of your site and analyzed how you're positioned compared to what patients in your area are searching for. This section is <strong>analysis by Claude AI</strong> — not a mechanical score, but a read of your actual content and how it lands on a new visitor.
+  </div>
+
+  <div class="ai-grid">
+
+    <div class="ai-block">
+      <h4>Positioning</h4>
+      <div class="current-tag">Current</div>
+      <p style="font-size:13px;line-height:1.55">A general dental practice offering a broad menu of services without a clear differentiating identity — the site appears to list services without a unifying narrative or patient-focused story</p>
+      <div class="rec-tag">Recommended</div>
+      <p class="rec-text">Long Beach's comprehensive neighborhood dental home — where advanced periodontal technology (LANAP laser therapy) meets full-spectrum care from routine cleanings to cosmetic transformation, all under one roof with same-day emergency access</p>
+      <p class="rationale">The combination of LANAP/laser periodontal therapy alongside cosmetic services like Invisalign, veneers, and Zoom whitening is genuinely rare for a single-doctor practice and creates a defensible specialty-adjacent position. Long Beach is a dense, competitive market where 'everything in one place' paired with a specific technology anchor is more compelling than generic family dentistry messaging.</p>
+    </div>
+
+    <div class="ai-block">
+      <h4>Brand Tone</h4>
+      <div class="current-tag">Current</div>
+      <p style="font-size:13px;line-height:1.55">Functional and informational — reads as a service directory without emotional warmth or brand confidence</p>
+      <div class="rec-tag">Recommended</div>
+      <p class="rec-text">bold</p>
+      <p class="rationale">Long Beach is an urban, design-conscious market with a younger and middle-aged demographic mix. A bold tone — high contrast, declarative headlines, confident service framing — positions Dr. Hoang as a modern specialist-level provider rather than a commodity neighborhood dentist. The LANAP technology and breadth of services support a confident, forward-leaning voice. Warm would undersell the clinical depth; editorial requires a luxury price point signal not yet established.</p>
+    </div>
+
+    <div class="ai-block">
+      <h4>Service Emphasis</h4>
+      <div class="tag-row">
+        <span class="tag-primary">dental-implants</span>
+        <span class="tag-secondary">invisalign</span><span class="tag-secondary">lanap</span><span class="tag-secondary">same-day-emergency-treatment</span><span class="tag-secondary">cosmetic-dentistry</span>
+      </div>
+      <p class="rationale" style="margin-top:10px">Dental implants carry the highest patient lifetime value and search intent in this market. LANAP and laser-assisted periodontal therapy are the clearest technology differentiators on this site and deserve prominent placement — they signal specialist-level capability that most general practices cannot match. Invisalign anchors a strong cosmetic/orthodontic funnel. Same-day emergency is a high-conversion acquisition service with strong local search demand in an urban market like Long Beach.</p>
+    </div>
+
+    <div class="ai-block">
+      <h4>Differentiators Found on Your Site</h4>
+      <ul class="bullet-list">
+        <li>LANAP (Laser-Assisted New Attachment Procedure) and Laser-Assisted Periodontal Therapy offered in-house — a surgical-grade gum disease treatment typically found only at periodontal specialists, available here within a general practice setting</li><li>Dr. Anthony Hoang DMD holds a doctoral-level dental degree (DMD) and delivers both advanced periodontal procedures and full cosmetic services under one provider, eliminating specialist referrals for most patients</li><li>Same-day emergency treatment combined with a 25+ service portfolio creates a single-provider solution for Long Beach patients across the entire dental care continuum — from prevention through complex restorative and surgical care</li>
+      </ul>
+    </div>
+
+    <div class="ai-block">
+      <h4>Content Gaps — What's Missing</h4>
+      <ul class="bullet-list">
+        <li>No patient testimonials or reviews detected — this is a critical trust gap in a competitive urban market; Google review integration or structured testimonial content is urgently needed</li><li>No FAQ content anywhere on the site — LANAP, dental implants, and Invisalign all generate high-volume question-based searches that FAQ schema could capture</li><li>No email contact detected — a direct contact channel beyond phone is a conversion barrier, especially for younger Long Beach patients who prefer async communication</li><li>Doctor bio exists but social presence is minimal (1 profile) — Dr. Hoang's credentials, DMD background, and any specialized training in LANAP or periodontics should be prominently featured with verifiable detail</li><li>No before/after gallery detected in the 16 images found — cosmetic services like veneers, bonding, and whitening require visual proof; a case gallery is essential for conversion on those pages</li><li>No financing or insurance information surfaced — for a practice offering implants, LANAP, and orthodontics, payment options content is a significant decision-stage gap</li><li>Service hub pages flagged as none — high-value category pages for Cosmetic Dentistry, Periodontics, and Orthodontics should be built to consolidate topical authority and improve crawl structure</li><li>No pediatric dentistry page despite 'Family Dentistry' being listed — if the practice sees children, a dedicated pediatric page closes a content and trust gap for parent searchers</li>
+      </ul>
+    </div>
+
+    <div class="ai-block">
+      <h4>Search Opportunities</h4>
+      <ul class="bullet-list">
+        <li>Target 'LANAP treatment Long Beach CA' and 'laser gum disease treatment Long Beach' — extremely low competition for a high-commercial-intent query that directly maps to a unique on-site service</li><li>Build a dedicated Emergency Dentist Long Beach landing page optimized for 'emergency dentist Long Beach' and 'same day dentist Long Beach 90802/90806' — emergency dental is a top-3 highest-converting local dental search category</li><li>Create a Periodontics hub page consolidating LANAP, laser periodontal therapy, deep cleaning, and root scaling — this topical cluster would rank for 'periodontist Long Beach' adjacent queries without requiring a specialist designation</li><li>Pursue Invisalign vs braces comparison content targeting 'Invisalign Long Beach' and 'clear aligners vs braces Long Beach' — orthodontic queries in urban LA County markets have strong commercial intent and moderate competition</li><li>Implement FAQ schema on implant, LANAP, and Invisalign service pages to capture featured snippet real estate for question-based queries like 'how much do dental implants cost in Long Beach'</li><li>Structured data gap: No primary-entity (LocalBusiness/Dentist) schema or breadcrumb schema detected across 40 crawled pages — implementing Dentist schema with geo-coordinates, services offered, and doctor credentials is a foundational SEO fix that will improve Knowledge Panel accuracy and local pack signals</li><li>Internal linking is likely weak given no hub pages exist — building hub-and-spoke architecture (Cosmetic hub → veneers, bonding, whitening, Zoom spokes; Periodontics hub → LANAP, deep cleaning, root scaling spokes) will consolidate crawl equity and improve ranking for category-level terms</li>
+      </ul>
+    </div>
+
+  </div>
+  </div>
+
+  <!-- ═══ TAB: What We'd Fix ══════════════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-build">
+    
+  <div class="section-header">
+    <h2>What We'd Fix</h2>
+    <span class="section-note">Every item below is tied to a specific finding above</span>
+  </div>
+
+  
+  <div class="preview-block">
+    <h3>Your Redesign</h3>
+    <p>Groundwork builds a custom, SEO-optimized site from your existing content in under 24 hours.</p>
+    <a class="preview-btn" href="https://groundwork.build" target="_blank" rel="noopener">
+      Get Started →
+    </a>
+  </div>
+
+  
+  <div style="margin-bottom:28px">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-dim);margin-bottom:14px">Top 3 changes — before and after</div>
+    
+    <div class="before-after-block">
+      <div class="ba-header">Pages competing against each other in Google</div>
+      <div class="ba-row">
+        <div class="ba-col">
+          <div class="ba-label before">Before</div>
+          <div class="ba-content">Multiple pages have the same title — Google can't tell them apart, so none of them rank.</div>
+        </div>
+        <div class="ba-col">
+          <div class="ba-label after">After</div>
+          <div class="ba-content">Every page targets a different search term and competes on its own terms.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div style="margin-bottom:24px">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-dim);margin-bottom:14px">Additional improvements</div>
+    <div class="improvements-list">
+  <div class="improvement-item">
+    <div class="impr-finding-ref critical">Critical fix — First impression loads too slowly</div>
+    <div class="impr-text">The first thing a patient sees loads in under 2.5 seconds, giving a strong first impression on any device.</div>
+  </div>
+  <div class="improvement-item">
+    <div class="impr-finding-ref critical">Critical fix — Images invisible to Google and visually impaired patients</div>
+    <div class="impr-text">Every image is described for Google Image Search and for patients using screen readers or low vision.</div>
+  </div>
+  <div class="improvement-item">
+    <div class="impr-finding-ref critical">Critical fix — Phone click conversion event</div>
+    <div class="impr-text">A phone_click event fires on every tel: link, giving Google Ads the signal it needs to prioritize keywords that drive calls.</div>
+  </div>
+  <div class="improvement-item">
+    <div class="impr-finding-ref warning">Improvement — Page titles missing city</div>
+    <div class="impr-text">Service page titles include your city, so local-intent ad keywords (&quot;dental implants huntington beach&quot;) match strongest.</div>
+  </div>
+  <div class="improvement-item">
+    <div class="impr-finding-ref warning">Improvement — Pages with no clear headline structure</div>
+    <div class="impr-text">Patients and Google can immediately see what each page is about, making your content easier to navigate and rank.</div>
+  </div></div>
+  </div>
+
+  
+  </div>
+
+</main>
+
+<script>
+  const btns   = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.tab-panel');
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+      btns.forEach(b => b.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + target)?.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
