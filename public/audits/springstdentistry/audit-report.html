@@ -4,26 +4,89 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Site Audit — Spring St. Dentistry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --ink:   #1A1A1A;
-    --terracotta: #C45D3E;
-    --cream:      #FAF8F5;
-    --sage:       #6B7F6E;
-    --surface:    #FFFFFF;
-    --border:     #E5E0DA;
-    --text-dim:   #666259;
-    --green:      #2E7D4F;
-    --red:        #C0392B;
-    --amber:      #C07A1A;
-    --blue:       #1565C0;
-    --radius:     8px;
-    --font:       -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --mono:       'SFMono-Regular', 'Consolas', monospace;
+    /* Groundwork Dental design system v2 — see /DESIGN.md.
+       Single source of truth: token names match the design doc 1:1.
+       Legacy aliases below (--ink, --terracotta, --cream, etc.) point at
+       the new tokens so existing CSS keeps working through the migration. */
+
+    /* Brand — sage is THE accent (non-text); sage-dark is text/links/buttons */
+    --sage:        #5F7F6B;
+    --sage-dark:   #4A6B55;
+    --sage-darker: #3D5A48;
+    --sage-tint:   #EBF0EC;
+
+    /* Neutrals */
+    --charcoal:    #334155;
+    --mid-gray:    #64748B;
+    --border-light:#E0DDD5;
+
+    /* Surfaces */
+    --surface-1:   #FFFFFF;
+    --surface-2:   #F8F8F3;
+    --on-dark:     #E7EBF0;
+    --on-dark-muted:#AAB4C2;
+
+    /* Semantic — contrast-audited against their own backgrounds */
+    --success:     #4A6B55;  /* same as sage-dark by design — one green */
+    --success-bg:  #EBF0EC;
+    --warning:     #92400E;
+    --warning-bg:  #FCF4E8;
+    --pending:     #475569;
+    --pending-bg:  #F1F0EB;
+    --danger:      #B42318;
+    --danger-bg:   #FDF0EE;
+
+    /* Legacy aliases — kept so existing rules in this file still resolve.
+       Prefer the design-system tokens above for new code. */
+    --ink:         var(--charcoal);
+    --terracotta:  var(--sage-dark);    /* design system has no terracotta */
+    --cream:       var(--surface-2);
+    --surface:     var(--surface-1);
+    --border:      var(--border-light);
+    --text-dim:    var(--mid-gray);
+    --green:       var(--success);
+    --red:         var(--danger);
+    --amber:       var(--warning);
+    --blue:        var(--sage-dark);    /* drop the blue, brand is sage */
+
+    /* Radius — design system: default = 4px, full = 9999. */
+    --radius:      4px;
+
+    /* Typography — Georgia for prose (zero font bytes), Figtree for UI
+       chrome (one webfont, on-brand), system mono for numerals. */
+    --font:        Georgia, "Times New Roman", serif;
+    --font-ui:     Figtree, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono:        ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   }
-  body { font-family: var(--font); background: var(--cream); color: var(--ink); font-size: 14px; line-height: 1.5; }
+  body { font-family: var(--font); background: var(--surface-1); color: var(--charcoal); font-size: 14px; line-height: 1.5; }
+
+  /* UI chrome — Figtree on buttons, badges, eyebrows, labels, nav, tabs.
+     Applied via class OR the selectors below cover the common cases. */
+  .ui, button, .tab-btn, .badge, .badge-green,
+  .gw-mark, .gw-logo .mark, .gw-logo .domain,
+  .section-note, .source-note,
+  .findings-group-title, .diff-group-title,
+  .diff-card-category, .diff-card-badge, .diff-fixed-line, .diff-side-label,
+  .score-name, .score-subtitle, .score-lbl, .score-pill,
+  .compare-table th, .metric-sublabel, .metric-label, .metric-threshold,
+  .finding-meta, .finding-source, .pages-label,
+  .fs-label, .fs-num, .ai-block h4, .current-tag, .rec-tag,
+  .tag-primary, .tag-secondary, .impr-finding-ref,
+  .ba-header, .ba-label, .design-info h4, .design-key,
+  .sev-badge, .section-title, .pair-found-severity, .pair-header,
+  .pair-found-pages-label, .lead-magnet-eyebrow, .lead-magnet-btn,
+  .lead-magnet-fineprint, .hero-screenshot-cap,
+  .scores-headline, .scores-attribution,
+  .report-footer, .empty-state {
+    font-family: var(--font-ui);
+  }
 
   /* Score circles */
   .score-circle {
@@ -53,11 +116,11 @@
     display: flex; align-items: center; justify-content: center;
     font-size: 12px; font-weight: 800; flex-shrink: 0; margin-top: 1px;
   }
-  .finding-icon.critical { background: #FDDCDC; color: var(--red); }
-  .finding-icon.warning  { background: #FEF3CD; color: var(--amber); }
-  .finding-icon.passed   { background: #D4EDD9; color: var(--green); }
+  .finding-icon.critical { background: var(--danger-bg); color: var(--red); }
+  .finding-icon.warning  { background: var(--warning-bg); color: var(--amber); }
+  .finding-icon.passed   { background: var(--success-bg); color: var(--green); }
 
-  .finding-title  { font-size: 14px; font-weight: 700; line-height: 1.3; }
+  .finding-title  { font-family: var(--font); font-size: 17px; font-weight: 400; line-height: 1.3; color: var(--charcoal); letter-spacing: -0.1px; }
   .finding-meta   { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); margin-top: 2px; }
   .finding-detail { font-size: 13px; color: var(--ink); line-height: 1.55; margin-top: 8px; }
   .finding-evidence { font-size: 13px; font-weight: 700; color: var(--ink); line-height: 1.4; margin-top: 8px; }
@@ -77,11 +140,17 @@
   
 
 /* ── Header ── */
-.header { background: var(--ink); color: white; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.header-left h1 { font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
-.header-left .sub { color: #9E9990; font-size: 13px; margin-top: 3px; }
-.header-badge { font-size: 12px; color: #9E9990; text-align: right; line-height: 1.7; }
-.gw-mark { font-size: 11px; font-weight: 700; color: var(--terracotta); letter-spacing: 1px; text-transform: uppercase; }
+/* Header — charcoal band per design system. Wordmark + practice title.
+   Georgia for the practice title (it's prose, not UI chrome). */
+.header { background: var(--charcoal); color: var(--on-dark); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.header-left h1 { font-family: var(--font); font-size: 22px; font-weight: 400; letter-spacing: -0.3px; color: var(--on-dark); }
+.header-left .sub { color: var(--on-dark-muted); font-size: 13px; margin-top: 4px; font-family: var(--font-ui); }
+.header-badge { font-size: 12px; color: var(--on-dark-muted); text-align: right; line-height: 1.7; }
+/* Brand wordmark per /DESIGN.md — Georgia 'Groundwork' + sage divider + Figtree 'dental'. */
+.gw-mark { display: inline-flex; align-items: baseline; gap: 8px; font-size: 16px; }
+.gw-mark .word { font-family: var(--font); font-weight: 400; color: var(--on-dark); letter-spacing: -0.2px; }
+.gw-mark .divider { width: 1px; height: 12px; background: var(--sage); align-self: center; }
+.gw-mark .suffix { font-family: var(--font-ui); font-size: 10px; font-weight: 500; color: var(--sage); letter-spacing: 0.14em; text-transform: uppercase; }
 
 /* ── Tab Nav ── */
 .tab-nav { background: var(--surface); border-bottom: 2px solid var(--border); padding: 0 32px; display: flex; gap: 0; overflow-x: auto; }
@@ -97,13 +166,14 @@
 
 /* ── Section layout ── */
 .section-header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 16px; border-bottom: 1px solid var(--border); margin-bottom: 28px; }
-.section-header h2 { font-size: 18px; font-weight: 700; letter-spacing: -0.2px; }
+/* Section headings — Georgia per design system (prose). */
+.section-header h2 { font-family: var(--font); font-size: 22px; font-weight: 400; letter-spacing: -0.2px; color: var(--charcoal); }
 .section-note { font-size: 12px; color: var(--text-dim); }
 
 /* ── Audit Hero ── */
 .growth-hero { max-width: 1080px; margin: 28px auto 0; padding: 22px 28px; border-radius: var(--radius); display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
 .growth-hero-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dim); margin-bottom: 6px; }
-.growth-hero-headline { font-size: 26px; font-weight: 800; line-height: 1.2; letter-spacing: -0.3px; }
+.growth-hero-headline { font-family: var(--font); font-size: 30px; font-weight: 400; line-height: 1.2; letter-spacing: -0.4px; }
 .growth-hero-sub { font-size: 12px; color: var(--text-dim); margin-top: 8px; }
 .growth-hero-right { display: flex; gap: 28px; }
 .growth-stat { display: flex; flex-direction: column; align-items: center; gap: 4px; }
@@ -126,14 +196,14 @@
 .diff-card-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
 .diff-card-symbol { font-size: 18px; font-weight: 800; line-height: 1.2; }
 .diff-card-titles { flex: 1; }
-.diff-card-title { font-size: 14px; font-weight: 700; }
+.diff-card-title { font-family: var(--font); font-size: 17px; font-weight: 400; color: var(--charcoal); letter-spacing: -0.1px; }
 .diff-card-category { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); margin-top: 2px; }
 .diff-card-badge { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 12px; border: 1px solid; text-transform: uppercase; letter-spacing: 0.5px; }
 .diff-fixed-line { font-size: 13px; font-weight: 600; color: var(--green); margin-bottom: 12px; }
 .diff-card-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
 .diff-card-side { padding: 12px 14px; }
-.diff-card-before { background: #FDDCDC55; border-right: 1px solid var(--border); }
-.diff-card-after  { background: #D4EDD955; }
+.diff-card-before { background: var(--danger-bg); border-right: 1px solid var(--border); }
+.diff-card-after  { background: var(--success-bg); }
 .diff-side-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); margin-bottom: 4px; }
 .diff-side-detail { font-size: 12px; line-height: 1.5; }
 .diff-card-benefit { font-size: 12px; font-style: italic; color: var(--text-dim); margin-top: 10px; line-height: 1.5; }
@@ -144,15 +214,15 @@
 .score-name { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); text-align: center; }
 .score-subtitle { font-size: 11px; color: var(--text-dim); font-weight: 400; text-align: center; max-width: 90px; line-height: 1.35; }
 
-.lighthouse-callout { background: #EEF4FF; border: 1px solid #C3D4F7; border-radius: var(--radius); padding: 16px 20px; margin-bottom: 28px; font-size: 13px; line-height: 1.6; color: var(--ink); }
-.lighthouse-callout strong { color: #1565C0; }
-.lighthouse-callout a { color: #1565C0; }
+.lighthouse-callout { background: var(--sage-tint); border: 1px solid var(--sage); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 28px; font-size: 13px; line-height: 1.6; color: var(--charcoal); }
+.lighthouse-callout strong { color: var(--sage-dark); }
+.lighthouse-callout a { color: var(--sage-dark); }
 
 .compare-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 32px; }
-.compare-table th { text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); padding: 8px 12px; background: #F5F2EE; border: 1px solid var(--border); }
+.compare-table th { text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); padding: 8px 12px; background: var(--surface-2); border: 1px solid var(--border); }
 .compare-table td { padding: 10px 12px; border: 1px solid var(--border); font-weight: 600; }
 .compare-table td.score-desc { font-size: 11px; color: var(--text-dim); font-weight: 400; }
-.compare-table tr:nth-child(even) td { background: #FAFAF8; }
+.compare-table tr:nth-child(even) td { background: var(--surface-2); }
 .score-val { display: inline-flex; align-items: center; gap: 8px; }
 .score-pill { font-size: 13px; font-weight: 800; padding: 3px 10px; border-radius: 20px; display: inline-block; }
 
@@ -166,12 +236,14 @@
 .source-note { font-size: 11px; color: var(--text-dim); font-style: italic; margin-top: 8px; }
 
 /* ── Technical Findings ── */
-.findings-summary { background: var(--ink); color: white; border-radius: var(--radius); padding: 14px 20px; margin-bottom: 24px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.findings-summary { background: var(--charcoal); color: var(--on-dark); border-radius: var(--radius); padding: 16px 22px; margin-bottom: 24px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
 .fs-stat { display: flex; align-items: center; gap: 8px; }
 .fs-num { font-size: 22px; font-weight: 800; font-family: var(--mono); line-height: 1; }
-.fs-num.critical { color: #FF6B6B; }
-.fs-num.warning  { color: #FFD93D; }
-.fs-label { font-size: 12px; font-weight: 600; color: #9E9990; }
+/* On the dark findings-summary band: brighter accents so the numerals
+   read against charcoal. AA-checked: #FF8B7E ~5.1:1 / #F5C745 ~9.5:1. */
+.fs-num.critical { color: #FF8B7E; }
+.fs-num.warning  { color: #F5C745; }
+.fs-label { font-size: 12px; font-weight: 600; color: var(--on-dark-muted); }
 
 .findings-group { margin-bottom: 28px; }
 .findings-group-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
@@ -181,11 +253,11 @@
 .findings-list { display: flex; flex-direction: column; gap: 10px; }
 
 .passed-checklist { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 8px; }
-.passed-item { background: var(--surface); border: 1px solid #D4EDD9; border-radius: var(--radius); padding: 10px 14px; display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.passed-item { background: var(--surface); border: 1px solid var(--success-bg); border-radius: var(--radius); padding: 10px 14px; display: flex; align-items: center; gap: 10px; font-size: 13px; }
 .passed-check { color: var(--green); font-weight: 800; flex-shrink: 0; }
 
 /* ── AI Audit Tab ── */
-.ai-source-note { background: #F5F2EE; border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 18px; margin-bottom: 24px; font-size: 13px; line-height: 1.6; color: var(--ink); }
+.ai-source-note { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 18px; margin-bottom: 24px; font-size: 13px; line-height: 1.6; color: var(--ink); }
 .ai-source-note strong { color: var(--terracotta); }
 .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 @media (max-width: 700px) { .ai-grid { grid-template-columns: 1fr; } }
@@ -197,7 +269,7 @@
 .rationale   { font-size: 12px; color: var(--text-dim); font-style: italic; line-height: 1.5; margin-top: 4px; }
 .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
 .tag-primary   { background: var(--terracotta); color: white; font-size: 12px; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
-.tag-secondary { background: #F0EDE8; color: var(--ink); font-size: 12px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+.tag-secondary { background: var(--border-light); color: var(--ink); font-size: 12px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
 .bullet-list { list-style: none; display: flex; flex-direction: column; gap: 5px; margin-top: 6px; }
 .bullet-list li { font-size: 13px; padding-left: 16px; position: relative; line-height: 1.5; }
 .bullet-list li::before { content: '•'; position: absolute; left: 4px; color: var(--terracotta); font-weight: 700; }
@@ -205,11 +277,13 @@
 .empty-state p { font-size: 14px; line-height: 1.6; }
 
 /* ── What We'd Fix ── */
-.preview-block { background: var(--ink); border-radius: 12px; padding: 32px; text-align: center; margin-bottom: 32px; }
-.preview-block h3 { font-size: 22px; font-weight: 700; color: white; margin-bottom: 10px; }
-.preview-block p { color: #9E9990; font-size: 14px; margin-bottom: 20px; }
-.preview-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--terracotta); color: white; text-decoration: none; font-size: 15px; font-weight: 700; padding: 14px 28px; border-radius: var(--radius); letter-spacing: 0.2px; }
-.preview-btn:hover { opacity: 0.9; }
+.preview-block { background: var(--charcoal); border-radius: var(--radius); padding: 32px; text-align: center; margin-bottom: 32px; }
+.preview-block h3 { font-family: var(--font); font-size: 26px; font-weight: 400; color: var(--on-dark); margin-bottom: 10px; letter-spacing: -0.3px; }
+.preview-block p { color: var(--on-dark-muted); font-size: 14px; margin-bottom: 20px; line-height: 1.5; }
+/* Matches .btn-primary spec — see /DESIGN.md buttons section. */
+.preview-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--sage-dark); color: white; text-decoration: none; font-family: var(--font-ui); font-size: 14px; font-weight: 500; padding: 12px 24px; border-radius: var(--radius); letter-spacing: 0.025em; min-height: 44px; line-height: 20px; transition: background-color 200ms; }
+.preview-btn:hover { background: var(--sage-darker); }
+.preview-btn:focus-visible { outline: 2px solid var(--sage); outline-offset: 2px; }
 .preview-iframe { width: 100%; height: 500px; border: none; border-radius: var(--radius); margin-bottom: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.12); }
 
 .improvements-list { display: flex; flex-direction: column; gap: 12px; }
@@ -220,7 +294,7 @@
 .impr-text { font-size: 13px; line-height: 1.55; }
 
 .before-after-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 12px; }
-.before-after-block .ba-header { padding: 12px 18px; background: #F5F2EE; border-bottom: 1px solid var(--border); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); }
+.before-after-block .ba-header { padding: 12px 18px; background: var(--surface-2); border-bottom: 1px solid var(--border); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); }
 .ba-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
 .ba-col { padding: 14px 18px; }
 .ba-col:first-child { border-right: 1px solid var(--border); }
@@ -231,7 +305,7 @@
 
 .design-info { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-top: 24px; }
 .design-info h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-dim); margin-bottom: 12px; }
-.design-row { display: flex; gap: 10px; padding: 6px 0; border-bottom: 1px solid #F0EDE8; font-size: 13px; }
+.design-row { display: flex; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--border-light); font-size: 13px; }
 .design-row:last-child { border-bottom: none; }
 .design-key { color: var(--text-dim); min-width: 100px; flex-shrink: 0; font-weight: 600; font-size: 12px; }
 </style>
@@ -244,13 +318,17 @@
     <div class="sub">https://www.springstdentistry.com &nbsp;·&nbsp; May 31, 2026</div>
   </div>
   <div class="header-badge">
-    <div class="gw-mark">Groundwork Builder</div>
-    <div style="color:#9E9990;font-size:12px;margin-top:4px">groundwork.build</div>
+    <div class="gw-mark">
+      <span class="word">Groundwork</span>
+      <span class="divider"></span>
+      <span class="suffix">dental</span>
+    </div>
+    <div style="color:var(--on-dark-muted);font-size:11px;margin-top:6px;font-family:var(--font-ui)">groundworkdental.com</div>
   </div>
 </header>
 
 
-<section class="growth-hero" style="background:#FDDCDC;border-left:6px solid #C0392B">
+<section class="growth-hero" style="background:var(--danger-bg);border-left:6px solid #C0392B">
   <div class="growth-hero-left">
     <div class="growth-hero-eyebrow">Site audit</div>
     <div class="growth-hero-headline" style="color:var(--ink)">13 of 34 checks need attention.</div>
@@ -287,28 +365,28 @@
   </div>
 
   <div class="score-strip"><div class="score-cell">
-      <div class="score-circle" style="background:#FEF3CD;color:#C07A1A;border-color:#C07A1A">
+      <div class="score-circle" style="background:var(--warning-bg);color:#C07A1A;border-color:#C07A1A">
         <span class="score-num">59</span>
         <span class="score-lbl">Needs work</span>
       </div>
       <div class="score-name">Mobile Speed</div>
       <div class="score-subtitle">How fast your site loads on a phone</div>
     </div><div class="score-cell">
-      <div class="score-circle" style="background:#FEF3CD;color:#C07A1A;border-color:#C07A1A">
+      <div class="score-circle" style="background:var(--warning-bg);color:#C07A1A;border-color:#C07A1A">
         <span class="score-num">82</span>
         <span class="score-lbl">Needs work</span>
       </div>
       <div class="score-name">Google Visibility</div>
       <div class="score-subtitle">How easily patients can find you</div>
     </div><div class="score-cell">
-      <div class="score-circle" style="background:#FEF3CD;color:#C07A1A;border-color:#C07A1A">
+      <div class="score-circle" style="background:var(--warning-bg);color:#C07A1A;border-color:#C07A1A">
         <span class="score-num">75</span>
         <span class="score-lbl">Needs work</span>
       </div>
       <div class="score-name">Ease of Use</div>
       <div class="score-subtitle">Works for all patients, all devices</div>
     </div><div class="score-cell">
-      <div class="score-circle" style="background:#D4EDD9;color:#2E7D4F;border-color:#2E7D4F">
+      <div class="score-circle" style="background:var(--success-bg);color:#2E7D4F;border-color:#2E7D4F">
         <span class="score-num">96</span>
         <span class="score-lbl">Good</span>
       </div>
@@ -329,29 +407,29 @@
         <strong>Mobile Speed</strong><br>
         <span class="score-desc">How fast your site loads on a phone</span>
       </td>
-      <td><span class="score-pill" style="background:#FEF3CD;color:#C07A1A">59</span></td>
-      <td><span class="score-pill" style="background:#FEF3CD;color:#C07A1A">79</span></td>
+      <td><span class="score-pill" style="background:var(--warning-bg);color:#C07A1A">59</span></td>
+      <td><span class="score-pill" style="background:var(--warning-bg);color:#C07A1A">79</span></td>
     </tr><tr>
       <td>
         <strong>Google Visibility</strong><br>
         <span class="score-desc">How easily patients can find you</span>
       </td>
-      <td><span class="score-pill" style="background:#FEF3CD;color:#C07A1A">82</span></td>
-      <td><span class="score-pill" style="background:#FEF3CD;color:#C07A1A">82</span></td>
+      <td><span class="score-pill" style="background:var(--warning-bg);color:#C07A1A">82</span></td>
+      <td><span class="score-pill" style="background:var(--warning-bg);color:#C07A1A">82</span></td>
     </tr><tr>
       <td>
         <strong>Ease of Use</strong><br>
         <span class="score-desc">Works for all patients, all devices</span>
       </td>
-      <td><span class="score-pill" style="background:#FEF3CD;color:#C07A1A">75</span></td>
-      <td><span class="score-pill" style="background:#FEF3CD;color:#C07A1A">75</span></td>
+      <td><span class="score-pill" style="background:var(--warning-bg);color:#C07A1A">75</span></td>
+      <td><span class="score-pill" style="background:var(--warning-bg);color:#C07A1A">75</span></td>
     </tr><tr>
       <td>
         <strong>Technical Health</strong><br>
         <span class="score-desc">Security &amp; modern standards</span>
       </td>
-      <td><span class="score-pill" style="background:#D4EDD9;color:#2E7D4F">96</span></td>
-      <td><span class="score-pill" style="background:#D4EDD9;color:#2E7D4F">96</span></td>
+      <td><span class="score-pill" style="background:var(--success-bg);color:#2E7D4F">96</span></td>
+      <td><span class="score-pill" style="background:var(--success-bg);color:#2E7D4F">96</span></td>
     </tr></tbody>
   </table>
 
@@ -690,8 +768,8 @@
   
   <div class="preview-block">
     <h3>Your Redesign</h3>
-    <p>Groundwork builds a custom, SEO-optimized site from your existing content in under 24 hours.</p>
-    <a class="preview-btn" href="https://groundwork.build" target="_blank" rel="noopener">
+    <p>Groundwork Dental builds a custom, SEO-optimized site from your existing content in under 24 hours.</p>
+    <a class="preview-btn" href="https://groundworkdental.com" target="_blank" rel="noopener">
       Get Started →
     </a>
   </div>

@@ -4,26 +4,89 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Audit Summary — Spring St. Dentistry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --ink:   #1A1A1A;
-    --terracotta: #C45D3E;
-    --cream:      #FAF8F5;
-    --sage:       #6B7F6E;
-    --surface:    #FFFFFF;
-    --border:     #E5E0DA;
-    --text-dim:   #666259;
-    --green:      #2E7D4F;
-    --red:        #C0392B;
-    --amber:      #C07A1A;
-    --blue:       #1565C0;
-    --radius:     8px;
-    --font:       -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --mono:       'SFMono-Regular', 'Consolas', monospace;
+    /* Groundwork Dental design system v2 — see /DESIGN.md.
+       Single source of truth: token names match the design doc 1:1.
+       Legacy aliases below (--ink, --terracotta, --cream, etc.) point at
+       the new tokens so existing CSS keeps working through the migration. */
+
+    /* Brand — sage is THE accent (non-text); sage-dark is text/links/buttons */
+    --sage:        #5F7F6B;
+    --sage-dark:   #4A6B55;
+    --sage-darker: #3D5A48;
+    --sage-tint:   #EBF0EC;
+
+    /* Neutrals */
+    --charcoal:    #334155;
+    --mid-gray:    #64748B;
+    --border-light:#E0DDD5;
+
+    /* Surfaces */
+    --surface-1:   #FFFFFF;
+    --surface-2:   #F8F8F3;
+    --on-dark:     #E7EBF0;
+    --on-dark-muted:#AAB4C2;
+
+    /* Semantic — contrast-audited against their own backgrounds */
+    --success:     #4A6B55;  /* same as sage-dark by design — one green */
+    --success-bg:  #EBF0EC;
+    --warning:     #92400E;
+    --warning-bg:  #FCF4E8;
+    --pending:     #475569;
+    --pending-bg:  #F1F0EB;
+    --danger:      #B42318;
+    --danger-bg:   #FDF0EE;
+
+    /* Legacy aliases — kept so existing rules in this file still resolve.
+       Prefer the design-system tokens above for new code. */
+    --ink:         var(--charcoal);
+    --terracotta:  var(--sage-dark);    /* design system has no terracotta */
+    --cream:       var(--surface-2);
+    --surface:     var(--surface-1);
+    --border:      var(--border-light);
+    --text-dim:    var(--mid-gray);
+    --green:       var(--success);
+    --red:         var(--danger);
+    --amber:       var(--warning);
+    --blue:        var(--sage-dark);    /* drop the blue, brand is sage */
+
+    /* Radius — design system: default = 4px, full = 9999. */
+    --radius:      4px;
+
+    /* Typography — Georgia for prose (zero font bytes), Figtree for UI
+       chrome (one webfont, on-brand), system mono for numerals. */
+    --font:        Georgia, "Times New Roman", serif;
+    --font-ui:     Figtree, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono:        ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   }
-  body { font-family: var(--font); background: var(--cream); color: var(--ink); font-size: 14px; line-height: 1.5; }
+  body { font-family: var(--font); background: var(--surface-1); color: var(--charcoal); font-size: 14px; line-height: 1.5; }
+
+  /* UI chrome — Figtree on buttons, badges, eyebrows, labels, nav, tabs.
+     Applied via class OR the selectors below cover the common cases. */
+  .ui, button, .tab-btn, .badge, .badge-green,
+  .gw-mark, .gw-logo .mark, .gw-logo .domain,
+  .section-note, .source-note,
+  .findings-group-title, .diff-group-title,
+  .diff-card-category, .diff-card-badge, .diff-fixed-line, .diff-side-label,
+  .score-name, .score-subtitle, .score-lbl, .score-pill,
+  .compare-table th, .metric-sublabel, .metric-label, .metric-threshold,
+  .finding-meta, .finding-source, .pages-label,
+  .fs-label, .fs-num, .ai-block h4, .current-tag, .rec-tag,
+  .tag-primary, .tag-secondary, .impr-finding-ref,
+  .ba-header, .ba-label, .design-info h4, .design-key,
+  .sev-badge, .section-title, .pair-found-severity, .pair-header,
+  .pair-found-pages-label, .lead-magnet-eyebrow, .lead-magnet-btn,
+  .lead-magnet-fineprint, .hero-screenshot-cap,
+  .scores-headline, .scores-attribution,
+  .report-footer, .empty-state {
+    font-family: var(--font-ui);
+  }
 
   /* Score circles */
   .score-circle {
@@ -53,11 +116,11 @@
     display: flex; align-items: center; justify-content: center;
     font-size: 12px; font-weight: 800; flex-shrink: 0; margin-top: 1px;
   }
-  .finding-icon.critical { background: #FDDCDC; color: var(--red); }
-  .finding-icon.warning  { background: #FEF3CD; color: var(--amber); }
-  .finding-icon.passed   { background: #D4EDD9; color: var(--green); }
+  .finding-icon.critical { background: var(--danger-bg); color: var(--red); }
+  .finding-icon.warning  { background: var(--warning-bg); color: var(--amber); }
+  .finding-icon.passed   { background: var(--success-bg); color: var(--green); }
 
-  .finding-title  { font-size: 14px; font-weight: 700; line-height: 1.3; }
+  .finding-title  { font-family: var(--font); font-size: 17px; font-weight: 400; line-height: 1.3; color: var(--charcoal); letter-spacing: -0.1px; }
   .finding-meta   { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); margin-top: 2px; }
   .finding-detail { font-size: 13px; color: var(--ink); line-height: 1.55; margin-top: 8px; }
   .finding-evidence { font-size: 13px; font-weight: 700; color: var(--ink); line-height: 1.4; margin-top: 8px; }
@@ -89,11 +152,15 @@ body {
   display: flex; align-items: flex-start; justify-content: space-between;
   padding-bottom: 20px; border-bottom: 3px solid var(--ink); margin-bottom: 24px;
 }
-.report-title { font-size: 22px; font-weight: 800; color: var(--ink); letter-spacing: -0.3px; }
+.report-title { font-family: var(--font); font-size: 26px; font-weight: 400; color: var(--charcoal); letter-spacing: -0.3px; line-height: 1.2; }
 .report-sub   { font-size: 13px; color: var(--text-dim); margin-top: 4px; line-height: 1.5; }
+/* Summary wordmark — same pattern as full report, smaller scale. */
 .gw-logo { text-align: right; }
-.gw-logo .mark { font-size: 13px; font-weight: 800; color: var(--terracotta); letter-spacing: 1px; text-transform: uppercase; }
-.gw-logo .domain { font-size: 11px; color: var(--text-dim); }
+.gw-logo .mark { display: inline-flex; align-items: baseline; gap: 7px; font-size: 15px; }
+.gw-logo .mark .word { font-family: var(--font); font-weight: 400; color: var(--charcoal); letter-spacing: -0.2px; }
+.gw-logo .mark .divider { width: 1px; height: 11px; background: var(--sage); align-self: center; }
+.gw-logo .mark .suffix { font-family: var(--font-ui); font-size: 9px; font-weight: 500; color: var(--sage-dark); letter-spacing: 0.14em; text-transform: uppercase; }
+.gw-logo .domain { font-size: 11px; color: var(--mid-gray); margin-top: 4px; font-family: var(--font-ui); }
 
 /* Homepage screenshot — top of summary, proves we looked at the site */
 .hero-screenshot {
@@ -101,7 +168,7 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  background: #F5F2EE;
+  background: var(--surface-2);
 }
 .hero-screenshot img {
   display: block;
@@ -120,41 +187,48 @@ body {
 }
 .hero-screenshot-cap strong { color: var(--ink); font-weight: 600; }
 
-/* Lead-magnet CTA — primary conversion path for cold traffic. Replaces
-   the old "see all issues" link that exposed the full report for free.
-   The full report (and a redesigned preview) is the carrot; this is the
-   email-opt-in to unlock it. Visually loud on purpose — this is THE CTA. */
+/* Lead-magnet CTA — primary conversion path for cold traffic.
+   Sage-palette per design system. Surface-2 fill, sage hairline, sage-dark
+   button (= .btn-primary spec: white on sage-dark = 5.95:1 AA, vs the AA-failing
+   white-on-sage at 4.4:1). This is THE CTA; styled to invite, not shout. */
 .lead-magnet-cta {
-  background: linear-gradient(135deg, #FFF6F0 0%, #FFEDDF 100%);
-  border: 2px solid var(--terracotta);
+  background: var(--surface-2);
+  border: 1px solid var(--sage);
   border-radius: var(--radius);
-  padding: 22px 24px;
-  margin-top: 20px;
+  padding: 28px 28px 24px;
+  margin-top: 24px;
   text-align: center;
 }
 .lead-magnet-eyebrow {
-  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
-  color: var(--terracotta); margin-bottom: 8px;
+  font-family: var(--font-ui);
+  font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--sage-dark); margin-bottom: 10px;
 }
 .lead-magnet-heading {
-  font-size: 18px; font-weight: 800; color: var(--ink); line-height: 1.3;
-  margin-bottom: 8px;
+  font-family: var(--font);  /* Georgia — design system says prose is serif */
+  font-size: 22px; font-weight: 400; color: var(--charcoal); line-height: 1.3;
+  letter-spacing: -0.3px; margin-bottom: 10px;
 }
 .lead-magnet-body {
-  font-size: 13px; color: var(--ink); line-height: 1.55; max-width: 540px;
-  margin: 0 auto 16px;
+  font-size: 14px; color: var(--charcoal); line-height: 1.6; max-width: 540px;
+  margin: 0 auto 18px;
 }
+/* Matches .btn-primary spec — sage-dark fill, white text, Figtree 500. */
 .lead-magnet-btn {
   display: inline-block;
-  background: var(--terracotta); color: white; text-decoration: none;
-  font-size: 14px; font-weight: 700;
-  padding: 13px 26px; border-radius: var(--radius);
+  background: var(--sage-dark); color: white; text-decoration: none;
+  font-family: var(--font-ui);
+  font-size: 14px; font-weight: 500; letter-spacing: 0.025em;
+  padding: 12px 24px; border-radius: var(--radius);
   white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(196, 105, 67, 0.25);
+  min-height: 44px; line-height: 20px;
+  transition: background-color 200ms;
 }
-.lead-magnet-btn:hover { opacity: 0.92; }
+.lead-magnet-btn:hover { background: var(--sage-darker); }
+.lead-magnet-btn:focus-visible { outline: 2px solid var(--sage); outline-offset: 2px; }
 .lead-magnet-fineprint {
-  font-size: 11px; color: var(--text-dim); margin-top: 10px;
+  font-family: var(--font-ui);
+  font-size: 11px; color: var(--mid-gray); margin-top: 12px;
 }
 
 /* Affected-pages list inside a paired finding row — hyperlinked, scrollable. */
@@ -165,7 +239,7 @@ body {
 }
 .pair-found-pages ul {
   list-style: none; padding: 0; margin: 0;
-  background: #F5F2EE; border-radius: 4px; padding: 8px 12px;
+  background: var(--surface-2); border-radius: 4px; padding: 8px 12px;
   font-family: var(--mono); font-size: 11px; line-height: 1.6;
   max-height: 140px; overflow-y: auto;
 }
@@ -176,17 +250,17 @@ body {
 .pair-found-pages li a:hover { color: var(--terracotta); text-decoration: underline; }
 .pair-found-pages-more { color: var(--text-dim); font-style: italic; }
 
-.scores-section { background: #FAF8F5; border-radius: var(--radius); padding: 20px 24px; margin-bottom: 24px; }
+.scores-section { background: var(--surface-2); border-radius: var(--radius); padding: 24px; margin-bottom: 24px; }
 .scores-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
-.scores-headline { font-size: 14px; font-weight: 700; color: var(--ink); }
+.scores-headline { font-family: var(--font); font-size: 18px; font-weight: 400; color: var(--charcoal); letter-spacing: -0.2px; }
 .scores-attribution { font-size: 11px; color: var(--text-dim); }
 .scores-attribution a { color: var(--blue); }
 .score-strip { display: flex; gap: 12px; flex-wrap: wrap; }
 
 .severity-bar { display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
 .sev-badge { display: flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; }
-.sev-badge.critical { background: #FDDCDC; color: var(--red); }
-.sev-badge.warning  { background: #FEF3CD; color: var(--amber); }
+.sev-badge.critical { background: var(--danger-bg); color: var(--red); }
+.sev-badge.warning  { background: var(--warning-bg); color: var(--amber); }
 
 .section-title {
   font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px;
@@ -205,7 +279,7 @@ body {
 }
 @media (max-width: 560px) { .pair-row { grid-template-columns: 1fr; } }
 .pair-found      { padding: 16px 18px; border-right: 1px solid var(--border); }
-.pair-fix        { padding: 16px 18px; background: #FAFAF8; display: flex; gap: 10px; align-items: flex-start; }
+.pair-fix        { padding: 16px 18px; background: var(--surface-2); display: flex; gap: 10px; align-items: flex-start; }
 .pair-fix-icon   { color: var(--terracotta); font-weight: 800; font-size: 16px; flex-shrink: 0; line-height: 1.4; }
 .pair-fix-text   { font-size: 13px; line-height: 1.5; color: var(--ink); }
 
@@ -220,7 +294,7 @@ body {
   font-size: 11px; font-weight: 800; flex-shrink: 0; margin-top: 1px;
 }
 .pair-found-meta { flex: 1; }
-.pair-found-title { font-size: 13px; font-weight: 700; line-height: 1.3; }
+.pair-found-title { font-family: var(--font); font-size: 16px; font-weight: 400; line-height: 1.3; color: var(--charcoal); letter-spacing: -0.1px; }
 .pair-found-severity { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 2px; }
 .pair-found-detail { font-size: 12px; font-weight: 600; color: var(--ink); line-height: 1.4; }
 .pair-found-why { font-size: 11px; color: var(--sage); margin-top: 6px; line-height: 1.4; font-style: italic; }
@@ -235,20 +309,27 @@ body {
 
 .block { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
 
+/* Preview CTA — dark variant per CTABlock spec in /DESIGN.md.
+   Charcoal panel + on-dark text + sage-dark button (CTABlock 'dark' variant). */
 .cta-block {
-  background: var(--ink); border-radius: var(--radius); padding: 24px;
+  background: var(--charcoal); border-radius: var(--radius); padding: 28px 32px;
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
-  margin-top: 28px;
+  margin-top: 32px;
 }
-.cta-left h3 { font-size: 16px; font-weight: 700; color: white; margin-bottom: 4px; }
-.cta-left p  { font-size: 13px; color: #9E9990; }
+.cta-left h3 { font-family: var(--font); font-size: 22px; font-weight: 400; color: var(--on-dark); margin-bottom: 6px; letter-spacing: -0.3px; }
+.cta-left p  { font-size: 14px; color: var(--on-dark-muted); line-height: 1.5; }
 .cta-btn {
   display: inline-flex; align-items: center; gap: 8px;
-  background: var(--terracotta); color: white; text-decoration: none;
-  font-size: 14px; font-weight: 700; padding: 12px 22px; border-radius: var(--radius);
+  background: var(--sage-dark); color: white; text-decoration: none;
+  font-family: var(--font-ui);
+  font-size: 14px; font-weight: 500; letter-spacing: 0.025em;
+  padding: 12px 24px; border-radius: var(--radius);
   white-space: nowrap; flex-shrink: 0;
+  min-height: 44px; line-height: 20px;
+  transition: background-color 200ms;
 }
-.cta-btn:hover { opacity: 0.9; }
+.cta-btn:hover { background: var(--sage-darker); }
+.cta-btn:focus-visible { outline: 2px solid var(--sage); outline-offset: 2px; }
 
 .report-footer {
   margin-top: 28px; padding-top: 14px; border-top: 1px solid var(--border);
@@ -272,8 +353,12 @@ body {
     <div class="report-sub">https://www.springstdentistry.com<br>Audit generated May 31, 2026</div>
   </div>
   <div class="gw-logo">
-    <div class="mark">Groundwork</div>
-    <div class="domain">groundwork.build</div>
+    <div class="mark">
+      <span class="word">Groundwork</span>
+      <span class="divider"></span>
+      <span class="suffix">dental</span>
+    </div>
+    <div class="domain">groundworkdental.com</div>
   </div>
 </div>
 
@@ -297,7 +382,7 @@ body {
   <div class="score-strip"><div style="display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;min-width:120px">
       <div style="
         width:72px;height:72px;border-radius:50%;
-        background:#FEF3CD;color:#C07A1A;border:3px solid #C07A1A;
+        background:var(--warning-bg);color:#C07A1A;border:3px solid #C07A1A;
         display:flex;flex-direction:column;align-items:center;justify-content:center;
         flex-shrink:0;
       ">
@@ -309,7 +394,7 @@ body {
     </div><div style="display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;min-width:120px">
       <div style="
         width:72px;height:72px;border-radius:50%;
-        background:#FEF3CD;color:#C07A1A;border:3px solid #C07A1A;
+        background:var(--warning-bg);color:#C07A1A;border:3px solid #C07A1A;
         display:flex;flex-direction:column;align-items:center;justify-content:center;
         flex-shrink:0;
       ">
@@ -321,7 +406,7 @@ body {
     </div><div style="display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;min-width:120px">
       <div style="
         width:72px;height:72px;border-radius:50%;
-        background:#FEF3CD;color:#C07A1A;border:3px solid #C07A1A;
+        background:var(--warning-bg);color:#C07A1A;border:3px solid #C07A1A;
         display:flex;flex-direction:column;align-items:center;justify-content:center;
         flex-shrink:0;
       ">
@@ -333,7 +418,7 @@ body {
     </div><div style="display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;min-width:120px">
       <div style="
         width:72px;height:72px;border-radius:50%;
-        background:#D4EDD9;color:#2E7D4F;border:3px solid #2E7D4F;
+        background:var(--success-bg);color:#2E7D4F;border:3px solid #2E7D4F;
         display:flex;flex-direction:column;align-items:center;justify-content:center;
         flex-shrink:0;
       ">
@@ -401,7 +486,7 @@ body {
   <div class="pair-row" style="border-left:3px solid var(--red)">
       <div class="pair-found">
         <div class="pair-found-header">
-          <div class="pair-found-icon" style="background:#FDDCDC;color:var(--red)">✕</div>
+          <div class="pair-found-icon" style="background:var(--danger-bg);color:var(--red)">✕</div>
           <div class="pair-found-meta">
             <div class="pair-found-title">Pages competing against each other in Google</div>
             <div class="pair-found-severity" style="color:var(--red)">CRITICAL</div>
@@ -425,7 +510,7 @@ body {
     </div><div class="pair-row" style="border-left:3px solid var(--red)">
       <div class="pair-found">
         <div class="pair-found-header">
-          <div class="pair-found-icon" style="background:#FDDCDC;color:var(--red)">✕</div>
+          <div class="pair-found-icon" style="background:var(--danger-bg);color:var(--red)">✕</div>
           <div class="pair-found-meta">
             <div class="pair-found-title">Confusing headline structure on multiple pages</div>
             <div class="pair-found-severity" style="color:var(--red)">CRITICAL</div>
@@ -449,7 +534,7 @@ body {
     </div><div class="pair-row" style="border-left:3px solid var(--red)">
       <div class="pair-found">
         <div class="pair-found-header">
-          <div class="pair-found-icon" style="background:#FDDCDC;color:var(--red)">✕</div>
+          <div class="pair-found-icon" style="background:var(--danger-bg);color:var(--red)">✕</div>
           <div class="pair-found-meta">
             <div class="pair-found-title">Search engines don't know which page to rank</div>
             <div class="pair-found-severity" style="color:var(--red)">CRITICAL</div>
@@ -473,7 +558,7 @@ body {
     </div><div class="pair-row" style="border-left:3px solid var(--red)">
       <div class="pair-found">
         <div class="pair-found-header">
-          <div class="pair-found-icon" style="background:#FDDCDC;color:var(--red)">✕</div>
+          <div class="pair-found-icon" style="background:var(--danger-bg);color:var(--red)">✕</div>
           <div class="pair-found-meta">
             <div class="pair-found-title">First impression loads too slowly</div>
             <div class="pair-found-severity" style="color:var(--red)">CRITICAL</div>
@@ -490,7 +575,7 @@ body {
     </div><div class="pair-row" style="border-left:3px solid var(--red)">
       <div class="pair-found">
         <div class="pair-found-header">
-          <div class="pair-found-icon" style="background:#FDDCDC;color:var(--red)">✕</div>
+          <div class="pair-found-icon" style="background:var(--danger-bg);color:var(--red)">✕</div>
           <div class="pair-found-meta">
             <div class="pair-found-title">Images invisible to Google and visually impaired patients</div>
             <div class="pair-found-severity" style="color:var(--red)">CRITICAL</div>
@@ -530,7 +615,7 @@ body {
 
 <!-- Footer -->
 <div class="report-footer">
-  <span>Generated by Groundwork Builder · groundwork.build</span>
+  <span>Generated by Groundwork Dental · groundworkdental.com</span>
   <span>May 31, 2026</span>
 </div>
 
