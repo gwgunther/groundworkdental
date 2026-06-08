@@ -60,6 +60,17 @@
   .scan-stat .n { font-family: var(--mono); font-size: 22px; font-weight: 600; color: var(--charcoal); line-height: 1; }
   .scan-stat .n.flag { color: var(--danger); }
   .scan-stat .l { font-family: var(--font-ui); font-size: 11px; color: var(--mid-gray); margin-top: 6px; line-height: 1.3; }
+  .agentic-line { font-family: var(--font-ui); font-size: 13px; line-height: 1.5; color: var(--charcoal); margin-top: 14px; padding: 12px 16px; background: var(--surface-2); border: 1px solid var(--border-light); border-radius: var(--radius); }
+  .agentic-line.warn { background: #FCF4E8; border-color: #E8D4A8; color: var(--warning); }
+  .agentic-line.ok { background: var(--sage-tint); border-color: var(--sage); color: var(--sage-darker); }
+  .llms-evidence { margin-top: 12px; border: 1px solid var(--border-light); border-radius: var(--radius); overflow: hidden; }
+  .llms-evidence-head { font-family: var(--font-ui); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 10px 14px; background: var(--surface-2); border-bottom: 1px solid var(--border-light); color: var(--mid-gray); }
+  .llms-issues { padding: 12px 14px; font-family: var(--font-ui); font-size: 13px; line-height: 1.5; }
+  .llms-issues li { margin: 0 0 6px 1.1em; }
+  .llms-pre { margin: 0; padding: 12px 14px; font-family: var(--mono); font-size: 11px; line-height: 1.45; white-space: pre-wrap; word-break: break-word; background: #FAFAF8; color: var(--charcoal); max-height: 220px; overflow: auto; }
+  .llms-pre.good { background: var(--sage-tint); }
+  .llms-verify { font-family: var(--font-ui); font-size: 11px; padding: 8px 14px 12px; color: var(--mid-gray); }
+  .llms-verify a { color: var(--sage-dark); }
   .finding { padding: 20px 0; border-bottom: 1px solid var(--border-light); }
   .finding-head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
   .finding-num { font-family: var(--mono); font-size: 12px; color: var(--sage); }
@@ -148,7 +159,7 @@
       <div class="by-label">Prepared by</div>
       <div class="gw-mark"><span class="word">Groundwork</span><span class="divider"></span><span class="suffix">dental</span></div>
       <div class="gw-domain">hello@groundworkdental.com</div>
-      <div class="by-date">June 5, 2026</div>
+      <div class="by-date">June 7, 2026</div>
     </div>
   </header>
 
@@ -201,8 +212,10 @@
   <div class="scan-stats">
     <div class="scan-stat"><div class="n">21</div><div class="l">Pages crawled</div></div>
     <div class="scan-stat"><div class="n">370</div><div class="l">Images checked</div></div>
-    <div class="scan-stat"><div class="n flag">10</div><div class="l">Issues found</div></div>
+    <div class="scan-stat"><div class="n flag">12</div><div class="l">Issues found</div></div>
   </div>
+
+  <p class="agentic-line warn">llms.txt exists but does not follow best practices — AI assistants may get the wrong summary of your practice.</p>
 
   
   <div class="vendor-card">
@@ -230,6 +243,7 @@
       </div>
     </div>
     
+    
   </div><div class="finding">
     <div class="finding-head">
       <span class="finding-num">02</span>
@@ -247,6 +261,7 @@
       </div>
     </div>
     
+    
   </div><div class="finding">
     <div class="finding-head">
       <span class="finding-num">03</span>
@@ -263,12 +278,13 @@
         <div class="compare-text">Every photo has alt text, so your before-and-afters can turn up in image search.</div>
       </div>
     </div>
+    
     <details class="evidence">
     <summary>Show all 21 pages with unlabeled photos</summary>
     <div class="evidence-table">
       <div class="evidence-scroll">
         <div class="evidence-row head"><span>Page (click to verify)</span><span>Unlabeled photos</span></div>
-        <div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/" target="_blank" rel="noopener">/</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/patient-testimonial" target="_blank" rel="noopener">/patient-testimonial</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/covid-19" target="_blank" rel="noopener">/covid-19</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/phoenix-dental-office" target="_blank" rel="noopener">/phoenix-dental-office</a></span><span class="val">5 photos</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/phoenix-dental-office/before-after-photos" target="_blank" rel="noopener">/phoenix-dental-office/before-after-photos</a></span><span class="val">21 photos</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/phoenix-dentists" target="_blank" rel="noopener">/phoenix-dentists</a></span><span class="val">2 photos</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/post-op-instructions" target="_blank" rel="noopener">/post-op-instructions</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/cosmetic-dentist" target="_blank" rel="noopener">/cosmetic-dentist</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/dentist" target="_blank" rel="noopener">/dentist</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/cosmetic-dentist/teeth-whitening" target="_blank" rel="noopener">/cosmetic-dentist/teeth-whitening</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/phoenix-dental-care" target="_blank" rel="noopener">/phoenix-dental-care</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/dentures" target="_blank" rel="noopener">/dentures</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/root-canal" target="_blank" rel="noopener">/root-canal</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/pediatric-dentist" target="_blank" rel="noopener">/pediatric-dentist</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/restorative-dentistry" target="_blank" rel="noopener">/restorative-dentistry</a></span><span class="val">2 photos</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/dental-implants" target="_blank" rel="noopener">/dental-implants</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/dental-implants/single-tooth-implants" target="_blank" rel="noopener">/dental-implants/single-tooth-implants</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/orthodontist/clearcorrect-aligners-in-phoenix-az" target="_blank" rel="noopener">/orthodontist/clearcorrect-aligners-in-phoenix-az</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/orthodontist" target="_blank" rel="noopener">/orthodontist</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/orthodontist/clear-aligners-in-phoenix-az" target="_blank" rel="noopener">/orthodontist/clear-aligners-in-phoenix-az</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/dental-implants/all-on-4" target="_blank" rel="noopener">/dental-implants/all-on-4</a></span><span class="val">1 photo</span></div>
+        <div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/" target="_blank" rel="noopener">/</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/phoenix-dentists" target="_blank" rel="noopener">/phoenix-dentists</a></span><span class="val">2 photos</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/phoenix-dental-office" target="_blank" rel="noopener">/phoenix-dental-office</a></span><span class="val">5 photos</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/phoenix-dental-office/before-after-photos" target="_blank" rel="noopener">/phoenix-dental-office/before-after-photos</a></span><span class="val">21 photos</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/covid-19" target="_blank" rel="noopener">/covid-19</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/patient-testimonial" target="_blank" rel="noopener">/patient-testimonial</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/cosmetic-dentist" target="_blank" rel="noopener">/cosmetic-dentist</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/post-op-instructions" target="_blank" rel="noopener">/post-op-instructions</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/cosmetic-dentist/teeth-whitening" target="_blank" rel="noopener">/cosmetic-dentist/teeth-whitening</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/phoenix-dental-care" target="_blank" rel="noopener">/phoenix-dental-care</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/dentist" target="_blank" rel="noopener">/dentist</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/pediatric-dentist" target="_blank" rel="noopener">/pediatric-dentist</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/root-canal" target="_blank" rel="noopener">/root-canal</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/dental-implants" target="_blank" rel="noopener">/dental-implants</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/dentures" target="_blank" rel="noopener">/dentures</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/restorative-dentistry" target="_blank" rel="noopener">/restorative-dentistry</a></span><span class="val">2 photos</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/orthodontist" target="_blank" rel="noopener">/orthodontist</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/dental-implants/single-tooth-implants" target="_blank" rel="noopener">/dental-implants/single-tooth-implants</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/orthodontist/clear-aligners-in-phoenix-az" target="_blank" rel="noopener">/orthodontist/clear-aligners-in-phoenix-az</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/orthodontist/clearcorrect-aligners-in-phoenix-az" target="_blank" rel="noopener">/orthodontist/clearcorrect-aligners-in-phoenix-az</a></span><span class="val">1 photo</span></div><div class="evidence-row"><span class="url"><a href="https://www.arizonabiltmoredentistry.com/dental-implants/all-on-4" target="_blank" rel="noopener">/dental-implants/all-on-4</a></span><span class="val">1 photo</span></div>
       </div>
       <div class="evidence-foot">All 21 pages</div>
     </div>
@@ -276,6 +292,99 @@
   </div><div class="finding">
     <div class="finding-head">
       <span class="finding-num">04</span>
+      <span class="finding-cat">AI agent readiness</span>
+      <span class="finding-status">Subpar</span>
+    </div>
+    <div class="compare">
+      <div class="compare-side compare-now">
+        <div class="compare-label">✕ Now</div>
+        <div class="compare-text">Your llms.txt exists but reads like a CMS dump — popup pages, plugin boilerplate, or missing services — so AI assistants get the wrong summary of your practice.</div>
+      </div>
+      <div class="compare-side compare-good">
+        <div class="compare-label">✓ What good looks like</div>
+        <div class="compare-text">A curated llms.txt with your practice name, a short summary, linked services, and contact info — no popups or internal CMS noise.</div>
+      </div>
+    </div>
+    <div class="llms-evidence">
+    <div class="llms-evidence-head">llms.txt evidence</div>
+    <ul class="llms-issues"><li>H1 is verbose or marketing-heavy instead of a clean practice name.</li><li>No Services or Key pages section — agents cannot see what you offer.</li><li>Lists CMS popup pages — noise that misleads AI assistants.</li><li>Includes off-topic promotional pages unrelated to dental care.</li><li>Auto-generated by Yoast SEO — typically a CMS dump, not a curated agent summary.</li></ul>
+    <ul class="llms-issues"><li><code># Arizona Biltmore Dentistry: Welcome to Arizona Biltmore Dentistry\!</code> — Should be a short practice name, not a welcome headline.</li><li><code>## Popups</code> — Popup/internal CMS URL — not useful for AI discovery.</li><li><code>- [Example: Auto\-opening announcement popup](https://www.arizonabiltmoredentistry.com/?post_type=popup&amp;p=3474)</code> — Popup/internal CMS URL — not useful for AI discovery.</li><li><code>- [Example: Auto\-opening announcement popup](https://www.arizonabiltmoredentistry.com/?post_type=popup&amp;p=3237)</code> — Popup/internal CMS URL — not useful for AI discovery.</li></ul>
+    <details class="evidence" open>
+        <summary>What your llms.txt looks like today</summary>
+        <pre class="llms-pre"># Arizona Biltmore Dentistry: Welcome to Arizona Biltmore Dentistry\!
+
+&gt; If you are in need of a dentist in Phoenix, come see our team at Arizona Biltmore Dentistry\. At our Phoenix dental office, we provide complete dentistry to patients of all ages\. Our office is insurance friendly and has flexible financial options\. Call today to schedule your convenient appointment\.
+
+Generated by Yoast SEO v27.6, this is an llms.txt file, meant for consumption by LLMs.
+
+## Pages
+- [Our Team](https://www.arizonabiltmoredentistry.com/phoenix-dentists/)
+- [3\-Night Carnival Cruise to Ensenada](https://www.arizonabiltmoredentistry.com/cruise-to-ensenada/)
+- [Sedation Dentistry](https://www.arizonabiltmoredentistry.com/sedation-dentistry/)
+- [Financial](https://www.arizonabiltmoredentistry.com/financial/)
+- [Spanish Home](https://www.arizonabiltmoredentistry.com/sp-home/)
+
+## Posts
+- [Preview Your Dream Smile with Digital Design](https://www.arizonabiltmoredentistry.com/preview-your-dream-smile-with-digital-design/)
+- [How to Make Your Dental Restorations Last Longer](https://www.arizonabiltmoredentistry.com/how-to-make-your-dental-restorations-last-longer/)
+- [How Often Should You See a Dentist? Find Out](https://www.arizonabiltmoredentistry.com/how-often-should-you-see-a-dentist-find-out/)
+- [Lost or Broken Aligner? Here's What to Do Next](https://www.arizonabiltmoredentistry.com/lost-or-broken-aligner-heres-what-to-do-next/)
+- [Planning Your Complete Smile Makeover Journey](https://www.arizonabiltmoredentistry.com/planning-your-complete-smile-makeover-journey/)
+
+## Popups
+- [Example: Auto\-opening announcement popup](https://www.arizonabiltmoredentistry.com/?post_type=popup&amp;p=3474)
+- [Example: Auto\-opening announcement popup](https://www.arizonabiltmoredentistry.com/?post_type=popup&amp;p=3237)
+- [Job Listing](https://www.arizonabiltmoredentistry.com/?post_type=popup&amp;p=2561)
+… (4 more lines)</pre>
+      </details>
+    <details class="evidence">
+        <summary>What good looks like (Groundwork rebuild)</summary>
+        <pre class="llms-pre good"># Arizona Biltmore Dentistry
+
+&gt; Dental practice serving Phoenix, AZ — led by Dr. Aaron Jeziorski.
+
+## Key pages
+
+- [Homepage](https://www.arizonabiltmoredentistry.com/)
+- [About](https://www.arizonabiltmoredentistry.com/about/)
+- [Services](https://www.arizonabiltmoredentistry.com/services/)
+- [Schedule an appointment](https://www.arizonabiltmoredentistry.com/schedule/)
+- [FAQ](https://www.arizonabiltmoredentistry.com/faq/)
+- [Gallery](https://www.arizonabiltmoredentistry.com/gallery/)
+- [Blog](https://www.arizonabiltmoredentistry.com/blog/)
+
+## Services
+
+- [Cosmetic Dentistry](https://www.arizonabiltmoredentistry.com/services/cosmetic-dentistry/)
+- [Teeth Whitening](https://www.arizonabiltmoredentistry.com/services/teeth-whitening/)
+- [Porcelain Veneers](https://www.arizonabiltmoredentistry.com/services/porcelain-veneers/)
+- [Veneers &amp; Lumineers](https://www.arizonabiltmoredentistry.com/services/veneers-lumineers/)
+- [Dental Bonding](https://www.arizonabiltmoredentistry.com/services/dental-bonding/)
+- [Smile Makeovers](https://www.arizonabiltmoredentistry.com/services/smile-makeovers/)
+- [General Dentistry](https://www.arizonabiltmoredentistry.com/services/general-dentistry/)
+- [Restorative Dentistry](https://www.arizonabiltmoredentistry.com/services/restorative-dentistry/)
+- [Tooth-Colored Fillings](https://www.arizonabiltmoredentistry.com/services/tooth-colored-fillings/)
+- [Dental Crowns](https://www.arizonabiltmoredentistry.com/services/dental-crowns/)
+- [Bridges](https://www.arizonabiltmoredentistry.com/services/bridges/)
+- [Root Canal Therapy](https://www.arizonabiltmoredentistry.com/services/root-canal-therapy/)
+- [Dentures](https://www.arizonabiltmoredentistry.com/services/dentures/)
+- [Traditional Dentures](https://www.arizonabiltmoredentistry.com/services/traditional-dentures/)
+- [Implant-Stabilized Dentures](https://www.arizonabiltmoredentistry.com/services/implant-stabilized-dentures/)
+- [Family Dentistry](https://www.arizonabiltmoredentistry.com/services/family-dentistry/)
+
+## Contact
+
+- Phone: (602) 957-8200
+- Location: Phoenix, AZ
+- Email: info@arizonabiltmoredentistry.com
+</pre>
+      </details>
+    <p class="llms-verify">Verify yourself: <a href="https://www.arizonabiltmoredentistry.com/llms.txt" target="_blank" rel="noopener">https://www.arizonabiltmoredentistry.com/llms.txt</a> · Lighthouse: llms.txt does not follow recommendations</p>
+  </div>
+    
+  </div><div class="finding">
+    <div class="finding-head">
+      <span class="finding-num">05</span>
       <span class="finding-cat">Google Business Profile</span>
       <span class="finding-status">Missing</span>
     </div>
@@ -290,22 +399,6 @@
       </div>
     </div>
     
-  </div><div class="finding">
-    <div class="finding-head">
-      <span class="finding-num">05</span>
-      <span class="finding-cat">Google Business Profile</span>
-      <span class="finding-badge amber">83%<span class="lbl">profile complete</span></span>
-    </div>
-    <div class="compare">
-      <div class="compare-side compare-now">
-        <div class="compare-label">✕ Now</div>
-        <div class="compare-text">Your Google Business Profile is incomplete — Google favors fully filled profiles in the map pack.</div>
-      </div>
-      <div class="compare-side compare-good">
-        <div class="compare-label">✓ What good looks like</div>
-        <div class="compare-text">Every essential field is complete, improving visibility when patients search nearby.</div>
-      </div>
-    </div>
     
   </div>
 
