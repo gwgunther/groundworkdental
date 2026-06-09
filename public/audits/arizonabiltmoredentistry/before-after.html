@@ -349,10 +349,10 @@
 <section class="growth-hero diff-hero" style="background:var(--danger-bg);border-left:6px solid #C0392B">
   <div class="growth-hero-left">
     <div class="growth-hero-eyebrow">Before → After</div>
-    <div class="growth-hero-headline" style="color:var(--ink)">4 fixed, but 5 regressed in the rebuild.</div>
+    <div class="growth-hero-headline" style="color:var(--ink)">3 fixed, but 5 regressed in the rebuild.</div>
   </div>
   <div class="growth-hero-right">
-    <div class="growth-stat"><span class="growth-stat-num" style="color:var(--green)">4</span><span class="growth-stat-label">Fixed</span></div>
+    <div class="growth-stat"><span class="growth-stat-num" style="color:var(--green)">3</span><span class="growth-stat-label">Fixed</span></div>
     <div class="growth-stat"><span class="growth-stat-num" style="color:var(--amber)">6</span><span class="growth-stat-label">Still issue</span></div>
     <div class="growth-stat"><span class="growth-stat-num" style="color:var(--red)">5</span><span class="growth-stat-label">Regressed</span></div>
   </div>
@@ -360,8 +360,8 @@
 
 <nav class="tab-nav">
   <button class="tab-btn active" data-tab="scorecard">Scorecard</button>
-  <button class="tab-btn" data-tab="agentic">AI Agent Readiness <span class="badge">!</span></button>
-  <button class="tab-btn" data-tab="findings">Before → After <span class="badge-green">4</span></button>
+  <button class="tab-btn" data-tab="agentic">AI Agent Readiness </button>
+  <button class="tab-btn" data-tab="findings">Before → After <span class="badge-green">3</span></button>
   <button class="tab-btn" data-tab="content">Your Messaging</button>
   <button class="tab-btn" data-tab="build">What We'd Fix</button>
 </nav>
@@ -506,7 +506,7 @@
   <div class="agentic-status-grid">
     <div class="agentic-stat-card">
       <div class="agentic-stat-label">llms.txt status</div>
-      <div class="agentic-stat-value" style="color:var(--amber)">Present but subpar</div>
+      <div class="agentic-stat-value" style="color:var(--green)">Good</div>
     </div>
     <div class="agentic-stat-card">
       <div class="agentic-stat-label">Lighthouse agentic checks</div>
@@ -518,18 +518,14 @@
     </div>
   </div>
 
-  <p class="agentic-headline agentic-warn">llms.txt exists but does not follow best practices — AI assistants may get the wrong summary of your practice.</p>
+  <p class="agentic-headline agentic-ok">llms.txt is present and follows agent-readiness best practices.</p>
 
-  <div class="agentic-evidence">
-    <div class="agentic-evidence-head">llms.txt issues</div>
-    <ul class="agentic-issues"><li>No Services or Key pages section — agents cannot see what you offer.</li></ul>
-    
-  </div>
+  
 
   
   
   <p class="source-note">Verify yourself: <a href="https://arizonabiltmoredentistry.groundworkdental.com/llms.txt" target="_blank">https://arizonabiltmoredentistry.groundworkdental.com/llms.txt</a></p>
-  <div class="lighthouse-callout" style="margin-top:20px"><strong>Why this matters:</strong> A curated llms.txt helps ChatGPT, Gemini, and Perplexity surface your services accurately instead of CMS noise.</div>
+  
 
   <p class="source-note">Agentic browsing requires Lighthouse CLI (not PageSpeed Insights API). llms.txt is also fetched directly over HTTP to distinguish missing files from subpar content.</p>
   </div>
@@ -538,7 +534,7 @@
   <div class="tab-panel" id="tab-findings">
     
 <section class="diff-group">
-  <h3 class="diff-group-title" style="color:var(--green)">Fixed (4)</h3>
+  <h3 class="diff-group-title" style="color:var(--green)">Fixed (3)</h3>
   <div class="diff-group-list">
     
 <article class="diff-card diff-card-fixed">
@@ -562,29 +558,6 @@
     </div>
   </div>
   <div class="diff-card-benefit">Why this matters: Meta descriptions appear in Google search results and directly influence click-through rate from organic search.</div>
-</article>
-
-<article class="diff-card diff-card-fixed">
-  <header class="diff-card-header">
-    <span class="diff-card-symbol" style="color:var(--green)">✓</span>
-    <div class="diff-card-titles">
-      <div class="diff-card-title">Multiple H1 headings on same page</div>
-      <div class="diff-card-category">seo</div>
-    </div>
-    <span class="diff-card-badge" style="color:var(--green);border-color:var(--green)">Fixed</span>
-  </header>
-  <div class="diff-fixed-line">Reduced each page to a single H1.</div>
-  <div class="diff-card-row">
-    <div class="diff-card-side diff-card-before">
-      <div class="diff-side-label">Before</div>
-      <div class="diff-side-detail">1 page have more than one H1 heading.</div>
-    </div>
-    <div class="diff-card-side diff-card-after">
-      <div class="diff-side-label">After</div>
-      <div class="diff-side-detail">No pages have multiple H1s.</div>
-    </div>
-  </div>
-  <div class="diff-card-benefit">Why this matters: Each page should have exactly one H1. Multiple H1s dilute the primary topic signal and can confuse search engine crawlers.</div>
 </article>
 
 <article class="diff-card diff-card-fixed">
@@ -656,7 +629,7 @@
     </div>
     <div class="diff-card-side diff-card-after">
       <div class="diff-side-label">After</div>
-      <div class="diff-side-detail">24 of 51 pages have fewer than 200 words of content.</div>
+      <div class="diff-side-detail">24 of 58 pages have fewer than 200 words of content.</div>
     </div>
   </div>
   <div class="diff-card-benefit">Why this matters: Pages with substantial content rank significantly better. Thin pages signal low quality to Google and rarely appear in top results.</div>
@@ -760,6 +733,29 @@
   <h3 class="diff-group-title" style="color:var(--amber)">Still issue (6)</h3>
   <div class="diff-group-list">
     
+<article class="diff-card diff-card-still-issue">
+  <header class="diff-card-header">
+    <span class="diff-card-symbol" style="color:var(--amber)">!</span>
+    <div class="diff-card-titles">
+      <div class="diff-card-title">Multiple H1 headings on same page</div>
+      <div class="diff-card-category">seo</div>
+    </div>
+    <span class="diff-card-badge" style="color:var(--amber);border-color:var(--amber)">Still issue</span>
+  </header>
+  
+  <div class="diff-card-row">
+    <div class="diff-card-side diff-card-before">
+      <div class="diff-side-label">Before</div>
+      <div class="diff-side-detail">1 page have more than one H1 heading.</div>
+    </div>
+    <div class="diff-card-side diff-card-after">
+      <div class="diff-side-label">After</div>
+      <div class="diff-side-detail">5 pages have more than one H1 heading.</div>
+    </div>
+  </div>
+  <div class="diff-card-benefit">Why this matters: Each page should have exactly one H1. Multiple H1s dilute the primary topic signal and can confuse search engine crawlers.</div>
+</article>
+
 <article class="diff-card diff-card-still-issue">
   <header class="diff-card-header">
     <span class="diff-card-symbol" style="color:var(--amber)">!</span>
@@ -873,29 +869,6 @@
     </div>
   </div>
   <div class="diff-card-benefit">Why this matters: Calls are the #1 conversion action for dental practices. Without a phone_click event in GA4, Smart Bidding can't prioritize keywords that drive calls — they look identical to keywords that drive nothing.</div>
-</article>
-
-<article class="diff-card diff-card-still-issue">
-  <header class="diff-card-header">
-    <span class="diff-card-symbol" style="color:var(--amber)">!</span>
-    <div class="diff-card-titles">
-      <div class="diff-card-title">llms.txt quality for AI agents</div>
-      <div class="diff-card-category">agentic</div>
-    </div>
-    <span class="diff-card-badge" style="color:var(--amber);border-color:var(--amber)">Still issue</span>
-  </header>
-  
-  <div class="diff-card-row">
-    <div class="diff-card-side diff-card-before">
-      <div class="diff-side-label">Before</div>
-      <div class="diff-side-detail">llms.txt exists but does not follow best practices. Lighthouse: &quot;llms.txt does not follow recommendations&quot;.</div>
-    </div>
-    <div class="diff-card-side diff-card-after">
-      <div class="diff-side-label">After</div>
-      <div class="diff-side-detail">llms.txt exists but does not follow best practices.</div>
-    </div>
-  </div>
-  <div class="diff-card-benefit">Why this matters: A curated llms.txt helps ChatGPT, Gemini, and Perplexity surface your services accurately instead of CMS noise.</div>
 </article>
   </div>
 </section>
@@ -1344,7 +1317,7 @@
 </section>
 
 <section class="diff-group">
-  <h3 class="diff-group-title" style="color:var(--text-dim)">Not re-scanned (2)</h3>
+  <h3 class="diff-group-title" style="color:var(--text-dim)">Not re-scanned (3)</h3>
   <div class="diff-group-list">
     
 <article class="diff-card diff-card-removed">
@@ -1368,6 +1341,29 @@
     </div>
   </div>
   <div class="diff-card-benefit">Why this matters: Local-intent ad keywords (&quot;dental implants huntington beach&quot;) match strongest when the city is in the page title. Google Ads quality score and local SEO both reward title-city alignment.</div>
+</article>
+
+<article class="diff-card diff-card-removed">
+  <header class="diff-card-header">
+    <span class="diff-card-symbol" style="color:var(--text-dim)">—</span>
+    <div class="diff-card-titles">
+      <div class="diff-card-title">llms.txt quality for AI agents</div>
+      <div class="diff-card-category">agentic</div>
+    </div>
+    <span class="diff-card-badge" style="color:var(--text-dim);border-color:var(--text-dim)">Not re-scanned</span>
+  </header>
+  
+  <div class="diff-card-row">
+    <div class="diff-card-side diff-card-before">
+      <div class="diff-side-label">Before</div>
+      <div class="diff-side-detail">llms.txt exists but does not follow best practices. Lighthouse: &quot;llms.txt does not follow recommendations&quot;.</div>
+    </div>
+    <div class="diff-card-side diff-card-after">
+      <div class="diff-side-label">After</div>
+      <div class="diff-side-detail">Not re-scanned</div>
+    </div>
+  </div>
+  <div class="diff-card-benefit">Why this matters: A curated llms.txt helps ChatGPT, Gemini, and Perplexity surface your services accurately instead of CMS noise.</div>
 </article>
 
 <article class="diff-card diff-card-removed">
@@ -1479,28 +1475,15 @@
   </div>
 
   
-  <div style="margin-bottom:28px">
-    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-dim);margin-bottom:14px">Top 3 changes — before and after</div>
-    
-    <div class="before-after-block">
-      <div class="ba-header">Pages with too little information for Google</div>
-      <div class="ba-row">
-        <div class="ba-col">
-          <div class="ba-label before">Before</div>
-          <div class="ba-content">Service pages with 100 words — not enough for Google to understand (or rank) what you offer.</div>
-        </div>
-        <div class="ba-col">
-          <div class="ba-label after">After</div>
-          <div class="ba-content">Expanded service pages that answer the questions patients are actually asking.</div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   
   <div style="margin-bottom:24px">
     <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-dim);margin-bottom:14px">Additional improvements</div>
     <div class="improvements-list">
+  <div class="improvement-item">
+    <div class="impr-finding-ref warning">Improvement — Pages with too little information for Google</div>
+    <div class="impr-text">Key service pages get the depth of information patients are searching for — and Google rewards.</div>
+  </div>
   <div class="improvement-item">
     <div class="impr-finding-ref warning">Improvement — Site is too slow on mobile phones</div>
     <div class="impr-text">Faster loading so phone visitors stay on your site — instead of leaving before they ever read your name.</div>
@@ -1516,10 +1499,6 @@
   <div class="improvement-item">
     <div class="impr-finding-ref warning">Improvement — Operating hours on site</div>
     <div class="impr-text">Operating hours are visible everywhere so patients know when to call — and don't arrive to a closed office.</div>
-  </div>
-  <div class="improvement-item">
-    <div class="impr-finding-ref warning">Improvement — GBP description</div>
-    <div class="impr-text">A keyword-rich GBP description controls your narrative on Google Maps and improves &quot;dentist near me&quot; ranking.</div>
   </div></div>
   </div>
 
