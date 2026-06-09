@@ -360,7 +360,7 @@
 
 <nav class="tab-nav">
   <button class="tab-btn active" data-tab="scorecard">Scorecard</button>
-  <button class="tab-btn" data-tab="agentic">AI Agent Readiness <span class="badge">!</span></button>
+  <button class="tab-btn" data-tab="agentic">AI Agent Readiness </button>
   <button class="tab-btn" data-tab="findings">Before → After <span class="badge-green">8</span></button>
   <button class="tab-btn" data-tab="content">Your Messaging</button>
   <button class="tab-btn" data-tab="build">What We'd Fix</button>
@@ -506,7 +506,7 @@
   <div class="agentic-status-grid">
     <div class="agentic-stat-card">
       <div class="agentic-stat-label">llms.txt status</div>
-      <div class="agentic-stat-value" style="color:var(--amber)">Present but subpar</div>
+      <div class="agentic-stat-value" style="color:var(--green)">Good</div>
     </div>
     <div class="agentic-stat-card">
       <div class="agentic-stat-label">Lighthouse agentic checks</div>
@@ -518,18 +518,14 @@
     </div>
   </div>
 
-  <p class="agentic-headline agentic-warn">llms.txt exists but does not follow best practices — AI assistants may get the wrong summary of your practice.</p>
+  <p class="agentic-headline agentic-ok">llms.txt is present and follows agent-readiness best practices.</p>
 
-  <div class="agentic-evidence">
-    <div class="agentic-evidence-head">llms.txt issues</div>
-    <ul class="agentic-issues"><li>No Services or Key pages section — agents cannot see what you offer.</li></ul>
-    
-  </div>
+  
 
   
   
   <p class="source-note">Verify yourself: <a href="https://bearcreekfamilydentistry.groundworkdental.com/llms.txt" target="_blank">https://bearcreekfamilydentistry.groundworkdental.com/llms.txt</a></p>
-  <div class="lighthouse-callout" style="margin-top:20px"><strong>Why this matters:</strong> A curated llms.txt helps ChatGPT, Gemini, and Perplexity surface your services accurately instead of CMS noise.</div>
+  
 
   <p class="source-note">Agentic browsing requires Lighthouse CLI (not PageSpeed Insights API). llms.txt is also fetched directly over HTTP to distinguish missing files from subpar content.</p>
   </div>
@@ -942,35 +938,6 @@
     </div>
   </div>
   <div class="diff-card-benefit">Why this matters: Calls are the #1 conversion action for dental practices. Without a phone_click event in GA4, Smart Bidding can't prioritize keywords that drive calls — they look identical to keywords that drive nothing.</div>
-</article>
-  </div>
-</section>
-
-<section class="diff-group">
-  <h3 class="diff-group-title" style="color:var(--amber)">New finding (1)</h3>
-  <div class="diff-group-list">
-    
-<article class="diff-card diff-card-new">
-  <header class="diff-card-header">
-    <span class="diff-card-symbol" style="color:var(--amber)">+</span>
-    <div class="diff-card-titles">
-      <div class="diff-card-title">llms.txt quality for AI agents</div>
-      <div class="diff-card-category">agentic</div>
-    </div>
-    <span class="diff-card-badge" style="color:var(--amber);border-color:var(--amber)">New finding</span>
-  </header>
-  
-  <div class="diff-card-row">
-    <div class="diff-card-side diff-card-before">
-      <div class="diff-side-label">Before</div>
-      <div class="diff-side-detail">—</div>
-    </div>
-    <div class="diff-card-side diff-card-after">
-      <div class="diff-side-label">After</div>
-      <div class="diff-side-detail">llms.txt exists but does not follow best practices.</div>
-    </div>
-  </div>
-  <div class="diff-card-benefit">Why this matters: A curated llms.txt helps ChatGPT, Gemini, and Perplexity surface your services accurately instead of CMS noise.</div>
 </article>
   </div>
 </section>
