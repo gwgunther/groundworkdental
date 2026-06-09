@@ -333,7 +333,7 @@
 <header class="header">
   <div class="header-left">
     <h1>Arizona Biltmore Dentistry — Site Audit</h1>
-    <div class="sub">http://127.0.0.1:4812/ &nbsp;·&nbsp; June 8, 2026</div>
+    <div class="sub">https://arizonabiltmoredentistry.groundworkdental.com &nbsp;·&nbsp; June 8, 2026</div>
   </div>
   <div class="header-badge">
     <div class="gw-mark">
@@ -349,12 +349,12 @@
 <section class="growth-hero diff-hero" style="background:var(--danger-bg);border-left:6px solid #C0392B">
   <div class="growth-hero-left">
     <div class="growth-hero-eyebrow">Before → After</div>
-    <div class="growth-hero-headline" style="color:var(--ink)">4 fixed, but 8 regressed in the rebuild.</div>
+    <div class="growth-hero-headline" style="color:var(--ink)">4 fixed, but 5 regressed in the rebuild.</div>
   </div>
   <div class="growth-hero-right">
     <div class="growth-stat"><span class="growth-stat-num" style="color:var(--green)">4</span><span class="growth-stat-label">Fixed</span></div>
-    <div class="growth-stat"><span class="growth-stat-num" style="color:var(--amber)">7</span><span class="growth-stat-label">Still issue</span></div>
-    <div class="growth-stat"><span class="growth-stat-num" style="color:var(--red)">8</span><span class="growth-stat-label">Regressed</span></div>
+    <div class="growth-stat"><span class="growth-stat-num" style="color:var(--amber)">6</span><span class="growth-stat-label">Still issue</span></div>
+    <div class="growth-stat"><span class="growth-stat-num" style="color:var(--red)">5</span><span class="growth-stat-label">Regressed</span></div>
   </div>
 </section>
 
@@ -487,6 +487,8 @@
 
   <p class="source-note">All metrics sourced from Google PageSpeed Insights API v5. Mobile scores are the primary signal Google uses for search ranking.</p>
   
+
+  
   </div>
 
   <!-- ═══ TAB: AI Agent Readiness ════════════════════════════════════════ -->
@@ -508,11 +510,11 @@
     </div>
     <div class="agentic-stat-card">
       <div class="agentic-stat-label">Lighthouse agentic checks</div>
-      <div class="agentic-stat-value">2/6 checks passing</div>
+      <div class="agentic-stat-value">3/6 checks passing</div>
     </div>
     <div class="agentic-stat-card">
       <div class="agentic-stat-label">Agentic score</div>
-      <div class="agentic-stat-value">67</div>
+      <div class="agentic-stat-value">100</div>
     </div>
   </div>
 
@@ -526,7 +528,7 @@
 
   
   
-  <p class="source-note">Verify yourself: <a href="http://127.0.0.1:4812/llms.txt" target="_blank">http://127.0.0.1:4812/llms.txt</a></p>
+  <p class="source-note">Verify yourself: <a href="https://arizonabiltmoredentistry.groundworkdental.com/llms.txt" target="_blank">https://arizonabiltmoredentistry.groundworkdental.com/llms.txt</a></p>
   <div class="lighthouse-callout" style="margin-top:20px"><strong>Why this matters:</strong> A curated llms.txt helps ChatGPT, Gemini, and Perplexity surface your services accurately instead of CMS noise.</div>
 
   <p class="source-note">Agentic browsing requires Lighthouse CLI (not PageSpeed Insights API). llms.txt is also fetched directly over HTTP to distinguish missing files from subpar content.</p>
@@ -560,6 +562,29 @@
     </div>
   </div>
   <div class="diff-card-benefit">Why this matters: Meta descriptions appear in Google search results and directly influence click-through rate from organic search.</div>
+</article>
+
+<article class="diff-card diff-card-fixed">
+  <header class="diff-card-header">
+    <span class="diff-card-symbol" style="color:var(--green)">✓</span>
+    <div class="diff-card-titles">
+      <div class="diff-card-title">Multiple H1 headings on same page</div>
+      <div class="diff-card-category">seo</div>
+    </div>
+    <span class="diff-card-badge" style="color:var(--green);border-color:var(--green)">Fixed</span>
+  </header>
+  <div class="diff-fixed-line">Reduced each page to a single H1.</div>
+  <div class="diff-card-row">
+    <div class="diff-card-side diff-card-before">
+      <div class="diff-side-label">Before</div>
+      <div class="diff-side-detail">1 page have more than one H1 heading.</div>
+    </div>
+    <div class="diff-card-side diff-card-after">
+      <div class="diff-side-label">After</div>
+      <div class="diff-side-detail">No pages have multiple H1s.</div>
+    </div>
+  </div>
+  <div class="diff-card-benefit">Why this matters: Each page should have exactly one H1. Multiple H1s dilute the primary topic signal and can confuse search engine crawlers.</div>
 </article>
 
 <article class="diff-card diff-card-fixed">
@@ -607,59 +632,13 @@
   </div>
   <div class="diff-card-benefit">Why this matters: A viewport meta tag is required for Google to index pages as mobile-friendly. Without it, the site appears broken on phones.</div>
 </article>
-
-<article class="diff-card diff-card-fixed">
-  <header class="diff-card-header">
-    <span class="diff-card-symbol" style="color:var(--green)">✓</span>
-    <div class="diff-card-titles">
-      <div class="diff-card-title">Phone click conversion event</div>
-      <div class="diff-card-category">conversion</div>
-    </div>
-    <span class="diff-card-badge" style="color:var(--green);border-color:var(--green)">Fixed</span>
-  </header>
-  <div class="diff-fixed-line">Added phone_click GA4 event — Smart Bidding now has its primary conversion signal.</div>
-  <div class="diff-card-row">
-    <div class="diff-card-side diff-card-before">
-      <div class="diff-side-label">Before</div>
-      <div class="diff-side-detail">No phone-click event tracker detected. Calls happen, but Google Ads sees no signal.</div>
-    </div>
-    <div class="diff-card-side diff-card-after">
-      <div class="diff-side-label">After</div>
-      <div class="diff-side-detail">A tel: click → analytics event handler is wired on the site.</div>
-    </div>
-  </div>
-  <div class="diff-card-benefit">Why this matters: Calls are the #1 conversion action for dental practices. Without a phone_click event in GA4, Smart Bidding can't prioritize keywords that drive calls — they look identical to keywords that drive nothing.</div>
-</article>
   </div>
 </section>
 
 <section class="diff-group">
-  <h3 class="diff-group-title" style="color:var(--red)">Regressed (8)</h3>
+  <h3 class="diff-group-title" style="color:var(--red)">Regressed (5)</h3>
   <div class="diff-group-list">
     
-<article class="diff-card diff-card-regressed">
-  <header class="diff-card-header">
-    <span class="diff-card-symbol" style="color:var(--red)">↓</span>
-    <div class="diff-card-titles">
-      <div class="diff-card-title">Missing title tags</div>
-      <div class="diff-card-category">seo</div>
-    </div>
-    <span class="diff-card-badge" style="color:var(--red);border-color:var(--red)">Regressed</span>
-  </header>
-  
-  <div class="diff-card-row">
-    <div class="diff-card-side diff-card-before">
-      <div class="diff-side-label">Before</div>
-      <div class="diff-side-detail">All pages have title tags.</div>
-    </div>
-    <div class="diff-card-side diff-card-after">
-      <div class="diff-side-label">After</div>
-      <div class="diff-side-detail">1 of 28 pages are missing a &lt;title&gt; tag.</div>
-    </div>
-  </div>
-  <div class="diff-card-benefit">Why this matters: The &lt;title&gt; tag is the single most important on-page SEO element and the first thing Google uses to understand a page.</div>
-</article>
-
 <article class="diff-card diff-card-regressed">
   <header class="diff-card-header">
     <span class="diff-card-symbol" style="color:var(--red)">↓</span>
@@ -677,7 +656,7 @@
     </div>
     <div class="diff-card-side diff-card-after">
       <div class="diff-side-label">After</div>
-      <div class="diff-side-detail">5 of 28 pages have fewer than 200 words of content.</div>
+      <div class="diff-side-detail">24 of 51 pages have fewer than 200 words of content.</div>
     </div>
   </div>
   <div class="diff-card-benefit">Why this matters: Pages with substantial content rank significantly better. Thin pages signal low quality to Google and rarely appear in top results.</div>
@@ -710,52 +689,6 @@
   <header class="diff-card-header">
     <span class="diff-card-symbol" style="color:var(--red)">↓</span>
     <div class="diff-card-titles">
-      <div class="diff-card-title">Thin About page content</div>
-      <div class="diff-card-category">content</div>
-    </div>
-    <span class="diff-card-badge" style="color:var(--red);border-color:var(--red)">Regressed</span>
-  </header>
-  
-  <div class="diff-card-row">
-    <div class="diff-card-side diff-card-before">
-      <div class="diff-side-label">Before</div>
-      <div class="diff-side-detail">About page has sufficient content.</div>
-    </div>
-    <div class="diff-card-side diff-card-after">
-      <div class="diff-side-label">After</div>
-      <div class="diff-side-detail">About page has fewer than 200 words.</div>
-    </div>
-  </div>
-  <div class="diff-card-benefit">Why this matters: The About page is often the second most-visited page for healthcare practices. A rich bio builds trust and ranks for doctor-name searches.</div>
-</article>
-
-<article class="diff-card diff-card-regressed">
-  <header class="diff-card-header">
-    <span class="diff-card-symbol" style="color:var(--red)">↓</span>
-    <div class="diff-card-titles">
-      <div class="diff-card-title">Address on site</div>
-      <div class="diff-card-category">trust</div>
-    </div>
-    <span class="diff-card-badge" style="color:var(--red);border-color:var(--red)">Regressed</span>
-  </header>
-  
-  <div class="diff-card-row">
-    <div class="diff-card-side diff-card-before">
-      <div class="diff-side-label">Before</div>
-      <div class="diff-side-detail">Address on site detected on the site.</div>
-    </div>
-    <div class="diff-card-side diff-card-after">
-      <div class="diff-side-label">After</div>
-      <div class="diff-side-detail">Address on site not detected on any crawled page.</div>
-    </div>
-  </div>
-  <div class="diff-card-benefit">Why this matters: A visible street address establishes that the practice is real and local — a top trust signal and a local-SEO ranking factor.</div>
-</article>
-
-<article class="diff-card diff-card-regressed">
-  <header class="diff-card-header">
-    <span class="diff-card-symbol" style="color:var(--red)">↓</span>
-    <div class="diff-card-titles">
       <div class="diff-card-title">Operating hours on site</div>
       <div class="diff-card-category">trust</div>
     </div>
@@ -779,29 +712,6 @@
   <header class="diff-card-header">
     <span class="diff-card-symbol" style="color:var(--red)">↓</span>
     <div class="diff-card-titles">
-      <div class="diff-card-title">Social media links</div>
-      <div class="diff-card-category">trust</div>
-    </div>
-    <span class="diff-card-badge" style="color:var(--red);border-color:var(--red)">Regressed</span>
-  </header>
-  
-  <div class="diff-card-row">
-    <div class="diff-card-side diff-card-before">
-      <div class="diff-side-label">Before</div>
-      <div class="diff-side-detail">Social media links detected on the site.</div>
-    </div>
-    <div class="diff-card-side diff-card-after">
-      <div class="diff-side-label">After</div>
-      <div class="diff-side-detail">Social media links not detected on any crawled page.</div>
-    </div>
-  </div>
-  <div class="diff-card-benefit">Why this matters: Social links extend reach and provide additional channels for patient engagement. Their absence reads as low effort.</div>
-</article>
-
-<article class="diff-card diff-card-regressed">
-  <header class="diff-card-header">
-    <span class="diff-card-symbol" style="color:var(--red)">↓</span>
-    <div class="diff-card-titles">
       <div class="diff-card-title">GBP website link matches audited domain</div>
       <div class="diff-card-category">gbp</div>
     </div>
@@ -815,41 +725,41 @@
     </div>
     <div class="diff-card-side diff-card-after">
       <div class="diff-side-label">After</div>
-      <div class="diff-side-detail">GBP links to arizonabiltmoredentistry.com but the audited site is 0.1.</div>
+      <div class="diff-side-detail">GBP links to arizonabiltmoredentistry.com but the audited site is groundworkdental.com.</div>
     </div>
   </div>
   <div class="diff-card-benefit">Why this matters: When the GBP points to a different domain than the practice's main site, the listing's authority bleeds out to a domain you may not even control.</div>
 </article>
-  </div>
-</section>
 
-<section class="diff-group">
-  <h3 class="diff-group-title" style="color:var(--amber)">Still issue (7)</h3>
-  <div class="diff-group-list">
-    
-<article class="diff-card diff-card-still-issue">
+<article class="diff-card diff-card-regressed">
   <header class="diff-card-header">
-    <span class="diff-card-symbol" style="color:var(--amber)">!</span>
+    <span class="diff-card-symbol" style="color:var(--red)">↓</span>
     <div class="diff-card-titles">
-      <div class="diff-card-title">Multiple H1 headings on same page</div>
-      <div class="diff-card-category">seo</div>
+      <div class="diff-card-title">GA4 measurement script</div>
+      <div class="diff-card-category">conversion</div>
     </div>
-    <span class="diff-card-badge" style="color:var(--amber);border-color:var(--amber)">Still issue</span>
+    <span class="diff-card-badge" style="color:var(--red);border-color:var(--red)">Regressed</span>
   </header>
   
   <div class="diff-card-row">
     <div class="diff-card-side diff-card-before">
       <div class="diff-side-label">Before</div>
-      <div class="diff-side-detail">1 page have more than one H1 heading.</div>
+      <div class="diff-side-detail">GA4 likely configured via GTM container (GTM-TJV3WVH).</div>
     </div>
     <div class="diff-card-side diff-card-after">
       <div class="diff-side-label">After</div>
-      <div class="diff-side-detail">1 page have more than one H1 heading.</div>
+      <div class="diff-side-detail">No GA4 measurement script or GTM container detected on the homepage.</div>
     </div>
   </div>
-  <div class="diff-card-benefit">Why this matters: Each page should have exactly one H1. Multiple H1s dilute the primary topic signal and can confuse search engine crawlers.</div>
+  <div class="diff-card-benefit">Why this matters: GA4 is the conversion data source Google Ads imports from. Without it, Smart Bidding has no signals to optimize against — every ad dollar is spent blind.</div>
 </article>
+  </div>
+</section>
 
+<section class="diff-group">
+  <h3 class="diff-group-title" style="color:var(--amber)">Still issue (6)</h3>
+  <div class="diff-group-list">
+    
 <article class="diff-card diff-card-still-issue">
   <header class="diff-card-header">
     <span class="diff-card-symbol" style="color:var(--amber)">!</span>
@@ -946,6 +856,29 @@
   <header class="diff-card-header">
     <span class="diff-card-symbol" style="color:var(--amber)">!</span>
     <div class="diff-card-titles">
+      <div class="diff-card-title">Phone click conversion event</div>
+      <div class="diff-card-category">conversion</div>
+    </div>
+    <span class="diff-card-badge" style="color:var(--amber);border-color:var(--amber)">Still issue</span>
+  </header>
+  
+  <div class="diff-card-row">
+    <div class="diff-card-side diff-card-before">
+      <div class="diff-side-label">Before</div>
+      <div class="diff-side-detail">No phone-click event tracker detected. Calls happen, but Google Ads sees no signal.</div>
+    </div>
+    <div class="diff-card-side diff-card-after">
+      <div class="diff-side-label">After</div>
+      <div class="diff-side-detail">No phone-click event tracker detected. Calls happen, but Google Ads sees no signal.</div>
+    </div>
+  </div>
+  <div class="diff-card-benefit">Why this matters: Calls are the #1 conversion action for dental practices. Without a phone_click event in GA4, Smart Bidding can't prioritize keywords that drive calls — they look identical to keywords that drive nothing.</div>
+</article>
+
+<article class="diff-card diff-card-still-issue">
+  <header class="diff-card-header">
+    <span class="diff-card-symbol" style="color:var(--amber)">!</span>
+    <div class="diff-card-titles">
       <div class="diff-card-title">llms.txt quality for AI agents</div>
       <div class="diff-card-category">agentic</div>
     </div>
@@ -964,36 +897,36 @@
   </div>
   <div class="diff-card-benefit">Why this matters: A curated llms.txt helps ChatGPT, Gemini, and Perplexity surface your services accurately instead of CMS noise.</div>
 </article>
+  </div>
+</section>
 
-<article class="diff-card diff-card-still-issue">
+<section class="diff-group">
+  <h3 class="diff-group-title" style="color:var(--green)">Still passing (19)</h3>
+  <div class="diff-group-list">
+    
+<article class="diff-card diff-card-unchanged">
   <header class="diff-card-header">
-    <span class="diff-card-symbol" style="color:var(--amber)">!</span>
+    <span class="diff-card-symbol" style="color:var(--green)">✓</span>
     <div class="diff-card-titles">
-      <div class="diff-card-title">Accessibility tree for AI agents</div>
-      <div class="diff-card-category">agentic</div>
+      <div class="diff-card-title">Missing title tags</div>
+      <div class="diff-card-category">seo</div>
     </div>
-    <span class="diff-card-badge" style="color:var(--amber);border-color:var(--amber)">Still issue</span>
+    <span class="diff-card-badge" style="color:var(--green);border-color:var(--green)">Still passing</span>
   </header>
   
   <div class="diff-card-row">
     <div class="diff-card-side diff-card-before">
       <div class="diff-side-label">Before</div>
-      <div class="diff-side-detail">Accessibility tree is not well-formed</div>
+      <div class="diff-side-detail">All pages have title tags.</div>
     </div>
     <div class="diff-card-side diff-card-after">
       <div class="diff-side-label">After</div>
-      <div class="diff-side-detail">Accessibility tree is not well-formed</div>
+      <div class="diff-side-detail">All pages have title tags.</div>
     </div>
   </div>
-  <div class="diff-card-benefit">Why this matters: AI assistants read your site through the accessibility tree. Broken structure means they cannot reliably find buttons, forms, or key content.</div>
+  <div class="diff-card-benefit">Why this matters: The &lt;title&gt; tag is the single most important on-page SEO element and the first thing Google uses to understand a page.</div>
 </article>
-  </div>
-</section>
 
-<section class="diff-group">
-  <h3 class="diff-group-title" style="color:var(--green)">Still passing (16)</h3>
-  <div class="diff-group-list">
-    
 <article class="diff-card diff-card-unchanged">
   <header class="diff-card-header">
     <span class="diff-card-symbol" style="color:var(--green)">✓</span>
@@ -1136,6 +1069,29 @@
   <header class="diff-card-header">
     <span class="diff-card-symbol" style="color:var(--green)">✓</span>
     <div class="diff-card-titles">
+      <div class="diff-card-title">Thin About page content</div>
+      <div class="diff-card-category">content</div>
+    </div>
+    <span class="diff-card-badge" style="color:var(--green);border-color:var(--green)">Still passing</span>
+  </header>
+  
+  <div class="diff-card-row">
+    <div class="diff-card-side diff-card-before">
+      <div class="diff-side-label">Before</div>
+      <div class="diff-side-detail">About page has sufficient content.</div>
+    </div>
+    <div class="diff-card-side diff-card-after">
+      <div class="diff-side-label">After</div>
+      <div class="diff-side-detail">About page has sufficient content.</div>
+    </div>
+  </div>
+  <div class="diff-card-benefit">Why this matters: The About page is often the second most-visited page for healthcare practices. A rich bio builds trust and ranks for doctor-name searches.</div>
+</article>
+
+<article class="diff-card diff-card-unchanged">
+  <header class="diff-card-header">
+    <span class="diff-card-symbol" style="color:var(--green)">✓</span>
+    <div class="diff-card-titles">
       <div class="diff-card-title">Phone number on site</div>
       <div class="diff-card-category">trust</div>
     </div>
@@ -1159,6 +1115,52 @@
   <header class="diff-card-header">
     <span class="diff-card-symbol" style="color:var(--green)">✓</span>
     <div class="diff-card-titles">
+      <div class="diff-card-title">Address on site</div>
+      <div class="diff-card-category">trust</div>
+    </div>
+    <span class="diff-card-badge" style="color:var(--green);border-color:var(--green)">Still passing</span>
+  </header>
+  
+  <div class="diff-card-row">
+    <div class="diff-card-side diff-card-before">
+      <div class="diff-side-label">Before</div>
+      <div class="diff-side-detail">Address on site detected on the site.</div>
+    </div>
+    <div class="diff-card-side diff-card-after">
+      <div class="diff-side-label">After</div>
+      <div class="diff-side-detail">Address on site detected on the site.</div>
+    </div>
+  </div>
+  <div class="diff-card-benefit">Why this matters: A visible street address establishes that the practice is real and local — a top trust signal and a local-SEO ranking factor.</div>
+</article>
+
+<article class="diff-card diff-card-unchanged">
+  <header class="diff-card-header">
+    <span class="diff-card-symbol" style="color:var(--green)">✓</span>
+    <div class="diff-card-titles">
+      <div class="diff-card-title">Social media links</div>
+      <div class="diff-card-category">trust</div>
+    </div>
+    <span class="diff-card-badge" style="color:var(--green);border-color:var(--green)">Still passing</span>
+  </header>
+  
+  <div class="diff-card-row">
+    <div class="diff-card-side diff-card-before">
+      <div class="diff-side-label">Before</div>
+      <div class="diff-side-detail">Social media links detected on the site.</div>
+    </div>
+    <div class="diff-card-side diff-card-after">
+      <div class="diff-side-label">After</div>
+      <div class="diff-side-detail">Social media links detected on the site.</div>
+    </div>
+  </div>
+  <div class="diff-card-benefit">Why this matters: Social links extend reach and provide additional channels for patient engagement. Their absence reads as low effort.</div>
+</article>
+
+<article class="diff-card diff-card-unchanged">
+  <header class="diff-card-header">
+    <span class="diff-card-symbol" style="color:var(--green)">✓</span>
+    <div class="diff-card-titles">
       <div class="diff-card-title">First-party domain</div>
       <div class="diff-card-category">hosting</div>
     </div>
@@ -1172,7 +1174,7 @@
     </div>
     <div class="diff-card-side diff-card-after">
       <div class="diff-side-label">After</div>
-      <div class="diff-side-detail">Site is on a first-party domain (0.1).</div>
+      <div class="diff-side-detail">Site is on a first-party domain (groundworkdental.com).</div>
     </div>
   </div>
   <div class="diff-card-benefit">Why this matters: A first-party domain (yourname.com) signals legitimacy, consolidates SEO equity, and gives full control over redirects, email, and tracking.</div>
@@ -1338,34 +1340,11 @@
   </div>
   <div class="diff-card-benefit">Why this matters: The GBP primary category drives which &quot;near me&quot; queries you appear for. A misaligned category caps your reach.</div>
 </article>
-
-<article class="diff-card diff-card-unchanged">
-  <header class="diff-card-header">
-    <span class="diff-card-symbol" style="color:var(--green)">✓</span>
-    <div class="diff-card-titles">
-      <div class="diff-card-title">GA4 measurement script</div>
-      <div class="diff-card-category">conversion</div>
-    </div>
-    <span class="diff-card-badge" style="color:var(--green);border-color:var(--green)">Still passing</span>
-  </header>
-  
-  <div class="diff-card-row">
-    <div class="diff-card-side diff-card-before">
-      <div class="diff-side-label">Before</div>
-      <div class="diff-side-detail">GA4 likely configured via GTM container (GTM-TJV3WVH).</div>
-    </div>
-    <div class="diff-card-side diff-card-after">
-      <div class="diff-side-label">After</div>
-      <div class="diff-side-detail">GA4 script detected (G-XXXXXXXXXX).</div>
-    </div>
-  </div>
-  <div class="diff-card-benefit">Why this matters: GA4 is the conversion data source Google Ads imports from. Without it, Smart Bidding has no signals to optimize against — every ad dollar is spent blind.</div>
-</article>
   </div>
 </section>
 
 <section class="diff-group">
-  <h3 class="diff-group-title" style="color:var(--text-dim)">Not re-scanned (1)</h3>
+  <h3 class="diff-group-title" style="color:var(--text-dim)">Not re-scanned (2)</h3>
   <div class="diff-group-list">
     
 <article class="diff-card diff-card-removed">
@@ -1389,6 +1368,29 @@
     </div>
   </div>
   <div class="diff-card-benefit">Why this matters: Local-intent ad keywords (&quot;dental implants huntington beach&quot;) match strongest when the city is in the page title. Google Ads quality score and local SEO both reward title-city alignment.</div>
+</article>
+
+<article class="diff-card diff-card-removed">
+  <header class="diff-card-header">
+    <span class="diff-card-symbol" style="color:var(--text-dim)">—</span>
+    <div class="diff-card-titles">
+      <div class="diff-card-title">Accessibility tree for AI agents</div>
+      <div class="diff-card-category">agentic</div>
+    </div>
+    <span class="diff-card-badge" style="color:var(--text-dim);border-color:var(--text-dim)">Not re-scanned</span>
+  </header>
+  
+  <div class="diff-card-row">
+    <div class="diff-card-side diff-card-before">
+      <div class="diff-side-label">Before</div>
+      <div class="diff-side-detail">Accessibility tree is not well-formed</div>
+    </div>
+    <div class="diff-card-side diff-card-after">
+      <div class="diff-side-label">After</div>
+      <div class="diff-side-detail">Not re-scanned</div>
+    </div>
+  </div>
+  <div class="diff-card-benefit">Why this matters: AI assistants read your site through the accessibility tree. Broken structure means they cannot reliably find buttons, forms, or key content.</div>
 </article>
   </div>
 </section>
@@ -1481,19 +1483,6 @@
     <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-dim);margin-bottom:14px">Top 3 changes — before and after</div>
     
     <div class="before-after-block">
-      <div class="ba-header">Pages with no title in Google</div>
-      <div class="ba-row">
-        <div class="ba-col">
-          <div class="ba-label before">Before</div>
-          <div class="ba-content">Google has no title to show for this page — it falls out of search results entirely.</div>
-        </div>
-        <div class="ba-col">
-          <div class="ba-label after">After</div>
-          <div class="ba-content">Every page has a keyword-rich title that shows up clearly in Google.</div>
-        </div>
-      </div>
-    </div>
-    <div class="before-after-block">
       <div class="ba-header">Pages with too little information for Google</div>
       <div class="ba-row">
         <div class="ba-col">
@@ -1525,12 +1514,12 @@
     <div class="impr-text">Content stays in place as the page loads — no shifting, no accidental taps, no frustrated visitors.</div>
   </div>
   <div class="improvement-item">
-    <div class="impr-finding-ref warning">Improvement — About page doesn't build enough trust</div>
-    <div class="impr-text">A rich About page with your story, credentials, and team photography that converts curious visitors into booked patients.</div>
+    <div class="impr-finding-ref warning">Improvement — Operating hours on site</div>
+    <div class="impr-text">Operating hours are visible everywhere so patients know when to call — and don't arrive to a closed office.</div>
   </div>
   <div class="improvement-item">
-    <div class="impr-finding-ref warning">Improvement — Address on site</div>
-    <div class="impr-text">Your address is surfaced on every page so prospects can locate your practice and Google sees a clear NAP signal.</div>
+    <div class="impr-finding-ref warning">Improvement — GBP description</div>
+    <div class="impr-text">A keyword-rich GBP description controls your narrative on Google Maps and improves &quot;dentist near me&quot; ranking.</div>
   </div></div>
   </div>
 
