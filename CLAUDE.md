@@ -33,7 +33,8 @@ The marketing website for Groundwork Dental, a productized dental website agency
 - **Full design reference:** `DESIGN.md`
 
 ## Brand Voice
-Conversational, self-aware, honest. "The honest dental website guy." Not an agency. Not a marketing firm. Write like you're talking to a busy dentist over coffee. No corporate fluff.
+Calm, competent, honest. An engineer explaining to a smart friend how something works, what it costs, and whether they need it — including when the answer is no. Answer first, personality second. Numbers over adjectives. Never salesy, never urgent, never fear-based.
+- **Full voice/tone source of truth (read before writing any copy):** `References/voice-and-tone.md`
 
 ## Key Reference
 - Full playbook: `References/groundwork-dental-playbook.md`

@@ -24,7 +24,7 @@ Every dentist we talk to has the same question: should I just use Wix or Squares
 
 We're [Groundwork Dental](/pricing), so we have an obvious bias toward custom-built sites. We'll be upfront about that throughout this post. But we've also helped dentists evaluate every option on this list, and sometimes the right answer genuinely is a $16/month Squarespace site. We'll tell you when.
 
-This is a comparison of five realistic paths for getting your dental practice online: Wix, Squarespace, Webflow, a WordPress agency, and a custom-built site. For each one, I'll cover what it costs, what it does well, what it does poorly, and who it actually makes sense for.
+This is a comparison of five realistic paths for getting your dental practice online: Wix, Squarespace, Webflow, a WordPress agency, and a custom-built site. For each one, we'll cover what it costs, what it does well, what it does poorly, and who it actually makes sense for.
 
 ## What Actually Matters for a Dental Website
 
@@ -234,7 +234,7 @@ The cost of platform limitations is invisible until you start trying to grow. Th
 
 ## Page Speed: Why It Matters More Than You Think
 
-I keep mentioning page speed, so let me explain why it keeps coming up.
+Page speed keeps coming up, so here's why it matters.
 
 Google's Core Web Vitals measure three things: how fast the largest element loads (LCP), how quickly the page responds to interaction (INP), and how much the layout shifts while loading (CLS). These are direct ranking factors for search. Not theoretical. Not "might matter someday." They affect your rankings right now.
 

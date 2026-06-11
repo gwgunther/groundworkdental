@@ -60,6 +60,17 @@
   .scan-stat .n { font-family: var(--mono); font-size: 22px; font-weight: 600; color: var(--charcoal); line-height: 1; }
   .scan-stat .n.flag { color: var(--danger); }
   .scan-stat .l { font-family: var(--font-ui); font-size: 11px; color: var(--mid-gray); margin-top: 6px; line-height: 1.3; }
+  .agentic-line { font-family: var(--font-ui); font-size: 13px; line-height: 1.5; color: var(--charcoal); margin-top: 14px; padding: 12px 16px; background: var(--surface-2); border: 1px solid var(--border-light); border-radius: var(--radius); }
+  .agentic-line.warn { background: #FCF4E8; border-color: #E8D4A8; color: var(--warning); }
+  .agentic-line.ok { background: var(--sage-tint); border-color: var(--sage); color: var(--sage-darker); }
+  .llms-evidence { margin-top: 12px; border: 1px solid var(--border-light); border-radius: var(--radius); overflow: hidden; }
+  .llms-evidence-head { font-family: var(--font-ui); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 10px 14px; background: var(--surface-2); border-bottom: 1px solid var(--border-light); color: var(--mid-gray); }
+  .llms-issues { padding: 12px 14px; font-family: var(--font-ui); font-size: 13px; line-height: 1.5; }
+  .llms-issues li { margin: 0 0 6px 1.1em; }
+  .llms-pre { margin: 0; padding: 12px 14px; font-family: var(--mono); font-size: 11px; line-height: 1.45; white-space: pre-wrap; word-break: break-word; background: #FAFAF8; color: var(--charcoal); max-height: 220px; overflow: auto; }
+  .llms-pre.good { background: var(--sage-tint); }
+  .llms-verify { font-family: var(--font-ui); font-size: 11px; padding: 8px 14px 12px; color: var(--mid-gray); }
+  .llms-verify a { color: var(--sage-dark); }
   .finding { padding: 20px 0; border-bottom: 1px solid var(--border-light); }
   .finding-head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
   .finding-num { font-family: var(--mono); font-size: 12px; color: var(--sage); }
@@ -142,13 +153,13 @@
     <div class="masthead-main">
       <div class="doc-type">Website Audit</div>
       <h1 class="subject">Bear Creek Family Dentistry</h1>
-      <a class="subject-url" href="https://www.bearcreekfamilydentistry.com/" target="_blank" rel="noopener">bearcreekfamilydentistry.com</a>
+      <a class="subject-url" href="https://www.bearcreekfamilydentistry.com" target="_blank" rel="noopener">bearcreekfamilydentistry.com</a>
     </div>
     <div class="masthead-by">
       <div class="by-label">Prepared by</div>
       <div class="gw-mark"><span class="word">Groundwork</span><span class="divider"></span><span class="suffix">dental</span></div>
       <div class="gw-domain">hello@groundworkdental.com</div>
-      <div class="by-date">June 5, 2026</div>
+      <div class="by-date">June 8, 2026</div>
     </div>
   </header>
 
@@ -205,6 +216,8 @@
   </div>
 
   
+
+  
   <div class="vendor-card">
     <h3>Current website provider</h3>
     <div class="vendor-name">TNT Dental</div>
@@ -230,6 +243,7 @@
       </div>
     </div>
     
+    
   </div><div class="finding">
     <div class="finding-head">
       <span class="finding-num">02</span>
@@ -247,6 +261,7 @@
       </div>
     </div>
     
+    
   </div><div class="finding">
     <div class="finding-head">
       <span class="finding-num">03</span>
@@ -263,6 +278,7 @@
         <div class="compare-text">Every photo has alt text, so your before-and-afters can turn up in image search.</div>
       </div>
     </div>
+    
     <details class="evidence">
     <summary>Show all 340 pages with unlabeled photos</summary>
     <div class="evidence-table">
@@ -289,6 +305,7 @@
         <div class="compare-text">Each page has a unique title, so it can rank for its own search.</div>
       </div>
     </div>
+    
     <details class="evidence">
     <summary>Show all 65 pages with this issue</summary>
     <div class="evidence-table">
@@ -315,6 +332,7 @@
         <div class="compare-text">Service pages answer the questions patients search for, with enough depth to earn rankings.</div>
       </div>
     </div>
+    
     <details class="evidence">
     <summary>Show all 160 affected pages</summary>
     <div class="evidence-table">
@@ -374,7 +392,7 @@
   const API_URL = "https://groundworkdental.com/api/audit-preview-request";
   const SLUG = "bearcreekfamilydentistry";
   const PRACTICE_NAME = "Bear Creek Family Dentistry";
-  const PRACTICE_URL = "https://www.bearcreekfamilydentistry.com/";
+  const PRACTICE_URL = "https://www.bearcreekfamilydentistry.com";
   const openBtn = document.getElementById('preview-open-btn');
   const panel = document.getElementById('preview-panel');
   const form = document.getElementById('preview-form');

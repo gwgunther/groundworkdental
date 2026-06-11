@@ -133,7 +133,7 @@ These pages capture patients who are actively making a treatment decision. They'
 
 ## Why Most Agencies Ignore This
 
-I keep coming back to this point because it's central to the problem: the standard dental marketing agency business model can't support this level of work.
+This point keeps coming up because it's central to the problem: the standard dental marketing agency business model can't support this level of work.
 
 Creating a comprehensive dental implant page with original cost breakdowns, procedure details, and real clinical information takes significant time and effort. Multiply that across every major treatment a practice offers — implants, veneers, Invisalign, crowns, bridges, dentures, root canals, whitening — and you're looking at 30-50+ pages of deep content.
 
@@ -155,12 +155,12 @@ Instead of 50-100 organic visitors per month from "dentist near me," you're gett
 
 ## The $30K Keyword Isn't a Shortcut
 
-I want to be clear: this isn't a hack or a trick. It's the approach that makes dental SEO actually worth the investment.
+To be clear: this isn't a hack or a trick. It's the approach that makes dental SEO actually worth the investment.
 
 Building a content strategy around treatment research keywords is harder than buying a template and submitting citations. It takes longer to produce results. It costs more upfront. And it requires ongoing content investment.
 
 But the alternative is paying an agency $500/month forever to maintain a ceiling you hit six months ago. The math on that approach never gets better.
 
-If you want to understand how treatment research content fits into a complete dental SEO strategy, We wrote the whole framework in [The Dental SEO Foundation guide](/dental-seo-foundation). It covers everything from baseline setup through authority building and growth content.
+If you want to understand how treatment research content fits into a complete dental SEO strategy, we wrote the whole framework in [The Dental SEO Foundation guide](/dental-seo-foundation). It covers everything from baseline setup through authority building and growth content.
 
 The $30K keyword is sitting there in your market right now. Patients in your city are searching for it today. The only question is whether your website shows up — or whether they find someone else's.

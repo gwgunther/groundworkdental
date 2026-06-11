@@ -100,7 +100,7 @@ This compounding effect is why practices that invest in authority-building for 1
 
 ## Everything Else Is Supporting Cast (or Noise)
 
-Now here's where I'll probably irritate some social media marketers.
+Now here's where this will probably irritate some social media marketers.
 
 **Social media** does not drive meaningful new patient acquisition for most dental practices. It can reinforce your brand with existing patients. It can be a place where potential patients check that you look legitimate. But almost nobody finds their dentist through Instagram.
 
@@ -110,7 +110,7 @@ If you enjoy social media and it's easy for you, keep doing it. But if you're ch
 
 **Print advertising** still works in some markets for awareness, but it's not measurable the way search is, and it's expensive relative to the return. It's a different channel entirely.
 
-**Paid search (Google Ads)** is the one exception I'll carve out. PPC can drive immediate new patient calls and is a legitimate growth channel. But it's a rental, not an asset — the moment you stop paying, the calls stop. Search engines are assets that build over time. PPC is a faucet you turn on and off.
+**Paid search (Google Ads)** is worth carving out as an exception. PPC can drive immediate new patient calls and is a legitimate growth channel. But it's a rental, not an asset — the moment you stop paying, the calls stop. Search engines are assets that build over time. PPC is a faucet you turn on and off.
 
 **The point is not that these channels are worthless.** It's that they are not engines of growth. They are supporting tools. If your three engines aren't running, no amount of Instagram posting or postcard mailing will compensate.
 

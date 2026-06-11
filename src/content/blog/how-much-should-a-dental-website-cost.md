@@ -64,7 +64,7 @@ But the limitations are real. Page speed on Wix and Squarespace is mediocre at b
 
 **What you get:**
 
-An agency builds you a website using a template they've used for dozens of other dental practices. They swap your logo, photos, and practice information into their proven layout. It looks more professional than DIY. The content is... present, though possibly copied from their other clients.
+An agency builds you a website using a template they've used for dozens of other dental practices. They swap your logo, photos, and practice information into their standard layout. It looks more professional than DIY. The content is... present, though possibly copied from their other clients.
 
 **What's actually included:**
 
@@ -172,7 +172,7 @@ The spread between the cheapest and most expensive option is staggering. And the
 
 ## The Middle Tier Trap
 
-I want to highlight why Tier 2 (template agency) is worth evaluating carefully.
+It's worth looking carefully at why Tier 2 (template agency) deserves scrutiny.
 
 You're paying near-custom prices for template work. The $15,000-23,000 three-year cost can get you a site that looks similar to other practices' sites, with content that may not be unique. That's not always a problem — a well-executed template is better than a poorly built custom site. But it's worth asking what you're getting for the money.
 
