@@ -234,7 +234,7 @@ The cost of platform limitations is invisible until you start trying to grow. Th
 
 ## Page Speed: Why It Matters More Than You Think
 
-I keep mentioning page speed, so let me explain why it keeps coming up.
+Page speed keeps coming up, so here's why it matters.
 
 Google's Core Web Vitals measure three things: how fast the largest element loads (LCP), how quickly the page responds to interaction (INP), and how much the layout shifts while loading (CLS). These are direct ranking factors for search. Not theoretical. Not "might matter someday." They affect your rankings right now.
 

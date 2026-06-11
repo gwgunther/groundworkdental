@@ -73,7 +73,7 @@ The second most common reason is that the content that does exist is generic tem
 
 ## 3. Your Site Has No Structured Data (Schema Markup)
 
-This is the most technical item on this list, but I'll keep it straightforward because it's also one of the most overlooked.
+This is the most technical item on this list, but we'll keep it straightforward because it's also one of the most overlooked.
 
 **What it is:** Structured data is a standardized format (code added to your website) that tells search engines exactly what your practice is, what you do, where you're located, and how to categorize your information. Think of it as filling out a detailed form for Google rather than making Google read your website and guess.
 
@@ -110,7 +110,7 @@ Beyond Google, generic content fails with patients too. A potential patient read
 
 **What's usually wrong:** Most dental website companies use content libraries. They have pre-written descriptions for every dental procedure, and they swap in your practice name and maybe your city. The result is technically accurate content that's functionally useless for differentiation. Some agencies use AI to generate content but still produce the same generic result — just paraphrased differently.
 
-**The honest take:** Rewriting your service pages with original, practice-specific content is one of the highest-leverage improvements you can make. It helps with SEO, it helps convert visitors into patients, and it differentiates you from every other practice with template copy. This is fixable without rebuilding your site — you're just replacing the words on existing pages. The hard part is someone actually knowing your practice well enough to write content that reflects how you work.
+**The honest take:** Rewriting your service pages with original, practice-specific content is one of the most impactful improvements you can make. It helps with SEO, it helps convert visitors into patients, and it differentiates you from every other practice with template copy. This is fixable without rebuilding your site — you're just replacing the words on existing pages. The hard part is someone actually knowing your practice well enough to write content that reflects how you work.
 
 ## 5. Your Site Isn't Truly Mobile-First
 

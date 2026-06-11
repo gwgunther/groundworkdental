@@ -94,7 +94,7 @@ This doesn't mean your existing SEO content is worthless — it means the best c
 
 ## The Timeline Problem
 
-Here's what keeps me up at night when I think about this on behalf of dental practices.
+Here's the timing issue worth understanding.
 
 AEO isn't something you implement and see results from in 30 days. AI systems build citation patterns over time. The sites that have clear, structured, authoritative content indexed and established *right now* will accumulate AI citation history as this shift accelerates. The sites that start optimizing next year are starting from zero when their competitors have a 12-month head start.
 
@@ -106,7 +106,7 @@ This is also true at the category level. There are very few well-structured reso
 
 If you want to make your dental website AEO-ready, the priority list is short:
 
-1. **Add schema markup** — if your site doesn't have comprehensive structured data, this is the highest-leverage fix. LocalBusiness, Dentist, Service, FAQPage, BreadcrumbList at minimum.
+1. **Add schema markup** — if your site doesn't have comprehensive structured data, this is the highest-impact fix. LocalBusiness, Dentist, Service, FAQPage, BreadcrumbList at minimum.
 
 2. **Audit your service pages for answer clarity** — read each page and ask: if an AI needed to answer "what is a dental implant and how much does it cost," could it find that answer quickly on this page? If no, rewrite the opening section.
 
