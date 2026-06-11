@@ -100,7 +100,7 @@ AEO isn't something you implement and see results from in 30 days. AI systems bu
 
 The practices that move early will own significant AI real estate in their local markets. Dental AEO content compounds the same way SEO content does — except AI citation authority is even newer, which means the gap between first-movers and laggards will be wider.
 
-This is also true at the category level. There are exactly zero well-known, well-structured resources explaining dental AEO right now. The practice or resource that publishes clear, authoritative, AEO-structured content on dental topics in the next six months will be the one AI systems learn to cite. This is a window. It closes.
+This is also true at the category level. There are very few well-structured resources explaining dental AEO right now. The practice that publishes clear, authoritative, answer-oriented content on dental topics early will be the one AI systems learn to cite — and that citation authority compounds as the channel grows.
 
 ## What You Can Do About It
 

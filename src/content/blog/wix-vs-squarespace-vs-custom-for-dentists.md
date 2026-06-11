@@ -24,7 +24,7 @@ Every dentist we talk to has the same question: should I just use Wix or Squares
 
 We're [Groundwork Dental](/pricing), so we have an obvious bias toward custom-built sites. We'll be upfront about that throughout this post. But we've also helped dentists evaluate every option on this list, and sometimes the right answer genuinely is a $16/month Squarespace site. We'll tell you when.
 
-This is a comparison of five realistic paths for getting your dental practice online: Wix, Squarespace, Webflow, a WordPress agency, and a custom-built site. For each one, I'll cover what it costs, what it does well, what it does poorly, and who it actually makes sense for.
+This is a comparison of five realistic paths for getting your dental practice online: Wix, Squarespace, Webflow, a WordPress agency, and a custom-built site. For each one, we'll cover what it costs, what it does well, what it does poorly, and who it actually makes sense for.
 
 ## What Actually Matters for a Dental Website
 
