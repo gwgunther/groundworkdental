@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQBlock from '../components/FAQBlock.astro';
+import CTABlock from '../components/CTABlock.astro';
+
+const faqs = [
+  {
+    question: 'What is AEO — Answer Engine Optimization?',
+    answer: 'AEO (Answer Engine Optimization) is the practice of structuring your website so AI systems like ChatGPT, Perplexity, and Google\'s AI Overviews can find, understand, and quote your content when someone asks a question. Where SEO is about ranking in a list of links, AEO is about being the answer that gets surfaced directly — no click required.',
+  },
+  {
+    question: 'Does AEO replace SEO?',
+    answer: 'No — it extends it. The technical foundations are almost identical: fast site, structured data, authoritative content, clean architecture. AEO adds a layer on top: answer-oriented content, explicit FAQ markup, clear page hierarchy, and strong entity signals so AI systems can quote you with confidence. A well-built dental website should be optimized for both.',
+  },
+  {
+    question: 'How do I know if AI is already surfacing my competitors?',
+    answer: 'Open ChatGPT, Perplexity, or Google and ask: "Who are the best dental implant providers in [your city]?" or "What should I know before getting Invisalign?" If you\'re not appearing and your competitors are, your site either lacks the structured content AI needs or has too many technical gaps. Both are fixable.',
+  },
+  {
+    question: 'Is AEO relevant for local dental practices, or just big brands?',
+    answer: 'Highly relevant for local practices — especially for treatment research questions. When someone asks an AI "how much do dental implants cost in Phoenix," the AI pulls from local dental practice pages, cost guides, and FAQ content. If your site answers these questions clearly with proper structure, you can appear in AI answers even if you\'re a single-location practice.',
+  },
+  {
+    question: 'What\'s the most important AEO fix for a dental website?',
+    answer: 'Structured data (schema markup) and FAQ content together have the highest impact. Schema tells AI systems what your page represents — dentist, service, location, FAQ. Answer-formatted content gives AI something to quote. If you\'re missing both, you\'re essentially invisible to AI answers regardless of how well you rank on Google.',
+  },
+  {
+    question: 'Does Groundwork Dental build AEO into every site?',
+    answer: 'Yes. Every site we build includes complete schema markup (LocalBusiness, Dentist, Service, FAQPage, BreadcrumbList), structured page hierarchy, answer-oriented content for core procedures, and meta architecture that AI crawlers can parse. It\'s not an add-on — it\'s how we build.',
+  },
+];
+---
+
+<BaseLayout
+  title="Dental AEO — Answer Engine Optimization for Dental Practices | Groundwork Dental"
+  description="AI doesn't rank pages. It picks answers. Answer Engine Optimization (AEO) is how you make sure your dental practice gets cited — not ignored — when patients ask AI systems about implants, Invisalign, and local dentists."
+>
+  <!-- Hero -->
+  <section class="bg-surface-2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+      <div class="max-w-3xl">
+        <p class="eyebrow text-sage-dark mb-4">The fourth engine</p>
+        <h1 class="section-heading mb-6">AI Doesn't Rank Pages. It Picks Answers.</h1>
+        <p class="font-serif text-xl text-mid-gray leading-relaxed">
+          Over 60% of searches now end without a click. If AI doesn't surface your practice when a patient asks about dental implants, Invisalign, or dentists near them — you don't exist. Here's what that means and what to do about it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose-article text-lg">
+
+        <h2>What AEO Actually Is</h2>
+        <p>
+          SEO gets you on Google. AEO gets you into AI answers.
+        </p>
+        <p>
+          Answer Engine Optimization is the practice of structuring your website so AI systems — ChatGPT, Perplexity, Google's AI Overviews, and others — can understand your content well enough to quote it. Not link to it. Quote it, summarize it, and present it as the answer to a patient's question.
+        </p>
+        <p>
+          Traditional search shows a list of ten blue links. The patient clicks one. AI search gives one answer, pulled from whichever page was clearest, most structured, and most authoritative. The other nine pages get nothing.
+        </p>
+        <p>
+          That's the shift. And most dental websites aren't built for it.
+        </p>
+
+        <h2>Why Dental Practices Should Care Right Now</h2>
+        <p>
+          Patients researching dental treatment are exactly the kind of searchers moving to AI first. Questions like "how much do dental implants cost," "is Invisalign worth it," and "what's the difference between a crown and a veneer" are research questions — the kind where AI gives a direct answer instead of a list of links.
+        </p>
+        <p>
+          These are also your highest-value patients. The person asking "how much do dental implants cost in Scottsdale" is a $20,000 case in research mode. If AI surfaces your competitor's implant cost page and not yours, you've lost that patient before they ever knew you existed.
+        </p>
+        <p>
+          The good news: most dental websites aren't AEO-ready yet. The vast majority still lack the structured data, clear content hierarchy, and answer-formatted pages that AI systems prefer. A few targeted fixes done right now put you ahead of every practice that's still only thinking about Google.
+        </p>
+
+        <h2>What AI Systems Actually Look For</h2>
+        <p>
+          AI crawlers don't read websites the way humans do. They're looking for signals that tell them what a page is, who it's for, and whether it can be trusted. Four signals matter most:
+        </p>
+
+        <h3>1. Structured Data (Schema Markup)</h3>
+        <p>
+          Schema markup is explicit metadata that tells AI (and Google) what your page represents. For dental practices, this includes <code>LocalBusiness</code> + <code>Dentist</code> schema on your homepage, <code>Service</code> schema on every procedure page, <code>FAQPage</code> schema on any Q&amp;A content, and <code>BreadcrumbList</code> schema throughout. Without it, AI systems are inferring your content from layout clues. With it, they know exactly what they're looking at.
+        </p>
+
+        <h3>2. Answer-Oriented Content</h3>
+        <p>
+          AI systems prefer pages built around one clear question with one clear answer. "How much does a dental implant cost?" as an H2 followed by a direct, specific answer — not a paragraph of hedging — is exactly what gets quoted. Most dental pages are written as marketing copy, not answers. That's the gap.
+        </p>
+
+        <h3>3. Content Hierarchy and Clarity</h3>
+        <p>
+          AI systems parse structure: H1 → H2 → H3, introduction → key point → detail. Pages that bury their main point in paragraph five, use vague headings like "Why Choose Us," or mix unrelated topics on the same page get skipped. Clear hierarchy means clear answers.
+        </p>
+
+        <h3>4. Authority and Trust Signals</h3>
+        <p>
+          AI models favor authoritative sources: pages with consistent NAP data, verified business information, strong external citations, and established domain history. A page from a well-structured, technically sound website on an owned domain carries more weight than a page on a generic platform where the agency controls everything. This is one of the reasons <a href="/compare">owning your website</a> matters more than ever.
+        </p>
+
+        <h2>The Connection to Your Existing SEO Foundation</h2>
+        <p>
+          Here's the honest answer: the technical foundation for AEO and SEO is almost identical. Fast load times, mobile-friendly design, proper schema markup, clean content architecture, clear page hierarchy, authoritative backlinks — all of this serves both.
+        </p>
+        <p>
+          The difference is in how the content is written. SEO has historically rewarded keyword density, link acquisition, and page depth. AEO rewards directness, clarity, and answer structure. A page that says "Dental implants are permanent tooth replacements. The average cost in the United States is $3,000–$5,000 per implant" will be quoted by AI before a page that says "We offer comprehensive dental implant solutions tailored to your unique smile goals."
+        </p>
+        <p>
+          If you've read our <a href="/dental-seo-foundation">dental SEO foundation guide</a>, you know we already talk about three ranking engines: Google Maps, local organic pages, and authority signals. AEO is the fourth engine — and it runs on the same infrastructure. Build the foundation right once, and it works for all four.
+        </p>
+
+        <h2>What "AEO-Ready" Looks Like in Practice</h2>
+        <p>
+          Every site we build at Groundwork includes the full stack:
+        </p>
+        <ul>
+          <li><strong>Complete schema markup:</strong> LocalBusiness, Dentist, Service, FAQPage, BreadcrumbList, and MedicalOrganization on every page that warrants it</li>
+          <li><strong>FAQ sections:</strong> Every service page ends with explicit Q&amp;A content formatted for FAQPage schema — the exact format AI systems quote from</li>
+          <li><strong>Answer-first content structure:</strong> Treatment pages open with the direct answer to the patient's most likely question, then support it</li>
+          <li><strong>Clear page hierarchy:</strong> One H1 per page, consistent H2/H3 logic, no ambiguous heading text</li>
+          <li><strong>Meta titles and descriptions:</strong> Written as answer previews, not marketing taglines</li>
+          <li><strong>Internal linking:</strong> Explicit relationships between service pages, location pages, and content — so AI systems understand how the site fits together</li>
+          <li><strong>Owned domain and hosting:</strong> Authority signals accumulate on your domain, not a platform</li>
+        </ul>
+        <p>
+          This isn't a separate AEO audit after the fact. It's how we build every site.
+        </p>
+
+        <h2>The Uncomfortable Timeline</h2>
+        <p>
+          AI search adoption is moving fast. Perplexity reached 100 million monthly active users faster than any search product in history. ChatGPT Browse, Google's AI Overviews, and Bing Copilot are now fielding patient research questions every day.
+        </p>
+        <p>
+          Practices that build AEO-ready sites now will accumulate authority and citation history as this shift accelerates. Practices that wait are starting at zero when their competitors have a 12-month head start.
+        </p>
+        <p>
+          The window to be early is still open. Not for much longer.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- The Pitch -->
+  <section class="py-10 bg-charcoal text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-serif text-3xl font-normal mb-6">We Build This Into Every Site.</h2>
+        <p class="font-serif text-on-dark text-lg leading-relaxed mb-2">
+          Schema markup, FAQ structure, answer-oriented content, clean hierarchy — it's not a bolt-on. Every Groundwork site is built to be cited by AI and ranked by Google. Same price. Same timeline.
+        </p>
+        <p class="text-5xl text-sage font-mono my-6">$2,000</p>
+        <p class="font-sans text-xs text-on-dark-muted mb-8">
+          One-time. You own everything. ~$12/year after that.
+        </p>
+        <a href="/pricing" class="btn-primary px-8 py-3.5">
+          View Full Pricing
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQBlock faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <CTABlock variant="light" />
+    </div>
+  </section>
+</BaseLayout>

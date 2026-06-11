@@ -29,6 +29,7 @@ export const navMain: NavEntry[] = [
     dropdown: [
       { label: 'Specialties', href: '/dental-websites' },
       { label: 'Dental SEO Guide', href: '/dental-seo-foundation' },
+      { label: 'Dental AEO Guide', href: '/dental-aeo' },
       { label: 'Resources', href: '/blog' },
     ],
   },
@@ -44,5 +45,6 @@ export const navLinks: NavLink[] = [
   { label: 'About', href: '/about' },
   { label: 'Specialties', href: '/dental-websites' },
   { label: 'Dental SEO Guide', href: '/dental-seo-foundation' },
+  { label: 'Dental AEO Guide', href: '/dental-aeo' },
   { label: 'Resources', href: '/blog' },
 ];
